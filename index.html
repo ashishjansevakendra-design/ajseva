@@ -7,36 +7,54 @@
 <meta name="description" content="AJ Seva - आशीष जन सेवा केंद्र | डिजिटल सेवाएं, यात्रा, बुकिंग और ग्राहक सहायता">
 <title>AJ Seva | आशीष जन सेवा केंद्र</title>
 <style>
-:root{--b:#1769e0;--b2:#0d47a1;--bg:#f5f8fd;--t:#172033;--m:#6d7788}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--t)}
-a{text-decoration:none;color:inherit}.header{position:sticky;top:0;z-index:20;background:linear-gradient(135deg,var(--b),#2480f5);color:#fff;box-shadow:0 3px 18px #0b3c8a25}
-.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:16px;background:#fff;color:var(--b);display:grid;place-items:center;font-weight:900;font-size:25px}.brand h1{font-size:22px;margin:0}.brand small{opacity:.9}.menu{display:flex;gap:20px}.menu a{font-weight:700;font-size:14px}.menuBtn{display:none;background:none;border:0;color:#fff;font-size:28px}
-.hero{max-width:1180px;margin:22px auto;padding:0 20px}.heroBox{border-radius:28px;padding:38px;min-height:250px;background:linear-gradient(120deg,#0d47a1,#1769e0 55%,#48a8ee);color:#fff;display:flex;align-items:center;justify-content:space-between;box-shadow:0 14px 30px #1769e033}.hero h2{font-size:clamp(30px,5vw,48px);margin:0 0 10px}.hero p{font-size:18px}.heroBtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:13px;padding:13px 20px;font-weight:800;cursor:pointer}.primary{background:#ffd21a;color:#172033}.light{background:#fff;color:var(--b)}
-.heroIcon{font-size:100px;opacity:.2;margin-right:45px}.container{max-width:1180px;margin:auto;padding:10px 20px 55px}.section{margin-top:38px}.sectionHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.sectionHead h2{margin:0;font-size:27px}.sectionHead span{color:var(--b);font-weight:800}
-.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.card{background:#fff;border:1px solid #e4eaf3;border-radius:20px;padding:20px;box-shadow:0 5px 18px #203b6510;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #203b6520}.serviceIcon{width:62px;height:62px;border-radius:17px;background:#edf4ff;display:grid;place-items:center;font-size:30px;margin-bottom:13px}.card h3{margin:0 0 7px;font-size:18px}.card p{margin:0;color:var(--m);font-size:14px;line-height:1.5}
-.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.travelImg{height:145px;border-radius:15px;display:grid;place-items:center;color:#fff;font-size:58px;margin-bottom:14px;background:linear-gradient(135deg,#7c2bbf,#ec7b17)}.travelImg.b{background:linear-gradient(135deg,#f37b10,#ffb31a)}.travelImg.c{background:linear-gradient(135deg,#1565c0,#42a5f5)}.price{color:var(--b);font-weight:900;margin-top:10px}
-.contact{background:#fff;border-radius:22px;padding:25px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid #e3e9f2;box-shadow:0 8px 24px #203b6510}.phone{font-size:28px;font-weight:900;color:var(--b)}
+:root{--blue:#1769e0;--blue2:#0d47a1;--bg:#f5f8fd;--text:#172033;--muted:#6d7788}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}.header{position:sticky;top:0;z-index:20;background:linear-gradient(135deg,var(--blue),#2480f5);color:#fff;box-shadow:0 3px 18px #0b3c8a25}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:11px 20px}.brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:16px;background:#fff;color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:25px}.brand h1{font-size:22px;margin:0}.brand small{opacity:.9}.menu{display:flex;gap:20px}.menu a{font-weight:700;font-size:14px}.menuBtn{display:none;background:none;border:0;color:#fff;font-size:29px}
+.hero{max-width:1180px;margin:22px auto;padding:0 20px}.heroBox{border-radius:28px;padding:38px;min-height:245px;background:linear-gradient(120deg,#0d47a1,#1769e0 55%,#48a8ee);color:#fff;display:flex;align-items:center;justify-content:space-between;box-shadow:0 14px 30px #1769e033}.hero h2{font-size:clamp(30px,5vw,48px);margin:0 0 10px}.hero p{font-size:18px}.heroBtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:13px;padding:13px 20px;font-weight:800;cursor:pointer}.primary{background:#ffd21a;color:#172033}.light{background:#fff;color:var(--blue)}.heroIcon{font-size:95px;opacity:.2;margin-right:45px}
+.container{max-width:1180px;margin:auto;padding:10px 20px 55px}.section{margin-top:38px}.sectionHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}.sectionHead h2{margin:0;font-size:27px}.sectionHead span{color:var(--blue);font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.card{background:#fff;border:1px solid #e4eaf3;border-radius:20px;padding:20px;box-shadow:0 5px 18px #203b6510;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #203b6520}.serviceIcon{width:62px;height:62px;border-radius:17px;background:#edf4ff;display:grid;place-items:center;font-size:30px;margin-bottom:13px}.card h3{margin:0 0 7px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.travelGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.travelCard{padding:0;overflow:hidden}.travelPhoto{height:185px;position:relative;overflow:hidden;background:#dfe7f5}.travelPhoto img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s}.travelCard:hover .travelPhoto img{transform:scale(1.05)}.travelPhoto:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#0008)}.travelTag{position:absolute;z-index:2;left:13px;top:13px;background:#fff;color:var(--blue);padding:6px 10px;border-radius:20px;font-size:12px;font-weight:900}.travelBody{padding:17px 18px 19px}.travelBody h3{font-size:20px;margin:0 0 7px}.travelBody p{margin:0;color:var(--muted);line-height:1.5}.price{color:var(--blue);font-weight:900;margin-top:11px}
+.bookingGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.contact{background:#fff;border-radius:22px;padding:25px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid #e3e9f2;box-shadow:0 8px 24px #203b6510}.phone{font-size:28px;font-weight:900;color:var(--blue)}
 footer{background:#151925;color:#d9deea;padding:35px 20px}.footerInner{max-width:1180px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.footerTitle{color:#fff;font-weight:900;font-size:20px}.footerLinks{display:grid;gap:10px;color:#b9c1d0;font-size:14px}.copy{text-align:center;border-top:1px solid #ffffff15;margin-top:25px;padding-top:20px;font-size:13px;color:#aab2c1}
 .modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;padding:20px;z-index:50}.modal.show{display:flex}.modalBox{max-width:500px;width:100%;background:#fff;border-radius:24px;padding:26px;box-shadow:0 20px 50px #0005}.modalBox h2{margin-top:0}.close{float:right;border:0;background:#eef2f7;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:20px}.notice{padding:16px;border-radius:14px;background:#fff8df;color:#765b00;margin-top:15px}
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.cards3{grid-template-columns:1fr 1fr}.heroIcon{margin-right:0}}
-@media(max-width:650px){.nav{padding:10px 14px}.menu{display:none;position:absolute;top:74px;left:10px;right:10px;background:#151925;padding:15px;border-radius:16px;flex-direction:column;align-items:stretch}.menu.open{display:flex}.menu a{padding:10px}.menuBtn{display:block}.hero{padding:0 12px}.heroBox{padding:27px 23px;min-height:235px}.heroIcon{display:none}.hero h2{font-size:31px}.container{padding:5px 12px 40px}.grid{grid-template-columns:1fr 1fr;gap:11px}.card{padding:16px;border-radius:17px}.serviceIcon{width:52px;height:52px;font-size:25px}.cards3{grid-template-columns:1fr}.contact{display:block}.phone{font-size:24px;margin:10px 0}.footerInner{grid-template-columns:1fr}}
+@media(max-width:950px){.grid{grid-template-columns:repeat(3,1fr)}.travelGrid{grid-template-columns:repeat(2,1fr)}.bookingGrid{grid-template-columns:repeat(2,1fr)}.heroIcon{margin-right:0}}
+@media(max-width:650px){.nav{padding:10px 14px}.menu{display:none;position:absolute;top:74px;left:10px;right:10px;background:#151925;padding:15px;border-radius:16px;flex-direction:column;align-items:stretch}.menu.open{display:flex}.menu a{padding:10px}.menuBtn{display:block}.hero{padding:0 12px}.heroBox{padding:27px 23px;min-height:230px}.heroIcon{display:none}.hero h2{font-size:31px}.container{padding:5px 12px 40px}.grid{grid-template-columns:1fr 1fr;gap:11px}.travelGrid,.bookingGrid{grid-template-columns:1fr 1fr;gap:11px}.travelPhoto{height:145px}.card{padding:16px;border-radius:17px}.serviceIcon{width:52px;height:52px;font-size:25px}.contact{display:block}.phone{font-size:24px;margin:10px 0}.footerInner{grid-template-columns:1fr}}
+
+.bookingChoice{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.bookingChoice button{border:1px solid #dbe4f0;background:#f7faff;border-radius:16px;padding:16px 10px;font-size:17px;font-weight:800;color:#172033;cursor:pointer}
+.bookingChoice button.active{background:#1769e0;color:#fff;border-color:#1769e0}
+.bookingForm{display:grid;gap:14px}
+.bookingForm .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bookingForm label{font-weight:800;font-size:14px;color:#344054}
+.bookingForm input,.bookingForm select{width:100%;margin-top:6px;border:1px solid #d8e0eb;border-radius:12px;padding:13px;font-size:16px;background:#fff;outline:none}
+.bookingForm input:focus,.bookingForm select:focus{border-color:#1769e0;box-shadow:0 0 0 3px #1769e01a}
+.bookingHelp{font-size:13px;color:#6d7788;margin:0}
+.bookingSubmit{width:100%;background:#19a857;color:#fff;border:0;border-radius:13px;padding:14px;font-size:17px;font-weight:900;cursor:pointer}
+@media(max-width:650px){.bookingChoice{grid-template-columns:repeat(3,1fr);gap:8px}.bookingChoice button{font-size:14px;padding:13px 5px}.bookingForm .row{grid-template-columns:1fr}.bookingModalBox{max-height:90vh;overflow:auto}}
+
 </style>
+<!-- Offline build: travel images are embedded; no external image access required. -->
 </head>
 <body>
-<header class="header"><nav class="nav">
+<header class="header">
+<nav class="nav">
 <a class="brand" href="#home"><div class="logo">AJ</div><div><h1>AJ Seva</h1><small>आशीष जन सेवा केंद्र</small></div></a>
 <button class="menuBtn" onclick="toggleMenu()">⋮</button>
 <div class="menu" id="menu"><a href="#home">होम</a><a href="#services">सेवाएँ</a><a href="#travel">यात्रा</a><a href="#booking">बुकिंग</a><a href="#gallery">गैलरी</a><a href="#contact">संपर्क</a><a href="#privacy">Privacy</a></div>
-</nav></header>
+</nav>
+</header>
 
 <main id="home">
 <section class="hero"><div class="heroBox"><div>
-<h2>आपकी सेवा, हमारी जिम्मेदारी</h2><p>डिजिटल सेवाएँ और यात्रा सुविधाएँ — एक ही जगह।</p>
+<h2>आपकी सेवा, हमारी जिम्मेदारी</h2>
+<p>डिजिटल सेवाएँ और यात्रा सुविधाएँ — एक ही जगह।</p>
 <div class="heroBtns"><a class="btn primary" href="#services">सेवाएँ देखें →</a><a class="btn light" href="#travel">यात्रा देखें</a></div>
-</div><div class="heroIcon">🛡️</div></div></section>
+</div><div class="heroIcon">✈️</div></div></section>
 
 <div class="container">
-<section class="section" id="services"><div class="sectionHead"><h2>🛠️ डिजिटल सेवाएँ</h2><span>सभी सेवाएँ</span></div>
+<section class="section" id="services">
+<div class="sectionHead"><h2>🛠️ डिजिटल सेवाएँ</h2><span>सभी सेवाएँ</span></div>
 <div class="grid">
 <div class="card" onclick="showDetail('PAN Card','नया PAN Card आवेदन, Correction एवं ऑनलाइन सहायता।')"><div class="serviceIcon">🪪</div><h3>PAN Card</h3><p>नया आवेदन और Correction</p></div>
 <div class="card" onclick="showDetail('Aadhaar','Aadhaar से संबंधित ऑनलाइन सेवाओं के लिए सहायता।')"><div class="serviceIcon">🆔</div><h3>Aadhaar</h3><p>आधार संबंधित सेवाएँ</p></div>
@@ -48,51 +66,408 @@ footer{background:#151925;color:#d9deea;padding:35px 20px}.footerInner{max-width
 <div class="card" onclick="showDetail('Passport','Passport आवेदन के लिए संपर्क और सहायता।')"><div class="serviceIcon">🛂</div><h3>Passport</h3><p>पासपोर्ट सहायता</p></div>
 <div class="card" onclick="showDetail('Ration Card','Ration Card से संबंधित ऑनलाइन सहायता।')"><div class="serviceIcon">🛒</div><h3>Ration Card</h3><p>राशन कार्ड सेवा</p></div>
 <div class="card" onclick="showDetail('अन्य सेवाएँ','अन्य उपलब्ध डिजिटल सेवाओं के लिए हमसे संपर्क करें।')"><div class="serviceIcon">➕</div><h3>अन्य सेवाएँ</h3><p>और भी डिजिटल सुविधाएँ</p></div>
-</div></section>
+</div>
+</section>
 
-<section class="section" id="travel"><div class="sectionHead"><h2>✈️ लोकप्रिय यात्रा पैकेज</h2><span>सभी देखें</span></div>
-<div class="cards3">
-<div class="card"><div class="travelImg">🏠</div><h3>अयोध्या धाम</h3><p>श्री राम जन्मभूमि, हनुमानगढ़ी और प्रमुख दर्शन।</p><div class="price">₹2200 से शुरू</div></div>
-<div class="card"><div class="travelImg b">🚆</div><h3>काशी दर्शन</h3><p>काशी विश्वनाथ एवं प्रमुख धार्मिक स्थल।</p><div class="price">₹1800 से शुरू</div></div>
-<div class="card"><div class="travelImg c">🏔️</div><h3>केदारनाथ</h3><p>केदारनाथ यात्रा एवं यात्रा सहायता।</p><div class="price">₹499 से शुरू</div></div>
-<div class="card"><div class="travelImg">🛕</div><h3>वैष्णो देवी</h3><p>माता वैष्णो देवी दर्शन यात्रा।</p><div class="price">बुकिंग के लिए संपर्क करें</div></div>
-<div class="card"><div class="travelImg b">🛕</div><h3>रामेश्वरम</h3><p>रामेश्वरम एवं दक्षिण भारत धार्मिक यात्रा।</p><div class="price">बुकिंग के लिए संपर्क करें</div></div>
-<div class="card"><div class="travelImg c">🌊</div><h3>कन्याकुमारी</h3><p>कन्याकुमारी दर्शन एवं यात्रा योजना।</p><div class="price">बुकिंग के लिए संपर्क करें</div></div>
-</div></section>
+<section class="section" id="travel">
+<div class="sectionHead"><h2>✈️ लोकप्रिय यात्रा पैकेज</h2><span>दर्शन स्थल</span></div>
+<div class="travelGrid">
 
-<section class="section" id="booking"><div class="sectionHead"><h2>🎫 बुकिंग</h2></div><div class="grid">
-<div class="card" onclick="showDetail('Bus Booking','बस टिकट बुकिंग के लिए AJ Seva से संपर्क करें।')"><div class="serviceIcon">🚌</div><h3>Bus</h3><p>बस टिकट बुकिंग</p></div>
-<div class="card" onclick="showDetail('Train Booking','ट्रेन टिकट बुकिंग के लिए AJ Seva से संपर्क करें।')"><div class="serviceIcon">🚆</div><h3>Train</h3><p>रेल टिकट बुकिंग</p></div>
-<div class="card" onclick="showDetail('Flight Booking','फ्लाइट टिकट बुकिंग के लिए AJ Seva से संपर्क करें।')"><div class="serviceIcon">✈️</div><h3>Flight</h3><p>हवाई टिकट बुकिंग</p></div>
+<article class="card travelCard" onclick="showDetail('अयोध्या धाम','श्री राम जन्मभूमि, हनुमानगढ़ी और प्रमुख दर्शन स्थलों की यात्रा।')">
+<div class="travelPhoto"><span class="travelTag">POPULAR</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNDIwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzdiMWZhMiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRhMTQ4YyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjQyMCIgcng9IjI4IiBmaWxsPSJ1cmwoI2cpIi8+CjxjaXJjbGUgY3g9Ijc2MCIgY3k9IjEwMCIgcj0iNzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMzUwIiByPSIxMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMDgiLz4KPHRleHQgeD0iNTUiIHk9IjkyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPvCfm5U8L3RleHQ+Cjx0ZXh0IHg9IjU1IiB5PSIxNjUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+4KSF4KSv4KWL4KSn4KWN4KSv4KS+IOCkp+CkvuCkrjwvdGV4dD4KPHRleHQgeD0iNTUiIHk9IjIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOTIiPuCktuCljeCksOClgCDgpLDgpL7gpK4g4KSc4KSo4KWN4KSu4KSt4KWC4KSu4KS/IOCkpuCksOCljeCktuCkqDwvdGV4dD4KPHJlY3QgeD0iNTUiIHk9IjI3MCIgd2lkdGg9IjIxMCIgaGVpZ2h0PSI1OCIgcng9IjI5IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjk1Ii8+Cjx0ZXh0IHg9IjE2MCIgeT0iMzA4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzRhMTQ4YyI+4KSm4KSw4KWN4KS24KSoIOCkr+CkvuCkpOCljeCksOCkvjwvdGV4dD4KPHBhdGggZD0iTTU3MCAzMzAgTDY1MCAyMjUgTDczMCAzMzAgWiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45Ii8+CjxyZWN0IHg9IjYxNSIgeT0iMzAwIiB3aWR0aD0iNzAiIGhlaWdodD0iMzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOSIvPgo8Y2lyY2xlIGN4PSI2NTAiIGN5PSIyMjAiIHI9IjIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjkiLz4KPC9zdmc+" alt="अयोध्या राम मंदिर"></div>
+<div class="travelBody"><h3>अयोध्या धाम</h3><p>श्री राम जन्मभूमि एवं प्रमुख दर्शन।</p><div class="price">₹2200 से शुरू</div></div>
+</article>
+
+<article class="card travelCard" onclick="showDetail('काशी दर्शन','काशी विश्वनाथ और वाराणसी के प्रमुख धार्मिक स्थलों की यात्रा।')">
+<div class="travelPhoto"><span class="travelTag">POPULAR</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNDIwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2VmNmMwMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2U2NTEwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjQyMCIgcng9IjI4IiBmaWxsPSJ1cmwoI2cpIi8+CjxjaXJjbGUgY3g9Ijc2MCIgY3k9IjEwMCIgcj0iNzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMzUwIiByPSIxMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMDgiLz4KPHRleHQgeD0iNTUiIHk9IjkyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPvCfm5U8L3RleHQ+Cjx0ZXh0IHg9IjU1IiB5PSIxNjUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+4KSV4KS+4KS24KWAIOCkpuCksOCljeCktuCkqDwvdGV4dD4KPHRleHQgeD0iNTUiIHk9IjIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOTIiPuCktuCljeCksOClgCDgpJXgpL7gpLbgpYAg4KS14KS/4KS24KWN4KS14KSo4KS+4KSlPC90ZXh0Pgo8cmVjdCB4PSI1NSIgeT0iMjcwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjU4IiByeD0iMjkiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOTUiLz4KPHRleHQgeD0iMTYwIiB5PSIzMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZTY1MTAwIj7gpKbgpLDgpY3gpLbgpKgg4KSv4KS+4KSk4KWN4KSw4KS+PC90ZXh0Pgo8cGF0aCBkPSJNNTcwIDMzMCBMNjUwIDIyNSBMNzMwIDMzMCBaIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjkiLz4KPHJlY3QgeD0iNjE1IiB5PSIzMDAiIHdpZHRoPSI3MCIgaGVpZ2h0PSIzMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45Ii8+CjxjaXJjbGUgY3g9IjY1MCIgY3k9IjIyMCIgcj0iMjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOSIvPgo8L3N2Zz4=" alt="काशी विश्वनाथ"></div>
+<div class="travelBody"><h3>काशी दर्शन</h3><p>काशी विश्वनाथ एवं प्रमुख स्थल।</p><div class="price">₹1800 से शुरू</div></div>
+</article>
+
+<article class="card travelCard" onclick="showDetail('केदारनाथ','केदारनाथ धाम यात्रा और यात्रा सहायता।')">
+<div class="travelPhoto"><span class="travelTag">DHAM YATRA</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNDIwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzE1NjVjMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBkNDdhMSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjQyMCIgcng9IjI4IiBmaWxsPSJ1cmwoI2cpIi8+CjxjaXJjbGUgY3g9Ijc2MCIgY3k9IjEwMCIgcj0iNzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMzUwIiByPSIxMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMDgiLz4KPHRleHQgeD0iNTUiIHk9IjkyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPvCfj5TvuI88L3RleHQ+Cjx0ZXh0IHg9IjU1IiB5PSIxNjUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+4KSV4KWH4KSm4KS+4KSw4KSo4KS+4KSlPC90ZXh0Pgo8dGV4dCB4PSI1NSIgeT0iMjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45MiI+4KSs4KS+4KSs4KS+IOCkleClh+CkpuCkvuCksCDgpJXgpYcg4KSm4KSw4KWN4KS24KSoPC90ZXh0Pgo8cmVjdCB4PSI1NSIgeT0iMjcwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjU4IiByeD0iMjkiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOTUiLz4KPHRleHQgeD0iMTYwIiB5PSIzMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGQ0N2ExIj7gpKbgpLDgpY3gpLbgpKgg4KSv4KS+4KSk4KWN4KSw4KS+PC90ZXh0Pgo8cGF0aCBkPSJNNTcwIDMzMCBMNjUwIDIyNSBMNzMwIDMzMCBaIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjkiLz4KPHJlY3QgeD0iNjE1IiB5PSIzMDAiIHdpZHRoPSI3MCIgaGVpZ2h0PSIzMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45Ii8+CjxjaXJjbGUgY3g9IjY1MCIgY3k9IjIyMCIgcj0iMjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOSIvPgo8L3N2Zz4=" alt="केदारनाथ मंदिर"></div>
+<div class="travelBody"><h3>केदारनाथ</h3><p>बाबा केदारनाथ धाम दर्शन।</p><div class="price">₹499 से शुरू</div></div>
+</article>
+
+<article class="card travelCard" onclick="showDetail('वैष्णो देवी','माता वैष्णो देवी दर्शन यात्रा।')">
+<div class="travelPhoto"><span class="travelTag">DARSHAN</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNDIwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2FkMTQ1NyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzg4MGU0ZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjQyMCIgcng9IjI4IiBmaWxsPSJ1cmwoI2cpIi8+CjxjaXJjbGUgY3g9Ijc2MCIgY3k9IjEwMCIgcj0iNzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMzUwIiByPSIxMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMDgiLz4KPHRleHQgeD0iNTUiIHk9IjkyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPvCfmY88L3RleHQ+Cjx0ZXh0IHg9IjU1IiB5PSIxNjUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+4KS14KWI4KS34KWN4KSj4KWLIOCkpuClh+CkteClgDwvdGV4dD4KPHRleHQgeD0iNTUiIHk9IjIxNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOTIiPuCkruCkvuCkpOCkviDgpLDgpL7gpKjgpYAg4KSm4KSw4KWN4KS24KSoPC90ZXh0Pgo8cmVjdCB4PSI1NSIgeT0iMjcwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjU4IiByeD0iMjkiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOTUiLz4KPHRleHQgeD0iMTYwIiB5PSIzMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjODgwZTRmIj7gpKbgpLDgpY3gpLbgpKgg4KSv4KS+4KSk4KWN4KSw4KS+PC90ZXh0Pgo8cGF0aCBkPSJNNTcwIDMzMCBMNjUwIDIyNSBMNzMwIDMzMCBaIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjkiLz4KPHJlY3QgeD0iNjE1IiB5PSIzMDAiIHdpZHRoPSI3MCIgaGVpZ2h0PSIzMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45Ii8+CjxjaXJjbGUgY3g9IjY1MCIgY3k9IjIyMCIgcj0iMjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOSIvPgo8L3N2Zz4=" alt="वैष्णो देवी"></div>
+<div class="travelBody"><h3>वैष्णो देवी</h3><p>माता वैष्णो देवी दर्शन यात्रा।</p><div class="price">बुकिंग के लिए संपर्क करें</div></div>
+</article>
+
+<article class="card travelCard" onclick="showDetail('रामेश्वरम','रामेश्वरम ज्योतिर्लिंग एवं दक्षिण भारत धार्मिक यात्रा।')">
+<div class="travelPhoto"><span class="travelTag">JYOTIRLING</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNDIwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzAwODk3YiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwNjk1YyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjQyMCIgcng9IjI4IiBmaWxsPSJ1cmwoI2cpIi8+CjxjaXJjbGUgY3g9Ijc2MCIgY3k9IjEwMCIgcj0iNzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMzUwIiByPSIxMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMDgiLz4KPHRleHQgeD0iNTUiIHk9IjkyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPvCfm5U8L3RleHQ+Cjx0ZXh0IHg9IjU1IiB5PSIxNjUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+4KSw4KS+4KSu4KWH4KS24KWN4KS14KSw4KSuPC90ZXh0Pgo8dGV4dCB4PSI1NSIgeT0iMjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45MiI+4KSc4KWN4KSv4KWL4KSk4KS/4KSw4KWN4KSy4KS/4KSC4KSXIOCkpuCksOCljeCktuCkqDwvdGV4dD4KPHJlY3QgeD0iNTUiIHk9IjI3MCIgd2lkdGg9IjIxMCIgaGVpZ2h0PSI1OCIgcng9IjI5IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjk1Ii8+Cjx0ZXh0IHg9IjE2MCIgeT0iMzA4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzAwNjk1YyI+4KSm4KSw4KWN4KS24KSoIOCkr+CkvuCkpOCljeCksOCkvjwvdGV4dD4KPHBhdGggZD0iTTU3MCAzMzAgTDY1MCAyMjUgTDczMCAzMzAgWiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45Ii8+CjxyZWN0IHg9IjYxNSIgeT0iMzAwIiB3aWR0aD0iNzAiIGhlaWdodD0iMzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOSIvPgo8Y2lyY2xlIGN4PSI2NTAiIGN5PSIyMjAiIHI9IjIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjkiLz4KPC9zdmc+" alt="रामेश्वरम मंदिर"></div>
+<div class="travelBody"><h3>रामेश्वरम</h3><p>रामनाथस्वामी मंदिर दर्शन।</p><div class="price">बुकिंग के लिए संपर्क करें</div></div>
+</article>
+
+<article class="card travelCard" onclick="showDetail('कन्याकुमारी','कन्याकुमारी दर्शन एवं दक्षिण भारत यात्रा योजना।')">
+<div class="travelPhoto"><span class="travelTag">SOUTH INDIA</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNDIwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzAyODhkMSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAxNTc5YiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjQyMCIgcng9IjI4IiBmaWxsPSJ1cmwoI2cpIi8+CjxjaXJjbGUgY3g9Ijc2MCIgY3k9IjEwMCIgcj0iNzAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iMzUwIiByPSIxMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuMDgiLz4KPHRleHQgeD0iNTUiIHk9IjkyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiPvCfjIo8L3RleHQ+Cjx0ZXh0IHg9IjU1IiB5PSIxNjUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+4KSV4KSo4KWN4KSv4KS+4KSV4KWB4KSu4KS+4KSw4KWAPC90ZXh0Pgo8dGV4dCB4PSI1NSIgeT0iMjE1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45MiI+4KSm4KSV4KWN4KS34KS/4KSjIOCkreCkvuCksOCkpCDgpK/gpL7gpKTgpY3gpLDgpL48L3RleHQ+CjxyZWN0IHg9IjU1IiB5PSIyNzAiIHdpZHRoPSIyMTAiIGhlaWdodD0iNTgiIHJ4PSIyOSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45NSIvPgo8dGV4dCB4PSIxNjAiIHk9IjMwOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjMiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMTU3OWIiPuCkpuCksOCljeCktuCkqCDgpK/gpL7gpKTgpY3gpLDgpL48L3RleHQ+CjxwYXRoIGQ9Ik01NzAgMzMwIEw2NTAgMjI1IEw3MzAgMzMwIFoiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIuOSIvPgo8cmVjdCB4PSI2MTUiIHk9IjMwMCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjMwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iLjkiLz4KPGNpcmNsZSBjeD0iNjUwIiBjeT0iMjIwIiByPSIyMiIgZmlsbD0id2hpdGUiIG9wYWNpdHk9Ii45Ii8+Cjwvc3ZnPg==" alt="कन्याकुमारी मंदिर"></div>
+<div class="travelBody"><h3>कन्याकुमारी</h3><p>कन्याकुमारी एवं प्रमुख स्थल।</p><div class="price">बुकिंग के लिए संपर्क करें</div></div>
+</article>
+
+</div>
+</section>
+
+<section class="section" id="booking">
+<div class="sectionHead"><h2>🎫 बुकिंग</h2><span>यात्रा बुकिंग</span></div>
+<div class="bookingGrid">
+<div class="card" onclick="openBookingForm('Bus')"><div class="serviceIcon">🚌</div><h3>Bus</h3><p>बस टिकट बुकिंग</p></div>
+<div class="card" onclick="openBookingForm('Train')"><div class="serviceIcon">🚆</div><h3>Train</h3><p>रेल टिकट बुकिंग</p></div>
+<div class="card" onclick="openBookingForm('Flight')"><div class="serviceIcon">✈️</div><h3>Flight</h3><p>हवाई टिकट बुकिंग</p></div>
 <div class="card" onclick="showDetail('Recharge','Recharge option coming soon.')"><div class="serviceIcon">📱</div><h3>Recharge</h3><p>Coming Soon</p></div>
-<div class="card" onclick="showDetail('Gallery','हमारी दैनिक कार्य गैलरी जल्द उपलब्ध होगी।')"><div class="serviceIcon">📸</div><h3>Gallery</h3><p>दैनिक कार्य गैलरी</p></div>
-</div></section>
+</div>
+</section>
 
-<section class="section" id="gallery"><div class="sectionHead"><h2>📸 हमारी गैलरी</h2></div>
-<div class="contact"><div><b>दैनिक कार्य और ग्राहक सेवा</b><p>AJ Seva की कार्य गैलरी यहाँ दिखाई जाएगी।</p></div><button class="btn primary" onclick="showDetail('Gallery','Gallery में सेवा कार्य की तस्वीरें जल्द जोड़ी जाएँगी।')">देखें</button></div></section>
+<section class="section" id="gallery">
+<div class="sectionHead"><h2>📸 हमारी गैलरी</h2></div>
+<div class="contact"><div><b>दैनिक कार्य और ग्राहक सेवा</b><p>AJ Seva की कार्य गैलरी यहाँ दिखाई जाएगी।</p></div><button class="btn primary" onclick="showDetail('Gallery','Gallery में सेवा कार्य की तस्वीरें जल्द जोड़ी जाएँगी।')">देखें</button></div>
+</section>
 
-<section class="section" id="contact"><div class="contact"><div><b>सहायता के लिए संपर्क करें</b><div class="phone">7376999243</div><span>हम आपकी सेवा के लिए तैयार हैं।</span></div>
-<a class="btn primary" href="https://wa.me/917376999243?text=नमस्ते%20AJ%20Seva,%20मुझे%20सेवा%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp करें</a></div></section>
+<section class="section" id="contact">
+<div class="contact"><div><b>सहायता के लिए संपर्क करें</b><div class="phone">7376999243</div><span>हम आपकी सेवा के लिए तैयार हैं।</span></div>
+<a class="btn primary" href="https://wa.me/917376999243?text=नमस्ते%20AJ%20Seva,%20मुझे%20सेवा%20की%20जानकारी%20चाहिए।" target="_blank">WhatsApp करें</a></div>
+</section>
 
 <section class="section" id="privacy"><div class="card">
-<h2>🔒 Privacy Policy</h2><p>AJ Seva आपकी आवश्यक जानकारी का उपयोग केवल सेवा, आवेदन, बुकिंग और ग्राहक सहायता के उद्देश्य से करता है। आवश्यक जानकारी को संबंधित सेवा प्रक्रिया के लिए उपयोग किया जा सकता है।</p>
+<h2>🔒 Privacy Policy</h2>
+<p>AJ Seva आपकी आवश्यक जानकारी का उपयोग केवल सेवा, आवेदन, बुकिंग और ग्राहक सहायता के उद्देश्य से करता है। आवश्यक जानकारी को संबंधित सेवा प्रक्रिया के लिए उपयोग किया जा सकता है।</p>
 <h3>Account & Data</h3><p>ग्राहक खाते से संबंधित डेटा का उपयोग सेवा उपलब्ध कराने के लिए किया जा सकता है। Account deletion के लिए AJ Seva से संपर्क करें।</p>
 <h2>📄 Terms & Conditions</h2><p>सेवा शुल्क, सरकारी शुल्क, टिकट शुल्क और अन्य शुल्क सेवा के अनुसार अलग हो सकते हैं। आवेदन की स्वीकृति संबंधित विभाग/सेवा प्रदाता के नियमों पर निर्भर करती है।</p>
 <h2>🗑️ Account Deletion</h2><p>खाता हटाने के अनुरोध के लिए WhatsApp या संपर्क नंबर पर अपना registered mobile number भेजें। आवश्यक सत्यापन के बाद अनुरोध पर कार्रवाई की जाएगी।</p>
 </div></section>
-</div></main>
+</div>
+</main>
 
-<footer><div class="footerInner"><div><div class="footerTitle">AJ Seva</div><p>आशीष जन सेवा केंद्र<br>आपकी सेवा, हमारा विश्वास।</p></div>
+<footer>
+<div class="footerInner">
+<div><div class="footerTitle">AJ Seva</div><p>आशीष जन सेवा केंद्र<br>आपकी सेवा, हमारा विश्वास।</p></div>
 <div><div class="footerTitle">Quick Links</div><div class="footerLinks"><a href="#services">सेवाएँ</a><a href="#travel">यात्रा</a><a href="#booking">बुकिंग</a><a href="#privacy">Privacy Policy</a></div></div>
-<div><div class="footerTitle">Contact</div><div class="footerLinks"><a href="tel:+917376999243">7376999243</a><a href="https://wa.me/917376999243" target="_blank">WhatsApp</a><a href="#privacy">Terms & Conditions</a></div></div></div>
-<div class="copy">© 2026 AJ Seva - आशीष जन सेवा केंद्र. All Rights Reserved.</div></footer>
+<div><div class="footerTitle">Contact</div><div class="footerLinks"><a href="tel:+917376999243">7376999243</a><a href="https://wa.me/917376999243" target="_blank">WhatsApp</a><a href="#privacy">Terms & Conditions</a></div></div>
+</div>
+<div class="copy">© 2026 AJ Seva - आशीष जन सेवा केंद्र. All Rights Reserved.</div>
+</footer>
 
-<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modalBox"><button class="close" onclick="closeModal()">×</button><h2 id="modalTitle"></h2><p id="modalText"></p><div class="notice">आवेदन या सहायता के लिए WhatsApp पर संपर्क करें।</div><br><a class="btn primary" target="_blank" href="https://wa.me/917376999243">WhatsApp पर संपर्क करें</a></div></div>
+
+<div class="modal" id="bookingModal" onclick="if(event.target===this)closeBookingForm()">
+<div class="modalBox bookingModalBox">
+<button class="close" onclick="closeBookingForm()">×</button>
+<h2 id="bookingFormTitle">🎫 यात्रा बुकिंग</h2>
+<p class="bookingHelp">अपनी जानकारी भरें। Submit करने पर पूरी booking details WhatsApp पर भेजी जाएँगी।</p>
+
+<div class="bookingChoice">
+<button type="button" id="bookBus" onclick="selectBookingType('Bus')">🚌 Bus</button>
+<button type="button" id="bookTrain" onclick="selectBookingType('Train')">🚆 Train</button>
+<button type="button" id="bookFlight" onclick="selectBookingType('Flight')">✈️ Flight</button>
+</div>
+
+<form class="bookingForm" onsubmit="submitBooking(event)">
+<input type="hidden" id="bookingType" value="Bus">
+
+<div class="row">
+<label>नाम
+<input id="bookName" type="text" placeholder="अपना नाम" required>
+</label>
+<label>मोबाइल नंबर
+<input id="bookMobile" type="tel" inputmode="numeric" maxlength="10" placeholder="10 अंकों का मोबाइल" required>
+</label>
+</div>
+
+<div class="row">
+<label>कहाँ से
+<input id="bookFrom" type="text" placeholder="From" required>
+</label>
+<label>कहाँ तक
+<input id="bookTo" type="text" placeholder="To" required>
+</label>
+</div>
+
+<div class="row">
+<label>यात्रा की तारीख
+<input id="bookDate" type="date" required>
+</label>
+<label>यात्रियों की संख्या
+<select id="bookPersons" required>
+<option value="1">1 यात्री</option>
+<option value="2">2 यात्री</option>
+<option value="3">3 यात्री</option>
+<option value="4">4 यात्री</option>
+<option value="5">5 यात्री</option>
+<option value="6">6 यात्री</option>
+<option value="7">7 यात्री</option>
+<option value="8">8 यात्री</option>
+<option value="9">9 यात्री</option>
+<option value="10">10 यात्री</option>
+</select>
+</label>
+</div>
+
+<label>अतिरिक्त जानकारी
+<input id="bookNote" type="text" placeholder="जैसे Sleeper, AC, पसंदीदा समय आदि">
+</label>
+
+<button class="bookingSubmit" type="submit">WhatsApp पर Booking भेजें →</button>
+</form>
+</div>
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="modalBox"><button class="close" onclick="closeModal()">×</button><h2 id="modalTitle"></h2><p id="modalText"></p><div class="notice">आवेदन या सहायता के लिए WhatsApp पर संपर्क करें।</div><br><a class="btn primary" target="_blank" href="https://wa.me/917376999243">WhatsApp पर संपर्क करें</a></div>
+</div>
+
 <script>
 function toggleMenu(){document.getElementById('menu').classList.toggle('open')}
-function showDetail(t,x){document.getElementById('modalTitle').textContent=t;document.getElementById('modalText').textContent=x;document.getElementById('modal').classList.add('show')}
-function closeModal(){document.getElementById('modal').classList.remove('show')}
-document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')))
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})
+
+function showDetail(t,x){
+  const digitalServices = [
+    'PAN Card','Aadhaar','Ayushman','Voter Card','E-Shram','Ration Card',
+    'प्रमाण पत्र','Driving Licence','Passport','अन्य सेवाएँ'
+  ];
+
+  // Digital Seva card -> direct application form
+  if(digitalServices.includes(t)){
+    if(typeof openServiceForm === 'function'){
+      openServiceForm(t);
+      return;
+    }
+  }
+
+  // Popular travel package -> direct travel booking form
+  const travelMap = {
+    'अयोध्या धाम':'Travel',
+    'काशी दर्शन':'Travel',
+    'केदारनाथ':'Travel',
+    'वैष्णो देवी':'Travel',
+    'रामेश्वरम':'Travel',
+    'कन्याकुमारी':'Travel'
+  };
+
+  if(travelMap[t] && typeof openBookingForm === 'function'){
+    openBookingForm('Travel');
+    return;
+  }
+
+  document.getElementById('modalTitle').textContent=t;
+  document.getElementById('modalText').textContent=x;
+  document.getElementById('modal').classList.add('show');
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('show');
+}
+
+function openBookingForm(type){
+  document.getElementById('bookingModal').classList.add('show');
+  selectBookingType(type || 'Bus');
+  const d=new Date();
+  d.setDate(d.getDate()+1);
+  document.getElementById('bookDate').min=d.toISOString().split('T')[0];
+}
+
+function closeBookingForm(){
+  document.getElementById('bookingModal').classList.remove('show');
+}
+
+function selectBookingType(type){
+  document.getElementById('bookingType').value=type;
+  const title = document.getElementById('bookingFormTitle');
+  if(title) title.textContent = type === 'Travel' ? '🛕 यात्रा पैकेज बुकिंग' : '🎫 यात्रा बुकिंग';
+  ['Bus','Train','Flight'].forEach(x=>{
+    const b=document.getElementById('book'+x);
+    if(b)b.classList.toggle('active',x===type);
+  });
+}
+
+function submitBooking(e){
+  e.preventDefault();
+
+  const name=document.getElementById('bookName').value.trim();
+  const mobile=document.getElementById('bookMobile').value.trim();
+  const from=document.getElementById('bookFrom').value.trim();
+  const to=document.getElementById('bookTo').value.trim();
+  const date=document.getElementById('bookDate').value;
+  const persons=document.getElementById('bookPersons').value;
+  const note=document.getElementById('bookNote').value.trim();
+  const type=document.getElementById('bookingType').value;
+
+  if(!/^[6-9]\d{9}$/.test(mobile)){
+    alert('कृपया सही 10 अंकों का मोबाइल नंबर डालें।');
+    return;
+  }
+
+  const readableDate=date ? new Date(date+'T00:00:00').toLocaleDateString('hi-IN',{day:'2-digit',month:'2-digit',year:'numeric'}) : '';
+
+  const message =
+`नमस्ते AJ Seva,
+मुझे ${type} Booking करनी है।
+
+👤 नाम: ${name}
+📱 मोबाइल: ${mobile}
+🚌/🚆/✈️ माध्यम: ${type}
+📍 From: ${from}
+📍 To: ${to}
+📅 यात्रा तारीख: ${readableDate}
+👥 यात्री: ${persons}
+📝 अतिरिक्त जानकारी: ${note || 'कोई नहीं'}
+
+कृपया Booking की उपलब्धता और किराया बताएं।`;
+
+  window.open('https://wa.me/917376999243?text='+encodeURIComponent(message),'_blank');
+  closeBookingForm();
+}
+
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeModal();
+    closeBookingForm();
+  }
+});
 </script>
-</body></html>
+
+<!-- AJ Seva: Digital Service Application Modal -->
+<div id="serviceModal" class="aj-modal" aria-hidden="true">
+  <div class="aj-modal-card">
+    <button class="aj-close" type="button" onclick="closeServiceForm()">×</button>
+    <div class="aj-modal-title">📝 आवेदन करें</div>
+    <div id="selectedService" class="aj-selected-service">सेवा</div>
+
+    <form id="serviceForm">
+      <input type="hidden" id="serviceName" name="serviceName">
+
+      <label>पूरा नाम</label>
+      <input id="applicantName" name="applicantName" type="text" placeholder="अपना नाम लिखें" required>
+
+      <label>मोबाइल नंबर</label>
+      <input id="applicantMobile" name="applicantMobile" type="tel"
+             inputmode="numeric" maxlength="10" pattern="[0-9]{10}"
+             placeholder="10 अंकों का मोबाइल नंबर" required>
+
+      <label>पता</label>
+      <textarea id="applicantAddress" name="applicantAddress" rows="3"
+                placeholder="पूरा पता लिखें" required></textarea>
+
+      <label>अतिरिक्त जानकारी</label>
+      <textarea id="applicantNote" name="applicantNote" rows="3"
+                placeholder="जरूरी जानकारी (वैकल्पिक)"></textarea>
+
+      <button class="aj-submit" type="submit">📲 WhatsApp पर आवेदन भेजें</button>
+    </form>
+  </div>
+</div>
+
+<style>
+.aj-modal{
+  display:none; position:fixed; inset:0; z-index:99999;
+  background:rgba(0,0,0,.58); padding:18px;
+  align-items:center; justify-content:center;
+}
+.aj-modal.show{display:flex}
+.aj-modal-card{
+  width:min(520px,100%); max-height:90vh; overflow:auto;
+  background:#fff; border-radius:22px; padding:22px;
+  box-shadow:0 20px 60px rgba(0,0,0,.28); position:relative;
+}
+.aj-close{
+  position:absolute; right:12px; top:8px; width:40px; height:40px;
+  border:0; border-radius:50%; background:#eef3fb; color:#222;
+  font-size:28px; cursor:pointer;
+}
+.aj-modal-title{font-size:25px;font-weight:800;color:#1769e0;margin-bottom:6px}
+.aj-selected-service{
+  background:#eef5ff; color:#1769e0; font-weight:700;
+  border-radius:12px; padding:10px 12px; margin-bottom:16px;
+}
+#serviceForm label{display:block;font-weight:700;margin:11px 0 6px;color:#263238}
+#serviceForm input,#serviceForm textarea{
+  width:100%; box-sizing:border-box; border:1px solid #d9e1ec;
+  border-radius:12px; padding:12px; font-size:16px; outline:none;
+}
+#serviceForm input:focus,#serviceForm textarea:focus{
+  border-color:#1769e0; box-shadow:0 0 0 3px rgba(23,105,224,.1)
+}
+.aj-submit{
+  width:100%; border:0; border-radius:13px; padding:14px;
+  margin-top:16px; background:#16a34a; color:#fff;
+  font-size:17px; font-weight:800; cursor:pointer;
+}
+</style>
+
+<script>
+(function(){
+  const modal = document.getElementById('serviceModal');
+  const serviceName = document.getElementById('serviceName');
+  const selectedService = document.getElementById('selectedService');
+
+  window.openServiceForm = function(name){
+    serviceName.value = name || 'Digital Service';
+    selectedService.textContent = 'सेवा: ' + serviceName.value;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+  };
+
+  window.closeServiceForm = function(){
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+  };
+
+  modal.addEventListener('click', function(e){
+    if(e.target === modal) closeServiceForm();
+  });
+
+  document.getElementById('serviceForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('applicantName').value.trim();
+    const mobile = document.getElementById('applicantMobile').value.trim();
+    const address = document.getElementById('applicantAddress').value.trim();
+    const note = document.getElementById('applicantNote').value.trim();
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+      alert('कृपया 10 अंकों का सही मोबाइल नंबर डालें।');
+      return;
+    }
+
+    const msg =
+      '📝 *AJ Seva आवेदन*%0A' +
+      '━━━━━━━━━━━━━━%0A' +
+      '*सेवा:* ' + encodeURIComponent(serviceName.value) + '%0A' +
+      '*नाम:* ' + encodeURIComponent(name) + '%0A' +
+      '*मोबाइल:* ' + encodeURIComponent(mobile) + '%0A' +
+      '*पता:* ' + encodeURIComponent(address) + '%0A' +
+      '*अतिरिक्त जानकारी:* ' + encodeURIComponent(note || 'नहीं') + '%0A' +
+      '━━━━━━━━━━━━━━%0A' +
+      'कृपया आवेदन स्वीकार करें।';
+
+    window.open('https://wa.me/917376999243?text=' + msg, '_blank');
+    closeServiceForm();
+  });
+
+  // Automatically make common digital-service cards/buttons open the application form.
+  // Existing explicit links/buttons are left intact if they already call openServiceForm.
+  const names = [
+    'PAN Card','Aadhaar','Ayushman','Ration Card','Voter Card','E-Shram',
+    'Income','Caste','Residence','Driving Licence','Passport','Birth Certificate',
+    'Death Certificate','Labour Card','PM Kisan','PM Vishwakarma','Life Certificate',
+    'Police Character Certificate','SBM Toilet','EPFO','ABHA Card'
+  ];
+
+  document.querySelectorAll('a,button,.service-card,.service-item,.service').forEach(function(el){
+    const label=(el.innerText||el.textContent||'').replace(/\s+/g,' ').trim();
+    const match=names.find(n => label.toLowerCase().includes(n.toLowerCase()));
+    if(match && !el.dataset.ajFormBound){
+      el.dataset.ajFormBound='1';
+      el.addEventListener('click', function(ev){
+        // Only intercept if this looks like a service tile/card, not a menu link.
+        if(el.tagName==='BUTTON' || el.classList.contains('service-card') ||
+           el.classList.contains('service-item') || el.classList.contains('service')){
+          ev.preventDefault();
+          ev.stopPropagation();
+          openServiceForm(match);
+        }
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
