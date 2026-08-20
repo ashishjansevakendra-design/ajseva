@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1565E8">
+<meta name="description" content="AJ Seva - आशीष जन सेवा केंद्र | डिजिटल सेवाएँ, यात्रा, बुकिंग और ग्राहक सेवाएँ">
+<title>AJ Seva | आशीष जन सेवा केंद्र</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  background:#f6f8fc;
+  color:#172033;
+  line-height:1.5;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:0}
+.container{width:min(1120px,92%);margin:auto}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:1000;
+  background:#1565e8;
+  color:#fff;
+  box-shadow:0 3px 14px rgba(0,0,0,.12)
+}
+.nav{
+  min-height:70px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px
+}
+.logo{
+  display:flex;align-items:center;gap:10px;font-weight:800
+}
+.logo-box{
+  width:44px;height:44px;border-radius:13px;
+  background:#fff;color:#1565e8;
+  display:grid;place-items:center;font-weight:900
+}
+.logo small{display:block;font-size:11px;font-weight:500;opacity:.9}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{
+  padding:9px 12px;border-radius:10px;font-size:14px
+}
+.nav-links a:hover{background:rgba(255,255,255,.14)}
+.menu-btn{display:none;background:transparent;color:#fff;font-size:28px}
+
+/* HERO */
+.hero{padding:48px 0 28px}
+.hero-card{
+  background:linear-gradient(135deg,#eaf3ff,#f7fbff);
+  border-radius:26px;padding:36px;
+  border:1px solid #dceaff
+}
+.badge{
+  display:inline-block;background:#dcecff;color:#1565e8;
+  padding:7px 12px;border-radius:30px;font-size:12px;font-weight:700
+}
+.hero h1{font-size:clamp(30px,5vw,48px);margin:12px 0 8px}
+.hero h1 span{color:#1565e8}
+.hero p{color:#657186;max-width:650px}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{
+  padding:12px 18px;border-radius:12px;font-weight:700;
+  display:inline-flex;align-items:center;justify-content:center
+}
+.btn-primary{background:#1565e8;color:#fff}
+.btn-light{background:#fff;color:#1565e8;border:1px solid #d6e5ff}
+.btn-green{background:#25d366;color:#fff}
+
+/* SECTIONS */
+section{padding:30px 0}
+.section-title{text-align:center;margin-bottom:20px}
+.section-title h2{font-size:28px}
+.section-title p{color:#718096;font-size:14px;margin-top:4px}
+
+/* CARDS */
+.grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px
+}
+.card{
+  background:#fff;border-radius:20px;padding:22px;
+  border:1px solid #e8edf5;
+  box-shadow:0 3px 14px rgba(26,42,68,.05)
+}
+.feature{
+  display:flex;align-items:center;gap:16px;
+  transition:.2s;cursor:pointer
+}
+.feature:hover{transform:translateY(-2px);box-shadow:0 7px 22px rgba(26,42,68,.1)}
+.icon{
+  width:62px;height:62px;flex:none;border-radius:18px;
+  display:grid;place-items:center;font-size:31px
+}
+.blue{background:#eaf3ff}.orange{background:#fff3e8}
+.purple{background:#f7edff}.green{background:#eaf7ec}
+.pink{background:#fff0f6}
+.feature h3{font-size:20px}
+.feature p{font-size:12px;color:#758095;margin-top:3px}
+.arrow{
+  margin-left:auto;width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;background:#1565e8;color:#fff
+}
+
+/* SERVICE LIST */
+.service-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px
+}
+.service{
+  background:#fff;padding:17px;border-radius:16px;
+  border:1px solid #e8edf5;text-align:center;
+  cursor:pointer
+}
+.service:hover{border-color:#bcd5ff}
+.service .emoji{font-size:28px}
+.service b{display:block;margin-top:7px;font-size:14px}
+
+/* TRAVEL */
+.travel-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:15px
+}
+.travel{
+  overflow:hidden;padding:0
+}
+.travel-top{
+  height:135px;display:grid;place-items:center;
+  font-size:55px;background:#edf4ff
+}
+.travel-body{padding:17px}
+.travel-body h3{font-size:18px}
+.travel-body p{font-size:12px;color:#718096;margin:4px 0 12px}
+
+/* INFO */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.info{text-align:center}
+.info .big{font-size:30px}
+.info h3{margin:5px 0}
+.info p{font-size:13px;color:#718096}
+
+/* FOOTER */
+footer{
+  margin-top:30px;background:#12213a;color:#dbe5f5;
+  padding:36px 0 20px
+}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}
+footer h3{color:#fff;margin-bottom:8px}
+footer p,footer a{font-size:13px;color:#b7c4d8}
+footer a{display:block;margin:5px 0}
+.copy{text-align:center;border-top:1px solid #2d3d57;margin-top:25px;padding-top:16px;font-size:12px;color:#9eacc0}
+
+/* MODAL */
+.modal{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);
+  z-index:2000;align-items:center;justify-content:center;padding:18px
+}
+.modal.show{display:flex}
+.modal-box{
+  background:#fff;width:min(520px,100%);max-height:85vh;
+  overflow:auto;border-radius:22px;padding:24px
+}
+.modal-head{display:flex;justify-content:space-between;gap:15px}
+.close{background:#eef2f7;border-radius:50%;width:34px;height:34px}
+.modal-box h2{margin-bottom:8px}
+.modal-box p{color:#596579;font-size:14px;white-space:pre-line}
+.form input,.form textarea{
+  width:100%;padding:12px;border:1px solid #dbe2ec;
+  border-radius:10px;margin:6px 0 10px;outline:none
+}
+.form input:focus,.form textarea:focus{border-color:#1565e8}
+
+/* MOBILE */
+@media(max-width:800px){
+  .nav-links{
+    display:none;position:absolute;left:4%;right:4%;top:68px;
+    background:#1565e8;border-radius:0 0 16px 16px;
+    padding:10px;flex-direction:column;align-items:stretch
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{text-align:center}
+  .menu-btn{display:block}
+  .grid{grid-template-columns:1fr}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .travel-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-card{padding:25px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <div class="logo-box">AJ</div>
+      <div>
+        AJ Seva
+        <small>आशीष जन सेवा केंद्र</small>
+      </div>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" onclick="closeMenu()">होम</a>
+      <a href="#services" onclick="closeMenu()">सेवाएँ</a>
+      <a href="#travel" onclick="closeMenu()">ट्रैवल</a>
+      <a href="#booking" onclick="closeMenu()">बुकिंग</a>
+      <a href="#gallery" onclick="closeMenu()">गैलरी</a>
+      <a href="#contact" onclick="closeMenu()">संपर्क</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <span class="badge">एक ही जगह • कई सुविधाएँ</span>
+      <h1>स्वागत है <span>AJ Seva</span> में</h1>
+      <p>
+        आशीष जन सेवा केंद्र के माध्यम से डिजिटल सेवाएँ,
+        यात्रा, बुकिंग और ग्राहक सहायता को आसान तरीके से प्राप्त करें।
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#services">सेवाएँ देखें</a>
+        <a class="btn btn-light" href="#travel">ट्रैवल देखें</a>
+        <a class="btn btn-green" href="https://wa.me/917376999243">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>मुख्य सुविधाएँ</h2>
+      <p>आपकी जरूरत की प्रमुख सुविधाएँ एक ही जगह</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card feature" onclick="goTo('services')">
+        <div class="icon blue">🏢</div>
+        <div>
+          <h3>सेवाएँ</h3>
+          <p>सभी डिजिटल एवं ऑनलाइन सेवाएँ</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="card feature" onclick="goTo('travel')">
+        <div class="icon orange">🚆</div>
+        <div>
+          <h3>ट्रैवल</h3>
+          <p>दर्शन स्थल एवं यात्रा सुविधा</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="card feature" onclick="goTo('booking')">
+        <div class="icon purple">🎫</div>
+        <div>
+          <h3>बुकिंग</h3>
+          <p>बस • ट्रेन • फ्लाइट</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="card feature" onclick="showRecharge()">
+        <div class="icon green">📱</div>
+        <div>
+          <h3>रिचार्ज</h3>
+          <p>मोबाइल • DTH — Coming Soon</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="card feature" onclick="goTo('gallery')">
+        <div class="icon pink">📸</div>
+        <div>
+          <h3>गैलरी</h3>
+          <p>हमारी दैनिक कार्य गैलरी</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="card feature" onclick="showAbout()">
+        <div class="icon blue">ℹ️</div>
+        <div>
+          <h3>हमारे बारे में</h3>
+          <p>AJ Seva की जानकारी</p>
+        </div>
+        <div class="arrow">→</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>डिजिटल सेवाएँ</h2>
+      <p>सेवा पर क्लिक करके विवरण देखें</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service" onclick="serviceInfo('PAN Card','PAN Card आवेदन एवं संबंधित ऑनलाइन सहायता।')"><span class="emoji">🪪</span><b>PAN Card</b></div>
+      <div class="service" onclick="serviceInfo('Aadhaar','Aadhaar से संबंधित उपलब्ध सेवाओं के लिए संपर्क करें।')"><span class="emoji">🆔</span><b>Aadhaar</b></div>
+      <div class="service" onclick="serviceInfo('Ayushman Card','Ayushman Card संबंधी सहायता।')"><span class="emoji">🏥</span><b>Ayushman</b></div>
+      <div class="service" onclick="serviceInfo('Ration Card','Ration Card संबंधी ऑनलाइन सहायता।')"><span class="emoji">🍚</span><b>Ration Card</b></div>
+      <div class="service" onclick="serviceInfo('Voter Card','Voter Card संबंधी आवेदन सहायता।')"><span class="emoji">🗳️</span><b>Voter Card</b></div>
+      <div class="service" onclick="serviceInfo('E-Shram','E-Shram Card संबंधी सहायता।')"><span class="emoji">👷</span><b>E-Shram</b></div>
+      <div class="service" onclick="serviceInfo('Income Certificate','आय प्रमाण पत्र संबंधी सहायता।')"><span class="emoji">📄</span><b>Income</b></div>
+      <div class="service" onclick="serviceInfo('Caste Certificate','जाति प्रमाण पत्र संबंधी सहायता।')"><span class="emoji">📑</span><b>Caste</b></div>
+      <div class="service" onclick="serviceInfo('Residence Certificate','निवास प्रमाण पत्र संबंधी सहायता।')"><span class="emoji">🏠</span><b>Residence</b></div>
+      <div class="service" onclick="serviceInfo('Driving Licence','Driving Licence संबंधी ऑनलाइन सहायता।')"><span class="emoji">🚗</span><b>Driving Licence</b></div>
+      <div class="service" onclick="serviceInfo('Passport','Passport प्रक्रिया के लिए संपर्क सहायता।')"><span class="emoji">🛂</span><b>Passport</b></div>
+      <div class="service" onclick="serviceInfo('Resume / Biodata','Professional Resume और Biodata बनाने की सुविधा।')"><span class="emoji">📋</span><b>Resume</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="travel">
+  <div class="container">
+    <div class="section-title">
+      <h2>ट्रैवल एवं दर्शन</h2>
+      <p>लोकप्रिय धार्मिक एवं पर्यटन स्थल</p>
+    </div>
+
+    <div class="travel-grid">
+      <div class="card travel" onclick="travelInfo('अयोध्या धाम','श्री राम जन्मभूमि, हनुमानगढ़ी, कनक भवन, राम की पैड़ी एवं सरयू आरती।')">
+        <div class="travel-top">🛕</div>
+        <div class="travel-body"><h3>अयोध्या धाम</h3><p>श्री राम जन्मभूमि एवं प्रमुख दर्शन</p><button class="btn btn-primary">विवरण देखें</button></div>
+      </div>
+
+      <div class="card travel" onclick="travelInfo('केदारनाथ','केदारनाथ धाम यात्रा एवं यात्रा संबंधी जानकारी के लिए संपर्क करें।')">
+        <div class="travel-top">🏔️</div>
+        <div class="travel-body"><h3>केदारनाथ</h3><p>पवित्र धाम यात्रा</p><button class="btn btn-primary">विवरण देखें</button></div>
+      </div>
+
+      <div class="card travel" onclick="travelInfo('वैष्णो देवी','माता वैष्णो देवी यात्रा संबंधी जानकारी और सहायता।')">
+        <div class="travel-top">🛕</div>
+        <div class="travel-body"><h3>वैष्णो देवी</h3><p>माता रानी के दर्शन</p><button class="btn btn-primary">विवरण देखें</button></div>
+      </div>
+
+      <div class="card travel" onclick="travelInfo('काशी / वाराणसी','काशी विश्वनाथ, गंगा आरती और प्रमुख दर्शनीय स्थल।')">
+        <div class="travel-top">🕉️</div>
+        <div class="travel-body"><h3>काशी</h3><p>काशी विश्वनाथ एवं गंगा आरती</p><button class="btn btn-primary">विवरण देखें</button></div>
+      </div>
+
+      <div class="card travel" onclick="travelInfo('रामेश्वरम','रामेश्वरम धाम एवं दक्षिण भारत यात्रा।')">
+        <div class="travel-top">🌊</div>
+        <div class="travel-body"><h3>रामेश्वरम</h3><p>प्रमुख धार्मिक यात्रा</p><button class="btn btn-primary">विवरण देखें</button></div>
+      </div>
+
+      <div class="card travel" onclick="travelInfo('कन्याकुमारी','कन्याकुमारी यात्रा एवं प्रमुख दर्शनीय स्थल।')">
+        <div class="travel-top">🌅</div>
+        <div class="travel-body"><h3>कन्याकुमारी</h3><p>समुद्र एवं पर्यटन स्थल</p><button class="btn btn-primary">विवरण देखें</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="container">
+    <div class="section-title">
+      <h2>बुकिंग</h2>
+      <p>बस, ट्रेन और फ्लाइट संबंधी सहायता</p>
+    </div>
+
+    <div class="grid">
+      <div class="card feature" onclick="bookingInfo('बस बुकिंग')">
+        <div class="icon orange">🚌</div>
+        <div><h3>बस</h3><p>बस टिकट बुकिंग सहायता</p></div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="card feature" onclick="bookingInfo('ट्रेन बुकिंग')">
+        <div class="icon blue">🚆</div>
+        <div><h3>ट्रेन</h3><p>रेल टिकट बुकिंग सहायता</p></div>
+        <div class="arrow">→</div>
+      </div>
+
+      <div class="card feature" onclick="bookingInfo('फ्लाइट बुकिंग')">
+        <div class="icon purple">✈️</div>
+        <div><h3>फ्लाइट</h3><p>फ्लाइट टिकट बुकिंग सहायता</p></div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-title">
+      <h2>दैनिक कार्य गैलरी</h2>
+      <p>हमारे सेवा कार्यों की झलक</p>
+    </div>
+
+    <div class="grid">
+      <div class="card" style="text-align:center;font-size:50px">📸</div>
+      <div class="card" style="text-align:center;font-size:50px">🧾</div>
+      <div class="card" style="text-align:center;font-size:50px">💻</div>
+      <div class="card" style="text-align:center;font-size:50px">🤝</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>संपर्क करें</h2>
+      <p>सेवा या जानकारी के लिए हमसे संपर्क करें</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="card info">
+        <div class="big">📞</div>
+        <h3>फोन</h3>
+        <p>7376999243</p>
+        <br>
+        <a class="btn btn-primary" href="tel:7376999243">कॉल करें</a>
+      </div>
+
+      <div class="card info">
+        <div class="big">💬</div>
+        <h3>WhatsApp</h3>
+        <p>सीधे WhatsApp पर बात करें</p>
+        <br>
+        <a class="btn btn-green" href="https://wa.me/917376999243">WhatsApp</a>
+      </div>
+
+      <div class="card info">
+        <div class="big">📲</div>
+        <h3>ऐप</h3>
+        <p>Android App जल्द उपलब्ध</p>
+        <br>
+        <button class="btn btn-light" onclick="shareWebsite()">शेयर करें</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="card">
+      <h2>🔐 Privacy Policy</h2>
+      <br>
+      <p style="color:#596579;font-size:14px">
+        AJ Seva उपयोगकर्ताओं द्वारा दी गई जानकारी का उपयोग संबंधित सेवा,
+        आवेदन, ऑर्डर और ग्राहक सहायता के लिए कर सकता है। आवश्यक जानकारी
+        को सुरक्षित रखने का प्रयास किया जाता है। संवेदनशील जानकारी साझा
+        करते समय उपयोगकर्ता को सावधानी बरतनी चाहिए।
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="card">
+      <h2>📄 Terms & Conditions</h2>
+      <br>
+      <p style="color:#596579;font-size:14px">
+        उपयोगकर्ता द्वारा दी गई जानकारी सही होनी चाहिए। संबंधित विभाग,
+        बैंक, रेलवे, एयरलाइन या अन्य सेवा प्रदाता के नियम लागू हो सकते हैं।
+        किसी सरकारी आवेदन की अंतिम स्वीकृति संबंधित सरकारी विभाग द्वारा
+        की जाती है। सेवा शुल्क सेवा के प्रकार के अनुसार अलग हो सकता है।
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="card" id="delete-account">
+      <h2>🗑️ Account Delete</h2>
+      <br>
+      <p style="color:#596579;font-size:14px">
+        यदि आपने AJ Seva पर ग्राहक खाता बनाया है और उसे हटाना चाहते हैं,
+        तो नीचे दिए गए संपर्क विकल्प से deletion request भेज सकते हैं।
+      </p>
+      <br>
+      <a class="btn btn-green" href="https://wa.me/917376999243?text=मैं%20अपना%20AJ%20Seva%20Customer%20Account%20delete%20करना%20चाहता/चाहती%20हूँ।">
+        Account Delete Request
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>AJ Seva</h3>
+        <p>आशीष जन सेवा केंद्र</p>
+        <p>डिजिटल सेवाएँ, यात्रा, बुकिंग एवं ग्राहक सहायता।</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#services">सेवाएँ</a>
+        <a href="#travel">ट्रैवल</a>
+        <a href="#booking">बुकिंग</a>
+        <a href="#gallery">गैलरी</a>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="#home">Privacy Policy</a>
+        <a href="#home">Terms & Conditions</a>
+        <a href="#delete-account">Account Delete</a>
+      </div>
+    </div>
+
+    <div class="copy">
+      © 2026 AJ Seva - आशीष जन सेवा केंद्र. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h2 id="modalTitle">जानकारी</h2>
+      </div>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+    <br>
+    <p id="modalText"></p>
+    <br>
+    <div class="hero-buttons">
+      <a class="btn btn-green" href="https://wa.me/917376999243">WhatsApp</a>
+      <a class="btn btn-primary" href="tel:7376999243">कॉल करें</a>
+      <button class="btn btn-light" onclick="closeModal()">बंद करें</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("open");
+}
+
+function closeMenu(){
+  document.getElementById("navLinks").classList.remove("open");
+}
+
+function goTo(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+function openModal(title,text){
+  document.getElementById("modalTitle").textContent=title;
+  document.getElementById("modalText").textContent=text;
+  document.getElementById("modal").classList.add("show");
+}
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
+}
+
+function serviceInfo(title,text){
+  openModal(
+    title,
+    text + "\n\nआवेदन/सेवा के लिए WhatsApp या फोन से संपर्क करें।"
+  );
+}
+
+function travelInfo(title,text){
+  openModal(
+    title,
+    text + "\n\nयात्रा की उपलब्धता, तारीख और शुल्क की जानकारी के लिए संपर्क करें।"
+  );
+}
+
+function bookingInfo(title){
+  openModal(
+    title,
+    title + " के लिए सहायता उपलब्ध है।\n\nअपनी यात्रा की तारीख, स्थान और यात्रियों की संख्या बताकर संपर्क करें।"
+  );
+}
+
+function showRecharge(){
+  openModal(
+    "Recharge Service",
+    "Recharge option Coming Soon.\n\nमोबाइल, DTH और अन्य Recharge सुविधा जल्द उपलब्ध होगी।"
+  );
+}
+
+function showAbout(){
+  openModal(
+    "आशीष जन सेवा केंद्र",
+    "AJ Seva में आपका स्वागत है।\n\nहम डिजिटल, ऑनलाइन, यात्रा और ग्राहक सहायता सेवाओं को आसान तरीके से उपलब्ध कराने का प्रयास करते हैं।\n\nसंपर्क: 7376999243"
+  );
+}
+
+function shareWebsite(){
+  const text =
+    "AJ Seva - आशीष जन सेवा केंद्र\n\n" +
+    "डिजिटल सेवाएँ, यात्रा, बुकिंग और अन्य सुविधाएँ एक ही जगह।\n\n" +
+    "वेबसाइट देखें:\n" + window.location.href +
+    "\n\nसंपर्क: 7376999243";
+
+  if(navigator.share){
+    navigator.share({
+      title:"AJ Seva - आशीष जन सेवा केंद्र",
+      text:text,
+      url:window.location.href
+    }).catch(()=>{});
+  }else{
+    navigator.clipboard.writeText(text).then(()=>{
+      alert("Website का शेयर मैसेज कॉपी हो गया।");
+    }).catch(()=>{
+      alert(text);
+    });
+  }
+}
+
+document.getElementById("modal").addEventListener("click",function(e){
+  if(e.target===this) closeModal();
+});
+</script>
+
+</body>
+</html>
