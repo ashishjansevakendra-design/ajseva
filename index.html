@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0B3D91">
-<meta name="description" content="AJ Seva - आशीष जन सेवा केंद्र | Digital Services, Travel, Booking, Recharge, Payment और Customer Support">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#0B3D91" name="theme-color"/>
+<meta content="AJ Seva - आशीष जन सेवा केंद्र | Digital Services, Travel, Booking, Recharge, Payment और Customer Support" name="description"/>
 <title>AJ Seva - आशीष जन सेवा केंद्र</title>
-
 <style>
 :root{
   --blue:#0B3D91;
@@ -995,7 +995,6 @@ main > section:nth-of-type(even) .container::before{
 }
 
 </style>
-
 <style>
 .work-apply-link{
   cursor:pointer;
@@ -1010,8 +1009,6 @@ main > section:nth-of-type(even) .container::before{
   transform:translateY(-1px);
 }
 </style>
-
-
 <style>
 .work-apply-link{
   display:flex !important;
@@ -1107,8 +1104,6 @@ main > section:nth-of-type(even) .container::before{
   .inline-close{min-height:42px}
 }
 </style>
-
-
 <style>
 .service-category-grid{
   grid-template-columns:1.2fr .9fr .8fr;
@@ -1131,766 +1126,557 @@ main > section:nth-of-type(even) .container::before{
 }
 </style>
 
-<style>
-#travel,#booking{display:none !important;}
-.service-category-grid{grid-template-columns:1.2fr .95fr .85fr !important;align-items:stretch !important;}
-.service-category:nth-child(2) .work-list,.service-category:nth-child(3) .work-list{grid-template-columns:1fr 1fr !important;}
-.work-list a{min-height:52px;box-sizing:border-box;justify-content:center;}
-.work-apply-link{display:flex !important;flex-direction:row !important;align-items:center;gap:6px;cursor:pointer;text-decoration:none !important;}
-.work-apply-link::after{content:" →";color:#0b3d91;font-weight:900;}
-.work-apply-link .apply-now{display:none !important;}
-@media(max-width:900px){.service-category-grid{grid-template-columns:1fr !important}}
-@media(max-width:560px){.service-category .work-list{grid-template-columns:1fr 1fr !important}.work-list a{font-size:11px;min-height:48px}}
-.aj-modal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:18px;box-sizing:border-box;background:rgba(10,22,40,.62);backdrop-filter:blur(4px)}
-.aj-modal.show{display:flex}.aj-modal-box{width:min(760px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;border:1px solid #d9e2ef;box-shadow:0 24px 70px rgba(0,0,0,.24)}
-.aj-modal-head{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;background:#0b3d91;color:#fff;position:sticky;top:0;z-index:2}.aj-modal-head h2{margin:0;font-size:19px}.aj-close{width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:24px;cursor:pointer}.aj-stepbar{display:flex;gap:8px;padding:14px 20px 0}.aj-step{flex:1;text-align:center;padding:8px 5px;border-radius:9px;background:#edf2f8;color:#64748b;font-size:11px;font-weight:800}.aj-step.active{background:#e8f1ff;color:#0b3d91}.aj-modal-body{padding:20px}.aj-step-pane{display:none}.aj-step-pane.active{display:block}.aj-selected{padding:12px 14px;margin-bottom:14px;background:#f3f7fc;border:1px solid #dce6f2;border-radius:12px;font-weight:800;color:#17345f}.aj-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.aj-field{display:flex;flex-direction:column;gap:5px}.aj-field.full{grid-column:1/-1}.aj-field label{font-size:12px;font-weight:800;color:#344054}.aj-field input,.aj-field textarea{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid #d8e1ec;border-radius:10px;outline:none;background:#fff;font:inherit}.aj-field input:focus,.aj-field textarea:focus{border-color:#0b3d91;box-shadow:0 0 0 3px rgba(11,61,145,.08)}.aj-actions{display:flex;gap:10px;margin-top:16px}.aj-btn{flex:1;min-height:44px;border:0;border-radius:11px;cursor:pointer;font-weight:900;font-size:14px}.aj-btn-primary{background:#0b3d91;color:#fff}.aj-btn-green{background:#159447;color:#fff}.aj-btn-light{background:#eef2f7;color:#344054}.aj-payment-box{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:center}.aj-qr{border:1px solid #dce4ef;border-radius:16px;padding:12px;background:#fff;text-align:center}.aj-qr img{width:100%;max-width:190px;display:block;margin:auto}.aj-upi{font-weight:900;font-size:16px;color:#0b3d91;padding:10px;border:1px dashed #9fb5d3;border-radius:9px;word-break:break-all;background:#f7faff}.aj-note{font-size:12px;color:#667085;line-height:1.5}.aj-success{text-align:center;padding:18px 5px}.aj-success-icon{width:70px;height:70px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:#e8f8ee;color:#159447;font-size:38px}.aj-summary{text-align:left;background:#f7f9fc;border:1px solid #e1e7ef;border-radius:13px;padding:13px;margin:15px 0}.aj-summary div{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:13px}.aj-summary strong{color:#17345f}@media(max-width:600px){.aj-modal{padding:8px}.aj-form-grid{grid-template-columns:1fr}.aj-field.full{grid-column:auto}.aj-payment-box{grid-template-columns:1fr}.aj-actions{flex-direction:column}}
+<style id="aj-v12-clean-ui">
+/* ===== AJ SEVA CLEAN DESKTOP + MOBILE SERVICE GRID ===== */
+.service-category-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,1fr) minmax(0,.9fr) !important;
+  gap:18px !important;
+  align-items:start !important;
+}
+.service-category{
+  background:#fff !important;
+  border:1.5px solid #dbe4ef !important;
+  border-radius:20px !important;
+  padding:18px !important;
+  box-shadow:0 8px 24px rgba(20,45,80,.06) !important;
+  min-width:0 !important;
+}
+.service-category:nth-child(1){border-color:#c9daf3 !important}
+.service-category:nth-child(2){border-color:#d0e5d5 !important}
+.service-category:nth-child(3){border-color:#eadbc5 !important}
+
+.category-head{
+  display:flex !important;
+  gap:12px !important;
+  align-items:center !important;
+  padding-bottom:14px !important;
+  border-bottom:1px solid #e7edf4 !important;
+  margin-bottom:14px !important;
+}
+.category-icon{
+  width:58px !important;height:58px !important;
+  flex:0 0 58px !important;
+  display:grid !important;place-items:center !important;
+  border-radius:16px !important;background:#edf4ff !important;
+  font-size:30px !important;
+}
+.category-tag{
+  display:block !important;
+  color:#138345 !important;
+  font-size:12px !important;
+  font-weight:900 !important;
+  letter-spacing:1px !important;
+  margin-bottom:3px !important;
+}
+.category-head h3{
+  margin:0 !important;font-size:24px !important;
+  line-height:1.25 !important;color:#172b4d !important;
+}
+.category-head p{
+  margin:4px 0 0 !important;color:#68768a !important;
+  font-size:13px !important;
+}
+.work-list{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:9px !important;
+}
+.service-category:nth-child(2) .work-list,
+.service-category:nth-child(3) .work-list{
+  grid-template-columns:1fr !important;
+}
+.work-list a.work-apply-link{
+  min-width:0 !important;
+  min-height:48px !important;
+  padding:10px 11px !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:7px !important;
+  border:1px solid #e0e7f0 !important;
+  border-radius:11px !important;
+  background:#f8fbff !important;
+  color:#30415c !important;
+  font-size:13px !important;
+  line-height:1.3 !important;
+  transition:.18s ease !important;
+  cursor:pointer !important;
+}
+.work-list a.work-apply-link:hover{
+  transform:translateY(-1px);
+  border-color:#86aee4 !important;
+  background:#fff !important;
+  box-shadow:0 5px 15px rgba(11,61,145,.08) !important;
+}
+.work-list a.work-apply-link::after{
+  content:"›" !important;
+  margin-left:auto !important;
+  color:#0b3d91 !important;
+  font-size:19px !important;
+  font-weight:900 !important;
+}
+@media(max-width:1050px){
+  .service-category-grid{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .service-category:first-child{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .container{width:min(94%,680px) !important}
+  .service-category-grid{grid-template-columns:1fr !important}
+  .service-category:first-child{grid-column:auto}
+  .work-list,.service-category:nth-child(2) .work-list,
+  .service-category:nth-child(3) .work-list{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .category-head h3{font-size:21px !important}
+}
+@media(max-width:430px){
+  .work-list,.service-category:nth-child(2) .work-list,
+  .service-category:nth-child(3) .work-list{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* ===== UNIVERSAL FORM MODAL ===== */
+.aj-modal{position:fixed;inset:0;z-index:999999;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(9,20,36,.62);backdrop-filter:blur(3px)}
+.aj-modal.show{display:flex}
+.aj-modal-box{width:min(720px,100%);max-height:94vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+.aj-modal-head{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;background:#0b3d91;color:#fff;position:sticky;top:0;z-index:2}
+.aj-modal-head h2{margin:0;font-size:19px}
+.aj-close{border:0;background:rgba(255,255,255,.18);color:#fff;width:35px;height:35px;border-radius:50%;font-size:23px;cursor:pointer}
+.aj-stepbar{display:flex;gap:7px;padding:13px 18px 0}
+.aj-step{flex:1;text-align:center;padding:7px 4px;border-radius:8px;background:#eef2f7;color:#667085;font-size:11px;font-weight:800}
+.aj-step.active{background:#e7f0ff;color:#0b3d91}
+.aj-modal-body{padding:18px}
+.aj-step-pane{display:none}.aj-step-pane.active{display:block}
+.aj-selected{background:#f3f7fc;border:1px solid #dbe5f0;border-radius:10px;padding:10px 12px;margin-bottom:13px;font-weight:800}
+.aj-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.aj-field{display:flex;flex-direction:column;gap:4px}.aj-field.full{grid-column:1/-1}
+.aj-field label{font-size:12px;font-weight:800;color:#344054}
+.aj-field input,.aj-field textarea,.aj-field select{width:100%;box-sizing:border-box;padding:10px;border:1px solid #d5dfeb;border-radius:9px;outline:0;background:#fff}
+.aj-field input:focus,.aj-field textarea:focus,.aj-field select:focus{border-color:#0b3d91;box-shadow:0 0 0 3px rgba(11,61,145,.08)}
+.aj-actions{display:flex;gap:9px;margin-top:15px}.aj-btn{flex:1;border:0;border-radius:10px;min-height:43px;font-weight:900;cursor:pointer}
+.aj-btn-primary{background:#0b3d91;color:#fff}.aj-btn-green{background:#159447;color:#fff}.aj-btn-light{background:#eef2f7;color:#344054}
+.aj-payment-box{display:grid;grid-template-columns:220px 1fr;gap:18px;align-items:center}
+.aj-qr{border:1px solid #dbe4ef;border-radius:14px;padding:10px;text-align:center}.aj-qr img{width:100%;max-width:180px;display:block;margin:auto}
+.aj-upi{font-weight:900;color:#0b3d91;padding:9px;border:1px dashed #9fb5d3;border-radius:8px;background:#f7faff;word-break:break-all}
+.aj-note{font-size:12px;color:#667085;line-height:1.5}.aj-success{text-align:center;padding:12px}
+.aj-success-icon{width:66px;height:66px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:#e8f8ee;color:#159447;font-size:36px}
+.aj-summary{text-align:left;background:#f7f9fc;border:1px solid #e1e7ef;border-radius:12px;padding:11px;margin:13px 0}
+.aj-summary div{display:flex;justify-content:space-between;gap:10px;padding:4px 0;font-size:13px}
+@media(max-width:600px){.aj-form-grid{grid-template-columns:1fr}.aj-field.full{grid-column:auto}.aj-payment-box{grid-template-columns:1fr}.aj-actions{flex-direction:column}}
 </style>
 </head>
-
 <body>
-
 <header>
-  <div class="container nav">
-    <a class="brand" href="#home">
-      <span class="logo">AJ</span>
-      <span>
-        <strong>AJ Seva</strong>
-        <small>आशीष जन सेवा केंद्र</small>
-      </span>
-    </a>
-
-    <button class="menu-btn" type="button" onclick="toggleMenu()">☰</button>
-
-    <nav id="mainNav">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="javascript:void(0)" class="work-apply-link" data-service="Travel" aria-label="Travel आवेदन form खोलें">Travel<span class="apply-now">आवेदन करें →</span></a>
-      <a href="javascript:void(0)" class="work-apply-link" data-service="Booking" aria-label="Booking आवेदन form खोलें">Booking<span class="apply-now">आवेदन करें →</span></a>
-      <a href="javascript:void(0)" class="work-apply-link" data-service="Recharge" aria-label="Recharge आवेदन form खोलें">Recharge<span class="apply-now">आवेदन करें →</span></a>
-      <a href="javascript:void(0)" class="work-apply-link" data-service="आवेदन" aria-label="आवेदन आवेदन form खोलें">आवेदन<span class="apply-now">आवेदन करें →</span></a>
-      <a href="#payment">Payment</a>
-      
-      <a href="#app">App</a>
-      <a href="#legal">Policies</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+<div class="container nav">
+<a class="brand" href="#home">
+<span class="logo">AJ</span>
+<span>
+<strong>AJ Seva</strong>
+<small>आशीष जन सेवा केंद्र</small>
+</span>
+</a>
+<button class="menu-btn" onclick="toggleMenu()" type="button">☰</button>
+<nav id="mainNav">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a aria-label="Travel आवेदन form खोलें" class="work-apply-link" data-service="Travel" href="javascript:void(0)">Travel<span class="apply-now">आवेदन करें →</span></a>
+<a aria-label="Booking आवेदन form खोलें" class="work-apply-link" data-service="Booking" href="javascript:void(0)">Booking<span class="apply-now">आवेदन करें →</span></a>
+<a aria-label="Recharge आवेदन form खोलें" class="work-apply-link" data-service="Recharge" href="javascript:void(0)">Recharge<span class="apply-now">आवेदन करें →</span></a>
+<a aria-label="आवेदन आवेदन form खोलें" class="work-apply-link" data-service="आवेदन" href="javascript:void(0)">आवेदन<span class="apply-now">आवेदन करें →</span></a>
+<a href="#payment">Payment</a>
+<a href="#app">App</a>
+<a href="#legal">Policies</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
 </header>
-
 <main id="home">
-
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="badge">आपकी सेवा, हमारा विश्वास</span>
-      <h1>AJ Seva<br>आशीष जन सेवा केंद्र</h1>
-      <p>
+<div class="container hero-grid">
+<div>
+<span class="badge">आपकी सेवा, हमारा विश्वास</span>
+<h1>AJ Seva<br/>आशीष जन सेवा केंद्र</h1>
+<p>
         सरकारी डिजिटल सेवाएँ, Travel, Ticket Booking,
         Recharge, Payment और Customer Support — एक ही जगह।
       </p>
-
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#services">📄 सेवाएँ देखें</a>
-        <a class="btn btn-green" href="https://wa.me/917376999243" target="_blank" rel="noopener">💬 WhatsApp करें</a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <h3>📱 AJ Seva Android App</h3>
-      <p>
+<div class="btn-row">
+<a class="btn btn-primary" href="#services">📄 सेवाएँ देखें</a>
+<a class="btn btn-green" href="https://wa.me/917376999243" rel="noopener" target="_blank">💬 WhatsApp करें</a>
+</div>
+</div>
+<div class="hero-card">
+<h3>📱 AJ Seva Android App</h3>
+<p>
         AJ Seva App में Services, Travel, Booking, Payment,
         Orders और Support की सुविधा उपलब्ध है।
       </p>
-      <a
-        class="btn btn-blue"
-        href="https://github.com/ashishjansevakendra-design/ajseva/releases/download/v1.0.0/ajseva.apk"
-        target="_blank"
-        rel="noopener"
-        download
-      >⬇️ AJ Seva App Download</a>
-      <p style="font-size:12px;margin-bottom:0">
+<a class="btn btn-blue" download="" href="https://github.com/ashishjansevakendra-design/ajseva/releases/download/v1.0.0/ajseva.apk" rel="noopener" target="_blank">⬇️ AJ Seva App Download</a>
+<p style="font-size:12px;margin-bottom:0">
         Version: <strong>v1.0.0</strong> • Latest Release
       </p>
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- ================= QUICK ACTIONS ================= -->
 <section>
-  <div class="container">
-    <h2 class="section-title">आपके लिए Quick Actions</h2>
-    <p class="section-sub">जरूरी सुविधाओं तक जल्दी पहुँचें</p>
-
-    <div class="quick-grid">
-      <a class="quick" href="#services"><div class="ico">📄</div><strong>सेवाएँ</strong></a>
-      <a class="quick" href="#booking"><div class="ico">🎫</div><strong>बुकिंग</strong></a>
-      <a class="quick" href="#payment"><div class="ico">💳</div><strong>Payment / Wallet</strong></a>
-      <a class="quick" href="https://wa.me/917376999243" target="_blank" rel="noopener"><div class="ico">🎧</div><strong>सहायता</strong></a>
-    </div>
-  </div>
+<div class="container">
+<h2 class="section-title">आपके लिए Quick Actions</h2>
+<p class="section-sub">जरूरी सुविधाओं तक जल्दी पहुँचें</p>
+<div class="quick-grid">
+<a class="quick" href="#services"><div class="ico">📄</div><strong>सेवाएँ</strong></a>
+<a class="quick" href="#booking"><div class="ico">🎫</div><strong>बुकिंग</strong></a>
+<a class="quick" href="#payment"><div class="ico">💳</div><strong>Payment / Wallet</strong></a>
+<a class="quick" href="https://wa.me/917376999243" rel="noopener" target="_blank"><div class="ico">🎧</div><strong>सहायता</strong></a>
+</div>
+</div>
 </section>
-
 <!-- ================= SERVICES ================= -->
-<section id="services" class="professional-section">
-  <div class="container">
-    <div class="section-heading-pro">
-      <span class="section-badge">AJ SEVA • SERVICES</span>
-      <h2 class="section-title">हमारी प्रमुख सेवाएँ</h2>
-      <p class="section-sub">
-        Digital Seva, Travel Tour Packages और Ticket Booking को अलग-अलग
-        और साफ तरीके से व्यवस्थित किया गया है।
-      </p>
-    </div>
-
-    <div class="service-category-grid">
-
-      <!-- DIGITAL SEVA: ONLY DIGITAL SERVICES -->
-      <div class="service-category">
-        <div class="category-head">
-          <div class="category-icon">💻</div>
-          <div>
-            <span class="category-tag">DIGITAL SEVA</span>
-            <h3>Digital Seva</h3>
-            <p>सभी सरकारी एवं ऑनलाइन डिजिटल सेवाएँ</p>
-          </div>
-        </div>
-
-        <div class="work-list">
-          <a href="javascript:void(0)" class="work-apply-link" data-service="PAN Card">🪪 PAN Card<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Aadhaar Services">🆔 Aadhaar Services<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Ayushman Card">🏥 Ayushman Card<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="ABHA Card">❤️ ABHA Card<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Ration Card">🍚 Ration Card<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Voter Card">🗳️ Voter Card<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="e-Shram Card">👷 e-Shram Card<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="EPFO / PF">💼 EPFO / PF<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Driving Licence">🚘 Driving Licence<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Passport Assistance">🛂 Passport Assistance<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Police Character Certificate">👮 Police Character Certificate<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Online FIR">🚨 Online FIR<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Birth Certificate">👶 Birth Certificate<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Life Certificate">📜 Life Certificate<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Labour Card">👷 Labour Card<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="PM Kisan">🌾 PM Kisan<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="PM Vishwakarma">🛠️ PM Vishwakarma<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Toilet Scheme Application">🚽 Toilet Scheme Application<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Income Certificate">💰 Income Certificate<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Caste Certificate">📑 Caste Certificate<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Residence Certificate">🏠 Residence Certificate<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Resume / Biodata">📄 Resume / Biodata<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="PVC Aadhaar / PAN">🖨️ PVC Aadhaar / PAN<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Other Online Work">📋 Other Online Work<span class="apply-now">आवेदन करें →</span></a>
-        </div>
-      </div>
-
-      <!-- TRAVEL: ONLY TOUR PACKAGES -->
-      <div class="service-category">
-        <div class="category-head">
-          <div class="category-icon">🧳</div>
-          <div>
-            <span class="category-tag">TRAVEL</span>
-            <h3>Travel & Tour Packages</h3>
-            <p>केवल Tour Packages और धार्मिक यात्राएँ</p>
-          </div>
-        </div>
-
-        <div class="work-list">
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Ayodhya Dham Tour">🛕 Ayodhya Dham Tour<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Kedarnath Yatra">🔱 Kedarnath Yatra<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Vaishno Devi Yatra">🚩 Vaishno Devi Yatra<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Varanasi / Kashi Tour">🕉️ Varanasi / Kashi Tour<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Rameshwaram Tour">🌊 Rameshwaram Tour<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Kanyakumari Tour">🌴 Kanyakumari Tour<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Other Tour Package">🗺️ Other Tour Package<span class="apply-now">आवेदन करें →</span></a>
-        </div>
-      </div>
-
-      <!-- BOOKING: ONLY BUS / TRAIN / FLIGHT -->
-      <div class="service-category">
-        <div class="category-head">
-          <div class="category-icon">🎫</div>
-          <div>
-            <span class="category-tag">BOOKING</span>
-            <h3>Ticket Booking</h3>
-            <p>केवल Bus, Train और Flight Booking</p>
-          </div>
-        </div>
-
-        <div class="work-list">
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Train Ticket Booking">🚆 Train Ticket Booking<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Bus Ticket Booking">🚌 Bus Ticket Booking<span class="apply-now">आवेदन करें →</span></a>
-          <a href="javascript:void(0)" class="work-apply-link" data-service="Flight Ticket Booking">✈️ Flight Ticket Booking<span class="apply-now">आवेदन करें →</span></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<section class="professional-section" id="services">
+<div class="container">
+<div class="section-heading-pro">
+<span class="section-badge">AJ SEVA • SERVICES</span>
+<h2 class="section-title">हमारी प्रमुख सेवाएँ</h2>
+<p class="section-sub">Digital Seva, Travel और Ticket Booking — तीनों एक ही जगह।</p>
+</div>
+<div class="service-category-grid">
+<!-- DIGITAL SEVA: ONLY DIGITAL SERVICES -->
+<div class="service-category">
+<div class="category-head">
+<div class="category-icon">💻</div>
+<div>
+<span class="category-tag">DIGITAL SEVA</span>
+<h3>Digital Seva</h3>
+<p>सभी सरकारी एवं ऑनलाइन डिजिटल सेवाएँ</p>
+</div>
+</div>
+<div class="work-list">
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="PAN Card" href="javascript:void(0)">🪪 PAN Card</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Aadhaar Services" href="javascript:void(0)">🆔 Aadhaar Services</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Ayushman Card" href="javascript:void(0)">🏥 Ayushman Card</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="ABHA Card" href="javascript:void(0)">❤️ ABHA Card</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Ration Card" href="javascript:void(0)">🍚 Ration Card</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Voter Card" href="javascript:void(0)">🗳️ Voter Card</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="e-Shram Card" href="javascript:void(0)">👷 e-Shram Card</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="EPFO / PF" href="javascript:void(0)">💼 EPFO / PF</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Driving Licence" href="javascript:void(0)">🚘 Driving Licence</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Passport Assistance" href="javascript:void(0)">🛂 Passport Assistance</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Police Character Certificate" href="javascript:void(0)">👮 Police Character Certificate</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Online FIR" href="javascript:void(0)">🚨 Online FIR</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Birth Certificate" href="javascript:void(0)">👶 Birth Certificate</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Life Certificate" href="javascript:void(0)">📜 Life Certificate</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Labour Card" href="javascript:void(0)">👷 Labour Card</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="PM Kisan" href="javascript:void(0)">🌾 PM Kisan</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="PM Vishwakarma" href="javascript:void(0)">🛠️ PM Vishwakarma</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Toilet Scheme Application" href="javascript:void(0)">🚽 Toilet Scheme Application</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Income Certificate" href="javascript:void(0)">💰 Income Certificate</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Caste Certificate" href="javascript:void(0)">📑 Caste Certificate</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Residence Certificate" href="javascript:void(0)">🏠 Residence Certificate</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Resume / Biodata" href="javascript:void(0)">📄 Resume / Biodata</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="PVC Aadhaar / PAN" href="javascript:void(0)">🖨️ PVC Aadhaar / PAN</a>
+<a class="work-apply-link" data-category="DIGITAL SEVA" data-service="Other Online Work" href="javascript:void(0)">📋 Other Online Work</a>
+</div>
+</div>
+<!-- TRAVEL: ONLY TOUR PACKAGES -->
+<div class="service-category">
+<div class="category-head">
+<div class="category-icon">🧳</div>
+<div>
+<span class="category-tag">TRAVEL</span>
+<h3>Travel &amp; Tour Packages</h3>
+<p>केवल Tour Packages और धार्मिक यात्राएँ</p>
+</div>
+</div>
+<div class="work-list">
+<a class="work-apply-link" data-category="TRAVEL" data-service="Ayodhya Dham Tour" href="javascript:void(0)">🛕 Ayodhya Dham Tour</a>
+<a class="work-apply-link" data-category="TRAVEL" data-service="Kedarnath Yatra" href="javascript:void(0)">🔱 Kedarnath Yatra</a>
+<a class="work-apply-link" data-category="TRAVEL" data-service="Vaishno Devi Yatra" href="javascript:void(0)">🚩 Vaishno Devi Yatra</a>
+<a class="work-apply-link" data-category="TRAVEL" data-service="Varanasi / Kashi Tour" href="javascript:void(0)">🕉️ Varanasi / Kashi Tour</a>
+<a class="work-apply-link" data-category="TRAVEL" data-service="Rameshwaram Tour" href="javascript:void(0)">🌊 Rameshwaram Tour</a>
+<a class="work-apply-link" data-category="TRAVEL" data-service="Kanyakumari Tour" href="javascript:void(0)">🌴 Kanyakumari Tour</a>
+<a class="work-apply-link" data-category="TRAVEL" data-service="Other Tour Package" href="javascript:void(0)">🗺️ Other Tour Package</a>
+</div>
+</div>
+<!-- BOOKING: ONLY BUS / TRAIN / FLIGHT -->
+<div class="service-category">
+<div class="category-head">
+<div class="category-icon">🎫</div>
+<div>
+<span class="category-tag">BOOKING</span>
+<h3>Ticket Booking</h3>
+<p>केवल Bus, Train और Flight Booking</p>
+</div>
+</div>
+<div class="work-list">
+<a class="work-apply-link" data-category="BOOKING" data-service="Train Ticket Booking" href="javascript:void(0)">🚆 Train Ticket Booking</a>
+<a class="work-apply-link" data-category="BOOKING" data-service="Bus Ticket Booking" href="javascript:void(0)">🚌 Bus Ticket Booking</a>
+<a class="work-apply-link" data-category="BOOKING" data-service="Flight Ticket Booking" href="javascript:void(0)">✈️ Flight Ticket Booking</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ================= TRAVEL ================= -->
-<section id="travel">
-  <div class="container">
-    <div class="section-heading-pro">
-      <span class="section-badge">AJ SEVA • TRAVEL DESK</span>
-      <h2 class="section-title">Travel & Tour Packages</h2>
-      <p class="section-sub">
-        धार्मिक यात्राओं, tour packages और यात्रा planning के लिए
-        सुविधाजनक booking सहायता।
-      </p>
-    </div>
-
-    <div class="travel-grid">
-      <div class="travel">
-        <div class="travel-top">🛕</div>
-        <div class="travel-body">
-          <h3>Ayodhya Dham</h3>
-          <p>राम जन्मभूमि, हनुमानगढ़ी, कनक भवन, राम की पैड़ी और सरयू आरती।</p>
-          <span class="price">₹2200 / व्यक्ति</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Ayodhya Dham','2200')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🔱</div>
-        <div class="travel-body">
-          <h3>Kedarnath</h3>
-          <p>धार्मिक यात्रा package और यात्रा सहायता के लिए संपर्क करें।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Kedarnath','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🌊</div>
-        <div class="travel-body">
-          <h3>Rameshwaram</h3>
-          <p>Rameshwaram और दक्षिण भारत यात्रा के लिए package सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Rameshwaram','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🌴</div>
-        <div class="travel-body">
-          <h3>Kanyakumari</h3>
-          <p>कन्याकुमारी यात्रा और local sightseeing सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Kanyakumari','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🕉️</div>
-        <div class="travel-body">
-          <h3>Varanasi / Kashi</h3>
-          <p>काशी विश्वनाथ, गंगा आरती और Varanasi यात्रा सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Varanasi / Kashi','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🚩</div>
-        <div class="travel-body">
-          <h3>Vaishno Devi</h3>
-          <p>माता वैष्णो देवी यात्रा के लिए booking और यात्रा सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Vaishno Devi','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ================= BOOKING ================= -->
-<section id="booking">
-  <div class="container">
-    <h2 class="section-title">🎫 Ticket Booking</h2>
-    <p class="section-sub">Train / Bus / Flight booking request WhatsApp पर भेजें</p>
-
-    <div class="form-card">
-      <form id="bookingForm">
-        <div class="form-grid">
-          <div class="form-group">
-            <label>नाम *</label>
-            <input required name="name" placeholder="पूरा नाम">
-          </div>
-          <div class="form-group">
-            <label>मोबाइल नंबर *</label>
-            <input required name="mobile" type="tel" pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल">
-          </div>
-          <div class="form-group">
-            <label>Booking Type *</label>
-            <select required name="type">
-              <option value="">चुनें</option>
-              <option>Train</option>
-              <option>Bus</option>
-              <option>Flight</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>यात्रियों की संख्या</label>
-            <input name="persons" type="number" min="1" placeholder="जैसे 2">
-          </div>
-          <div class="form-group">
-            <label>From</label>
-            <input name="from" placeholder="कहाँ से">
-          </div>
-          <div class="form-group">
-            <label>To</label>
-            <input name="to" placeholder="कहाँ तक">
-          </div>
-          <div class="form-group">
-            <label>यात्रा तारीख</label>
-            <input name="date" type="date">
-          </div>
-          <div class="form-group">
-            <label>Class / Preference</label>
-            <input name="preference" placeholder="Sleeper / AC आदि">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>अतिरिक्त जानकारी</label>
-          <textarea name="message" rows="3" placeholder="कोई अन्य जानकारी"></textarea>
-        </div>
-
-        <button class="btn btn-blue" type="submit">📲 Booking WhatsApp पर भेजें</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- ================= RECHARGE ================= -->
-<section id="recharge">
-  <div class="container">
-    <h2 class="section-title">📱 Mobile Recharge</h2>
-    <p class="section-sub">Mobile / DTH Recharge request भेजें</p>
-
-    <div class="form-card">
-      <form id="rechargeForm">
-        <div class="form-grid">
-          <div class="form-group">
-            <label>ग्राहक का नाम *</label>
-            <input required name="name" placeholder="नाम">
-          </div>
-          <div class="form-group">
-            <label>Recharge मोबाइल नंबर *</label>
-            <input required name="mobile" type="tel" placeholder="मोबाइल नंबर">
-          </div>
-          <div class="form-group">
-            <label>Operator *</label>
-            <select required name="operator">
-              <option value="">चुनें</option>
-              <option>Airtel</option>
-              <option>Jio</option>
-              <option>Vi</option>
-              <option>BSNL</option>
-              <option>DTH</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Recharge Amount *</label>
-            <input required name="amount" type="number" min="1" placeholder="₹ राशि">
-          </div>
-        </div>
-
-        <button class="btn btn-green" type="submit">📲 Recharge Request WhatsApp करें</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- ================= APPLICATION ================= -->
-<section id="application">
-  <div class="container">
-    <h2 class="section-title">📝 सेवा आवेदन फॉर्म</h2>
-    <p class="section-sub">अपनी जरूरत की सेवा चुनें और आवेदन WhatsApp पर भेजें</p>
-
-    <div class="form-card">
-      <form id="applicationForm">
-        <div class="form-grid">
-          <div class="form-group">
-            <label>आवेदक का नाम *</label>
-            <input required name="name" placeholder="पूरा नाम">
-          </div>
-          <div class="form-group">
-            <label>मोबाइल नंबर *</label>
-            <input required name="mobile" type="tel" placeholder="मोबाइल नंबर">
-          </div>
-          <div class="form-group">
-            <label>सेवा चुनें *</label>
-            <select required name="service">
-              <option value="">सेवा चुनें</option>
-              <option>PAN Card</option>
-              <option>Aadhaar Service</option>
-              <option>Ayushman Card</option>
-              <option>ABHA Card</option>
-              <option>Ration Card</option>
-              <option>Voter Card</option>
-              <option>e-Shram Card</option>
-              <option>EPFO / PF</option>
-              <option>Driving Licence</option>
-              <option>Passport Assistance</option>
-              <option>Police Character Certificate</option>
-              <option>Online FIR</option>
-              <option>Birth Certificate</option>
-              <option>Life Certificate</option>
-              <option>Labour Card</option>
-              <option>PM Kisan</option>
-              <option>PM Vishwakarma</option>
-              <option>Toilet Scheme Application</option>
-              <option>Income Certificate</option>
-              <option>Caste Certificate</option>
-              <option>Residence Certificate</option>
-              <option>Resume / Biodata</option>
-              <option>Other Service</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>जिला / स्थान</label>
-            <input name="location" placeholder="स्थान">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>आवेदन से जुड़ी जानकारी</label>
-          <textarea name="message" rows="4" placeholder="आपको कौन-सी सहायता चाहिए?"></textarea>
-        </div>
-
-        <button class="btn btn-blue" type="submit">📲 आवेदन WhatsApp पर भेजें</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- ================= PAYMENT ================= -->
-
 <section id="payment">
-  <div class="container">
-    <div class="section-heading-pro">
-      <span class="section-badge">AJ SEVA • PAYMENT</span>
-      <h2 class="section-title">💳 Payment</h2>
-      <p class="section-sub">QR Code या UPI ID से आसानी से Payment करें</p>
-    </div>
-
-    <div class="payment-compact">
-      <div class="payment-qr-side">
-        <div class="qr-payment-badge">SECURE PAYMENT</div>
-        <h3>Scan & Pay</h3>
-
-        <div class="qr-box">
-          <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi%3A%2F%2Fpay%3Fpa%3D7376999243-4%40ybl%26pn%3DAJ%2520Seva%26cu%3DINR"
-            alt="AJ Seva UPI Payment QR Code"
-            loading="lazy"
-          >
-        </div>
-      </div>
-
-      <div class="payment-upi-side">
-        <span class="payment-mini-label">UPI PAYMENT</span>
-        <h3>UPI ID</h3>
-        <div class="upi-display">7376999243-4@ybl</div>
-
-        <div class="payment-info">
-          <p>1. QR Code Scan करें या UPI ID से Payment करें।</p>
-          <p>2. Payment के बाद Transaction ID / UTR सुरक्षित रखें।</p>
-          <p>3. Payment Screenshot WhatsApp पर भेजें।</p>
-        </div>
-
-        <a
-          class="whatsapp-payment-btn"
-          href="https://wa.me/917376999243?text=Namaste%20AJ%20Seva%2C%20maine%20payment%20kiya%20hai.%20Payment%20screenshot%20bhej%20raha%20hoon."
-          target="_blank"
-          rel="noopener"
-        >💬 Payment Screenshot भेजें</a>
-
-        <div class="payment-security">
+<div class="container">
+<div class="section-heading-pro">
+<span class="section-badge">AJ SEVA • PAYMENT</span>
+<h2 class="section-title">💳 Payment</h2>
+<p class="section-sub">QR Code या UPI ID से आसानी से Payment करें</p>
+</div>
+<div class="payment-compact">
+<div class="payment-qr-side">
+<div class="qr-payment-badge">SECURE PAYMENT</div>
+<h3>Scan &amp; Pay</h3>
+<div class="qr-box">
+<img alt="AJ Seva UPI Payment QR Code" loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;data=upi%3A%2F%2Fpay%3Fpa%3D7376999243-4%40ybl%26pn%3DAJ%2520Seva%26cu%3DINR"/>
+</div>
+</div>
+<div class="payment-upi-side">
+<span class="payment-mini-label">UPI PAYMENT</span>
+<h3>UPI ID</h3>
+<div class="upi-display">7376999243-4@ybl</div>
+<div class="payment-info">
+<p>1. QR Code Scan करें या UPI ID से Payment करें।</p>
+<p>2. Payment के बाद Transaction ID / UTR सुरक्षित रखें।</p>
+<p>3. Payment Screenshot WhatsApp पर भेजें।</p>
+</div>
+<a class="whatsapp-payment-btn" href="https://wa.me/917376999243?text=Namaste%20AJ%20Seva%2C%20maine%20payment%20kiya%20hai.%20Payment%20screenshot%20bhej%20raha%20hoon." rel="noopener" target="_blank">💬 Payment Screenshot भेजें</a>
+<div class="payment-security">
           🔒 OTP, UPI PIN, CVV या ATM PIN किसी के साथ साझा न करें।
         </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- ================= APP ================= -->
 <section id="app">
-  <div class="container">
-    <div class="hero-card" style="text-align:center">
-      <h2 style="margin:0;color:var(--blue)">📱 AJ Seva Android App</h2>
-      <p>
+<div class="container">
+<div class="hero-card" style="text-align:center">
+<h2 style="margin:0;color:var(--blue)">📱 AJ Seva Android App</h2>
+<p>
         AJ Seva App डाउनलोड करें और Services, Travel, Booking,
         Payment, Orders और Support का उपयोग मोबाइल से करें।
       </p>
-
-      <a
-        class="btn btn-blue"
-        href="https://github.com/ashishjansevakendra-design/ajseva/releases/download/v1.0.0/ajseva.apk"
-        target="_blank"
-        rel="noopener"
-        download
-      >
+<a class="btn btn-blue" download="" href="https://github.com/ashishjansevakendra-design/ajseva/releases/download/v1.0.0/ajseva.apk" rel="noopener" target="_blank">
         ⬇️ AJ Seva App Download
       </a>
-
-      <p style="font-size:13px;color:var(--muted);margin-bottom:0">
+<p style="font-size:13px;color:var(--muted);margin-bottom:0">
         Version: <strong>v1.0.0</strong> • Latest Release
       </p>
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- ================= LEGAL ================= -->
 <section id="legal">
-  <div class="container">
-    <h2 class="section-title">🔒 Legal & Policies</h2>
-    <p class="section-sub">Payment और customer information से संबंधित महत्वपूर्ण जानकारी</p>
-
-    <div class="legal-grid">
-      <div class="legal-card" id="privacy">
-        <h3>🔒 Privacy Policy</h3>
-        <p>
+<div class="container">
+<h2 class="section-title">🔒 Legal &amp; Policies</h2>
+<p class="section-sub">Payment और customer information से संबंधित महत्वपूर्ण जानकारी</p>
+<div class="legal-grid">
+<div class="legal-card" id="privacy">
+<h3>🔒 Privacy Policy</h3>
+<p>
           नाम, मोबाइल, Booking और service information का उपयोग संबंधित सेवा,
           payment, order और customer support के लिए किया जा सकता है।
         </p>
-        <p>• जानकारी को अनावश्यक रूप से बेचा नहीं जाता।</p>
-        <p>• WhatsApp पर जानकारी आपकी कार्रवाई के बाद भेजी जाती है।</p>
-        <p>• Payment information को सुरक्षित तरीके से process करने का प्रयास किया जाता है।</p>
-        <p><strong>संपर्क: 7376999243</strong></p>
-      </div>
-
-      <div class="legal-card">
-        <h3>📄 Terms & Conditions</h3>
-        <p>
+<p>• जानकारी को अनावश्यक रूप से बेचा नहीं जाता।</p>
+<p>• WhatsApp पर जानकारी आपकी कार्रवाई के बाद भेजी जाती है।</p>
+<p>• Payment information को सुरक्षित तरीके से process करने का प्रयास किया जाता है।</p>
+<p><strong>संपर्क: 7376999243</strong></p>
+</div>
+<div class="legal-card">
+<h3>📄 Terms &amp; Conditions</h3>
+<p>
           ग्राहक को आवेदन/Booking के समय सही जानकारी देनी होगी।
           Service और Booking संबंधित provider के लागू नियमों के अनुसार होगी।
         </p>
-        <p>
+<p>
           गलत जानकारी, ग्राहक की गलती या provider के नियमों के कारण
           सेवा/Refund प्रभावित हो सकता है।
         </p>
-      </div>
-
-      <div class="legal-card" id="refund">
-        <h3>💰 Payment Refund & Cancellation Policy</h3>
-
-        <div class="notice">
+</div>
+<div class="legal-card" id="refund">
+<h3>💰 Payment Refund &amp; Cancellation Policy</h3>
+<div class="notice">
           Payment करने से पहले ग्राहक को सेवा, राशि और Booking विवरण ध्यान से जांचना चाहिए।
         </div>
-
-        <h4>1. सामान्य नियम</h4>
-        <p>
+<h4>1. सामान्य नियम</h4>
+<p>
           सफल Payment के बाद Refund सेवा/Booking की स्थिति और लागू नियमों के अनुसार तय होगा।
         </p>
-
-        <h4>2. Failed Payment</h4>
-        <p>
+<h4>2. Failed Payment</h4>
+<p>
           पैसा कट गया लेकिन Payment/Booking सफल नहीं दिख रही है तो तुरंत दोबारा Payment न करें।
           UPI/Banking App में Status जांचें और Transaction ID/UTR के साथ संपर्क करें।
         </p>
-
-        <h4>3. Pending Payment</h4>
-        <p>
+<h4>3. Pending Payment</h4>
+<p>
           Pending Transaction का अंतिम Status Bank/UPI Payment Provider से प्राप्त होने के बाद
           निर्धारित होगा। समय provider पर निर्भर हो सकता है।
         </p>
-
-        <h4>4. Duplicate Payment</h4>
-        <p>
+<h4>4. Duplicate Payment</h4>
+<p>
           एक ही सेवा/Booking के लिए दो बार Payment होने पर दोनों Transaction की जानकारी
           और UTR/Transaction ID के साथ सहायता से संपर्क करें। जांच के बाद जहाँ Refund लागू होगा,
           Refund प्रक्रिया शुरू की जाएगी।
         </p>
-
-        <div class="warning">
-          <h4 style="margin-top:0;color:#8a5a00">5. Refund कब नहीं मिलेगा</h4>
-          <p>
+<div class="warning">
+<h4 style="margin-top:0;color:#8a5a00">5. Refund कब नहीं मिलेगा</h4>
+<p>
             सेवा सफलतापूर्वक प्रदान हो चुकी हो, ग्राहक ने गलत जानकारी दी हो,
             ग्राहक की गलती से सेवा पूरी न हुई हो, या संबंधित Provider के नियमों के अनुसार
             Refund उपलब्ध न हो, तो Refund लागू नहीं हो सकता।
           </p>
-        </div>
-
-        <h4>6. Booking Cancellation</h4>
-        <p>
+</div>
+<h4>6. Booking Cancellation</h4>
+<p>
           Cancellation पर Refund संबंधित Service/Booking Provider के Cancellation Rules,
           समय और सेवा की स्थिति के अनुसार होगा। कुछ सेवाओं में Cancellation के बाद Refund
           उपलब्ध नहीं हो सकता।
         </p>
-
-        <h4>7. Refund प्रक्रिया</h4>
-        <p>
+<h4>7. Refund प्रक्रिया</h4>
+<p>
           Refund स्वीकृत होने पर राशि सामान्यतः उसी Payment Method/Source में वापस भेजी जाएगी।
           वास्तविक Credit होने का समय Bank, UPI या Payment Provider पर निर्भर करेगा।
         </p>
-
-        <h4>8. Refund के लिए आवश्यक जानकारी</h4>
-        <p>
+<h4>8. Refund के लिए आवश्यक जानकारी</h4>
+<p>
           नाम, मोबाइल नंबर, Booking ID/Service विवरण, Payment राशि, Payment की तारीख
           और Transaction ID/UTR उपलब्ध रखें।
         </p>
-
-        <p>
-          <strong>UPI PIN, OTP, CVV या ATM PIN कभी साझा न करें।</strong>
-        </p>
-
-        <h4>9. सहायता</h4>
-        <p><strong>मोबाइल / WhatsApp: 7376999243</strong></p>
-
-        <a class="btn btn-green" href="https://wa.me/917376999243" target="_blank" rel="noopener">
+<p>
+<strong>UPI PIN, OTP, CVV या ATM PIN कभी साझा न करें।</strong>
+</p>
+<h4>9. सहायता</h4>
+<p><strong>मोबाइल / WhatsApp: 7376999243</strong></p>
+<a class="btn btn-green" href="https://wa.me/917376999243" rel="noopener" target="_blank">
           💬 Refund सहायता
         </a>
-
-        <p style="color:var(--muted);font-size:12px">
+<p style="color:var(--muted);font-size:12px">
           अंतिम अपडेट: 23 अगस्त 2026
         </p>
-      </div>
-
-      <div class="legal-card">
-        <h3>🗑️ Account / Data Deletion</h3>
-        <p>
+</div>
+<div class="legal-card">
+<h3>🗑️ Account / Data Deletion</h3>
+<p>
           Account या data deletion से संबंधित सहायता के लिए WhatsApp/मोबाइल पर
           अनुरोध भेजें।
         </p>
-        <a class="btn btn-outline" href="https://wa.me/917376999243?text=AJ%20Seva%20Account%20%2F%20Data%20Deletion%20Request" target="_blank" rel="noopener">
+<a class="btn btn-outline" href="https://wa.me/917376999243?text=AJ%20Seva%20Account%20%2F%20Data%20Deletion%20Request" rel="noopener" target="_blank">
           Delete Request करें
         </a>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ================= CONTACT ================= -->
 <section id="contact">
-  <div class="container">
-    <div class="contact">
-      <div>
-        <div style="color:#47705A">सहायता के लिए संपर्क करें</div>
-        <strong>7376999243</strong>
-        <div style="color:#47705A">Baghewa Karnai</div>
-      </div>
-
-      <div class="btn-row" style="margin-top:0">
-        <a class="btn btn-green" href="tel:+917376999243">📞 Call</a>
-        <a class="btn btn-green" href="https://wa.me/917376999243" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:20px">
-      <h3>आपकी सेवा, हमारा विश्वास</h3>
-      <p style="color:var(--muted)">हर सेवा में भरोसा • हर कदम पर आपकी सहायता</p>
-    </div>
-  </div>
+<div class="container">
+<div class="contact">
+<div>
+<div style="color:#47705A">सहायता के लिए संपर्क करें</div>
+<strong>7376999243</strong>
+<div style="color:#47705A">Baghewa Karnai</div>
+</div>
+<div class="btn-row" style="margin-top:0">
+<a class="btn btn-green" href="tel:+917376999243">📞 Call</a>
+<a class="btn btn-green" href="https://wa.me/917376999243" rel="noopener" target="_blank">💬 WhatsApp</a>
+</div>
+</div>
+<div style="text-align:center;margin-top:20px">
+<h3>आपकी सेवा, हमारा विश्वास</h3>
+<p style="color:var(--muted)">हर सेवा में भरोसा • हर कदम पर आपकी सहायता</p>
+</div>
+</div>
 </section>
-
 </main>
-
 <!-- ================= FOOTER ================= -->
 <footer>
-  <div class="container footer-grid">
-    <div>
-      <h3>AJ Seva</h3>
-      <p>आशीष जन सेवा केंद्र — आपकी सेवा, हमारा विश्वास।</p>
-      <p>📞 7376999243</p>
-    </div>
-
-    <div>
-      <h3>Quick Links</h3>
-      <p><a href="#services">Services</a></p>
-      <p><a href="javascript:void(0)" class="work-apply-link" data-service="Travel" aria-label="Travel आवेदन form खोलें">Travel<span class="apply-now">आवेदन करें →</span></a></p>
-      <p><a href="javascript:void(0)" class="work-apply-link" data-service="Booking" aria-label="Booking आवेदन form खोलें">Booking<span class="apply-now">आवेदन करें →</span></a></p>
-      <p><a href="javascript:void(0)" class="work-apply-link" data-service="आवेदन" aria-label="आवेदन आवेदन form खोलें">आवेदन<span class="apply-now">आवेदन करें →</span></a></p>
-      <p><a href="#app">Download App</a></p>
-    </div>
-
-    <div>
-      <h3>Legal & Support</h3>
-      <p><a href="#privacy">Privacy Policy</a></p>
-      <p><a href="#refund">Payment Refund Policy</a></p>
-      <p><a href="#legal">Terms & Conditions</a></p>
-      <p><a href="https://wa.me/917376999243" target="_blank" rel="noopener">WhatsApp Support</a></p>
-    </div>
-  </div>
-
-  <div class="container copyright">
+<div class="container footer-grid">
+<div>
+<h3>AJ Seva</h3>
+<p>आशीष जन सेवा केंद्र — आपकी सेवा, हमारा विश्वास।</p>
+<p>📞 7376999243</p>
+</div>
+<div>
+<h3>Quick Links</h3>
+<p><a href="#services">Services</a></p>
+<p><a aria-label="Travel आवेदन form खोलें" class="work-apply-link" data-service="Travel" href="javascript:void(0)">Travel<span class="apply-now">आवेदन करें →</span></a></p>
+<p><a aria-label="Booking आवेदन form खोलें" class="work-apply-link" data-service="Booking" href="javascript:void(0)">Booking<span class="apply-now">आवेदन करें →</span></a></p>
+<p><a aria-label="आवेदन आवेदन form खोलें" class="work-apply-link" data-service="आवेदन" href="javascript:void(0)">आवेदन<span class="apply-now">आवेदन करें →</span></a></p>
+<p><a href="#app">Download App</a></p>
+</div>
+<div>
+<h3>Legal &amp; Support</h3>
+<p><a href="#privacy">Privacy Policy</a></p>
+<p><a href="#refund">Payment Refund Policy</a></p>
+<p><a href="#legal">Terms &amp; Conditions</a></p>
+<p><a href="https://wa.me/917376999243" rel="noopener" target="_blank">WhatsApp Support</a></p>
+</div>
+</div>
+<div class="container copyright">
     © 2026 AJ Seva — आशीष जन सेवा केंद्र. All Rights Reserved.
   </div>
 </footer>
-
 <!-- ================= TRAVEL MODAL ================= -->
 <div class="modal" id="travelModal">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h2>🧳 Travel Booking</h2>
-      <button class="close" onclick="closeModal('travelModal')">×</button>
-    </div>
-
-    <p id="travelPackageText" style="font-weight:800;color:var(--blue)"></p>
-
-    <form id="travelForm">
-      <input type="hidden" id="travelPackage" name="package">
-
-      <div class="form-group">
-        <label>नाम *</label>
-        <input required name="name" placeholder="पूरा नाम">
-      </div>
-
-      <div class="form-group">
-        <label>मोबाइल *</label>
-        <input required name="mobile" type="tel" pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल">
-      </div>
-
-      <div class="form-grid" style="margin-top:14px">
-        <div class="form-group">
-          <label>यात्रा तारीख</label>
-          <input name="date" type="date">
-        </div>
-
-        <div class="form-group">
-          <label>यात्री</label>
-          <input name="persons" type="number" min="1" value="1">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Payment राशि</label>
-        <input id="travelAmount" name="amount" type="number" min="0" placeholder="₹ राशि">
-      </div>
-
-      <button class="btn btn-green" type="submit">💳 Payment/Booking के लिए आगे बढ़ें</button>
-    </form>
-  </div>
+<div class="modal-box">
+<div class="modal-head">
+<h2>🧳 Travel Booking</h2>
+<button class="close" onclick="closeModal('travelModal')">×</button>
 </div>
-
+<p id="travelPackageText" style="font-weight:800;color:var(--blue)"></p>
+<form id="travelForm">
+<input id="travelPackage" name="package" type="hidden"/>
+<div class="form-group">
+<label>नाम *</label>
+<input name="name" placeholder="पूरा नाम" required=""/>
+</div>
+<div class="form-group">
+<label>मोबाइल *</label>
+<input name="mobile" pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल" required="" type="tel"/>
+</div>
+<div class="form-grid" style="margin-top:14px">
+<div class="form-group">
+<label>यात्रा तारीख</label>
+<input name="date" type="date"/>
+</div>
+<div class="form-group">
+<label>यात्री</label>
+<input min="1" name="persons" type="number" value="1"/>
+</div>
+</div>
+<div class="form-group">
+<label>Payment राशि</label>
+<input id="travelAmount" min="0" name="amount" placeholder="₹ राशि" type="number"/>
+</div>
+<button class="btn btn-green" type="submit">💳 Payment/Booking के लिए आगे बढ़ें</button>
+</form>
+</div>
+</div>
 <!-- ================= GENERIC INFO MODAL ================= -->
 <div class="modal" id="infoModal">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h2 id="infoTitle">AJ Seva</h2>
-      <button class="close" onclick="closeModal('infoModal')">×</button>
-    </div>
-    <p id="infoText" style="white-space:pre-line"></p>
-    <a class="btn btn-green" href="https://wa.me/917376999243" target="_blank" rel="noopener">💬 WhatsApp सहायता</a>
-  </div>
+<div class="modal-box">
+<div class="modal-head">
+<h2 id="infoTitle">AJ Seva</h2>
+<button class="close" onclick="closeModal('infoModal')">×</button>
 </div>
-
+<p id="infoText" style="white-space:pre-line"></p>
+<a class="btn btn-green" href="https://wa.me/917376999243" rel="noopener" target="_blank">💬 WhatsApp सहायता</a>
+</div>
+</div>
 <script>
 /* ================= BASIC ================= */
 const WA_NUMBER = "917376999243";
@@ -2147,12 +1933,236 @@ function openUPI(){
 /* ================= INITIAL ================= */
 renderOrders();
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const template = document.querySelector("#inline-application-template");
+  if (!template) return;
 
+  document.querySelectorAll(".work-apply-link").forEach(function(card) {
+    card.addEventListener("click", function () {
+      const service = this.dataset.service || "Online Service";
 
+      // Close any other inline form.
+      document.querySelectorAll(".inline-application-card").forEach(function(x){
+        if (!x.closest("#inline-application-template")) x.remove();
+      });
 
+      const existing = this.parentElement.querySelector(".inline-application-card");
+      if (existing) {
+        existing.scrollIntoView({behavior:"smooth", block:"center"});
+        return;
+      }
 
+      const fragment = template.firstElementChild.cloneNode(true);
+      fragment.querySelector('[name="selected_service"]').value = service;
 
+      const form = fragment.querySelector("form");
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const text =
+          "AJ Seva Application%0A%0A" +
+          "Service: " + encodeURIComponent(fd.get("selected_service")) + "%0A" +
+          "Name: " + encodeURIComponent(fd.get("name")) + "%0A" +
+          "Mobile: " + encodeURIComponent(fd.get("mobile")) + "%0A" +
+          "Email: " + encodeURIComponent(fd.get("email") || "") + "%0A" +
+          "Details: " + encodeURIComponent(fd.get("details") || "");
+        window.open(
+          "https://wa.me/917376999243?text=" + text,
+          "_blank"
+        );
+      });
+
+      fragment.querySelector(".inline-close").addEventListener("click", function(){
+        fragment.remove();
+      });
+
+      this.insertAdjacentElement("afterend", fragment);
+      setTimeout(function(){
+        fragment.scrollIntoView({behavior:"smooth", block:"center"});
+      }, 50);
+    });
+  });
+});
+</script>
+<div hidden="" id="inline-application-template">
+<div class="inline-application-card">
+<div class="inline-form-head">
+<span class="section-badge">AJ SEVA • आवेदन</span>
+<h3>सेवा आवेदन फॉर्म</h3>
+<p>चुनी गई सेवा के लिए नीचे अपनी जानकारी भरें।</p>
+</div>
+<form class="inline-service-form">
+<div class="inline-form-grid">
+<label>सेवा
+          <input name="selected_service" readonly="" type="text"/>
+</label>
+<label>नाम
+          <input name="name" placeholder="अपना नाम" required="" type="text"/>
+</label>
+<label>मोबाइल नंबर
+          <input maxlength="10" name="mobile" placeholder="10 अंकों का मोबाइल नंबर" required="" type="tel"/>
+</label>
+<label>ईमेल (वैकल्पिक)
+          <input name="email" placeholder="Email" type="email"/>
+</label>
+<label class="full">आवश्यक जानकारी / विवरण
+          <textarea name="details" placeholder="अपनी जरूरत या जानकारी लिखें" rows="3"></textarea>
+</label>
+</div>
+<div class="inline-form-actions">
+<button class="category-btn" type="submit">📲 आवेदन WhatsApp पर भेजें</button>
+<button class="inline-close" type="button">✕ बंद करें</button>
+</div>
+</form>
+</div>
 </div>
 
-\n<div class="aj-modal" id="ajServiceModal" aria-hidden="true"><div class="aj-modal-box"><div class="aj-modal-head"><h2 id="ajModalTitle">AJ Seva आवेदन</h2><button class="aj-close" type="button" onclick="ajCloseModal()">×</button></div><div class="aj-stepbar"><div class="aj-step active" id="ajStep1Tab">1. विवरण</div><div class="aj-step" id="ajStep2Tab">2. Payment</div><div class="aj-step" id="ajStep3Tab">3. Success</div></div><div class="aj-modal-body">\n<div class="aj-step-pane active" id="ajStep1"><div class="aj-selected">सेवा: <span id="ajSelectedService">—</span></div><form id="ajServiceForm"><div class="aj-form-grid"><div class="aj-field"><label>नाम *</label><input id="ajName" required placeholder="पूरा नाम"></div><div class="aj-field"><label>मोबाइल नंबर *</label><input id="ajMobile" required maxlength="10" inputmode="numeric" pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल"></div><div class="aj-field full"><label>पूरा पता *</label><textarea id="ajAddress" required rows="2" placeholder="गांव / मोहल्ला, पोस्ट, जिला, राज्य"></textarea></div><div class="aj-field"><label>तारीख</label><input id="ajDate" type="date"></div><div class="aj-field"><label>यात्री / Quantity</label><input id="ajQty" type="number" min="1" value="1"></div><div class="aj-field" id="ajFromField"><label>From</label><input id="ajFrom" placeholder="कहाँ से"></div><div class="aj-field" id="ajToField"><label>To</label><input id="ajTo" placeholder="कहाँ तक"></div><div class="aj-field full"><label>अतिरिक्त जानकारी</label><textarea id="ajDetails" rows="2" placeholder="जरूरी जानकारी / दस्तावेज / विशेष अनुरोध"></textarea></div><div class="aj-field"><label>Payment राशि (₹) *</label><input id="ajAmount" type="number" min="0" step="1" required placeholder="उदाहरण: 249"></div></div><div class="aj-actions"><button class="aj-btn aj-btn-primary" type="submit">आगे बढ़ें → Payment</button></div></form></div>\n<div class="aj-step-pane" id="ajStep2"><div class="aj-selected">Payment: <span id="ajPaymentService">—</span></div><div class="aj-payment-box"><div class="aj-qr"><img id="ajPaymentQr" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi%3A%2F%2Fpay%3Fpa%3D7376999243-4%40ybl%26pn%3DAJ%2520Seva%26cu%3DINR" alt="AJ Seva Payment QR"><div style="font-size:11px;font-weight:800;margin-top:8px">QR Scan करके Payment करें</div></div><div><p><strong>Payment राशि:</strong> ₹<span id="ajPayAmount">0</span></p><div class="aj-upi">7376999243-4@ybl</div><p class="aj-note">Payment के बाद UTR / Transaction ID भरें। OTP, UPI PIN या ATM PIN कभी साझा न करें।</p><div class="aj-field"><label>UTR / Transaction ID *</label><input id="ajUtr" required placeholder="Payment के बाद UTR / Transaction ID"></div></div></div><div class="aj-actions"><button class="aj-btn aj-btn-light" type="button" onclick="ajGoStep(1)">← वापस</button><button class="aj-btn aj-btn-green" type="button" onclick="ajCompletePayment()">✓ Payment हो गया</button></div></div>\n<div class="aj-step-pane" id="ajStep3"><div class="aj-success"><div class="aj-success-icon">✓</div><h2 style="margin:0 0 6px;color:#159447">Request Submitted</h2><p style="margin:0;color:#667085">आपकी request तैयार है। WhatsApp पर details भेजें।</p><div class="aj-summary" id="ajSummary"></div><div class="aj-actions"><button class="aj-btn aj-btn-green" type="button" onclick="ajShareWhatsApp()">💬 WhatsApp पर Share करें</button><button class="aj-btn aj-btn-light" type="button" onclick="ajCloseModal()">बंद करें</button></div></div></div>\n</div></div></div>\n<script>\n(function(){const WA_NUMBER="917376999243",UPI_ID="7376999243-4@ybl";let currentService="",currentCategory="Service",requestData={};const q=id=>document.getElementById(id);function setStep(n){[1,2,3].forEach(x=>{q("ajStep"+x).classList.toggle("active",x===n);q("ajStep"+x+"Tab").classList.toggle("active",x===n)})}window.ajGoStep=setStep;window.ajOpenService=function(service,category){currentService=service;currentCategory=category||"Service";q("ajSelectedService").textContent=service;q("ajPaymentService").textContent=service;q("ajModalTitle").textContent="AJ Seva • "+service;q("ajServiceForm").reset();q("ajQty").value="1";q("ajUtr").value="";const tr=/TRAVEL|BOOKING/i.test(currentCategory);q("ajFromField").style.display=tr?"flex":"none";q("ajToField").style.display=tr?"flex":"none";q("ajServiceModal").classList.add("show");document.body.style.overflow="hidden";setStep(1)};window.ajCloseModal=function(){q("ajServiceModal").classList.remove("show");document.body.style.overflow="";setStep(1)};document.addEventListener("click",function(e){const card=e.target.closest(".work-apply-link");if(!card)return;e.preventDefault();const parent=card.closest(".service-category"),tag=parent&&parent.querySelector(".category-tag");ajOpenService(card.dataset.service||card.textContent.trim(),tag?tag.textContent.trim():"Service")});q("ajServiceForm").addEventListener("submit",function(e){e.preventDefault();const mobile=q("ajMobile").value.trim();if(!/^[6-9][0-9]{9}$/.test(mobile)){alert("कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।");return}requestData={service:currentService,category:currentCategory,name:q("ajName").value.trim(),mobile,address:q("ajAddress").value.trim(),date:q("ajDate").value,qty:q("ajQty").value,from:q("ajFrom").value.trim(),to:q("ajTo").value.trim(),details:q("ajDetails").value.trim(),amount:q("ajAmount").value};q("ajPayAmount").textContent=requestData.amount;q("ajPaymentService").textContent=currentService;const upi="upi://pay?pa="+encodeURIComponent(UPI_ID)+"&pn="+encodeURIComponent("AJ Seva")+"&am="+encodeURIComponent(requestData.amount)+"&cu=INR";q("ajPaymentQr").src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(upi);setStep(2)});window.ajCompletePayment=function(){const utr=q("ajUtr").value.trim();if(!utr){alert("कृपया Payment के बाद UTR / Transaction ID दर्ज करें।");return}requestData.utr=utr;requestData.requestId="AJ"+Date.now().toString().slice(-8);q("ajSummary").innerHTML='<div><span>Request ID</span><strong>'+esc(requestData.requestId)+'</strong></div><div><span>Service</span><strong>'+esc(requestData.service)+'</strong></div><div><span>Name</span><strong>'+esc(requestData.name)+'</strong></div><div><span>Mobile</span><strong>'+esc(requestData.mobile)+'</strong></div><div><span>Payment</span><strong>₹'+esc(requestData.amount)+'</strong></div><div><span>UTR</span><strong>'+esc(requestData.utr)+'</strong></div>';try{const a=JSON.parse(localStorage.getItem("ajseva_orders")||"[]");a.unshift({...requestData,time:new Date().toLocaleString("hi-IN")});localStorage.setItem("ajseva_orders",JSON.stringify(a.slice(0,30)))}catch(err){}setStep(3)};window.ajShareWhatsApp=function(){const lines=["AJ Seva Request","","Request ID: "+requestData.requestId,"Category: "+requestData.category,"Service: "+requestData.service,"Name: "+requestData.name,"Mobile: "+requestData.mobile,"Address: "+requestData.address,requestData.date?"Date: "+requestData.date:"",requestData.qty?"Quantity/Passengers: "+requestData.qty:"",requestData.from?"From: "+requestData.from:"",requestData.to?"To: "+requestData.to:"",requestData.details?"Details: "+requestData.details:"","Payment: ₹"+requestData.amount,"UTR: "+requestData.utr].filter(Boolean);window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(lines.join("\n")),"_blank")};function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}q("ajServiceModal").addEventListener("click",e=>{if(e.target===q("ajServiceModal"))ajCloseModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")ajCloseModal()})})();\n</script>\n</body>
+<div aria-hidden="true" class="aj-modal" id="ajServiceModal">
+<div class="aj-modal-box">
+<div class="aj-modal-head">
+<h2 id="ajModalTitle">AJ Seva आवेदन</h2>
+<button class="aj-close" id="ajClose" type="button">×</button>
+</div>
+<div class="aj-stepbar">
+<div class="aj-step active" id="ajStep1Tab">1. विवरण</div>
+<div class="aj-step" id="ajStep2Tab">2. Payment</div>
+<div class="aj-step" id="ajStep3Tab">3. Success</div>
+</div>
+<div class="aj-modal-body">
+<div class="aj-step-pane active" id="ajStep1">
+<div class="aj-selected">सेवा: <span id="ajSelectedService">—</span></div>
+<form id="ajServiceForm">
+<div class="aj-form-grid">
+<div class="aj-field"><label>नाम *</label><input id="ajName" placeholder="पूरा नाम" required=""/></div>
+<div class="aj-field"><label>मोबाइल नंबर *</label><input id="ajMobile" inputmode="numeric" maxlength="10" placeholder="10 अंकों का मोबाइल" required=""/></div>
+<div class="aj-field full"><label>पूरा पता *</label><textarea id="ajAddress" placeholder="गांव / मोहल्ला, पोस्ट, जिला, राज्य" required="" rows="2"></textarea></div>
+<div class="aj-field"><label>तारीख</label><input id="ajDate" type="date"/></div>
+<div class="aj-field"><label>Quantity / यात्री</label><input id="ajQty" min="1" type="number" value="1"/></div>
+<div class="aj-field" id="ajFromField"><label>From</label><input id="ajFrom" placeholder="कहाँ से"/></div>
+<div class="aj-field" id="ajToField"><label>To</label><input id="ajTo" placeholder="कहाँ तक"/></div>
+<div class="aj-field full"><label>अतिरिक्त जानकारी</label><textarea id="ajDetails" placeholder="जरूरी जानकारी" rows="2"></textarea></div>
+<div class="aj-field"><label>Payment राशि (₹) *</label><input id="ajAmount" min="0" placeholder="उदाहरण: 249" required="" type="number"/></div>
+</div>
+<div class="aj-actions"><button class="aj-btn aj-btn-primary">आगे बढ़ें → Payment</button></div>
+</form>
+</div>
+<div class="aj-step-pane" id="ajStep2">
+<div class="aj-selected">Payment: <span id="ajPaymentService">—</span></div>
+<div class="aj-payment-box">
+<div class="aj-qr"><img alt="AJ Seva Payment QR" id="ajPaymentQr"/><b style="font-size:11px">QR Scan करके Payment करें</b></div>
+<div>
+<p><b>Payment राशि:</b> ₹<span id="ajPayAmount">0</span></p>
+<div class="aj-upi">7376999243-4@ybl</div>
+<p class="aj-note">Payment के बाद UTR / Transaction ID दर्ज करें। UPI PIN/OTP कभी साझा न करें।</p>
+<div class="aj-field"><label>UTR / Transaction ID *</label><input id="ajUtr" placeholder="UTR / Transaction ID" required=""/></div>
+</div>
+</div>
+<div class="aj-actions">
+<button class="aj-btn aj-btn-light" id="ajBack" type="button">← वापस</button>
+<button class="aj-btn aj-btn-green" id="ajPaid" type="button">✓ Payment हो गया</button>
+</div>
+</div>
+<div class="aj-step-pane" id="ajStep3">
+<div class="aj-success">
+<div class="aj-success-icon">✓</div>
+<h2 style="margin:0;color:#159447">Request Submitted</h2>
+<p class="aj-note">आपकी request तैयार है। WhatsApp पर details भेजें।</p>
+<div class="aj-summary" id="ajSummary"></div>
+<div class="aj-actions">
+<button class="aj-btn aj-btn-green" id="ajWhatsApp" type="button">💬 WhatsApp पर Share करें</button>
+<button class="aj-btn aj-btn-light" id="ajDone" type="button">बंद करें</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script id="aj-v12-js">
+(function(){
+  const WA="917376999243", UPI="7376999243-4@ybl";
+  const $=id=>document.getElementById(id);
+  let data={};
+
+  function step(n){
+    [1,2,3].forEach(i=>{
+      $("ajStep"+i).classList.toggle("active",i===n);
+      $("ajStep"+i+"Tab").classList.toggle("active",i===n);
+    });
+  }
+  function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+
+  function openService(service,category){
+    data={service,category};
+    $("ajModalTitle").textContent="AJ Seva • "+service;
+    $("ajSelectedService").textContent=service;
+    $("ajPaymentService").textContent=service;
+    $("ajServiceForm").reset();
+    $("ajQty").value=1;
+    $("ajUtr").value="";
+    const travelOrBooking=(category==="TRAVEL"||category==="BOOKING");
+    $("ajFromField").style.display=travelOrBooking?"flex":"none";
+    $("ajToField").style.display=travelOrBooking?"flex":"none";
+    $("ajServiceModal").classList.add("show");
+    document.body.style.overflow="hidden";
+    step(1);
+  }
+  function close(){ $("ajServiceModal").classList.remove("show"); document.body.style.overflow=""; step(1); }
+
+  document.querySelectorAll(".work-apply-link").forEach(a=>{
+    a.addEventListener("click",e=>{
+      e.preventDefault();
+      openService(a.dataset.service||a.textContent.trim(),a.dataset.category||"DIGITAL SEVA");
+    });
+  });
+
+  $("ajServiceForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const mobile=$("ajMobile").value.trim();
+    if(!/^[6-9]\d{9}$/.test(mobile)){alert("कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।");return;}
+    data={...data,
+      name:$("ajName").value.trim(),mobile,address:$("ajAddress").value.trim(),
+      date:$("ajDate").value,qty:$("ajQty").value,from:$("ajFrom").value.trim(),
+      to:$("ajTo").value.trim(),details:$("ajDetails").value.trim(),amount:$("ajAmount").value
+    };
+    $("ajPayAmount").textContent=data.amount;
+    const upi="upi://pay?pa="+encodeURIComponent(UPI)+"&pn="+encodeURIComponent("AJ Seva")+"&am="+encodeURIComponent(data.amount)+"&cu=INR";
+    $("ajPaymentQr").src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(upi);
+    step(2);
+  });
+
+  $("ajBack").onclick=()=>step(1);
+  $("ajPaid").onclick=()=>{
+    const utr=$("ajUtr").value.trim();
+    if(!utr){alert("कृपया UTR / Transaction ID दर्ज करें।");return;}
+    data.utr=utr; data.requestId="AJ"+Date.now().toString().slice(-8);
+    $("ajSummary").innerHTML=[
+      ["Request ID",data.requestId],["Service",data.service],["Name",data.name],
+      ["Mobile",data.mobile],["Payment","₹"+data.amount],["UTR",data.utr]
+    ].map(x=>"<div><span>"+esc(x[0])+"</span><strong>"+esc(x[1])+"</strong></div>").join("");
+    try{
+      const orders=JSON.parse(localStorage.getItem("ajseva_orders")||"[]");
+      orders.unshift({...data,time:new Date().toLocaleString("hi-IN")});
+      localStorage.setItem("ajseva_orders",JSON.stringify(orders.slice(0,50)));
+    }catch(e){}
+    step(3);
+  };
+  $("ajWhatsApp").onclick=()=>{
+    const msg=[
+      "AJ Seva Request","Request ID: "+data.requestId,
+      "Category: "+data.category,"Service: "+data.service,"Name: "+data.name,
+      "Mobile: "+data.mobile,"Address: "+data.address,
+      data.date?"Date: "+data.date:"",data.qty?"Quantity/Passengers: "+data.qty:"",
+      data.from?"From: "+data.from:"",data.to?"To: "+data.to:"",
+      data.details?"Details: "+data.details:"","Payment: ₹"+data.amount,"UTR: "+data.utr
+    ].filter(Boolean).join("\n");
+    window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");
+  };
+  $("ajClose").onclick=close; $("ajDone").onclick=close;
+  $("ajServiceModal").addEventListener("click",e=>{if(e.target.id==="ajServiceModal")close();});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")close();});
+})();
+</script>
+</body>
 </html>
