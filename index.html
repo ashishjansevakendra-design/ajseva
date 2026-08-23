@@ -603,6 +603,7 @@ footer a{color:#dce5f2}
   font-size:13px;
 }
 
+
 /* ===== QR PAYMENT CARD ===== */
 .qr-payment-card{
   max-width:430px;
@@ -689,6 +690,7 @@ footer a{color:#dce5f2}
   text-decoration:none !important;
   font-weight:800;
 }
+
 
 /* ===== COMPACT PROFESSIONAL LAYOUT ===== */
 section{
@@ -872,6 +874,7 @@ main > section:nth-of-type(even) .container::before{
   }
 }
 
+
 /* ===== 3 PROFESSIONAL SERVICE CATEGORIES ===== */
 .service-category-grid{
   display:grid;
@@ -994,6 +997,119 @@ main > section:nth-of-type(even) .container::before{
 </style>
 
 <style>
+.work-apply-link{
+  cursor:pointer;
+  position:relative;
+}
+.work-apply-link::after{
+  content:" →";
+  font-weight:800;
+  color:#0b3d91;
+}
+.work-apply-link:hover{
+  transform:translateY(-1px);
+}
+</style>
+
+
+<style>
+.work-apply-link{
+  display:flex !important;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  text-decoration:none !important;
+}
+.work-apply-link::after{display:none !important}
+.apply-now{
+  display:inline-block;
+  color:#0b3d91;
+  font-size:10px;
+  font-weight:900;
+}
+.inline-application-card{
+  grid-column:1/-1;
+  margin-top:12px;
+  padding:20px;
+  border:1px solid #cfdced;
+  border-radius:18px;
+  background:linear-gradient(145deg,#ffffff,#f6f9ff);
+  box-shadow:0 8px 24px rgba(20,38,70,.08);
+}
+.inline-form-head{
+  margin-bottom:15px;
+}
+.inline-form-head h3{
+  margin:6px 0 4px;
+  color:#17243a;
+}
+.inline-form-head p{
+  margin:0;
+  color:#667085;
+  font-size:13px;
+}
+.inline-form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.inline-form-grid label{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  color:#344054;
+  font-size:12px;
+  font-weight:800;
+}
+.inline-form-grid .full{
+  grid-column:1/-1;
+}
+.inline-form-grid input,
+.inline-form-grid textarea{
+  width:100%;
+  box-sizing:border-box;
+  padding:11px 12px;
+  border:1px solid #dce3ec;
+  border-radius:10px;
+  background:#fff;
+  outline:none;
+  font:inherit;
+  font-weight:400;
+}
+.inline-form-grid input:focus,
+.inline-form-grid textarea:focus{
+  border-color:#0b3d91;
+  box-shadow:0 0 0 3px rgba(11,61,145,.08);
+}
+.inline-form-actions{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+}
+.inline-form-actions .category-btn{
+  border:0;
+  cursor:pointer;
+  flex:1;
+}
+.inline-close{
+  padding:0 18px;
+  border:1px solid #d9e0ea;
+  background:#fff;
+  color:#344054;
+  border-radius:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+@media(max-width:560px){
+  .inline-form-grid{grid-template-columns:1fr}
+  .inline-form-grid .full{grid-column:auto}
+  .inline-form-actions{flex-direction:column}
+  .inline-close{min-height:42px}
+}
+</style>
+
+
+<style>
 .service-category-grid{
   grid-template-columns:1.2fr .9fr .8fr;
   align-items:start;
@@ -1016,49 +1132,19 @@ main > section:nth-of-type(even) .container::before{
 </style>
 
 <style>
-/* ===== CLEAN SEPARATE CATEGORY BORDERS ===== */
-.service-category-grid{
-  display:grid;
-  grid-template-columns:1.25fr .9fr .75fr;
-  gap:18px;
-  align-items:stretch;
-}
-.service-category{
-  border:1.5px solid #d8e1ed !important;
-  border-radius:22px !important;
-  background:#fff !important;
-  padding:20px !important;
-  box-shadow:0 7px 22px rgba(20,38,70,.06) !important;
-}
-.service-category:nth-child(1){
-  border-color:#c9d9ef !important;
-}
-.service-category:nth-child(2){
-  border-color:#d8e6d8 !important;
-}
-.service-category:nth-child(3){
-  border-color:#eadcc8 !important;
-}
-.category-head{
-  padding-bottom:14px;
-  margin-bottom:0;
-  border-bottom:1px solid #e8edf3 !important;
-}
-.work-list{
-  padding-top:14px;
-}
-.work-list a{
-  border:1px solid #e8edf3 !important;
-  border-radius:9px !important;
-  text-decoration:none !important;
-}
-@media(max-width:900px){
-  .service-category-grid{
-    grid-template-columns:1fr;
-  }
-}
+#travel,#booking{display:none !important;}
+.service-category-grid{grid-template-columns:1.2fr .95fr .85fr !important;align-items:stretch !important;}
+.service-category:nth-child(2) .work-list,.service-category:nth-child(3) .work-list{grid-template-columns:1fr 1fr !important;}
+.work-list a{min-height:52px;box-sizing:border-box;justify-content:center;}
+.work-apply-link{display:flex !important;flex-direction:row !important;align-items:center;gap:6px;cursor:pointer;text-decoration:none !important;}
+.work-apply-link::after{content:" →";color:#0b3d91;font-weight:900;}
+.work-apply-link .apply-now{display:none !important;}
+@media(max-width:900px){.service-category-grid{grid-template-columns:1fr !important}}
+@media(max-width:560px){.service-category .work-list{grid-template-columns:1fr 1fr !important}.work-list a{font-size:11px;min-height:48px}}
+.aj-modal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:18px;box-sizing:border-box;background:rgba(10,22,40,.62);backdrop-filter:blur(4px)}
+.aj-modal.show{display:flex}.aj-modal-box{width:min(760px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;border:1px solid #d9e2ef;box-shadow:0 24px 70px rgba(0,0,0,.24)}
+.aj-modal-head{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;background:#0b3d91;color:#fff;position:sticky;top:0;z-index:2}.aj-modal-head h2{margin:0;font-size:19px}.aj-close{width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:24px;cursor:pointer}.aj-stepbar{display:flex;gap:8px;padding:14px 20px 0}.aj-step{flex:1;text-align:center;padding:8px 5px;border-radius:9px;background:#edf2f8;color:#64748b;font-size:11px;font-weight:800}.aj-step.active{background:#e8f1ff;color:#0b3d91}.aj-modal-body{padding:20px}.aj-step-pane{display:none}.aj-step-pane.active{display:block}.aj-selected{padding:12px 14px;margin-bottom:14px;background:#f3f7fc;border:1px solid #dce6f2;border-radius:12px;font-weight:800;color:#17345f}.aj-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.aj-field{display:flex;flex-direction:column;gap:5px}.aj-field.full{grid-column:1/-1}.aj-field label{font-size:12px;font-weight:800;color:#344054}.aj-field input,.aj-field textarea{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid #d8e1ec;border-radius:10px;outline:none;background:#fff;font:inherit}.aj-field input:focus,.aj-field textarea:focus{border-color:#0b3d91;box-shadow:0 0 0 3px rgba(11,61,145,.08)}.aj-actions{display:flex;gap:10px;margin-top:16px}.aj-btn{flex:1;min-height:44px;border:0;border-radius:11px;cursor:pointer;font-weight:900;font-size:14px}.aj-btn-primary{background:#0b3d91;color:#fff}.aj-btn-green{background:#159447;color:#fff}.aj-btn-light{background:#eef2f7;color:#344054}.aj-payment-box{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:center}.aj-qr{border:1px solid #dce4ef;border-radius:16px;padding:12px;background:#fff;text-align:center}.aj-qr img{width:100%;max-width:190px;display:block;margin:auto}.aj-upi{font-weight:900;font-size:16px;color:#0b3d91;padding:10px;border:1px dashed #9fb5d3;border-radius:9px;word-break:break-all;background:#f7faff}.aj-note{font-size:12px;color:#667085;line-height:1.5}.aj-success{text-align:center;padding:18px 5px}.aj-success-icon{width:70px;height:70px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:#e8f8ee;color:#159447;font-size:38px}.aj-summary{text-align:left;background:#f7f9fc;border:1px solid #e1e7ef;border-radius:13px;padding:13px;margin:15px 0}.aj-summary div{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:13px}.aj-summary strong{color:#17345f}@media(max-width:600px){.aj-modal{padding:8px}.aj-form-grid{grid-template-columns:1fr}.aj-field.full{grid-column:auto}.aj-payment-box{grid-template-columns:1fr}.aj-actions{flex-direction:column}}
 </style>
-
 </head>
 
 <body>
@@ -1078,10 +1164,10 @@ main > section:nth-of-type(even) .container::before{
     <nav id="mainNav">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
-      <a href="#contact" class="work-apply-link" data-service="Travel" aria-label="Travel आवेदन form खोलें">Travel</a>
-      <a href="#contact" class="work-apply-link" data-service="Booking" aria-label="Booking आवेदन form खोलें">Booking</a>
-      <a href="#contact" class="work-apply-link" data-service="Recharge" aria-label="Recharge आवेदन form खोलें">Recharge</a>
-      <a href="#contact" class="work-apply-link" data-service="आवेदन" aria-label="आवेदन आवेदन form खोलें">आवेदन</a>
+      <a href="javascript:void(0)" class="work-apply-link" data-service="Travel" aria-label="Travel आवेदन form खोलें">Travel<span class="apply-now">आवेदन करें →</span></a>
+      <a href="javascript:void(0)" class="work-apply-link" data-service="Booking" aria-label="Booking आवेदन form खोलें">Booking<span class="apply-now">आवेदन करें →</span></a>
+      <a href="javascript:void(0)" class="work-apply-link" data-service="Recharge" aria-label="Recharge आवेदन form खोलें">Recharge<span class="apply-now">आवेदन करें →</span></a>
+      <a href="javascript:void(0)" class="work-apply-link" data-service="आवेदन" aria-label="आवेदन आवेदन form खोलें">आवेदन<span class="apply-now">आवेदन करें →</span></a>
       <a href="#payment">Payment</a>
       
       <a href="#app">App</a>
@@ -1138,7 +1224,7 @@ main > section:nth-of-type(even) .container::before{
 
     <div class="quick-grid">
       <a class="quick" href="#services"><div class="ico">📄</div><strong>सेवाएँ</strong></a>
-      
+      <a class="quick" href="#booking"><div class="ico">🎫</div><strong>बुकिंग</strong></a>
       <a class="quick" href="#payment"><div class="ico">💳</div><strong>Payment / Wallet</strong></a>
       <a class="quick" href="https://wa.me/917376999243" target="_blank" rel="noopener"><div class="ico">🎧</div><strong>सहायता</strong></a>
     </div>
@@ -1171,30 +1257,30 @@ main > section:nth-of-type(even) .container::before{
         </div>
 
         <div class="work-list">
-          <a href="#contact" class="work-apply-link" data-service="PAN Card">🪪 PAN Card</a>
-          <a href="#contact" class="work-apply-link" data-service="Aadhaar Services">🆔 Aadhaar Services</a>
-          <a href="#contact" class="work-apply-link" data-service="Ayushman Card">🏥 Ayushman Card</a>
-          <a href="#contact" class="work-apply-link" data-service="ABHA Card">❤️ ABHA Card</a>
-          <a href="#contact" class="work-apply-link" data-service="Ration Card">🍚 Ration Card</a>
-          <a href="#contact" class="work-apply-link" data-service="Voter Card">🗳️ Voter Card</a>
-          <a href="#contact" class="work-apply-link" data-service="e-Shram Card">👷 e-Shram Card</a>
-          <a href="#contact" class="work-apply-link" data-service="EPFO / PF">💼 EPFO / PF</a>
-          <a href="#contact" class="work-apply-link" data-service="Driving Licence">🚘 Driving Licence</a>
-          <a href="#contact" class="work-apply-link" data-service="Passport Assistance">🛂 Passport Assistance</a>
-          <a href="#contact" class="work-apply-link" data-service="Police Character Certificate">👮 Police Character Certificate</a>
-          <a href="#contact" class="work-apply-link" data-service="Online FIR">🚨 Online FIR</a>
-          <a href="#contact" class="work-apply-link" data-service="Birth Certificate">👶 Birth Certificate</a>
-          <a href="#contact" class="work-apply-link" data-service="Life Certificate">📜 Life Certificate</a>
-          <a href="#contact" class="work-apply-link" data-service="Labour Card">👷 Labour Card</a>
-          <a href="#contact" class="work-apply-link" data-service="PM Kisan">🌾 PM Kisan</a>
-          <a href="#contact" class="work-apply-link" data-service="PM Vishwakarma">🛠️ PM Vishwakarma</a>
-          <a href="#contact" class="work-apply-link" data-service="Toilet Scheme Application">🚽 Toilet Scheme Application</a>
-          <a href="#contact" class="work-apply-link" data-service="Income Certificate">💰 Income Certificate</a>
-          <a href="#contact" class="work-apply-link" data-service="Caste Certificate">📑 Caste Certificate</a>
-          <a href="#contact" class="work-apply-link" data-service="Residence Certificate">🏠 Residence Certificate</a>
-          <a href="#contact" class="work-apply-link" data-service="Resume / Biodata">📄 Resume / Biodata</a>
-          <a href="#contact" class="work-apply-link" data-service="PVC Aadhaar / PAN">🖨️ PVC Aadhaar / PAN</a>
-          <a href="#contact" class="work-apply-link" data-service="Other Online Work">📋 Other Online Work</a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="PAN Card">🪪 PAN Card<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Aadhaar Services">🆔 Aadhaar Services<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Ayushman Card">🏥 Ayushman Card<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="ABHA Card">❤️ ABHA Card<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Ration Card">🍚 Ration Card<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Voter Card">🗳️ Voter Card<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="e-Shram Card">👷 e-Shram Card<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="EPFO / PF">💼 EPFO / PF<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Driving Licence">🚘 Driving Licence<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Passport Assistance">🛂 Passport Assistance<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Police Character Certificate">👮 Police Character Certificate<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Online FIR">🚨 Online FIR<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Birth Certificate">👶 Birth Certificate<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Life Certificate">📜 Life Certificate<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Labour Card">👷 Labour Card<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="PM Kisan">🌾 PM Kisan<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="PM Vishwakarma">🛠️ PM Vishwakarma<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Toilet Scheme Application">🚽 Toilet Scheme Application<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Income Certificate">💰 Income Certificate<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Caste Certificate">📑 Caste Certificate<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Residence Certificate">🏠 Residence Certificate<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Resume / Biodata">📄 Resume / Biodata<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="PVC Aadhaar / PAN">🖨️ PVC Aadhaar / PAN<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Other Online Work">📋 Other Online Work<span class="apply-now">आवेदन करें →</span></a>
         </div>
       </div>
 
@@ -1210,13 +1296,13 @@ main > section:nth-of-type(even) .container::before{
         </div>
 
         <div class="work-list">
-          <a href="#contact" class="work-apply-link" data-service="Ayodhya Dham Tour">🛕 Ayodhya Dham Tour</a>
-          <a href="#contact" class="work-apply-link" data-service="Kedarnath Yatra">🔱 Kedarnath Yatra</a>
-          <a href="#contact" class="work-apply-link" data-service="Vaishno Devi Yatra">🚩 Vaishno Devi Yatra</a>
-          <a href="#contact" class="work-apply-link" data-service="Varanasi / Kashi Tour">🕉️ Varanasi / Kashi Tour</a>
-          <a href="#contact" class="work-apply-link" data-service="Rameshwaram Tour">🌊 Rameshwaram Tour</a>
-          <a href="#contact" class="work-apply-link" data-service="Kanyakumari Tour">🌴 Kanyakumari Tour</a>
-          <a href="#contact" class="work-apply-link" data-service="Other Tour Package">🗺️ Other Tour Package</a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Ayodhya Dham Tour">🛕 Ayodhya Dham Tour<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Kedarnath Yatra">🔱 Kedarnath Yatra<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Vaishno Devi Yatra">🚩 Vaishno Devi Yatra<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Varanasi / Kashi Tour">🕉️ Varanasi / Kashi Tour<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Rameshwaram Tour">🌊 Rameshwaram Tour<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Kanyakumari Tour">🌴 Kanyakumari Tour<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Other Tour Package">🗺️ Other Tour Package<span class="apply-now">आवेदन करें →</span></a>
         </div>
       </div>
 
@@ -1232,9 +1318,9 @@ main > section:nth-of-type(even) .container::before{
         </div>
 
         <div class="work-list">
-          <a href="#contact" class="work-apply-link" data-service="Train Ticket Booking">🚆 Train Ticket Booking</a>
-          <a href="#contact" class="work-apply-link" data-service="Bus Ticket Booking">🚌 Bus Ticket Booking</a>
-          <a href="#contact" class="work-apply-link" data-service="Flight Ticket Booking">✈️ Flight Ticket Booking</a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Train Ticket Booking">🚆 Train Ticket Booking<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Bus Ticket Booking">🚌 Bus Ticket Booking<span class="apply-now">आवेदन करें →</span></a>
+          <a href="javascript:void(0)" class="work-apply-link" data-service="Flight Ticket Booking">✈️ Flight Ticket Booking<span class="apply-now">आवेदन करें →</span></a>
         </div>
       </div>
 
@@ -1243,8 +1329,151 @@ main > section:nth-of-type(even) .container::before{
 </section>
 
 <!-- ================= TRAVEL ================= -->
+<section id="travel">
+  <div class="container">
+    <div class="section-heading-pro">
+      <span class="section-badge">AJ SEVA • TRAVEL DESK</span>
+      <h2 class="section-title">Travel & Tour Packages</h2>
+      <p class="section-sub">
+        धार्मिक यात्राओं, tour packages और यात्रा planning के लिए
+        सुविधाजनक booking सहायता।
+      </p>
+    </div>
+
+    <div class="travel-grid">
+      <div class="travel">
+        <div class="travel-top">🛕</div>
+        <div class="travel-body">
+          <h3>Ayodhya Dham</h3>
+          <p>राम जन्मभूमि, हनुमानगढ़ी, कनक भवन, राम की पैड़ी और सरयू आरती।</p>
+          <span class="price">₹2200 / व्यक्ति</span>
+          <div style="margin-top:12px">
+            <button class="btn btn-blue" onclick="openTravel('Ayodhya Dham','2200')">Booking करें</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="travel">
+        <div class="travel-top">🔱</div>
+        <div class="travel-body">
+          <h3>Kedarnath</h3>
+          <p>धार्मिक यात्रा package और यात्रा सहायता के लिए संपर्क करें।</p>
+          <span class="price">Package पूछें</span>
+          <div style="margin-top:12px">
+            <button class="btn btn-blue" onclick="openTravel('Kedarnath','')">Booking करें</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="travel">
+        <div class="travel-top">🌊</div>
+        <div class="travel-body">
+          <h3>Rameshwaram</h3>
+          <p>Rameshwaram और दक्षिण भारत यात्रा के लिए package सहायता।</p>
+          <span class="price">Package पूछें</span>
+          <div style="margin-top:12px">
+            <button class="btn btn-blue" onclick="openTravel('Rameshwaram','')">Booking करें</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="travel">
+        <div class="travel-top">🌴</div>
+        <div class="travel-body">
+          <h3>Kanyakumari</h3>
+          <p>कन्याकुमारी यात्रा और local sightseeing सहायता।</p>
+          <span class="price">Package पूछें</span>
+          <div style="margin-top:12px">
+            <button class="btn btn-blue" onclick="openTravel('Kanyakumari','')">Booking करें</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="travel">
+        <div class="travel-top">🕉️</div>
+        <div class="travel-body">
+          <h3>Varanasi / Kashi</h3>
+          <p>काशी विश्वनाथ, गंगा आरती और Varanasi यात्रा सहायता।</p>
+          <span class="price">Package पूछें</span>
+          <div style="margin-top:12px">
+            <button class="btn btn-blue" onclick="openTravel('Varanasi / Kashi','')">Booking करें</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="travel">
+        <div class="travel-top">🚩</div>
+        <div class="travel-body">
+          <h3>Vaishno Devi</h3>
+          <p>माता वैष्णो देवी यात्रा के लिए booking और यात्रा सहायता।</p>
+          <span class="price">Package पूछें</span>
+          <div style="margin-top:12px">
+            <button class="btn btn-blue" onclick="openTravel('Vaishno Devi','')">Booking करें</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= BOOKING ================= -->
+<section id="booking">
+  <div class="container">
+    <h2 class="section-title">🎫 Ticket Booking</h2>
+    <p class="section-sub">Train / Bus / Flight booking request WhatsApp पर भेजें</p>
+
+    <div class="form-card">
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>नाम *</label>
+            <input required name="name" placeholder="पूरा नाम">
+          </div>
+          <div class="form-group">
+            <label>मोबाइल नंबर *</label>
+            <input required name="mobile" type="tel" pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल">
+          </div>
+          <div class="form-group">
+            <label>Booking Type *</label>
+            <select required name="type">
+              <option value="">चुनें</option>
+              <option>Train</option>
+              <option>Bus</option>
+              <option>Flight</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>यात्रियों की संख्या</label>
+            <input name="persons" type="number" min="1" placeholder="जैसे 2">
+          </div>
+          <div class="form-group">
+            <label>From</label>
+            <input name="from" placeholder="कहाँ से">
+          </div>
+          <div class="form-group">
+            <label>To</label>
+            <input name="to" placeholder="कहाँ तक">
+          </div>
+          <div class="form-group">
+            <label>यात्रा तारीख</label>
+            <input name="date" type="date">
+          </div>
+          <div class="form-group">
+            <label>Class / Preference</label>
+            <input name="preference" placeholder="Sleeper / AC आदि">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>अतिरिक्त जानकारी</label>
+          <textarea name="message" rows="3" placeholder="कोई अन्य जानकारी"></textarea>
+        </div>
+
+        <button class="btn btn-blue" type="submit">📲 Booking WhatsApp पर भेजें</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 <!-- ================= RECHARGE ================= -->
 <section id="recharge">
@@ -1282,6 +1511,69 @@ main > section:nth-of-type(even) .container::before{
         </div>
 
         <button class="btn btn-green" type="submit">📲 Recharge Request WhatsApp करें</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPLICATION ================= -->
+<section id="application">
+  <div class="container">
+    <h2 class="section-title">📝 सेवा आवेदन फॉर्म</h2>
+    <p class="section-sub">अपनी जरूरत की सेवा चुनें और आवेदन WhatsApp पर भेजें</p>
+
+    <div class="form-card">
+      <form id="applicationForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>आवेदक का नाम *</label>
+            <input required name="name" placeholder="पूरा नाम">
+          </div>
+          <div class="form-group">
+            <label>मोबाइल नंबर *</label>
+            <input required name="mobile" type="tel" placeholder="मोबाइल नंबर">
+          </div>
+          <div class="form-group">
+            <label>सेवा चुनें *</label>
+            <select required name="service">
+              <option value="">सेवा चुनें</option>
+              <option>PAN Card</option>
+              <option>Aadhaar Service</option>
+              <option>Ayushman Card</option>
+              <option>ABHA Card</option>
+              <option>Ration Card</option>
+              <option>Voter Card</option>
+              <option>e-Shram Card</option>
+              <option>EPFO / PF</option>
+              <option>Driving Licence</option>
+              <option>Passport Assistance</option>
+              <option>Police Character Certificate</option>
+              <option>Online FIR</option>
+              <option>Birth Certificate</option>
+              <option>Life Certificate</option>
+              <option>Labour Card</option>
+              <option>PM Kisan</option>
+              <option>PM Vishwakarma</option>
+              <option>Toilet Scheme Application</option>
+              <option>Income Certificate</option>
+              <option>Caste Certificate</option>
+              <option>Residence Certificate</option>
+              <option>Resume / Biodata</option>
+              <option>Other Service</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>जिला / स्थान</label>
+            <input name="location" placeholder="स्थान">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>आवेदन से जुड़ी जानकारी</label>
+          <textarea name="message" rows="4" placeholder="आपको कौन-सी सहायता चाहिए?"></textarea>
+        </div>
+
+        <button class="btn btn-blue" type="submit">📲 आवेदन WhatsApp पर भेजें</button>
       </form>
     </div>
   </div>
@@ -1336,6 +1628,7 @@ main > section:nth-of-type(even) .container::before{
     </div>
   </div>
 </section>
+
 
 <!-- ================= APP ================= -->
 <section id="app">
@@ -1521,9 +1814,9 @@ main > section:nth-of-type(even) .container::before{
     <div>
       <h3>Quick Links</h3>
       <p><a href="#services">Services</a></p>
-      <p><a href="#contact" class="work-apply-link" data-service="Travel" aria-label="Travel आवेदन form खोलें">Travel</a></p>
-      <p><a href="#contact" class="work-apply-link" data-service="Booking" aria-label="Booking आवेदन form खोलें">Booking</a></p>
-      <p><a href="#contact" class="work-apply-link" data-service="आवेदन" aria-label="आवेदन आवेदन form खोलें">आवेदन</a></p>
+      <p><a href="javascript:void(0)" class="work-apply-link" data-service="Travel" aria-label="Travel आवेदन form खोलें">Travel<span class="apply-now">आवेदन करें →</span></a></p>
+      <p><a href="javascript:void(0)" class="work-apply-link" data-service="Booking" aria-label="Booking आवेदन form खोलें">Booking<span class="apply-now">आवेदन करें →</span></a></p>
+      <p><a href="javascript:void(0)" class="work-apply-link" data-service="आवेदन" aria-label="आवेदन आवेदन form खोलें">आवेदन<span class="apply-now">आवेदन करें →</span></a></p>
       <p><a href="#app">Download App</a></p>
     </div>
 
@@ -1855,38 +2148,11 @@ function openUPI(){
 renderOrders();
 </script>
 
-<div id="inline-application-template" hidden>
-  <div class="inline-application-card">
-    <div class="inline-form-head">
-      <span class="section-badge">AJ SEVA • आवेदन</span>
-      <h3>सेवा आवेदन फॉर्म</h3>
-      <p>चुनी गई सेवा के लिए नीचे अपनी जानकारी भरें।</p>
-    </div>
-    <form class="inline-service-form">
-      <div class="inline-form-grid">
-        <label>सेवा
-          <input type="text" name="selected_service" readonly>
-        </label>
-        <label>नाम
-          <input type="text" name="name" placeholder="अपना नाम" required>
-        </label>
-        <label>मोबाइल नंबर
-          <input type="tel" name="mobile" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10" required>
-        </label>
-        <label>ईमेल (वैकल्पिक)
-          <input type="email" name="email" placeholder="Email">
-        </label>
-        <label class="full">आवश्यक जानकारी / विवरण
-          <textarea name="details" rows="3" placeholder="अपनी जरूरत या जानकारी लिखें"></textarea>
-        </label>
-      </div>
-      <div class="inline-form-actions">
-        <button type="submit" class="category-btn">📲 आवेदन WhatsApp पर भेजें</button>
-        <button type="button" class="inline-close">✕ बंद करें</button>
-      </div>
-    </form>
-  </div>
+
+
+
+
 </div>
 
-</body>
+\n<div class="aj-modal" id="ajServiceModal" aria-hidden="true"><div class="aj-modal-box"><div class="aj-modal-head"><h2 id="ajModalTitle">AJ Seva आवेदन</h2><button class="aj-close" type="button" onclick="ajCloseModal()">×</button></div><div class="aj-stepbar"><div class="aj-step active" id="ajStep1Tab">1. विवरण</div><div class="aj-step" id="ajStep2Tab">2. Payment</div><div class="aj-step" id="ajStep3Tab">3. Success</div></div><div class="aj-modal-body">\n<div class="aj-step-pane active" id="ajStep1"><div class="aj-selected">सेवा: <span id="ajSelectedService">—</span></div><form id="ajServiceForm"><div class="aj-form-grid"><div class="aj-field"><label>नाम *</label><input id="ajName" required placeholder="पूरा नाम"></div><div class="aj-field"><label>मोबाइल नंबर *</label><input id="ajMobile" required maxlength="10" inputmode="numeric" pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल"></div><div class="aj-field full"><label>पूरा पता *</label><textarea id="ajAddress" required rows="2" placeholder="गांव / मोहल्ला, पोस्ट, जिला, राज्य"></textarea></div><div class="aj-field"><label>तारीख</label><input id="ajDate" type="date"></div><div class="aj-field"><label>यात्री / Quantity</label><input id="ajQty" type="number" min="1" value="1"></div><div class="aj-field" id="ajFromField"><label>From</label><input id="ajFrom" placeholder="कहाँ से"></div><div class="aj-field" id="ajToField"><label>To</label><input id="ajTo" placeholder="कहाँ तक"></div><div class="aj-field full"><label>अतिरिक्त जानकारी</label><textarea id="ajDetails" rows="2" placeholder="जरूरी जानकारी / दस्तावेज / विशेष अनुरोध"></textarea></div><div class="aj-field"><label>Payment राशि (₹) *</label><input id="ajAmount" type="number" min="0" step="1" required placeholder="उदाहरण: 249"></div></div><div class="aj-actions"><button class="aj-btn aj-btn-primary" type="submit">आगे बढ़ें → Payment</button></div></form></div>\n<div class="aj-step-pane" id="ajStep2"><div class="aj-selected">Payment: <span id="ajPaymentService">—</span></div><div class="aj-payment-box"><div class="aj-qr"><img id="ajPaymentQr" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi%3A%2F%2Fpay%3Fpa%3D7376999243-4%40ybl%26pn%3DAJ%2520Seva%26cu%3DINR" alt="AJ Seva Payment QR"><div style="font-size:11px;font-weight:800;margin-top:8px">QR Scan करके Payment करें</div></div><div><p><strong>Payment राशि:</strong> ₹<span id="ajPayAmount">0</span></p><div class="aj-upi">7376999243-4@ybl</div><p class="aj-note">Payment के बाद UTR / Transaction ID भरें। OTP, UPI PIN या ATM PIN कभी साझा न करें।</p><div class="aj-field"><label>UTR / Transaction ID *</label><input id="ajUtr" required placeholder="Payment के बाद UTR / Transaction ID"></div></div></div><div class="aj-actions"><button class="aj-btn aj-btn-light" type="button" onclick="ajGoStep(1)">← वापस</button><button class="aj-btn aj-btn-green" type="button" onclick="ajCompletePayment()">✓ Payment हो गया</button></div></div>\n<div class="aj-step-pane" id="ajStep3"><div class="aj-success"><div class="aj-success-icon">✓</div><h2 style="margin:0 0 6px;color:#159447">Request Submitted</h2><p style="margin:0;color:#667085">आपकी request तैयार है। WhatsApp पर details भेजें।</p><div class="aj-summary" id="ajSummary"></div><div class="aj-actions"><button class="aj-btn aj-btn-green" type="button" onclick="ajShareWhatsApp()">💬 WhatsApp पर Share करें</button><button class="aj-btn aj-btn-light" type="button" onclick="ajCloseModal()">बंद करें</button></div></div></div>\n</div></div></div>\n<script>\n(function(){const WA_NUMBER="917376999243",UPI_ID="7376999243-4@ybl";let currentService="",currentCategory="Service",requestData={};const q=id=>document.getElementById(id);function setStep(n){[1,2,3].forEach(x=>{q("ajStep"+x).classList.toggle("active",x===n);q("ajStep"+x+"Tab").classList.toggle("active",x===n)})}window.ajGoStep=setStep;window.ajOpenService=function(service,category){currentService=service;currentCategory=category||"Service";q("ajSelectedService").textContent=service;q("ajPaymentService").textContent=service;q("ajModalTitle").textContent="AJ Seva • "+service;q("ajServiceForm").reset();q("ajQty").value="1";q("ajUtr").value="";const tr=/TRAVEL|BOOKING/i.test(currentCategory);q("ajFromField").style.display=tr?"flex":"none";q("ajToField").style.display=tr?"flex":"none";q("ajServiceModal").classList.add("show");document.body.style.overflow="hidden";setStep(1)};window.ajCloseModal=function(){q("ajServiceModal").classList.remove("show");document.body.style.overflow="";setStep(1)};document.addEventListener("click",function(e){const card=e.target.closest(".work-apply-link");if(!card)return;e.preventDefault();const parent=card.closest(".service-category"),tag=parent&&parent.querySelector(".category-tag");ajOpenService(card.dataset.service||card.textContent.trim(),tag?tag.textContent.trim():"Service")});q("ajServiceForm").addEventListener("submit",function(e){e.preventDefault();const mobile=q("ajMobile").value.trim();if(!/^[6-9][0-9]{9}$/.test(mobile)){alert("कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।");return}requestData={service:currentService,category:currentCategory,name:q("ajName").value.trim(),mobile,address:q("ajAddress").value.trim(),date:q("ajDate").value,qty:q("ajQty").value,from:q("ajFrom").value.trim(),to:q("ajTo").value.trim(),details:q("ajDetails").value.trim(),amount:q("ajAmount").value};q("ajPayAmount").textContent=requestData.amount;q("ajPaymentService").textContent=currentService;const upi="upi://pay?pa="+encodeURIComponent(UPI_ID)+"&pn="+encodeURIComponent("AJ Seva")+"&am="+encodeURIComponent(requestData.amount)+"&cu=INR";q("ajPaymentQr").src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(upi);setStep(2)});window.ajCompletePayment=function(){const utr=q("ajUtr").value.trim();if(!utr){alert("कृपया Payment के बाद UTR / Transaction ID दर्ज करें।");return}requestData.utr=utr;requestData.requestId="AJ"+Date.now().toString().slice(-8);q("ajSummary").innerHTML='<div><span>Request ID</span><strong>'+esc(requestData.requestId)+'</strong></div><div><span>Service</span><strong>'+esc(requestData.service)+'</strong></div><div><span>Name</span><strong>'+esc(requestData.name)+'</strong></div><div><span>Mobile</span><strong>'+esc(requestData.mobile)+'</strong></div><div><span>Payment</span><strong>₹'+esc(requestData.amount)+'</strong></div><div><span>UTR</span><strong>'+esc(requestData.utr)+'</strong></div>';try{const a=JSON.parse(localStorage.getItem("ajseva_orders")||"[]");a.unshift({...requestData,time:new Date().toLocaleString("hi-IN")});localStorage.setItem("ajseva_orders",JSON.stringify(a.slice(0,30)))}catch(err){}setStep(3)};window.ajShareWhatsApp=function(){const lines=["AJ Seva Request","","Request ID: "+requestData.requestId,"Category: "+requestData.category,"Service: "+requestData.service,"Name: "+requestData.name,"Mobile: "+requestData.mobile,"Address: "+requestData.address,requestData.date?"Date: "+requestData.date:"",requestData.qty?"Quantity/Passengers: "+requestData.qty:"",requestData.from?"From: "+requestData.from:"",requestData.to?"To: "+requestData.to:"",requestData.details?"Details: "+requestData.details:"","Payment: ₹"+requestData.amount,"UTR: "+requestData.utr].filter(Boolean);window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(lines.join("\n")),"_blank")};function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}q("ajServiceModal").addEventListener("click",e=>{if(e.target===q("ajServiceModal"))ajCloseModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")ajCloseModal()})})();\n</script>\n</body>
 </html>
