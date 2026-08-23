@@ -3,126 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#081B33">
-<meta name="description" content="AJ Seva - आशीष जन सेवा केंद्र | Digital Services, Travel & Booking">
+<meta name="theme-color" content="#071a33">
+<meta name="description" content="AJ Seva - Digital Services, Travel, Ticket Booking, Recharge and Online Application">
 <title>AJ Seva | आशीष जन सेवा केंद्र</title>
 <style>
 :root{
-  --navy:#081B33;--navy2:#0D3157;--blue:#1769E0;
-  --green:#07865B;--green2:#0BAE78;--gold:#D9A52B;
-  --bg:#F5F7FA;--card:#fff;--text:#172033;--muted:#667085;
-  --line:#E1E7EF;--shadow:0 14px 38px rgba(8,27,51,.08);
-  --r:22px
+  --navy:#071a33; --navy2:#0d2d52; --blue:#1769e0; --blue2:#2b83ff;
+  --gold:#f6c64d; --green:#19a66a; --bg:#f5f8fc; --card:#ffffff;
+  --text:#13233d; --muted:#64748b; --line:#e2e8f0; --soft:#eef5ff;
+  --shadow:0 16px 45px rgba(11,35,64,.10); --radius:22px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;line-height:1.55}
-a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}
-.container{width:min(1160px,92%);margin:auto}
-
-/* HEADER */
-.top{background:var(--navy);color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 8px 25px rgba(0,0,0,.14)}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:11px}
-.logo{width:45px;height:45px;border-radius:14px;background:linear-gradient(145deg,#fff,#dfeaf5);color:var(--navy);display:grid;place-items:center;font-weight:1000;font-size:19px}
-.brand b{font-size:20px}.brand small{display:block;color:#cbd9e7;font-size:10px}
-.navlinks{display:flex;gap:4px}.navlinks a{padding:9px 11px;border-radius:10px;font-size:13px;color:#eaf1f8}.navlinks a:hover{background:rgba(255,255,255,.1)}
-.menu{display:none;background:none;border:1px solid #46627d;color:#fff;border-radius:9px;padding:7px 10px}
-
-/* HERO */
-.hero{background:radial-gradient(circle at 82% 15%,rgba(11,174,120,.25),transparent 28%),linear-gradient(135deg,#06172c,#0b3155 60%,#10416d);color:#fff;padding:58px 0 50px;overflow:hidden}
-.heroGrid{display:grid;grid-template-columns:1.25fr .75fr;gap:38px;align-items:center}
-.kicker{display:inline-flex;padding:7px 11px;border:1px solid rgba(255,255,255,.2);border-radius:30px;background:rgba(255,255,255,.08);font-size:11px;font-weight:800;color:#dce8f3}
-.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.08;margin:15px 0 13px;letter-spacing:-1.2px}
-.hero h1 span{color:#72E0B7}.hero p{color:#d7e4ef;max-width:670px;font-size:16px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:850;display:inline-flex;align-items:center;justify-content:center;gap:7px}
-.btnWhite{background:#fff;color:var(--navy)}.btnGreen{background:var(--green2);color:#fff}.btnBlue{background:var(--blue);color:#fff}.btnLight{background:#eef2f7;color:#26364a}
-.heroCard{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:24px;backdrop-filter:blur(10px)}
-.heroCard .mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px}.stat b{display:block;font-size:18px}.stat span{font-size:11px;color:#cbd9e7}
-
-/* COMMON */
-section{padding:26px 0}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}.sectionHead h2{margin:0;font-size:27px;color:var(--navy)}.sectionHead p{margin:4px 0 0;color:var(--muted);font-size:13px}
-.panel{background:#fff;border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:var(--shadow)}
-.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.quick a{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:0 6px 18px rgba(8,27,51,.04);transition:.18s}.quick a:hover{transform:translateY(-3px);box-shadow:0 11px 24px rgba(8,27,51,.08)}
-.quick i{font-style:normal;font-size:23px}.quick b{display:block;margin-top:4px;font-size:13px}.quick small{color:var(--muted);font-size:10px}
-
-/* CATEGORY */
-.category{margin-top:16px;border:1px solid var(--line);border-radius:23px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
-.catHead{display:flex;align-items:center;gap:14px;padding:19px 21px;background:linear-gradient(135deg,#f7fbff,#edf5fb);border-bottom:1px solid var(--line)}
-.category:nth-child(2) .catHead{background:linear-gradient(135deg,#fffdf7,#fff6df)}
-.category:nth-child(3) .catHead{background:linear-gradient(135deg,#f8fbff,#eef4ff)}
-.catIcon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:#eaf8f3}.category:nth-child(2) .catIcon{background:#fff1cd}.category:nth-child(3) .catIcon{background:#eaf1ff}
-.catHead b{font-size:21px;color:var(--navy)}.catHead span{display:block;font-size:11px;color:var(--muted)}
-.catBody{padding:18px 20px}
-.serviceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.serviceGrid a{min-height:49px;border:1px solid #e1e8ef;background:#fbfcfe;border-radius:12px;padding:11px 13px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:650;transition:.18s}
-.serviceGrid a:after{content:"›";margin-left:auto;color:#91a0ae;font-size:19px}.serviceGrid a:hover{background:#eff9f5;border-color:#b9e2d2;color:var(--green);transform:translateX(2px)}
-.travelGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.travelGrid a{min-height:68px;border:1px solid #eee0bb;background:#fffdf7;border-radius:14px;padding:13px;display:flex;align-items:center;gap:10px;font-weight:700}.travelGrid a:hover{background:#fff6df;border-color:#e3c66d}
-.bookingGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.bookingGrid a{min-height:92px;border:1px solid #dce6f6;background:#f8fbff;border-radius:16px;padding:17px;display:flex;flex-direction:column;justify-content:center;gap:5px;font-weight:850}.bookingGrid a span{font-size:11px;color:var(--muted);font-weight:500}.bookingGrid a:hover{background:#edf4ff;border-color:#b9cbe8}
-.catFoot{padding:0 20px 20px}.catFoot .btn{width:100%}
-
-/* WHY / FOOTER */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feature{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px}.feature b{display:block;color:var(--navy);margin-bottom:4px}.feature p{margin:0;color:var(--muted);font-size:12px}
-footer{margin-top:28px;background:#06172c;color:#d5e1ec;border-top:4px solid var(--gold);padding:30px 0}.footerGrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:25px}.footerGrid h3,.footerGrid h4{color:#fff;margin:0 0 9px}.footerGrid p,.footerGrid a{font-size:12px;color:#b9c9d8}.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:22px;padding-top:15px;font-size:11px;color:#9fb0c1}
-
-/* MODAL */
-.modal{position:fixed;inset:0;background:rgba(4,16,31,.68);backdrop-filter:blur(4px);z-index:5000;display:none;align-items:center;justify-content:center;padding:10px}.modal.show{display:flex}
-.box{width:min(760px,100%);max-height:94vh;overflow:auto;background:#fff;border-radius:24px;box-shadow:0 28px 80px rgba(0,0,0,.3)}
-.modalHead{position:sticky;top:0;z-index:3;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:17px 20px;display:flex;align-items:center;justify-content:space-between}.modalHead h3{margin:0;font-size:18px}.close{width:35px;height:35px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:23px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px 18px 0}.step{padding:7px;text-align:center;border-radius:8px;background:#edf1f5;color:#718096;font-size:11px;font-weight:800}.step.on{background:#e9f8f3;color:var(--green)}
-.pane{display:none;padding:19px}.pane.on{display:block}.selected{padding:11px 13px;background:#f5f8fb;border:1px solid var(--line);border-radius:12px;font-weight:800;margin-bottom:14px}
-.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:850;color:#344054}.field input,.field textarea,.field select{border:1px solid #d6e0e9;border-radius:11px;padding:10px 11px;outline:0;background:#fff}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(11,174,120,.1)}
-.pay{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:center}.qr{border:1px solid var(--line);border-radius:17px;padding:11px;text-align:center}.qr img{width:100%;max-width:190px}.upi{font-weight:900;color:var(--blue);background:#f4f8ff;border:1px dashed #a9bdd7;border-radius:9px;padding:9px;word-break:break-all}.note{font-size:11px;color:var(--muted)}
-.success{text-align:center;padding:20px}.check{width:68px;height:68px;margin:auto;border-radius:50%;background:#e8f8ef;color:var(--green);display:grid;place-items:center;font-size:38px}.summary{text-align:left;border:1px solid var(--line);background:#f8fafc;border-radius:13px;padding:12px;margin:14px 0}.summary div{display:flex;justify-content:space-between;padding:4px;font-size:12px}.modalActions{display:flex;gap:9px;margin-top:15px}.modalActions .btn{flex:1}
-
-/* MOBILE */
-@media(max-width:850px){.heroGrid{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.footerGrid{grid-template-columns:1fr 1fr}.navlinks{display:none}.menu{display:block}}
-@media(max-width:600px){.nav{min-height:64px}.brand b{font-size:17px}.hero{padding:40px 0}.hero h1{font-size:36px}.panel{padding:17px;border-radius:20px}.serviceGrid,.travelGrid,.bookingGrid{grid-template-columns:1fr}.catHead{padding:16px}.catBody{padding:14px}.formGrid,.pay{grid-template-columns:1fr}.field.full{grid-column:auto}.modalActions{flex-direction:column}.footerGrid{grid-template-columns:1fr}.sectionHead{display:block}.sectionHead h2{font-size:23px}}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
+.topbar{background:#061326;color:#dbeafe;font-size:13px}
+.topbar .container{display:flex;justify-content:space-between;gap:15px;padding:9px 0}
+header{position:sticky;top:0;z-index:50;background:rgba(7,26,51,.94);backdrop-filter:blur(16px);box-shadow:0 8px 28px rgba(0,0,0,.12)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.logo{width:48px;height:48px;border-radius:15px;background:#fff;color:#0c3b78;display:grid;place-items:center;font-weight:900;font-size:19px}
+.brand strong{display:block;font-size:20px}.brand small{color:#bcd0e8}
+.navlinks{display:flex;gap:6px;align-items:center}
+.navlinks a{color:#dbeafe;padding:10px 13px;border-radius:11px;font-size:14px}
+.navlinks a:hover{background:rgba(255,255,255,.10)}
+.appBtn,.goldBtn,.blueBtn,.greenBtn{border:0;cursor:pointer;font-weight:800;border-radius:13px;padding:12px 17px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.appBtn{background:var(--gold);color:#09203a}
+.goldBtn{background:var(--gold);color:#09203a}.blueBtn{background:var(--blue);color:#fff}.greenBtn{background:var(--green);color:#fff}
+.menu{display:none;background:transparent;border:1px solid #49627d;color:#fff;border-radius:10px;padding:8px 11px}
+.hero{background:linear-gradient(135deg,#071a33 0%,#0c315a 55%,#1257a0 100%);color:#fff;padding:62px 0 70px;overflow:hidden}
+.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
+.kicker{display:inline-flex;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.7px}
+h1{font-size:clamp(38px,5vw,64px);line-height:1.04;margin:17px 0}
+.hero h1 span{color:#f7cf63}.hero p{font-size:18px;line-height:1.8;color:#d9e7f7;max-width:700px}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.heroCard{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:28px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.16)}
+.appPreview{background:#fff;border-radius:22px;padding:18px;color:var(--text)}
+.previewHead{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding-bottom:13px}
+.previewLogo{width:42px;height:42px;border-radius:12px;background:#eaf2ff;display:grid;place-items:center;font-weight:900;color:#1452a1}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:15px}
+.quick div{background:#f6f8fb;border-radius:14px;padding:12px 5px;text-align:center;font-size:11px}
+.quick b{display:block;font-size:20px;margin-bottom:5px}
+.section{padding:62px 0}
+.sectionHead{text-align:center;margin-bottom:30px}
+.eyebrow{color:#168657;font-size:12px;font-weight:900;letter-spacing:1.5px}
+.sectionHead h2{font-size:clamp(28px,4vw,40px);margin:8px 0}
+.sectionHead p{color:var(--muted);margin:0 auto;max-width:720px;line-height:1.7}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:var(--shadow)}
+.serviceGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.service{background:#f8fbff;border:1px solid #dce7f4;border-radius:16px;padding:16px;text-align:left;cursor:pointer;transition:.22s;min-height:92px}
+.service:hover{transform:translateY(-3px);border-color:#8bb8f5;box-shadow:0 10px 24px rgba(23,105,224,.10)}
+.icon{font-size:25px;margin-bottom:9px}.service b{font-size:14px}.service small{display:block;color:var(--muted);margin-top:4px}
+.travelGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.travel{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.travelTop{height:150px;background:linear-gradient(135deg,#e9f2ff,#f9fbff);display:grid;place-items:center;font-size:65px}
+.travelBody{padding:18px}.travelBody h3{margin:0 0 8px}.travelBody p{color:var(--muted);font-size:14px;line-height:1.6}.price{color:#07844e;font-weight:900;margin:12px 0}
+.bookingGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.booking{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;text-align:center;box-shadow:var(--shadow)}
+.booking .big{font-size:45px}
+.featureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.feature{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 25px rgba(10,30,60,.06)}
+.feature b{display:block;margin:8px 0}.feature p{font-size:13px;color:var(--muted);line-height:1.6}
+.download{background:linear-gradient(135deg,#0a2342,#104e8f);color:#fff;border-radius:28px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.download p{color:#c9ddf3;line-height:1.6}.downloadActions{display:flex;gap:10px;flex-wrap:wrap}
+footer{background:#061326;color:#c7d6e8;padding:40px 0 25px;margin-top:20px}
+.footerGrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+footer h3{color:#fff;margin-top:0}.footerLinks a{display:block;margin:9px 0;color:#b9cbe0;font-size:14px}
+.copy{text-align:center;border-top:1px solid #203650;margin-top:25px;padding-top:18px;font-size:13px;color:#8ea4bd}
+.modal{position:fixed;inset:0;background:rgba(3,13,27,.65);display:none;align-items:center;justify-content:center;padding:18px;z-index:100}
+.modal.show{display:flex}.modalBox{width:min(680px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:25px;padding:25px;box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.modalHead{display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:18px}
+.close{border:0;background:#eef2f7;border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:20px}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-weight:700;font-size:13px}
+.field input,.field select,.field textarea{border:1px solid #d8e1eb;border-radius:12px;padding:12px;outline:0;background:#fbfdff}
+.field textarea{min-height:90px;resize:vertical}
+.formActions{display:flex;gap:10px;margin-top:17px;flex-wrap:wrap}
+.toast{position:fixed;right:18px;bottom:18px;background:#071a33;color:#fff;padding:14px 18px;border-radius:13px;display:none;z-index:150}
+.toast.show{display:block}
+@media(max-width:900px){
+ .heroGrid{grid-template-columns:1fr}.serviceGrid{grid-template-columns:repeat(3,1fr)}.featureGrid{grid-template-columns:repeat(2,1fr)}
+ .navlinks{display:none;position:absolute;left:0;right:0;top:76px;background:#071a33;padding:12px 16px;flex-direction:column;align-items:stretch}
+ .navlinks.show{display:flex}.menu{display:block}.appBtn{display:none}
+}
+@media(max-width:650px){
+ .container{width:min(100% - 22px,1180px)}.topbar{display:none}.nav{min-height:68px}
+ .hero{padding:42px 0}.hero p{font-size:16px}.quick{grid-template-columns:repeat(2,1fr)}
+ .serviceGrid,.travelGrid,.bookingGrid,.featureGrid{grid-template-columns:1fr 1fr}
+ .section{padding:44px 0}.panel{padding:14px}.download{display:block;padding:22px}.downloadActions{margin-top:17px}
+ .footerGrid{grid-template-columns:1fr 1fr}.formGrid{grid-template-columns:1fr}.field.full{grid-column:auto}
+}
+@media(max-width:420px){.serviceGrid,.travelGrid,.bookingGrid,.featureGrid,.footerGrid{grid-template-columns:1fr}.heroActions a{width:100%}}
 </style>
-
-<style id="aj-app-like-v18">
-/* APP-LIKE SMOOTH UI */
-body{font-family:"Noto Sans Devanagari","Segoe UI",system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-*{scrollbar-width:thin}
-.btn,.quick a,.serviceGrid a,.travelGrid a,.bookingGrid a,.navlinks a,.feature{
- transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease;
-}
-.appDownload{
- margin-top:18px;padding:16px 17px;border:1px solid rgba(255,255,255,.16);
- background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.055));
- border-radius:18px;display:flex;align-items:center;gap:13px;max-width:590px;
-}
-.appIcon{width:45px;height:45px;border-radius:13px;background:#fff;color:#0B1F33;display:grid;place-items:center;font-weight:1000}
-.appDownload b{display:block;font-size:14px}.appDownload small{display:block;color:#cbd9e7;font-size:11px;margin-top:2px}
-.appDownload .downloadBtn{margin-left:auto;white-space:nowrap;background:#F3C65B;color:#081B33;border:0;border-radius:11px;padding:10px 13px;font-weight:900;cursor:pointer}
-.appDownload .downloadBtn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.18)}
-.appBanner{
- background:linear-gradient(135deg,#081B33,#0D3157);
- color:#fff;border-radius:24px;padding:22px;margin-top:18px;
- display:flex;align-items:center;justify-content:space-between;gap:18px;
- box-shadow:0 14px 35px rgba(8,27,51,.10);
-}
-.appBanner p{margin:3px 0 0;color:#cad8e6;font-size:12px}
-.appBanner .btn{background:#fff;color:#081B33;white-space:nowrap}
-@media(max-width:600px){
- .appDownload{align-items:flex-start}.appDownload .downloadBtn{margin-left:auto}
- .appBanner{display:block}.appBanner .btn{margin-top:12px;width:100%}
-}
-</style>
-
 </head>
 <body>
 
-<header class="top">
+<div class="topbar"><div class="container"><span>आशीष जन सेवा केंद्र • Digital Services & Travel</span><span>☎ 7376999243</span></div></div>
+
+<header>
  <div class="container nav">
-  <a class="brand" href="#home"><div class="logo">AJ</div><div><b>AJ Seva</b><small>आशीष जन सेवा केंद्र</small></div></a>
-  <nav class="navlinks">
-   <a href="#services">Digital Seva</a><a href="#travel">Travel</a><a href="#booking">Booking</a><a href="#app">App</a><a href="#about">About</a>
+  <a class="brand" href="#home">
+   <span class="logo">AJ</span>
+   <span><strong>AJ Seva</strong><small>आशीष जन सेवा केंद्र</small></span>
+  </a>
+  <nav class="navlinks" id="navlinks">
+   <a href="#services">Digital Seva</a><a href="#travel">Travel</a><a href="#booking">Booking</a><a href="#features">Features</a><a href="#support">Support</a>
   </nav>
-  <button class="menu" onclick="document.querySelector('.navlinks').style.display=document.querySelector('.navlinks').style.display==='flex'?'none':'flex'">☰</button>
+  <div style="display:flex;gap:8px;align-items:center">
+   <a class="appBtn" href="AJ-Seva.apk" download>📲 AJ Seva v1.0.0</a>
+   <button class="menu" onclick="document.getElementById('navlinks').classList.toggle('show')">☰</button>
+  </div>
  </div>
 </header>
 
@@ -130,199 +122,152 @@ body{font-family:"Noto Sans Devanagari","Segoe UI",system-ui,Arial,sans-serif;-w
 <section class="hero">
  <div class="container heroGrid">
   <div>
-   <span class="kicker">DIGITAL SERVICES • TRAVEL • BOOKING</span>
+   <span class="kicker">AJ SEVA • SIMPLE • FAST • TRUSTED</span>
    <h1>आपका काम,<br><span>एक ही जगह।</span></h1>
-   <p>AJ Seva पर डिजिटल सेवाएँ, यात्रा पैकेज और Train • Bus • Flight booking सहायता — सरल, तेज़ और व्यवस्थित तरीके से।</p>
-   <div class="actions"><a class="btn btnWhite" href="#services">सेवाएँ देखें →</a><a class="btn btnGreen" href="tel:+917376999243">☎ संपर्क करें</a></div>
-   <div class="appDownload">
-    <div class="appIcon">AJ</div>
-    <div><b>AJ Seva App</b><small>Website की तरह सभी सेवाएँ App में भी</small></div>
-    <a class="downloadBtn" href="AJ-Seva.apk" download>⬇ App Download</a>
+   <p>Digital Seva, Travel Packages, Train • Bus • Flight Booking, Recharge और customer support — एक smooth और आसान platform पर।</p>
+   <div class="heroActions">
+    <a class="goldBtn" href="#services">सेवाएँ देखें →</a>
+    <a class="blueBtn" style="background:#fff;color:#0b356e" href="AJ-Seva.apk" download>📲 AJ Seva App</a>
+    <a class="greenBtn" href="https://wa.me/917376999243" target="_blank">WhatsApp</a>
    </div>
   </div>
   <div class="heroCard">
-   <b style="font-size:18px">AJ Seva Service Desk</b>
-   <p style="font-size:12px">ऑनलाइन आवेदन और booking request भेजें। Form भरें, QR से payment करें और request WhatsApp पर share करें।</p>
-   <div class="mini"><div class="stat"><b>30+</b><span>Digital Services</span></div><div class="stat"><b>24×7</b><span>Online Request</span></div></div>
+   <div class="appPreview">
+    <div class="previewHead"><div class="previewLogo">AJ</div><div><b>AJ Seva</b><small style="display:block;color:#64748b">आशीष जन सेवा केंद्र</small></div></div>
+    <div class="quick">
+     <div><b>📄</b>सेवाएँ</div><div><b>🎫</b>Booking</div><div><b>💳</b>Wallet</div><div><b>🎧</b>सहायता</div>
+    </div>
+    <div style="margin-top:14px;background:#eef8f2;border-radius:14px;padding:14px"><b>🔒 सुरक्षित सेवा</b><br><small style="color:#64748b">Application • Payment • Support</small></div>
+   </div>
   </div>
  </div>
 </section>
 
-<section>
+<section class="section" id="services">
  <div class="container">
-  <div class="sectionHead"><div><h2>Quick Access</h2><p>सबसे ज्यादा इस्तेमाल होने वाली सेवाएँ</p></div></div>
-  <div class="quick">
-   <a href="#services"><i>🪪</i><b>PAN Card</b><small>Apply online</small></a>
-   <a href="#services"><i>🧾</i><b>Certificate</b><small>Income / Caste / Residence</small></a>
-   <a href="#travel"><i>🛕</i><b>Tour Packages</b><small>Travel assistance</small></a>
-   <a href="#booking"><i>🎫</i><b>Ticket Booking</b><small>Train / Bus / Flight</small></a>
-  </div>
+  <div class="sectionHead"><div class="eyebrow">DIGITAL SEVA</div><h2>डिजिटल सेवाएँ</h2><p>जिस सेवा की जरूरत है उस पर क्लिक करें और आवेदन request भेजें।</p></div>
+  <div class="panel"><div class="serviceGrid" id="serviceGrid"></div></div>
  </div>
 </section>
 
-<section id="services">
+<section class="section" id="travel">
  <div class="container">
-  <div class="sectionHead"><div><h2>हमारी सेवाएँ</h2><p>जिस सेवा की जरूरत हो, उस पर क्लिक करके आवेदन शुरू करें।</p></div></div>
-  <div class="category">
-   <div class="catHead"><div class="catIcon">💻</div><div><b>Digital Seva</b><span>सरकारी और डिजिटल सेवाएँ • आवेदन सहायता</span></div></div>
-   <div class="catBody"><div class="serviceGrid" id="digitalGrid"></div></div>
-   <div class="catFoot"><button class="btn btnGreen" onclick="openService('Digital Seva','Digital')">Digital Seva Request शुरू करें</button></div>
-  </div>
+  <div class="sectionHead"><div class="eyebrow">TRAVEL DESK</div><h2>Travel & Tour Packages</h2><p>धार्मिक और लोकप्रिय यात्राओं के लिए package enquiry और booking सहायता।</p></div>
+  <div class="travelGrid" id="travelGrid"></div>
  </div>
 </section>
 
-<section id="travel">
+<section class="section" id="booking">
  <div class="container">
-  <div class="category">
-   <div class="catHead"><div class="catIcon">🧳</div><div><b>Travel & Tour</b><span>धार्मिक यात्रा • Tour Package • Travel Planning</span></div></div>
-   <div class="catBody"><div class="travelGrid" id="travelGrid"></div></div>
-   <div class="catFoot"><button class="btn" style="background:#A06D0A;color:#fff" onclick="openService('Travel Enquiry','Travel')">Travel Enquiry शुरू करें</button></div>
+  <div class="sectionHead"><div class="eyebrow">TICKET BOOKING</div><h2>Bus • Train • Flight</h2><p>केवल ticket booking requests के लिए तीन आसान विकल्प।</p></div>
+  <div class="bookingGrid">
+   <div class="booking"><div class="big">🚆</div><h3>Train Booking</h3><p style="color:#64748b">Train ticket enquiry और booking request</p><button class="blueBtn" onclick="openForm('Train Ticket Booking','Booking')">Booking करें</button></div>
+   <div class="booking"><div class="big">🚌</div><h3>Bus Booking</h3><p style="color:#64748b">Bus ticket enquiry और booking request</p><button class="blueBtn" onclick="openForm('Bus Ticket Booking','Booking')">Booking करें</button></div>
+   <div class="booking"><div class="big">✈️</div><h3>Flight Booking</h3><p style="color:#64748b">Flight ticket enquiry और booking request</p><button class="blueBtn" onclick="openForm('Flight Ticket Booking','Booking')">Booking करें</button></div>
   </div>
  </div>
 </section>
 
-<section id="booking">
+<section class="section">
  <div class="container">
-  <div class="category">
-   <div class="catHead"><div class="catIcon">🎫</div><div><b>Booking Service</b><span>Ticket request • Train • Bus • Flight</span></div></div>
-   <div class="catBody"><div class="bookingGrid" id="bookingGrid"></div></div>
+  <div class="download">
+   <div><div class="eyebrow" style="color:#f6c64d">AJ SEVA APP</div><h2 style="margin:8px 0">AJ Seva v1.0.0</h2><p>Website जैसी सुविधाएँ अब मोबाइल App में भी। Digital Seva, Travel, Booking और support को एक जगह से इस्तेमाल करें।</p></div>
+   <div class="downloadActions"><a class="goldBtn" href="AJ-Seva.apk" download>⬇️ App Download</a><a class="blueBtn" style="background:#fff;color:#0b356e" href="#support">सहायता</a></div>
   </div>
  </div>
 </section>
 
-
-<section id="app">
+<section class="section" id="features">
  <div class="container">
-  <div class="appBanner">
-   <div><strong style="font-size:18px">AJ Seva App भी इस्तेमाल करें</strong><p>Digital Seva, Travel और Booking को मोबाइल App में और आसान तरीके से इस्तेमाल करें।</p></div>
-   <a class="btn" href="AJ-Seva.apk" download>📲 AJ Seva App Download</a>
+  <div class="sectionHead"><div class="eyebrow">ONE PLATFORM</div><h2>AJ Seva की सुविधाएँ</h2></div>
+  <div class="featureGrid">
+   <div class="feature"><div class="icon">📄</div><b>Digital Services</b><p>PAN, Aadhaar, Ayushman, Voter, e-Shram, PF आदि की request सुविधा।</p></div>
+   <div class="feature"><div class="icon">🧳</div><b>Travel Packages</b><p>Ayodhya, Kedarnath, Vaishno Devi, Kashi, Rameshwaram आदि की enquiry।</p></div>
+   <div class="feature"><div class="icon">🎫</div><b>Ticket Booking</b><p>Train, Bus और Flight booking request एक ही जगह।</p></div>
+   <div class="feature"><div class="icon">💳</div><b>Payment & Wallet</b><p>Payment instructions, QR payment और transaction reference support।</p></div>
+   <div class="feature"><div class="icon">📦</div><b>Orders / Requests</b><p>आपकी service request की जानकारी और सहायता के लिए संपर्क सुविधा।</p></div>
+   <div class="feature"><div class="icon">🎁</div><b>Offers</b><p>उपलब्ध service offers और special deals की जानकारी।</p></div>
+   <div class="feature"><div class="icon">📱</div><b>WhatsApp Support</b><p>Application या booking details सीधे WhatsApp पर भेजने की सुविधा।</p></div>
+   <div class="feature"><div class="icon">🛡️</div><b>Simple & Secure</b><p>साफ़ interface और आसान steps ताकि हर customer आसानी से समझ सके।</p></div>
   </div>
  </div>
 </section>
-<section id="about">
- <div class="container panel">
-  <div class="sectionHead"><div><h2>क्यों AJ Seva?</h2><p>एक सरल और भरोसेमंद service-request experience</p></div></div>
-  <div class="features">
-   <div class="feature"><b>✓ आसान आवेदन</b><p>हर service के लिए एक साफ़ और mobile-friendly form।</p></div>
-   <div class="feature"><b>✓ QR Payment</b><p>Payment के लिए QR और UTR/Transaction ID दर्ज करने की सुविधा।</p></div>
-   <div class="feature"><b>✓ WhatsApp Share</b><p>Request पूरी होने पर details सीधे WhatsApp पर share करें।</p></div>
+
+<section class="section" id="support">
+ <div class="container">
+  <div class="sectionHead"><div class="eyebrow">CUSTOMER SUPPORT</div><h2>सहायता चाहिए?</h2><p>किसी भी service, booking या payment से जुड़ी जानकारी के लिए संपर्क करें।</p></div>
+  <div class="panel" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+   <div><b style="font-size:20px">📞 7376999243</b><p style="color:#64748b;margin-bottom:0">आशीष जन सेवा केंद्र</p></div>
+   <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="greenBtn" href="https://wa.me/917376999243" target="_blank">WhatsApp करें</a><a class="blueBtn" href="tel:+917376999243">Call करें</a></div>
   </div>
  </div>
 </section>
 </main>
 
 <footer>
- <div class="container">
-  <div class="footerGrid">
-   <div><h3>AJ Seva</h3><p>आशीष जन सेवा केंद्र</p><p>Digital Services • Travel • Booking</p></div>
-   <div><h4>Services</h4><a href="#services">Digital Seva</a><br><a href="#travel">Travel & Tour</a><br><a href="#booking">Train / Bus / Flight</a></div>
-   <div><h4>Contact</h4><a href="tel:+917376999243">7376999243</a><br><a href="https://wa.me/917376999243" target="_blank">WhatsApp</a></div>
-  </div>
-  <div class="copy">© 2026 AJ Seva • सभी अधिकार सुरक्षित</div>
+ <div class="container footerGrid">
+  <div><h3>AJ Seva</h3><p>आशीष जन सेवा केंद्र — Digital Services, Travel & Booking सहायता।</p></div>
+  <div><h3>Quick Links</h3><div class="footerLinks"><a href="#services">Digital Seva</a><a href="#travel">Travel</a><a href="#booking">Booking</a><a href="#features">Features</a></div></div>
+  <div><h3>Important</h3><div class="footerLinks"><a href="payment-refund-policy.html">Payment & Refund Policy</a><a href="privacy-policy.html">Privacy Policy</a><a href="#support">Customer Support</a></div></div>
  </div>
+ <div class="container copy">© 2026 AJ Seva • आशीष जन सेवा केंद्र • All Rights Reserved</div>
 </footer>
 
-<!-- APPLICATION MODAL -->
-<div class="modal" id="modal">
- <div class="box">
-  <div class="modalHead"><h3 id="modalTitle">AJ Seva आवेदन</h3><button class="close" onclick="closeModal()">×</button></div>
-  <div class="steps"><div class="step on" id="st1">1. विवरण</div><div class="step" id="st2">2. Payment</div><div class="step" id="st3">3. Success</div></div>
-
-  <div class="pane on" id="pane1">
-   <div class="selected">सेवा: <span id="selectedService">—</span></div>
-   <form id="form">
-    <div class="formGrid">
-     <div class="field"><label>नाम *</label><input id="name" required placeholder="पूरा नाम"></div>
-     <div class="field"><label>मोबाइल नंबर *</label><input id="mobile" required maxlength="10" inputmode="numeric" placeholder="10 अंकों का मोबाइल"></div>
-     <div class="field full"><label>पूरा पता *</label><textarea id="address" required rows="2" placeholder="गांव / पोस्ट / जिला / राज्य"></textarea></div>
-     <div class="field"><label>तारीख</label><input id="date" type="date"></div>
-     <div class="field"><label>Quantity / यात्रियों की संख्या</label><input id="qty" type="number" min="1" value="1"></div>
-     <div class="field" id="fromWrap"><label>From</label><input id="from" placeholder="कहाँ से"></div>
-     <div class="field" id="toWrap"><label>To</label><input id="to" placeholder="कहाँ तक"></div>
-     <div class="field full"><label>अतिरिक्त जानकारी</label><textarea id="details" rows="2" placeholder="जरूरी जानकारी / दस्तावेज / विशेष अनुरोध"></textarea></div>
-     <div class="field"><label>Payment राशि (₹) *</label><input id="amount" required type="number" min="0" placeholder="राशि"></div>
-    </div>
-    <div class="modalActions"><button class="btn btnBlue" type="submit">आगे बढ़ें → Payment</button></div>
-   </form>
-  </div>
-
-  <div class="pane" id="pane2">
-   <div class="selected">Payment: ₹<span id="payAmount">0</span> • <span id="payService"></span></div>
-   <div class="pay">
-    <div class="qr"><img id="qr" alt="Payment QR"><b style="font-size:11px">QR Scan करके Payment करें</b></div>
-    <div>
-     <p class="note">Payment के बाद UTR / Transaction ID दर्ज करें। UPI PIN, OTP या ATM PIN कभी साझा न करें।</p>
-     <div class="upi">7376999243-4@ybl</div>
-     <div class="field" style="margin-top:12px"><label>UTR / Transaction ID *</label><input id="utr" required placeholder="Payment के बाद UTR"></div>
-    </div>
+<div class="modal" id="formModal">
+ <div class="modalBox">
+  <div class="modalHead"><div><div class="eyebrow" id="formType">APPLICATION</div><h2 id="formTitle" style="margin:4px 0">आवेदन</h2></div><button class="close" onclick="closeForm()">×</button></div>
+  <form id="requestForm" onsubmit="submitForm(event)">
+   <div class="formGrid">
+    <div class="field"><label>नाम *</label><input id="name" required placeholder="पूरा नाम"></div>
+    <div class="field"><label>मोबाइल नंबर *</label><input id="mobile" required pattern="[0-9]{10}" placeholder="10 अंकों का मोबाइल"></div>
+    <div class="field full"><label>पता</label><input id="address" placeholder="पूरा पता"></div>
+    <div class="field"><label>सेवा / Booking</label><input id="selected" readonly></div>
+    <div class="field"><label>Payment Reference / UTR</label><input id="utr" placeholder="यदि payment किया है"></div>
+    <div class="field full"><label>अतिरिक्त जानकारी</label><textarea id="message" placeholder="जरूरी जानकारी लिखें"></textarea></div>
    </div>
-   <div class="modalActions"><button class="btn btnLight" onclick="goStep(1)">← वापस</button><button class="btn btnGreen" onclick="complete()">✓ Payment हो गया</button></div>
-  </div>
-
-  <div class="pane" id="pane3">
-   <div class="success"><div class="check">✓</div><h2 style="margin:8px 0 3px;color:var(--green)">Request Successful</h2><p class="note">आपकी request तैयार है। नीचे से WhatsApp पर share करें।</p><div class="summary" id="summary"></div><div class="modalActions"><button class="btn btnGreen" onclick="share()">💬 WhatsApp पर Share</button><button class="btn btnLight" onclick="closeModal()">बंद करें</button></div></div>
-  </div>
+   <div style="margin-top:15px;background:#f6f9fd;border:1px solid #e0e8f1;border-radius:14px;padding:13px;font-size:13px;color:#64748b">💳 Payment के लिए उपलब्ध QR / instructions का उपयोग करें। Payment के बाद UTR भरना उपयोगी रहेगा।</div>
+   <div class="formActions"><button class="blueBtn" type="submit">✓ Request Submit</button><button class="close" type="button" onclick="closeForm()">Cancel</button></div>
+  </form>
  </div>
 </div>
+<div class="toast" id="toast">Request तैयार है। WhatsApp खुल रहा है...</div>
 
 <script>
-const digital=[
- ["🪪","PAN Card"],["🆔","Aadhaar Services"],["💼","EPFO / PF Withdrawal"],["🏥","Ayushman Card"],["❤️","ABHA Card"],["🍚","Ration Card"],["🗳️","Voter Card"],["👷","E-Shram Card"],["🚔","Online FIR"],["🎂","Birth Certificate"],["📜","Life Certificate"],["👮","Police Character Certificate"],["🧰","New Labour Card"],["🚽","SBM Toilet Application"],["🌾","PM Kisan"],["🛠️","PM Vishwakarma"],["💰","Income Certificate"],["📄","Caste Certificate"],["🏠","Residence Certificate"],["🚗","Driving Licence"],["🛂","Passport Assistance"],["📑","Resume / Biodata"],["🖨️","PVC Aadhaar / PAN"],["💳","Other Digital Service"]
+const services=[
+ ["🪪","PAN Card","PAN आवेदन / correction"],["🆔","Aadhaar Services","Aadhaar सहायता"],["💗","Ayushman Card","Ayushman आवेदन"],["💟","ABHA Card","ABHA health ID"],["🍚","Ration Card","Ration card services"],["🗳️","Voter Card","Voter services"],["🧑‍🌾","e-Shram Card","e-Shram आवेदन"],["💼","EPFO / PF","PF related services"],["🚘","Driving Licence","DL services"],["🛂","Passport Assistance","Passport सहायता"],["👮","Police Character Certificate","Character certificate"],["🚨","Online FIR","Online FIR सहायता"],["👶","Birth Certificate","Birth certificate"],["📜","Life Certificate","Life certificate"],["👷","Labour Card","Labour card"],["🌾","PM Kisan","PM Kisan services"],["🛠️","PM Vishwakarma","Vishwakarma scheme"],["🚽","Toilet Scheme","SBM / toilet application"],["📄","Income Certificate","आय प्रमाण पत्र"],["📄","Caste Certificate","जाति प्रमाण पत्र"],["🏠","Residence Certificate","निवास प्रमाण पत्र"],["📝","Resume / Biodata","Resume बनवाएँ"]
 ];
-const travel=[
- ["🛕","Ayodhya Dham Tour"],["🔱","Kedarnath Yatra"],["🌺","Vaishno Devi Yatra"],["🕉️","Kashi / Varanasi Tour"],["🛕","Rameshwaram Tour"],["🌊","Kanyakumari Tour"],["🚆","Custom Tour Planning"],["🧳","Travel Assistance"]
+const travels=[
+ ["🛕","Ayodhya Dham","राम जन्मभूमि, हनुमानगढ़ी और प्रमुख स्थान","₹2200 / व्यक्ति"],
+ ["🔱","Kedarnath Yatra","धार्मिक यात्रा package enquiry","Package enquiry"],
+ ["🚩","Vaishno Devi Yatra","माता वैष्णो देवी यात्रा सहायता","Package enquiry"],
+ ["🕉️","Varanasi / Kashi Tour","काशी दर्शन और यात्रा planning","Package enquiry"],
+ ["🌊","Rameshwaram Tour","दक्षिण भारत यात्रा सहायता","Package enquiry"],
+ ["🌴","Kanyakumari Tour","Kanyakumari यात्रा planning","Package enquiry"]
 ];
-const booking=[
- ["🚆","Train Booking","Sleeper / General / Other"],["🚌","Bus Booking","Bus ticket assistance"],["✈️","Flight Booking","Domestic flight assistance"]
-];
-function render(){
- const dg=document.getElementById('digitalGrid'),tg=document.getElementById('travelGrid'),bg=document.getElementById('bookingGrid');
- dg.innerHTML=digital.map(x=>`<a href="#" onclick="openService('${x[1].replace(/'/g,"\\'")}','Digital');return false">${x[0]} ${x[1]}</a>`).join('');
- tg.innerHTML=travel.map(x=>`<a href="#" onclick="openService('${x[1].replace(/'/g,"\\'")}','Travel');return false"><span style="font-size:22px">${x[0]}</span><span>${x[1]}</span></a>`).join('');
- bg.innerHTML=booking.map(x=>`<a href="#" onclick="openService('${x[1]}','Booking');return false"><span style="font-size:25px">${x[0]}</span>${x[1]}<span>${x[2]}</span></a>`).join('');
-}
-render();
 
-let data={};
-function openService(service,type){
- data={service,type};
- document.getElementById('modalTitle').textContent='AJ Seva • '+service;
- document.getElementById('selectedService').textContent=service;
- document.getElementById('payService').textContent=service;
- document.getElementById('form').reset();
- document.getElementById('qty').value=1;
- document.getElementById('utr').value='';
- const travel=(type==='Travel'||type==='Booking');
- document.getElementById('fromWrap').style.display=travel?'flex':'none';
- document.getElementById('toWrap').style.display=travel?'flex':'none';
- document.getElementById('modal').classList.add('show');
- document.body.style.overflow='hidden';goStep(1);
+const sg=document.getElementById("serviceGrid");
+services.forEach(s=>{sg.innerHTML+=`<button class="service" onclick="openForm('${s[1]}','Digital Seva')"><div class="icon">${s[0]}</div><b>${s[1]}</b><small>${s[2]}</small></button>`});
+const tg=document.getElementById("travelGrid");
+travels.forEach(t=>{tg.innerHTML+=`<article class="travel"><div class="travelTop">${t[0]}</div><div class="travelBody"><h3>${t[1]}</h3><p>${t[2]}</p><div class="price">${t[3]}</div><button class="blueBtn" onclick="openForm('${t[1]}','Travel')">Enquiry / Booking</button></div></article>`});
+
+function openForm(title,type){
+ document.getElementById("formTitle").textContent=title;
+ document.getElementById("formType").textContent=type.toUpperCase();
+ document.getElementById("selected").value=title;
+ document.getElementById("formModal").classList.add("show");
+ document.body.style.overflow="hidden";
 }
-function closeModal(){document.getElementById('modal').classList.remove('show');document.body.style.overflow='';goStep(1)}
-function goStep(n){
- [1,2,3].forEach(i=>{document.getElementById('pane'+i).classList.toggle('on',i===n);document.getElementById('st'+i).classList.toggle('on',i===n)})
-}
-document.getElementById('form').addEventListener('submit',e=>{
+function closeForm(){document.getElementById("formModal").classList.remove("show");document.body.style.overflow=""}
+function submitForm(e){
  e.preventDefault();
- if(!/^[6-9]\d{9}$/.test(mobile.value.trim())){alert('सही 10 अंकों का मोबाइल नंबर दर्ज करें।');mobile.focus();return}
- data={...data,name:name.value.trim(),mobile:mobile.value.trim(),address:address.value.trim(),date:date.value,qty:qty.value,from:from.value.trim(),to:to.value.trim(),details:details.value.trim(),amount:amount.value};
- payAmount.textContent=data.amount;qr.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data='+encodeURIComponent('upi://pay?pa=7376999243-4@ybl&pn=AJ%20Seva&am='+data.amount+'&cu=INR');
- goStep(2);
-});
-function complete(){
- const u=utr.value.trim();if(!u){alert('UTR / Transaction ID दर्ज करें।');utr.focus();return}
- data.utr=u;data.id='AJ'+Date.now().toString().slice(-8);
- summary.innerHTML=`<div><span>Request ID</span><b>${esc(data.id)}</b></div><div><span>Service</span><b>${esc(data.service)}</b></div><div><span>Name</span><b>${esc(data.name)}</b></div><div><span>Mobile</span><b>${esc(data.mobile)}</b></div><div><span>Payment</span><b>₹${esc(data.amount)}</b></div><div><span>UTR</span><b>${esc(data.utr)}</b></div>`;
- try{let a=JSON.parse(localStorage.getItem('ajseva_requests')||'[]');a.unshift({...data,time:new Date().toLocaleString('hi-IN')});localStorage.setItem('ajseva_requests',JSON.stringify(a.slice(0,50)))}catch(e){}
- goStep(3);
+ const name=document.getElementById("name").value.trim(), mobile=document.getElementById("mobile").value.trim();
+ const selected=document.getElementById("selected").value, address=document.getElementById("address").value.trim();
+ const utr=document.getElementById("utr").value.trim(), msg=document.getElementById("message").value.trim();
+ const text=`AJ Seva Request%0A%0AService: ${encodeURIComponent(selected)}%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(mobile)}%0AAddress: ${encodeURIComponent(address)}%0APayment/UTR: ${encodeURIComponent(utr)}%0ADetails: ${encodeURIComponent(msg)}`;
+ document.getElementById("toast").classList.add("show");
+ setTimeout(()=>{document.getElementById("toast").classList.remove("show");closeForm();window.open("https://wa.me/917376999243?text="+text,"_blank")},500);
 }
-function share(){
- const t=['AJ Seva Request','',`Request ID: ${data.id}`,`Category: ${data.type}`,`Service: ${data.service}`,`Name: ${data.name}`,`Mobile: ${data.mobile}`,`Address: ${data.address}`,data.date?`Date: ${data.date}`:'',data.from?`From: ${data.from}`:'',data.to?`To: ${data.to}`:'',`Payment: ₹${data.amount}`,`UTR: ${data.utr}`].filter(Boolean).join('\n');
- open('https://wa.me/917376999243?text='+encodeURIComponent(t),'_blank');
-}
-function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.getElementById("formModal").addEventListener("click",e=>{if(e.target.id==="formModal")closeForm()});
 </script>
 </body>
 </html>
