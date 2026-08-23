@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#0B3D91" name="theme-color"/>
 <meta content="AJ Seva - आशीष जन सेवा केंद्र | Digital Services, Travel, Booking, Recharge, Payment और Customer Support" name="description"/>
-<title>AJ Seva Premium | आशीष जन सेवा केंद्र</title>
+<title>AJ Seva | Digital Services • Travel • Booking</title>
 <style>
 :root{
   --blue:#0B3D91;
@@ -1720,6 +1720,238 @@ footer a:hover{color:#F3C65B!important}
     grid-template-columns:1fr!important;
   }
   .hero-card{padding:20px!important}
+}
+</style>
+
+
+<style id="aj-custom-professional-v15">
+/* ===== CUSTOM PROFESSIONAL CATEGORY DESIGN ===== */
+.service-category-grid{
+  max-width:1180px!important;
+  margin:0 auto!important;
+}
+
+/* Common category shell */
+.service-category{
+  padding:0!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid #D9E3EC!important;
+  border-radius:24px!important;
+  box-shadow:0 12px 35px rgba(11,31,58,.07)!important;
+}
+.service-category:before{width:6px!important}
+
+/* Premium category header */
+.service-category .category-head{
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
+  align-items:center!important;
+  gap:16px!important;
+  padding:20px 22px!important;
+  margin:0!important;
+  background:linear-gradient(135deg,#F8FBFD,#EEF4F8)!important;
+  border-bottom:1px solid #E1E8EF!important;
+}
+.service-category:nth-child(2) .category-head{
+  background:linear-gradient(135deg,#FFFCF5,#FFF6DF)!important;
+}
+.service-category:nth-child(3) .category-head{
+  background:linear-gradient(135deg,#F7FAFF,#EEF4FF)!important;
+}
+.service-category .category-icon{
+  width:58px!important;height:58px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:17px!important;
+  font-size:28px!important;
+  box-shadow:0 7px 18px rgba(11,31,58,.07);
+}
+.service-category .category-tag{
+  margin:0 0 4px!important;
+  font-size:11px!important;
+  font-weight:900!important;
+}
+.service-category .category-head h3{
+  margin:0!important;
+  font-size:23px!important;
+  line-height:1.2!important;
+}
+.service-category .category-head p{
+  margin:5px 0 0!important;
+  max-width:620px!important;
+  line-height:1.5!important;
+}
+.service-category .category-head:after{
+  content:"EXPLORE  ›";
+  justify-self:end;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+  color:#087F5B;
+  background:#EAF8F3;
+  padding:8px 11px;
+  border-radius:20px;
+}
+.service-category:nth-child(2) .category-head:after{
+  content:"EXPLORE  ›";
+  color:#916209;
+  background:#FFF2CF;
+}
+.service-category:nth-child(3) .category-head:after{
+  content:"SELECT  ›";
+  color:#285DB9;
+  background:#EAF1FF;
+}
+
+/* Content area */
+.service-category .work-list{
+  margin:0!important;
+  padding:18px 20px!important;
+}
+.service-category .category-btn{
+  margin:0 20px 20px!important;
+  width:calc(100% - 40px)!important;
+}
+
+/* Digital: clean vertical service directory */
+.service-category:first-child .work-list{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:9px!important;
+}
+.service-category:first-child .work-list a{
+  position:relative!important;
+  min-height:50px!important;
+  padding:12px 15px 12px 18px!important;
+  border-radius:13px!important;
+  background:#FBFCFE!important;
+  border:1px solid #E2E9F0!important;
+  font-weight:600!important;
+  transition:all .18s ease!important;
+}
+.service-category:first-child .work-list a:after{
+  content:"›";
+  margin-left:auto;
+  color:#9AA9B7;
+  font-size:20px;
+  line-height:1;
+}
+.service-category:first-child .work-list a:hover{
+  transform:translateX(3px)!important;
+  background:#F0FAF6!important;
+  border-color:#B9E1D1!important;
+  box-shadow:0 5px 14px rgba(8,127,91,.08)!important;
+}
+
+/* Travel: tour package cards */
+.service-category:nth-child(2) .work-list{
+  display:grid!important;
+  grid-template-columns:repeat(2,1fr)!important;
+  gap:12px!important;
+}
+.service-category:nth-child(2) .work-list a{
+  min-height:66px!important;
+  padding:13px 15px!important;
+  border-radius:15px!important;
+  background:#FFFDF8!important;
+  border:1px solid #EEE1BF!important;
+  font-weight:650!important;
+  transition:.18s ease!important;
+}
+.service-category:nth-child(2) .work-list a:after{
+  content:"›";
+  margin-left:auto;
+  color:#B58A2C;
+  font-size:20px;
+}
+.service-category:nth-child(2) .work-list a:hover{
+  transform:translateY(-2px)!important;
+  background:#FFF7E5!important;
+  box-shadow:0 7px 18px rgba(154,105,10,.09)!important;
+}
+
+/* Booking: exactly three premium choices */
+.service-category:nth-child(3) .work-list{
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:13px!important;
+}
+.service-category:nth-child(3) .work-list a{
+  min-height:86px!important;
+  padding:17px!important;
+  border-radius:17px!important;
+  background:#F9FBFF!important;
+  border:1px solid #DCE6F5!important;
+  font-weight:750!important;
+  font-size:14px!important;
+  transition:.18s ease!important;
+}
+.service-category:nth-child(3) .work-list a:after{
+  content:"→";
+  margin-left:auto;
+  color:#285DB9;
+  font-size:20px;
+}
+.service-category:nth-child(3) .work-list a:hover{
+  transform:translateY(-3px)!important;
+  background:#EEF4FF!important;
+  border-color:#B9CBE8!important;
+  box-shadow:0 9px 20px rgba(40,93,185,.10)!important;
+}
+
+/* Category action button */
+.service-category .category-btn{
+  border-radius:13px!important;
+  min-height:46px!important;
+  font-weight:800!important;
+  letter-spacing:.1px;
+}
+.service-category:first-child .category-btn{
+  background:#087F5B!important;
+}
+.service-category:nth-child(2) .category-btn{
+  background:#A06D0A!important;
+}
+.service-category:nth-child(3) .category-btn{
+  background:#285DB9!important;
+}
+
+/* Small label below each category button */
+.service-category:first-child .category-btn:after{
+  content:"  •  आवेदन / सहायता";
+  font-weight:600;
+  opacity:.75;
+}
+.service-category:nth-child(2) .category-btn:after{
+  content:"  •  Tour enquiry";
+  font-weight:600;
+  opacity:.75;
+}
+.service-category:nth-child(3) .category-btn:after{
+  content:"  •  Ticket request";
+  font-weight:600;
+  opacity:.75;
+}
+
+/* Mobile */
+@media(max-width:720px){
+  .service-category .category-head{
+    grid-template-columns:auto 1fr!important;
+  }
+  .service-category .category-head:after{
+    grid-column:2!important;
+    justify-self:start!important;
+    margin-top:-8px!important;
+  }
+  .service-category:first-child .work-list,
+  .service-category:nth-child(2) .work-list{
+    grid-template-columns:1fr!important;
+  }
+  .service-category:nth-child(3) .work-list{
+    grid-template-columns:1fr!important;
+  }
 }
 </style>
 
