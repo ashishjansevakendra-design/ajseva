@@ -146,6 +146,26 @@ footer a{color:#dce5f2}
   .footer-grid{grid-template-columns:1fr}
   .contact{flex-direction:column;align-items:flex-start}
 }
+
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px}
+form label{display:block;font-weight:700;margin:0 0 6px}
+form input,form select,form textarea{
+  width:100%;padding:12px 13px;border:1px solid #d8e0ec;border-radius:10px;
+  font:inherit;background:#fff;color:#172033;outline:none;
+}
+form input:focus,form select:focus,form textarea:focus{
+  border-color:#1769E0;box-shadow:0 0 0 3px rgba(23,105,224,.10);
+}
+form textarea{resize:vertical;margin-bottom:14px}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+
+.service{display:block;color:inherit}
+.service .btn{color:#fff}
+
+.order-card{background:#fff;border:1px solid #e8edf5;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.order-status{display:inline-block;padding:5px 10px;border-radius:20px;background:#eaf8ef;color:#168a4a;font-size:12px;font-weight:800}
+.service h3{color:#172033}
+button.btn{font-family:inherit}
 </style>
 </head>
 <body>
@@ -162,6 +182,10 @@ footer a{color:#dce5f2}
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
+      <a href="#travel">Travel</a>
+      <a href="#booking">Booking</a>
+      <a href="#recharge">Recharge</a>
+      <a href="#application">आवेदन</a>
       <a href="#app">App</a>
       <a href="#legal">Policies</a>
       <a href="#contact">Contact</a>
@@ -207,24 +231,172 @@ footer a{color:#dce5f2}
   </div>
 </section>
 
+
 <section id="services">
   <div class="container">
     <h2 class="section-title">हमारी प्रमुख सेवाएँ</h2>
-    <p class="section-sub">डिजिटल और ऑनलाइन सेवाएँ एक ही जगह</p>
+    <p class="section-sub">AJ Seva App की तरह वेबसाइट से भी सीधे सेवा चुनें और आवेदन भेजें</p>
+
     <div class="services">
-      <div class="service"><div class="ico">💻</div><h3>Digital Services</h3><p>PAN, Aadhaar, Ayushman, e-Shram, certificates और अन्य ऑनलाइन सेवाएँ।</p></div>
-      <div class="service"><div class="ico">🧳</div><h3>Travel</h3><p>Travel packages और यात्रा संबंधी सहायता।</p></div>
-      <div class="service" id="booking"><div class="ico">🎫</div><h3>Ticket Booking</h3><p>Bus, Train और Flight Booking सहायता।</p></div>
-      <div class="service"><div class="ico">📱</div><h3>Mobile Recharge</h3><p>Mobile, DTH और अन्य Recharge सेवाएँ।</p></div>
-      <div class="service" id="payment"><div class="ico">💳</div><h3>Payment / Wallet</h3><p>Payment और Wallet सहायता।</p></div>
-      <div class="service"><div class="ico">🎁</div><h3>Offers</h3><p>AJ Seva के विशेष offers और service information।</p></div>
-      <div class="service"><div class="ico">🖼️</div><h3>Daily Gallery</h3><p>हमारे दैनिक कार्य और service updates।</p></div>
-      <div class="service"><div class="ico">➕</div><h3>अधिक सेवाएँ</h3><p>अन्य सेवाओं के लिए सीधे संपर्क करें।</p></div>
-      <div class="service"><div class="ico">📞</div><h3>Customer Support</h3><p>WhatsApp और मोबाइल सहायता उपलब्ध।</p></div>
+      <a class="service" href="#application"><div class="ico">💻</div><h3>Digital Services</h3><p>PAN, Aadhaar, Ayushman, e-Shram, certificates और अन्य ऑनलाइन सेवाएँ।</p></a>
+      <a class="service" href="#travel"><div class="ico">🧳</div><h3>Travel</h3><p>Tour packages और यात्रा संबंधी सहायता।</p></a>
+      <a class="service" href="#booking"><div class="ico">🎫</div><h3>Booking</h3><p>Train, Bus और Flight Booking के लिए आवेदन करें।</p></a>
+      <a class="service" href="#recharge"><div class="ico">📱</div><h3>Mobile Recharge</h3><p>Mobile और DTH Recharge के लिए विवरण भेजें।</p></a>
+      <a class="service" href="#payment"><div class="ico">💳</div><h3>Payment / Wallet</h3><p>Payment और Wallet सहायता के लिए संपर्क करें।</p></a>
+      <a class="service" href="#application"><div class="ico">📝</div><h3>आवेदन फॉर्म</h3><p>सेवा चुनकर अपना नाम और मोबाइल नंबर भेजें।</p></a>
+      <a class="service" href="#services"><div class="ico">🎁</div><h3>Offers</h3><p>AJ Seva के विशेष offers और service updates।</p></a>
+      <a class="service" href="#contact"><div class="ico">🖼️</div><h3>Daily Gallery</h3><p>हमारे दैनिक कार्य और service updates।</p></a>
+      <a class="service" href="#contact"><div class="ico">📞</div><h3>Customer Support</h3><p>WhatsApp और मोबाइल सहायता उपलब्ध।</p></a>
     </div>
   </div>
 </section>
 
+<section id="travel">
+  <div class="container">
+    <h2 class="section-title">🧳 Travel & Tour Packages</h2>
+    <p class="section-sub">यात्रा की जानकारी और बुकिंग सहायता के लिए पैकेज चुनें</p>
+
+    <div class="services">
+      <div class="service">
+        <div class="ico">🛕</div>
+        <h3>Ayodhya Dham</h3>
+        <p>श्री राम जन्मभूमि, हनुमानगढ़ी, कनक भवन, दशरथ महल, राम की पैड़ी और सरयू आरती।</p>
+        <a class="btn btn-blue" href="#booking" style="margin-top:14px">Booking करें</a>
+      </div>
+      <div class="service">
+        <div class="ico">🕉️</div>
+        <h3>Varanasi / Kashi</h3>
+        <p>काशी विश्वनाथ, घाट और वाराणसी यात्रा के लिए सहायता।</p>
+        <a class="btn btn-blue" href="#booking" style="margin-top:14px">Booking करें</a>
+      </div>
+      <div class="service">
+        <div class="ico">🏔️</div>
+        <h3>Kedarnath</h3>
+        <p>केदारनाथ यात्रा और यात्रा योजना के लिए संपर्क करें।</p>
+        <a class="btn btn-blue" href="#booking" style="margin-top:14px">जानकारी लें</a>
+      </div>
+      <div class="service">
+        <div class="ico">🙏</div>
+        <h3>Vaishno Devi</h3>
+        <p>वैष्णो देवी यात्रा के लिए Booking और सहायता।</p>
+        <a class="btn btn-blue" href="#booking" style="margin-top:14px">जानकारी लें</a>
+      </div>
+      <div class="service">
+        <div class="ico">🌊</div>
+        <h3>Rameshwaram</h3>
+        <p>रामेश्वरम यात्रा के लिए Tour और Booking सहायता।</p>
+        <a class="btn btn-blue" href="#booking" style="margin-top:14px">जानकारी लें</a>
+      </div>
+      <div class="service">
+        <div class="ico">🌴</div>
+        <h3>Kanyakumari</h3>
+        <p>कन्याकुमारी यात्रा के लिए योजना और Booking सहायता।</p>
+        <a class="btn btn-blue" href="#booking" style="margin-top:14px">जानकारी लें</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="container">
+    <h2 class="section-title">🎫 Booking Form</h2>
+    <p class="section-sub">Train, Bus, Flight या Tour Booking के लिए जानकारी भेजें</p>
+
+    <div class="policy" style="max-width:850px;margin:0 auto">
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div><label>नाम *</label><input required name="name" placeholder="अपना नाम"></div>
+          <div><label>मोबाइल नंबर *</label><input required name="mobile" type="tel" placeholder="10 अंकों का मोबाइल नंबर"></div>
+          <div><label>Booking Type *</label>
+            <select required name="type">
+              <option value="">चुनें</option>
+              <option>Train</option><option>Bus</option><option>Flight</option><option>Tour Package</option>
+            </select>
+          </div>
+          <div><label>यात्रियों की संख्या</label><input name="persons" type="number" min="1" value="1"></div>
+          <div><label>From</label><input name="from" placeholder="कहाँ से"></div>
+          <div><label>To</label><input name="to" placeholder="कहाँ तक"></div>
+          <div><label>यात्रा की तारीख</label><input name="date" type="date"></div>
+          <div><label>Class / Preference</label><input name="preference" placeholder="Sleeper / AC आदि"></div>
+        </div>
+        <label>अतिरिक्त जानकारी</label>
+        <textarea name="message" rows="4" placeholder="यात्रा या Booking से जुड़ी जानकारी"></textarea>
+        <button class="btn btn-blue" type="submit">📲 WhatsApp पर Booking भेजें</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="recharge">
+  <div class="container">
+    <h2 class="section-title">📱 Mobile Recharge</h2>
+    <p class="section-sub">Mobile या DTH Recharge के लिए विवरण भेजें</p>
+
+    <div class="policy" style="max-width:850px;margin:0 auto">
+      <form id="rechargeForm">
+        <div class="form-grid">
+          <div><label>ग्राहक का नाम *</label><input required name="name" placeholder="नाम"></div>
+          <div><label>मोबाइल नंबर *</label><input required name="mobile" type="tel" placeholder="जिस नंबर पर Recharge चाहिए"></div>
+          <div><label>Operator *</label>
+            <select required name="operator">
+              <option value="">चुनें</option>
+              <option>Airtel</option><option>Jio</option><option>Vi</option>
+              <option>BSNL</option><option>DTH</option><option>Other</option>
+            </select>
+          </div>
+          <div><label>Recharge Amount *</label><input required name="amount" type="number" min="1" placeholder="₹ राशि"></div>
+        </div>
+        <button class="btn btn-green" type="submit">📲 Recharge Request WhatsApp करें</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="application">
+  <div class="container">
+    <h2 class="section-title">📝 सेवा आवेदन फॉर्म</h2>
+    <p class="section-sub">अपनी जरूरत की सेवा चुनें और आवेदन की जानकारी WhatsApp पर भेजें</p>
+
+    <div class="policy" style="max-width:850px;margin:0 auto">
+      <form id="applicationForm">
+        <div class="form-grid">
+          <div><label>आवेदक का नाम *</label><input required name="name" placeholder="पूरा नाम"></div>
+          <div><label>मोबाइल नंबर *</label><input required name="mobile" type="tel" placeholder="मोबाइल नंबर"></div>
+          <div><label>सेवा चुनें *</label>
+            <select required name="service">
+              <option value="">सेवा चुनें</option>
+              <option>PAN Card</option>
+              <option>Aadhaar Service</option>
+              <option>Ayushman Card</option>
+              <option>e-Shram Card</option>
+              <option>Voter Card</option>
+              <option>Ration Card</option>
+              <option>Income Certificate</option>
+              <option>Caste Certificate</option>
+              <option>Residence Certificate</option>
+              <option>Birth Certificate</option>
+              <option>Driving Licence</option>
+              <option>Passport Assistance</option>
+              <option>Police Character Certificate</option>
+              <option>Online FIR</option>
+              <option>Life Certificate</option>
+              <option>Labour Card</option>
+              <option>PM Kisan</option>
+              <option>PM Vishwakarma</option>
+              <option>Toilet Scheme Application</option>
+              <option>Resume / Biodata</option>
+              <option>Other Service</option>
+            </select>
+          </div>
+          <div><label>जिला / स्थान</label><input name="location" placeholder="स्थान"></div>
+        </div>
+        <label>आवेदन से जुड़ी जानकारी</label>
+        <textarea name="message" rows="4" placeholder="आपको कौन-सी सहायता चाहिए?"></textarea>
+        <button class="btn btn-blue" type="submit">📲 आवेदन WhatsApp पर भेजें</button>
+      </form>
+    </div>
+  </div>
+</section>
 <section id="app">
   <div class="container">
     <div class="hero-card">
@@ -235,6 +407,115 @@ footer a{color:#dce5f2}
         अगर GitHub पर APK 25 MB से बड़ी है, तो APK को GitHub Release में upload करके
         नीचे वाले button के href को Release download link से replace करें।
       </p>
+    </div>
+  </div>
+</section>
+
+
+<section id="app-features">
+  <div class="container">
+    <h2 class="section-title">📲 AJ Seva App जैसा पूरा Dashboard</h2>
+    <p class="section-sub">App में मौजूद मुख्य Home, Booking, Travel, Payment, Offers, Orders और Support flow वेबसाइट में भी उपलब्ध है।</p>
+
+    <div class="quick-grid">
+      <a class="quick" href="#services"><div class="ico">📄</div><strong>सेवाएँ</strong></a>
+      <a class="quick" href="#booking"><div class="ico">🎫</div><strong>बुकिंग</strong></a>
+      <a class="quick" href="#wallet"><div class="ico">👛</div><strong>Wallet</strong></a>
+      <a class="quick" href="#orders"><div class="ico">🧾</div><strong>Orders</strong></a>
+      <a class="quick" href="#recharge"><div class="ico">📱</div><strong>Recharge</strong></a>
+      <a class="quick" href="#offers"><div class="ico">🎁</div><strong>Offers</strong></a>
+      <a class="quick" href="#gallery"><div class="ico">🖼️</div><strong>Daily Gallery</strong></a>
+      <a class="quick" href="#contact"><div class="ico">🎧</div><strong>सहायता</strong></a>
+    </div>
+  </div>
+</section>
+
+<section id="wallet">
+  <div class="container">
+    <h2 class="section-title">👛 Payment / Wallet</h2>
+    <p class="section-sub">App के Payment विकल्प की तरह UPI, QR और Wallet विकल्प</p>
+    <div class="legal-grid">
+      <div class="legal-card">
+        <h3>UPI Payment</h3>
+        <p><strong>UPI ID:</strong> 7376999243-4@ybl</p>
+        <button class="btn btn-blue" onclick="openUpiPayment()">💳 UPI Payment खोलें</button>
+      </div>
+      <div class="legal-card">
+        <h3>QR Code Payment</h3>
+        <p>QR Code से Payment करने के लिए सहायता लें।</p>
+        <a class="btn btn-outline" href="https://wa.me/917376999243?text=नमस्ते%20AJ%20Seva,%20मुझे%20QR%20Payment%20की%20जानकारी%20चाहिए।" target="_blank">📲 QR सहायता</a>
+      </div>
+      <div class="legal-card">
+        <h3>Wallet</h3>
+        <p>Wallet Payment विकल्प उपलब्ध होने पर Booking/Service Payment में उपयोग करें।</p>
+        <a class="btn btn-green" href="#payment">Wallet Payment</a>
+      </div>
+      <div class="legal-card">
+        <h3>Payment सुरक्षा</h3>
+        <p><strong>OTP, UPI PIN, CVV या ATM PIN किसी के साथ साझा न करें।</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="orders">
+  <div class="container">
+    <h2 class="section-title">🧾 My Orders / Booking</h2>
+    <p class="section-sub">इस browser में भेजी गई Booking और Requests की जानकारी</p>
+    <div id="ordersList" class="services"></div>
+    <div id="emptyOrders" class="policy" style="text-align:center">
+      <div style="font-size:45px">📋</div>
+      <h3>अभी कोई Order नहीं है</h3>
+      <p>Booking या आवेदन भेजने के बाद आपकी request यहाँ दिखाई जाएगी।</p>
+    </div>
+    <button class="btn btn-outline" onclick="clearOrders()">🗑️ Orders Clear करें</button>
+  </div>
+</section>
+
+<section id="offers">
+  <div class="container">
+    <h2 class="section-title">🎁 आज के ऑफर</h2>
+    <p class="section-sub">AJ Seva के विशेष ऑफर</p>
+    <div class="services">
+      <div class="service"><div class="ico">💻</div><h3>Digital Services</h3><p>सभी डिजिटल सेवाओं के लिए संपर्क करें।</p></div>
+      <div class="service"><div class="ico">🧳</div><h3>Travel Package</h3><p>Travel Package Booking उपलब्ध।</p></div>
+      <div class="service"><div class="ico">🎫</div><h3>Bus / Train / Flight</h3><p>Ticket Booking सहायता उपलब्ध।</p></div>
+      <div class="service"><div class="ico">💬</div><h3>WhatsApp सहायता</h3><p>आसान और तेज WhatsApp सहायता।</p><a class="btn btn-green" href="https://wa.me/917376999243" target="_blank">WhatsApp करें</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <h2 class="section-title">🖼️ Daily Gallery</h2>
+    <p class="section-sub">हमारा काम और service updates</p>
+    <div class="services">
+      <div class="service"><div class="ico">📸</div><h3>Daily Work</h3><p>दैनिक customer services और काम की gallery यहाँ दिखाई जा सकती है।</p></div>
+      <div class="service"><div class="ico">🛡️</div><h3>सुरक्षित सेवा</h3><p>हर सेवा में भरोसा और सहायता।</p></div>
+      <div class="service"><div class="ico">⚡</div><h3>तेज़ सेवा</h3><p>ऑनलाइन आवेदन और सहायता।</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="container">
+    <h2 class="section-title">👤 हमारे बारे में</h2>
+    <div class="policy">
+      <h3>AJ Seva – आशीष जन सेवा केंद्र</h3>
+      <p><strong>आपका भरोसेमंद डिजिटल सेवा केंद्र</strong></p>
+      <p>AJ Seva के माध्यम से सरकारी डिजिटल सेवाएँ, Travel Package, Ticket Booking, Payment/Wallet और अन्य ऑनलाइन सेवाओं की सुविधा एक ही जगह उपलब्ध कराने का उद्देश्य है।</p>
+      <h3>हमारा उद्देश्य</h3>
+      <p>ग्राहकों को आसान, तेज़ और भरोसेमंद डिजिटल सेवा उपलब्ध कराना।</p>
+      <p><strong>मोबाइल / WhatsApp: 7376999243</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="notifications">
+  <div class="container">
+    <div class="notice">
+      <h3 style="margin-top:0">🔔 Notifications</h3>
+      <p>आपकी Booking, Payment और Order की स्थिति देखने के लिए <a href="#orders"><strong>My Orders</strong></a> खोलें।</p>
     </div>
   </div>
 </section>
@@ -353,5 +634,126 @@ footer a{color:#dce5f2}
   </div>
 </footer>
 
+
+<script>
+const WA_NUMBER = "917376999243";
+
+function sendToWhatsApp(title, data) {
+  const lines = [title, ""];
+  Object.entries(data).forEach(([key, value]) => {
+    if (value !== undefined && String(value).trim() !== "") {
+      lines.push(`${key}: ${value}`);
+    }
+  });
+  const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+  window.open(url, "_blank");
+}
+
+function formDataObject(form) {
+  const obj = {};
+  new FormData(form).forEach((value, key) => {
+    obj[key] = value;
+  });
+  return obj;
+}
+
+document.getElementById("bookingForm")?.addEventListener("submit", function(e){
+  e.preventDefault();
+  const d = formDataObject(this);
+  saveAndSend("🎫 AJ Seva Booking Request", {
+    "नाम": d.name,
+    "मोबाइल": d.mobile,
+    "Booking Type": d.type,
+    "यात्री": d.persons,
+    "From": d.from,
+    "To": d.to,
+    "तारीख": d.date,
+    "Class / Preference": d.preference,
+    "अतिरिक्त जानकारी": d.message
+  });
+});
+
+document.getElementById("rechargeForm")?.addEventListener("submit", function(e){
+  e.preventDefault();
+  const d = formDataObject(this);
+  saveAndSend("📱 AJ Seva Recharge Request", {
+    "नाम": d.name,
+    "मोबाइल": d.mobile,
+    "Operator": d.operator,
+    "Recharge Amount": "₹" + d.amount
+  });
+});
+
+document.getElementById("applicationForm")?.addEventListener("submit", function(e){
+  e.preventDefault();
+  const d = formDataObject(this);
+  saveAndSend("📝 AJ Seva Service Application", {
+    "आवेदक का नाम": d.name,
+    "मोबाइल": d.mobile,
+    "सेवा": d.service,
+    "स्थान": d.location,
+    "आवेदन जानकारी": d.message
+  });
+});
+</script>
+
+<script>
+const AJ_WA = "917376999243";
+const AJ_UPI = "7376999243-4@ybl";
+
+function ajOrders(){
+  try { return JSON.parse(localStorage.getItem("ajseva_orders") || "[]"); }
+  catch(e){ return []; }
+}
+function saveAjOrder(order){
+  const list = ajOrders();
+  list.unshift({...order, id:"AJ"+Date.now().toString().slice(-8), time:new Date().toLocaleString("hi-IN")});
+  localStorage.setItem("ajseva_orders", JSON.stringify(list.slice(0,30)));
+  renderAjOrders();
+}
+function renderAjOrders(){
+  const box=document.getElementById("ordersList"), empty=document.getElementById("emptyOrders");
+  if(!box) return;
+  const list=ajOrders();
+  box.innerHTML="";
+  if(!list.length){ empty.style.display="block"; return; }
+  empty.style.display="none";
+  list.forEach(o=>{
+    const card=document.createElement("div");
+    card.className="order-card";
+    card.innerHTML=`
+      <span class="order-status">Request Sent</span>
+      <h3 style="margin:10px 0 4px">${escapeHtml(o.title||"AJ Seva Request")}</h3>
+      <p style="margin:4px 0"><strong>Order ID:</strong> ${escapeHtml(o.id)}</p>
+      <p style="margin:4px 0"><strong>नाम:</strong> ${escapeHtml(o.name||"-")}</p>
+      <p style="margin:4px 0"><strong>मोबाइल:</strong> ${escapeHtml(o.mobile||"-")}</p>
+      <p style="margin:4px 0"><strong>समय:</strong> ${escapeHtml(o.time||"-")}</p>
+    `;
+    box.appendChild(card);
+  });
+}
+function escapeHtml(v){
+  return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+function clearOrders(){
+  localStorage.removeItem("ajseva_orders");
+  renderAjOrders();
+}
+function openUpiPayment(amount=""){
+  const url=`upi://pay?pa=${encodeURIComponent(AJ_UPI)}&pn=${encodeURIComponent("AJ Seva")}&cu=INR${amount?`&am=${encodeURIComponent(amount)}`:""}`;
+  window.location.href=url;
+}
+function sendAjWhatsApp(title, data){
+  const lines=[`नमस्ते AJ Seva,`,``,`${title}`,``];
+  Object.entries(data).forEach(([k,v])=>{ if(String(v||"").trim()) lines.push(`${k}: ${v}`); });
+  const text=lines.join("\\n");
+  window.open(`https://wa.me/${AJ_WA}?text=${encodeURIComponent(text)}`,"_blank");
+}
+function saveAndSend(title, data){
+  saveAjOrder({title,...data});
+  sendAjWhatsApp(title,data);
+}
+renderAjOrders();
+</script>
 </body>
 </html>
