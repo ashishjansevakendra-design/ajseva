@@ -2621,90 +2621,9 @@ function openUPI(){
 /* ================= INITIAL ================= */
 renderOrders();
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const template = document.querySelector("#inline-application-template");
-  if (!template) return;
 
-  document.querySelectorAll(".work-apply-link").forEach(function(card) {
-    card.addEventListener("click", function () {
-      const service = this.dataset.service || "Online Service";
-
-      // Close any other inline form.
-      document.querySelectorAll(".inline-application-card").forEach(function(x){
-        if (!x.closest("#inline-application-template")) x.remove();
-      });
-
-      const existing = this.parentElement.querySelector(".inline-application-card");
-      if (existing) {
-        existing.scrollIntoView({behavior:"smooth", block:"center"});
-        return;
-      }
-
-      const fragment = template.firstElementChild.cloneNode(true);
-      fragment.querySelector('[name="selected_service"]').value = service;
-
-      const form = fragment.querySelector("form");
-      form.addEventListener("submit", function(e) {
-        e.preventDefault();
-        const fd = new FormData(form);
-        const text =
-          "AJ Seva Application%0A%0A" +
-          "Service: " + encodeURIComponent(fd.get("selected_service")) + "%0A" +
-          "Name: " + encodeURIComponent(fd.get("name")) + "%0A" +
-          "Mobile: " + encodeURIComponent(fd.get("mobile")) + "%0A" +
-          "Email: " + encodeURIComponent(fd.get("email") || "") + "%0A" +
-          "Details: " + encodeURIComponent(fd.get("details") || "");
-        window.open(
-          "https://wa.me/917376999243?text=" + text,
-          "_blank"
-        );
-      });
-
-      fragment.querySelector(".inline-close").addEventListener("click", function(){
-        fragment.remove();
-      });
-
-      this.insertAdjacentElement("afterend", fragment);
-      setTimeout(function(){
-        fragment.scrollIntoView({behavior:"smooth", block:"center"});
-      }, 50);
-    });
-  });
-});
-</script>
 <div hidden="" id="inline-application-template">
-<div class="inline-application-card">
-<div class="inline-form-head">
-<span class="section-badge">AJ SEVA • आवेदन</span>
-<h3>सेवा आवेदन फॉर्म</h3>
-<p>चुनी गई सेवा के लिए नीचे अपनी जानकारी भरें।</p>
-</div>
-<form class="inline-service-form">
-<div class="inline-form-grid">
-<label>सेवा
-          <input name="selected_service" readonly="" type="text"/>
-</label>
-<label>नाम
-          <input name="name" placeholder="अपना नाम" required="" type="text"/>
-</label>
-<label>मोबाइल नंबर
-          <input maxlength="10" name="mobile" placeholder="10 अंकों का मोबाइल नंबर" required="" type="tel"/>
-</label>
-<label>ईमेल (वैकल्पिक)
-          <input name="email" placeholder="Email" type="email"/>
-</label>
-<label class="full">आवश्यक जानकारी / विवरण
-          <textarea name="details" placeholder="अपनी जरूरत या जानकारी लिखें" rows="3"></textarea>
-</label>
-</div>
-<div class="inline-form-actions">
-<button class="category-btn" type="submit">📲 आवेदन WhatsApp पर भेजें</button>
-<button class="inline-close" type="button">✕ बंद करें</button>
-</div>
-</form>
-</div>
-</div>
+
 
 <div aria-hidden="true" class="aj-modal" id="ajServiceModal">
 <div class="aj-modal-box">
@@ -2852,5 +2771,48 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown",e=>{if(e.key==="Escape")close();});
 })();
 </script>
+
+<script id="aj-single-form-fix">
+document.addEventListener("DOMContentLoaded", function () {
+  const modals = document.querySelectorAll("#ajServiceModal");
+  if (modals.length > 1) {
+    for (let i = 1; i < modals.length; i++) modals[i].remove();
+  }
+
+  const modal = document.querySelector("#ajServiceModal");
+  if (!modal) return;
+
+  // Make sure clicking the close button only closes the universal modal.
+  modal.querySelectorAll(".aj-close").forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof window.ajCloseModal === "function") {
+        window.ajCloseModal();
+      } else {
+        modal.classList.remove("show");
+        document.body.style.overflow = "";
+      }
+    });
+  });
+
+  // Prevent hidden application/form remnants from showing after modal close.
+  function cleanupOldForms(){
+    document.querySelectorAll(
+      ".inline-application-card, #inline-application-template, #application"
+    ).forEach(function(el){
+      if (!el.closest("#ajServiceModal")) el.remove();
+    });
+  }
+
+  cleanupOldForms();
+
+  const observer = new MutationObserver(function(){
+    cleanupOldForms();
+  });
+  observer.observe(document.body, {childList:true, subtree:true});
+});
+</script>
+
 </body>
 </html>
