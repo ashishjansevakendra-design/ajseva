@@ -1267,6 +1267,84 @@ main > section:nth-of-type(even) .container::before{
 .aj-summary div{display:flex;justify-content:space-between;gap:10px;padding:4px 0;font-size:13px}
 @media(max-width:600px){.aj-form-grid{grid-template-columns:1fr}.aj-field.full{grid-column:auto}.aj-payment-box{grid-template-columns:1fr}.aj-actions{flex-direction:column}}
 </style>
+
+<style id="aj-final-layout-fix">
+/* ===== AJ SEVA: DIGITAL VERTICAL -> TRAVEL -> BOOKING ===== */
+.service-category-grid{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:20px !important;
+  width:100% !important;
+}
+.service-category{
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+.service-category:first-child{
+  order:1 !important;
+}
+.service-category:nth-child(2){
+  order:2 !important;
+}
+.service-category:nth-child(3){
+  order:3 !important;
+}
+
+/* Digital Seva: vertical one-by-one list */
+.service-category:first-child .work-list{
+  display:flex !important;
+  flex-direction:column !important;
+  grid-template-columns:none !important;
+  gap:9px !important;
+}
+.service-category:first-child .work-list a{
+  width:100% !important;
+  min-height:52px !important;
+  justify-content:flex-start !important;
+  box-sizing:border-box !important;
+}
+
+/* Travel: clean horizontal cards inside its own section */
+.service-category:nth-child(2) .work-list{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:10px !important;
+}
+.service-category:nth-child(2) .work-list a{
+  width:100% !important;
+  min-height:58px !important;
+  justify-content:flex-start !important;
+  box-sizing:border-box !important;
+}
+
+/* Booking: 3 items in one row on desktop */
+.service-category:nth-child(3) .work-list{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:10px !important;
+}
+.service-category:nth-child(3) .work-list a{
+  width:100% !important;
+  min-height:58px !important;
+  justify-content:flex-start !important;
+  box-sizing:border-box !important;
+}
+
+@media(max-width:800px){
+  .service-category:nth-child(2) .work-list{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .service-category:nth-child(3) .work-list{
+    grid-template-columns:1fr !important;
+  }
+}
+@media(max-width:520px){
+  .service-category:nth-child(2) .work-list{
+    grid-template-columns:1fr !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header>
