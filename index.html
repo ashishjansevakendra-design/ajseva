@@ -466,6 +466,143 @@ footer a{color:#dce5f2}
   .footer-grid{grid-template-columns:1fr}
   .contact{flex-direction:column;align-items:flex-start}
 }
+
+/* ===== PROFESSIONAL SERVICES & TRAVEL UI ===== */
+.section-heading-pro{
+  text-align:center;
+  max-width:820px;
+  margin:0 auto 28px;
+}
+.section-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 14px;
+  border-radius:999px;
+  background:rgba(11,67,150,.08);
+  color:var(--blue);
+  border:1px solid rgba(11,67,150,.14);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  margin-bottom:10px;
+}
+.professional-services{
+  gap:18px;
+}
+.service-pro{
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:22px;
+  min-height:170px;
+  text-decoration:none;
+  overflow:hidden;
+  border:1px solid #e5e9f0;
+  border-radius:22px;
+  background:linear-gradient(145deg,#ffffff,#f8faff);
+  box-shadow:0 8px 25px rgba(20,38,70,.07);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.service-pro:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 32px rgba(20,38,70,.12);
+  border-color:rgba(11,67,150,.25);
+}
+.service-pro::after{
+  content:"";
+  position:absolute;
+  width:110px;
+  height:110px;
+  right:-42px;
+  top:-42px;
+  border-radius:50%;
+  background:rgba(11,67,150,.055);
+}
+.service-icon{
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
+  display:grid;
+  place-items:center;
+  border-radius:17px;
+  background:#eef5ff;
+  font-size:28px;
+  box-shadow:inset 0 0 0 1px rgba(11,67,150,.06);
+}
+.service-content{
+  position:relative;
+  z-index:1;
+  min-width:0;
+}
+.service-number{
+  display:block;
+  color:#9aa5b5;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:2px;
+}
+.service-pro h3{
+  margin:0 0 7px;
+  font-size:19px;
+  color:#17243a;
+}
+.service-pro p{
+  margin:0 0 12px;
+  color:#667085;
+  font-size:14px;
+  line-height:1.55;
+}
+.service-link{
+  color:var(--blue);
+  font-size:13px;
+  font-weight:800;
+}
+.travel-grid{
+  gap:20px;
+}
+.travel{
+  border-radius:22px !important;
+  border:1px solid #e5e9f0 !important;
+  background:#fff !important;
+  box-shadow:0 8px 25px rgba(20,38,70,.07) !important;
+  overflow:hidden;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.travel:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 32px rgba(20,38,70,.12) !important;
+}
+.travel-top{
+  min-height:110px;
+  display:grid;
+  place-items:center;
+  font-size:48px;
+  background:linear-gradient(135deg,#eef5ff,#f8fbff);
+}
+.travel-body{
+  padding:20px !important;
+}
+.travel-body h3{
+  font-size:19px !important;
+  margin-bottom:7px !important;
+  color:#17243a;
+}
+.travel-body p{
+  color:#667085 !important;
+  line-height:1.55 !important;
+}
+.price{
+  display:inline-block;
+  padding:6px 11px;
+  border-radius:999px;
+  background:#f1f8f4;
+  color:#16824b;
+  font-weight:800;
+  font-size:13px;
+}
+
 </style>
 </head>
 
@@ -491,7 +628,7 @@ footer a{color:#dce5f2}
       <a href="#recharge">Recharge</a>
       <a href="#application">आवेदन</a>
       <a href="#payment">Payment</a>
-      <a href="#orders">Orders</a>
+      
       <a href="#app">App</a>
       <a href="#legal">Policies</a>
       <a href="#contact">Contact</a>
@@ -554,21 +691,97 @@ footer a{color:#dce5f2}
 </section>
 
 <!-- ================= SERVICES ================= -->
-<section id="services">
+<section id="services" class="professional-section">
   <div class="container">
-    <h2 class="section-title">हमारी प्रमुख सेवाएँ</h2>
-    <p class="section-sub">AJ Seva App की तरह वेबसाइट से भी सेवा चुनें</p>
+    <div class="section-heading-pro">
+      <span class="section-badge">AJ SEVA • DIGITAL SERVICES</span>
+      <h2 class="section-title">हमारी प्रमुख सेवाएँ</h2>
+      <p class="section-sub">
+        आपके रोज़मर्रा के डिजिटल, दस्तावेज़, यात्रा और ऑनलाइन कार्यों के लिए
+        एक ही जगह पर आसान और भरोसेमंद सेवा सहायता।
+      </p>
+    </div>
 
-    <div class="services">
-      <a class="service" href="#application"><div class="ico">💻</div><h3>Digital Services</h3><p>PAN, Aadhaar, Ayushman, e-Shram, certificates और अन्य ऑनलाइन सेवाएँ।</p></a>
-      <a class="service" href="#travel"><div class="ico">🧳</div><h3>Travel</h3><p>Tour packages और यात्रा सहायता।</p></a>
-      <a class="service" href="#booking"><div class="ico">🎫</div><h3>Booking</h3><p>Train, Bus और Flight Booking सहायता।</p></a>
-      <a class="service" href="#recharge"><div class="ico">📱</div><h3>Mobile Recharge</h3><p>Mobile और DTH Recharge request भेजें।</p></a>
-      <a class="service" href="#payment"><div class="ico">💳</div><h3>Payment / Wallet</h3><p>UPI Payment और Wallet सहायता।</p></a>
-      <a class="service" href="#application"><div class="ico">📝</div><h3>आवेदन फॉर्म</h3><p>सेवा चुनकर आवेदन WhatsApp पर भेजें।</p></a>
-      <a class="service" href="#offers"><div class="ico">🎁</div><h3>Offers</h3><p>AJ Seva के विशेष offers की जानकारी।</p></a>
-      <a class="service" href="#orders"><div class="ico">📦</div><h3>Orders</h3><p>अपने भेजे हुए requests देखें।</p></a>
-      <a class="service" href="#contact"><div class="ico">📞</div><h3>Customer Support</h3><p>WhatsApp और मोबाइल सहायता उपलब्ध।</p></a>
+    <div class="services professional-services">
+      <a class="service service-pro" href="#application">
+        <div class="service-icon">💻</div>
+        <div class="service-content">
+          <span class="service-number">01</span>
+          <h3>Digital Services</h3>
+          <p>PAN, Aadhaar, Ayushman, e-Shram, प्रमाण पत्र और अन्य ऑनलाइन सेवाएँ।</p>
+          <span class="service-link">सेवा देखें →</span>
+        </div>
+      </a>
+
+      <a class="service service-pro" href="#travel">
+        <div class="service-icon">✈️</div>
+        <div class="service-content">
+          <span class="service-number">02</span>
+          <h3>Travel Services</h3>
+          <p>Tour packages, यात्रा योजना और यात्रा संबंधी सहायता एक ही जगह।</p>
+          <span class="service-link">यात्रा देखें →</span>
+        </div>
+      </a>
+
+      <a class="service service-pro" href="#booking">
+        <div class="service-icon">🎫</div>
+        <div class="service-content">
+          <span class="service-number">03</span>
+          <h3>Ticket Booking</h3>
+          <p>Train, Bus और Flight booking के लिए आसान request सुविधा।</p>
+          <span class="service-link">Booking करें →</span>
+        </div>
+      </a>
+
+      <a class="service service-pro" href="#recharge">
+        <div class="service-icon">📱</div>
+        <div class="service-content">
+          <span class="service-number">04</span>
+          <h3>Mobile Recharge</h3>
+          <p>Mobile और DTH recharge के लिए तेज़ और सरल request सेवा।</p>
+          <span class="service-link">Recharge करें →</span>
+        </div>
+      </a>
+
+      <a class="service service-pro" href="#payment">
+        <div class="service-icon">💳</div>
+        <div class="service-content">
+          <span class="service-number">05</span>
+          <h3>Payment & Wallet</h3>
+          <p>UPI payment, payment confirmation और wallet सहायता।</p>
+          <span class="service-link">Payment देखें →</span>
+        </div>
+      </a>
+
+      <a class="service service-pro" href="#application">
+        <div class="service-icon">📝</div>
+        <div class="service-content">
+          <span class="service-number">06</span>
+          <h3>Online आवेदन</h3>
+          <p>अपनी जरूरत की सेवा चुनें और आवेदन की जानकारी आसानी से भेजें।</p>
+          <span class="service-link">आवेदन करें →</span>
+        </div>
+      </a>
+
+      <a class="service service-pro" href="#contact">
+        <div class="service-icon">🤝</div>
+        <div class="service-content">
+          <span class="service-number">07</span>
+          <h3>Customer Support</h3>
+          <p>किसी भी सेवा, booking या payment सहायता के लिए सीधे संपर्क करें।</p>
+          <span class="service-link">सहायता लें →</span>
+        </div>
+      </a>
+
+      <a class="service service-pro" href="#app">
+        <div class="service-icon">📲</div>
+        <div class="service-content">
+          <span class="service-number">08</span>
+          <h3>AJ Seva App</h3>
+          <p>मोबाइल से AJ Seva की सुविधाओं का उपयोग करने के लिए App डाउनलोड करें।</p>
+          <span class="service-link">App डाउनलोड करें →</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -576,8 +789,14 @@ footer a{color:#dce5f2}
 <!-- ================= TRAVEL ================= -->
 <section id="travel">
   <div class="container">
-    <h2 class="section-title">🧳 Travel & Tour Packages</h2>
-    <p class="section-sub">अपना package चुनें और booking request भेजें</p>
+    <div class="section-heading-pro">
+      <span class="section-badge">AJ SEVA • TRAVEL DESK</span>
+      <h2 class="section-title">Travel & Tour Services</h2>
+      <p class="section-sub">
+        धार्मिक यात्राओं, tour packages और यात्रा planning के लिए
+        सुविधाजनक booking सहायता।
+      </p>
+    </div>
 
     <div class="travel-grid">
       <div class="travel">
@@ -852,43 +1071,6 @@ footer a{color:#dce5f2}
       <a class="btn btn-green" href="https://wa.me/917376999243" target="_blank" rel="noopener">
         💬 Payment सहायता WhatsApp
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= OFFERS ================= -->
-<section id="offers">
-  <div class="container">
-    <h2 class="section-title">🎁 आज के ऑफर</h2>
-    <p class="section-sub">AJ Seva की विशेष सेवाओं की जानकारी</p>
-
-    <div class="legal-card" style="max-width:850px;margin:auto;text-align:center">
-      <h3>🎉 AJ Seva Special Offers</h3>
-      <p>
-        सभी Digital Services, Travel Package, Train / Bus / Flight Booking,
-        Recharge और अन्य सेवाओं के लिए WhatsApp पर संपर्क करें।
-      </p>
-      <a class="btn btn-green" href="https://wa.me/917376999243" target="_blank" rel="noopener">
-        💬 ऑफर की जानकारी लें
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ORDERS ================= -->
-<section id="orders">
-  <div class="container">
-    <h2 class="section-title">📦 आपके Orders / Requests</h2>
-    <p class="section-sub">इस browser में भेजे गए requests यहाँ दिखाई देंगे</p>
-
-    <div id="ordersList"></div>
-
-    <div id="emptyOrders" class="empty">
-      अभी कोई request नहीं है।
-    </div>
-
-    <div style="text-align:center;margin-top:12px">
-      <button class="btn btn-outline" onclick="clearOrders()">🗑️ Local Orders हटाएँ</button>
     </div>
   </div>
 </section>
