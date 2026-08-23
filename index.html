@@ -603,7 +603,6 @@ footer a{color:#dce5f2}
   font-size:13px;
 }
 
-
 /* ===== QR PAYMENT CARD ===== */
 .qr-payment-card{
   max-width:430px;
@@ -690,7 +689,6 @@ footer a{color:#dce5f2}
   text-decoration:none !important;
   font-weight:800;
 }
-
 
 /* ===== COMPACT PROFESSIONAL LAYOUT ===== */
 section{
@@ -874,7 +872,6 @@ main > section:nth-of-type(even) .container::before{
   }
 }
 
-
 /* ===== 3 PROFESSIONAL SERVICE CATEGORIES ===== */
 .service-category-grid{
   display:grid;
@@ -996,12 +993,6 @@ main > section:nth-of-type(even) .container::before{
 
 </style>
 
-
-
-
-
-
-
 <style>
 .service-category-grid{
   grid-template-columns:1.2fr .9fr .8fr;
@@ -1023,7 +1014,6 @@ main > section:nth-of-type(even) .container::before{
   .service-category-grid{grid-template-columns:1fr}
 }
 </style>
-
 
 <style>
 /* ===== CLEAN SEPARATE CATEGORY BORDERS ===== */
@@ -1148,7 +1138,7 @@ main > section:nth-of-type(even) .container::before{
 
     <div class="quick-grid">
       <a class="quick" href="#services"><div class="ico">📄</div><strong>सेवाएँ</strong></a>
-      <a class="quick" href="#booking"><div class="ico">🎫</div><strong>बुकिंग</strong></a>
+      
       <a class="quick" href="#payment"><div class="ico">💳</div><strong>Payment / Wallet</strong></a>
       <a class="quick" href="https://wa.me/917376999243" target="_blank" rel="noopener"><div class="ico">🎧</div><strong>सहायता</strong></a>
     </div>
@@ -1253,144 +1243,8 @@ main > section:nth-of-type(even) .container::before{
 </section>
 
 <!-- ================= TRAVEL ================= -->
-<section id="travel">
-  <div class="container">
-    
-
-    <div class="travel-grid">
-      <div class="travel">
-        <div class="travel-top">🛕</div>
-        <div class="travel-body">
-          <h3>Ayodhya Dham</h3>
-          <p>राम जन्मभूमि, हनुमानगढ़ी, कनक भवन, राम की पैड़ी और सरयू आरती।</p>
-          <span class="price">₹2200 / व्यक्ति</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Ayodhya Dham','2200')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🔱</div>
-        <div class="travel-body">
-          <h3>Kedarnath</h3>
-          <p>धार्मिक यात्रा package और यात्रा सहायता के लिए संपर्क करें।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Kedarnath','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🌊</div>
-        <div class="travel-body">
-          <h3>Rameshwaram</h3>
-          <p>Rameshwaram और दक्षिण भारत यात्रा के लिए package सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Rameshwaram','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🌴</div>
-        <div class="travel-body">
-          <h3>Kanyakumari</h3>
-          <p>कन्याकुमारी यात्रा और local sightseeing सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Kanyakumari','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🕉️</div>
-        <div class="travel-body">
-          <h3>Varanasi / Kashi</h3>
-          <p>काशी विश्वनाथ, गंगा आरती और Varanasi यात्रा सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Varanasi / Kashi','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div class="travel-top">🚩</div>
-        <div class="travel-body">
-          <h3>Vaishno Devi</h3>
-          <p>माता वैष्णो देवी यात्रा के लिए booking और यात्रा सहायता।</p>
-          <span class="price">Package पूछें</span>
-          <div style="margin-top:12px">
-            <button class="btn btn-blue" onclick="openTravel('Vaishno Devi','')">Booking करें</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ================= BOOKING ================= -->
-<section id="booking">
-  <div class="container">
-    <h2 class="section-title">🎫 Ticket Booking</h2>
-    <p class="section-sub">Train / Bus / Flight booking request WhatsApp पर भेजें</p>
-
-    <div class="form-card">
-      <form id="bookingForm">
-        <div class="form-grid">
-          <div class="form-group">
-            <label>नाम *</label>
-            <input required name="name" placeholder="पूरा नाम">
-          </div>
-          <div class="form-group">
-            <label>मोबाइल नंबर *</label>
-            <input required name="mobile" type="tel" pattern="[6-9][0-9]{9}" placeholder="10 अंकों का मोबाइल">
-          </div>
-          <div class="form-group">
-            <label>Booking Type *</label>
-            <select required name="type">
-              <option value="">चुनें</option>
-              <option>Train</option>
-              <option>Bus</option>
-              <option>Flight</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>यात्रियों की संख्या</label>
-            <input name="persons" type="number" min="1" placeholder="जैसे 2">
-          </div>
-          <div class="form-group">
-            <label>From</label>
-            <input name="from" placeholder="कहाँ से">
-          </div>
-          <div class="form-group">
-            <label>To</label>
-            <input name="to" placeholder="कहाँ तक">
-          </div>
-          <div class="form-group">
-            <label>यात्रा तारीख</label>
-            <input name="date" type="date">
-          </div>
-          <div class="form-group">
-            <label>Class / Preference</label>
-            <input name="preference" placeholder="Sleeper / AC आदि">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>अतिरिक्त जानकारी</label>
-          <textarea name="message" rows="3" placeholder="कोई अन्य जानकारी"></textarea>
-        </div>
-
-        <button class="btn btn-blue" type="submit">📲 Booking WhatsApp पर भेजें</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- ================= RECHARGE ================= -->
 <section id="recharge">
@@ -1482,7 +1336,6 @@ main > section:nth-of-type(even) .container::before{
     </div>
   </div>
 </section>
-
 
 <!-- ================= APP ================= -->
 <section id="app">
@@ -2001,10 +1854,6 @@ function openUPI(){
 /* ================= INITIAL ================= */
 renderOrders();
 </script>
-
-
-
-
 
 <div id="inline-application-template" hidden>
   <div class="inline-application-card">
