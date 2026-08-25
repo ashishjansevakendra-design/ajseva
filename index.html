@@ -1,115 +1,3589 @@
 <!doctype html>
 <html lang="hi">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b4ea2">
+<meta charset="utf-8">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
+
+<meta name="theme-color"
+      content="#0b4ea2">
+
+<meta name="description"
+      content="AJ Seva - आशीष जन सेवा केंद्र | Digital Services, Recharge, Bus Train Flight Booking, Travel, Payment">
+
 <title>AJ Seva | आशीष जन सेवा केंद्र</title>
+
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#f4f8fd;color:#17243a;line-height:1.55}
-a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}.wrap{width:min(1180px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:3px solid #0b4ea2;box-shadow:0 3px 18px #12365b18}
-.nav{min-height:76px;display:flex;align-items:center;gap:18px}.brand{display:flex;align-items:center;gap:10px}.brand img{width:54px;height:54px;object-fit:contain;border:2px solid #0b4ea2;border-radius:14px}.brand b{display:block;color:#0b4ea2;font-size:22px}.brand small{color:#66758a;font-weight:700}
-nav{display:flex;gap:7px;margin-left:auto}nav a{border:1px solid #d2dfef;border-radius:10px;padding:9px 11px;font-weight:700;color:#213a60;background:#fff}nav a:hover{border-color:#0b4ea2;color:#0b4ea2}
-.menu{display:none;margin-left:auto;background:#fff;border:2px solid #0b4ea2;border-radius:10px;padding:8px 12px}
-section{padding:48px 0}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}.box,.card{background:#fff;border:2px solid #cbdced;border-radius:22px;box-shadow:0 7px 22px #0b4ea211}
-.hero .box{padding:40px}.hero h1{font-size:clamp(38px,6vw,62px);line-height:1.05;margin:10px 0;color:#10294d}.hero h1 span{color:#0b4ea2}.hero p{font-size:18px;color:#617086}.logo-box{text-align:center;padding:24px;background:linear-gradient(145deg,#fff,#edf5ff)}.logo-box img{width:min(100%,330px)}.tag{font-size:12px;letter-spacing:1.4px;color:#0b4ea2;font-weight:900}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:2px solid #0b4ea2;border-radius:11px;padding:11px 17px;font-weight:800;cursor:pointer;display:inline-flex;justify-content:center}.primary{background:#0b4ea2;color:#fff}.outline{background:#fff;color:#0b4ea2}.green{background:#19aa57!important;border-color:#19aa57!important;color:#fff!important}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:24px}.trust div{border:1px solid #d8e4f1;border-radius:13px;padding:11px;background:#f9fbff}.trust b,.trust small{display:block}.trust small{color:#718096}
-.head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}.head h2{font-size:32px;margin:3px 0;color:#15335b}
-.grid{display:grid;gap:15px}.four{grid-template-columns:repeat(4,1fr)}.three{grid-template-columns:repeat(3,1fr)}.two{grid-template-columns:repeat(2,1fr)}
-.card{padding:20px}.quick{cursor:pointer;text-align:left}.quick:hover,.card:hover{border-color:#0b4ea2;transform:translateY(-2px)}.quick .ico{font-size:30px;width:55px;height:55px;border-radius:14px;display:grid;place-items:center;background:#eaf2ff;color:#0b4ea2;margin-bottom:12px}.quick b{font-size:18px}.muted{color:#68778c}
-.service h3,.travel h3{margin:6px 0;color:#17365f}.service p,.travel p{color:#69788c}.service button,.travel button,.linkbtn{border:0;background:none;color:#0b4ea2;font-weight:900;cursor:pointer;padding:5px 0}
-.booking{padding:25px}.booking .ico{font-size:40px}.booking h3{font-size:22px;margin:7px 0}.full{width:100%}
-.travel{overflow:hidden;padding:0 0 16px}.travel .pic{height:135px;display:grid;place-items:center;color:#fff;font-size:27px;font-weight:900}.pic1{background:linear-gradient(135deg,#e77820,#a52616)}.pic2{background:linear-gradient(135deg,#22519d,#1288a7)}.pic3{background:linear-gradient(135deg,#bd397d,#ec9630)}.pic4{background:linear-gradient(135deg,#752ca6,#e04a62)}.travel h3,.travel p,.travel strong,.travel button{margin-left:16px;margin-right:16px}.travel strong{display:block;color:#0b4ea2}
-.offer{background:linear-gradient(120deg,#0b4ea2,#1976d2);color:#fff;border:2px solid #073d82;border-radius:22px;padding:27px;display:flex;align-items:center;justify-content:space-between;gap:15px}.offer h2{color:#fff}.offer .tag{color:#d9e9ff}
-.gallery{min-height:160px;display:grid;place-items:center;align-content:center;text-align:center;background:linear-gradient(145deg,#fff,#edf5ff)}.gallery span{font-size:40px;color:#0b4ea2}
-.policy{padding:25px}.policy h3{color:#0b4ea2}.policy ul{padding-left:20px}.contact{padding:28px;background:#eff8ff;border-color:#a8c9eb;display:flex;justify-content:space-between;align-items:center;gap:20px}
-footer{background:#0c1830;color:#e9f2ff;border-top:4px solid #0b4ea2}.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:16px;padding:35px 0}.foot>div{border:1px solid #334d6c;border-radius:14px;padding:17px}.foot img{width:60px;height:60px;background:#fff;border-radius:12px;object-fit:contain}.foot a{display:block;color:#c9d8eb;margin:7px 0}.copy{text-align:center;border-top:1px solid #334d6c;padding:13px;color:#adbed3}
-.modal{display:none;position:fixed;inset:0;background:#06172db8;z-index:100;align-items:center;justify-content:center;padding:16px}.modal.on{display:flex}.modalbox{width:min(650px,100%);max-height:90vh;overflow:auto;background:#fff;border:2px solid #0b4ea2;border-radius:20px;padding:25px;position:relative}.close{position:absolute;right:12px;top:10px;border:0;border-radius:50%;width:36px;height:36px;background:#eaf2ff;color:#0b4ea2;font-size:24px;cursor:pointer}.modal h2{color:#0b4ea2;margin-top:0}label{display:block;font-weight:800;margin:11px 0}input,select,textarea{width:100%;padding:11px;margin-top:5px;border:2px solid #d7e2ee;border-radius:9px;outline:none}input:focus,select:focus,textarea:focus{border-color:#0b4ea2}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.qr{width:180px;height:180px;margin:10px auto;border:3px dashed #0b4ea2;border-radius:14px;display:grid;place-items:center;text-align:center;color:#0b4ea2;font-size:42px;background:repeating-linear-gradient(45deg,#eef5ff 0 8px,#fff 8px 16px)}.qr small{font-size:11px}.order{border:2px solid #d5e1ee;border-radius:12px;padding:12px;margin:9px 0;background:#f9fbff}.order b{color:#0b4ea2}.mini{display:grid;grid-template-columns:1fr 1fr;gap:9px}.mini span{border:2px solid #d5e1ee;border-radius:10px;padding:11px}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;background:#142033;color:#fff;padding:12px 18px;border-radius:11px;z-index:200;transition:.25s}.toast.on{opacity:1;transform:translate(-50%,0)}
-@media(max-width:950px){nav{display:none;position:absolute;left:4%;right:4%;top:76px;flex-direction:column;background:#fff;border:2px solid #cbdced;border-radius:14px;padding:10px}.menu{display:block}.hero{grid-template-columns:1fr}.four{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:650px){section{padding:34px 0}.hero .box{padding:26px}.four,.three,.two{grid-template-columns:1fr}.trust{grid-template-columns:1fr}.head,.contact,.offer{align-items:stretch;flex-direction:column}.foot{grid-template-columns:1fr}.row,.mini{grid-template-columns:1fr}.brand b{font-size:18px}.brand small{font-size:10px}}
-</style></head>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:
+        Arial,
+        "Noto Sans Devanagari",
+        "Segoe UI",
+        sans-serif;
+
+    background:#f5f9ff;
+    color:#172a46;
+    line-height:1.55;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.wrap{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:30;
+
+    background:#fff;
+
+    border-bottom:
+        3px solid #0b4ea2;
+
+    box-shadow:
+        0 4px 18px #0b4ea21a;
+}
+
+.nav{
+    min-height:78px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.brand img{
+    width:58px;
+    height:58px;
+
+    object-fit:contain;
+
+    border:
+        2px solid #0b4ea2;
+
+    border-radius:15px;
+
+    background:#fff;
+}
+
+.brand b{
+    display:block;
+
+    color:#0b4ea2;
+
+    font-size:22px;
+}
+
+.brand small{
+    display:block;
+
+    color:#66778d;
+
+    font-weight:700;
+}
+
+nav{
+    display:flex;
+    gap:7px;
+
+    margin-left:auto;
+
+    flex-wrap:wrap;
+}
+
+nav a{
+    border:
+        1px solid #cbdced;
+
+    border-radius:10px;
+
+    padding:8px 10px;
+
+    font-weight:800;
+
+    color:#244367;
+
+    background:#fff;
+}
+
+nav a:hover{
+    border-color:#0b4ea2;
+    color:#0b4ea2;
+}
+
+.menu{
+    display:none;
+
+    margin-left:auto;
+
+    border:
+        2px solid #0b4ea2;
+
+    background:#fff;
+
+    color:#0b4ea2;
+
+    border-radius:10px;
+
+    padding:8px 12px;
+
+    font-size:20px;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:48px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    display:grid;
+
+    grid-template-columns:
+        1.25fr .75fr;
+
+    gap:22px;
+
+    align-items:center;
+}
+
+.box,
+.card{
+    background:#fff;
+
+    border:
+        2px solid #c9daed;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 8px 25px #0b4ea212;
+}
+
+.hero .box{
+    padding:35px;
+}
+
+.hero h1{
+    font-size:
+        clamp(36px,6vw,60px);
+
+    line-height:1.05;
+
+    margin:10px 0;
+
+    color:#132f55;
+}
+
+.hero h1 span{
+    color:#0b4ea2;
+}
+
+.hero p{
+    font-size:18px;
+    color:#64758a;
+}
+
+.tag{
+    font-size:12px;
+
+    letter-spacing:1.4px;
+
+    color:#0b4ea2;
+
+    font-weight:900;
+}
+
+.actions{
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:18px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    border:
+        2px solid #0b4ea2;
+
+    border-radius:11px;
+
+    padding:11px 16px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#fff;
+
+    color:#0b4ea2;
+}
+
+.primary{
+    background:#0b4ea2;
+    color:#fff;
+}
+
+.green{
+    background:#16a653!important;
+    border-color:#16a653!important;
+    color:#fff!important;
+}
+
+.red{
+    background:#c62828!important;
+    border-color:#c62828!important;
+    color:#fff!important;
+}
+
+.full{
+    width:100%;
+}
+
+/* ================= LOGO ================= */
+
+.logo-box{
+    text-align:center;
+
+    padding:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #edf5ff
+        );
+}
+
+.logo-box img{
+    width:min(100%,340px);
+
+    max-height:360px;
+
+    object-fit:contain;
+}
+
+/* ================= TRUST ================= */
+
+.trust{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:9px;
+
+    margin-top:22px;
+}
+
+.trust div{
+    border:
+        1px solid #d6e3f0;
+
+    border-radius:13px;
+
+    padding:11px;
+
+    background:#f9fbff;
+}
+
+.trust b,
+.trust small{
+    display:block;
+}
+
+.trust small{
+    color:#728197;
+}
+
+/* ================= HEAD ================= */
+
+.head{
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:end;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.head h2{
+    font-size:32px;
+
+    margin:4px 0;
+
+    color:#15365f;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+    display:grid;
+    gap:15px;
+}
+
+.four{
+    grid-template-columns:
+        repeat(4,1fr);
+}
+
+.three{
+    grid-template-columns:
+        repeat(3,1fr);
+}
+
+.two{
+    grid-template-columns:
+        repeat(2,1fr);
+}
+
+/* ================= CARD ================= */
+
+.card{
+    padding:20px;
+
+    transition:
+        .2s ease;
+}
+
+.card:hover{
+    border-color:#0b4ea2;
+
+    transform:
+        translateY(-2px);
+}
+
+.quick{
+    cursor:pointer;
+    text-align:left;
+}
+
+.quick .ico{
+    font-size:30px;
+
+    width:56px;
+    height:56px;
+
+    border-radius:14px;
+
+    display:grid;
+    place-items:center;
+
+    background:#eaf2ff;
+
+    color:#0b4ea2;
+
+    margin-bottom:12px;
+}
+
+.quick b{
+    font-size:18px;
+}
+
+.muted{
+    color:#68798e;
+}
+
+/* ================= SERVICE ================= */
+
+.service h3,
+.travel h3{
+    margin:6px 0;
+    color:#17385f;
+}
+
+.service p,
+.travel p{
+    color:#69798d;
+}
+
+/* ================= TRAVEL ================= */
+
+.travel{
+    overflow:hidden;
+    padding:0 0 18px;
+}
+
+.travel .pic{
+    height:145px;
+
+    display:grid;
+    place-items:center;
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:900;
+}
+
+.pic1{
+    background:
+        linear-gradient(
+            135deg,
+            #d76b18,
+            #9b2418
+        );
+}
+
+.pic2{
+    background:
+        linear-gradient(
+            135deg,
+            #24539c,
+            #0d8eaa
+        );
+}
+
+.pic3{
+    background:
+        linear-gradient(
+            135deg,
+            #a82e78,
+            #eb9130
+        );
+}
+
+.pic4{
+    background:
+        linear-gradient(
+            135deg,
+            #69249c,
+            #db4260
+        );
+}
+
+.pic5{
+    background:
+        linear-gradient(
+            135deg,
+            #0b7d61,
+            #2a4c9b
+        );
+}
+
+.travel h3,
+.travel p,
+.travel strong,
+.travel button{
+    margin-left:16px;
+    margin-right:16px;
+}
+
+.travel strong{
+    display:block;
+    color:#0b4ea2;
+}
+
+/* ================= OFFER ================= */
+
+.offer{
+    background:
+        linear-gradient(
+            120deg,
+            #0b4ea2,
+            #1976d2
+        );
+
+    color:#fff;
+
+    border:
+        2px solid #073d82;
+
+    border-radius:22px;
+
+    padding:27px;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.offer h2{
+    color:#fff;
+    margin:4px 0;
+}
+
+.offer .tag{
+    color:#dcecff;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    padding:28px;
+
+    background:#eff8ff;
+
+    border-color:#a8c9eb;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+/* ================= POLICY ================= */
+
+.policy{
+    padding:25px;
+}
+
+.policy h3{
+    color:#0b4ea2;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    min-height:180px;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #edf5ff
+        );
+}
+
+.gallery span{
+    font-size:42px;
+    color:#0b4ea2;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0c1830;
+
+    color:#e9f2ff;
+
+    border-top:
+        4px solid #0b4ea2;
+}
+
+.foot{
+    display:grid;
+
+    grid-template-columns:
+        1.4fr 1fr 1fr 1fr;
+
+    gap:15px;
+
+    padding:35px 0;
+}
+
+.foot>div{
+    border:
+        1px solid #334d6c;
+
+    border-radius:14px;
+
+    padding:17px;
+}
+
+.foot img{
+    width:65px;
+    height:65px;
+
+    object-fit:contain;
+
+    background:#fff;
+
+    border-radius:13px;
+}
+
+.foot a{
+    display:block;
+
+    color:#c9d8eb;
+
+    margin:7px 0;
+}
+
+.copy{
+    text-align:center;
+
+    border-top:
+        1px solid #334d6c;
+
+    padding:13px;
+
+    color:#adbed3;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:#06172db8;
+
+    z-index:100;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+}
+
+.modal.on{
+    display:flex;
+}
+
+.modalbox{
+    width:min(680px,100%);
+
+    max-height:92vh;
+
+    overflow:auto;
+
+    background:#fff;
+
+    border:
+        2px solid #0b4ea2;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    position:relative;
+}
+
+.close{
+    position:absolute;
+
+    right:12px;
+    top:10px;
+
+    border:0;
+
+    border-radius:50%;
+
+    width:36px;
+    height:36px;
+
+    background:#eaf2ff;
+
+    color:#0b4ea2;
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+.modal h2{
+    color:#0b4ea2;
+    margin-top:0;
+}
+
+/* ================= FORM ================= */
+
+label{
+    display:block;
+
+    font-weight:800;
+
+    margin:10px 0;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+
+    padding:11px;
+
+    margin-top:5px;
+
+    border:
+        2px solid #d7e2ee;
+
+    border-radius:9px;
+
+    outline:none;
+
+    background:#fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#0b4ea2;
+}
+
+.row{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:10px;
+}
+
+/* ================= STEPS ================= */
+
+.stepbar{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:7px;
+
+    margin-bottom:18px;
+}
+
+.step{
+    border:
+        2px solid #d5e2ef;
+
+    border-radius:10px;
+
+    padding:8px;
+
+    text-align:center;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    color:#738198;
+}
+
+.step.active{
+    border-color:#0b4ea2;
+
+    background:#eaf2ff;
+
+    color:#0b4ea2;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+    border:
+        2px solid #d5e2ef;
+
+    border-radius:13px;
+
+    background:#f9fbff;
+
+    padding:14px;
+
+    margin:12px 0;
+}
+
+.summary div{
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    gap:10px;
+
+    padding:5px 0;
+
+    border-bottom:
+        1px dashed #dbe5ef;
+}
+
+.summary div:last-child{
+    border-bottom:0;
+}
+
+.amount{
+    font-size:25px;
+
+    font-weight:900;
+
+    color:#0b4ea2;
+}
+
+/* ================= QR ================= */
+
+.qr{
+    width:245px;
+    height:245px;
+
+    display:block;
+
+    object-fit:contain;
+
+    margin:12px auto;
+
+    border:
+        3px solid #0b4ea2;
+
+    border-radius:15px;
+
+    padding:8px;
+
+    background:#fff;
+}
+
+.upi{
+    text-align:center;
+
+    border:
+        2px dashed #0b4ea2;
+
+    border-radius:12px;
+
+    padding:11px;
+
+    background:#f5f9ff;
+}
+
+.note{
+    padding:11px;
+
+    border-radius:10px;
+
+    background:#fff7e5;
+
+    border:
+        1px solid #f0d28b;
+}
+
+/* ================= SUCCESS ================= */
+
+.success{
+    padding:22px;
+
+    text-align:center;
+
+    border:
+        2px solid #2e9b59;
+
+    border-radius:18px;
+
+    background:#f0fff5;
+}
+
+.success .tick{
+    font-size:60px;
+}
+
+.order{
+    border:
+        2px solid #d5e1ee;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    margin:9px 0;
+
+    background:#f9fbff;
+}
+
+.order b{
+    color:#0b4ea2;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+
+    bottom:22px;
+
+    transform:
+        translate(-50%,20px);
+
+    opacity:0;
+
+    background:#142033;
+
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:11px;
+
+    z-index:200;
+
+    transition:.25s;
+}
+
+.toast.on{
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
+}
+
+.hidden{
+    display:none!important;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+    nav{
+        display:none;
+
+        position:absolute;
+
+        left:4%;
+        right:4%;
+
+        top:78px;
+
+        flex-direction:column;
+
+        background:#fff;
+
+        border:
+            2px solid #cbdced;
+
+        border-radius:14px;
+
+        padding:10px;
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .four{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .foot{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:34px 0;
+    }
+
+    .hero .box{
+        padding:25px;
+    }
+
+    .four,
+    .three,
+    .two{
+        grid-template-columns:1fr;
+    }
+
+    .trust{
+        grid-template-columns:1fr;
+    }
+
+    .head,
+    .contact,
+    .offer{
+        align-items:stretch;
+
+        flex-direction:column;
+    }
+
+    .foot{
+        grid-template-columns:1fr;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .brand b{
+        font-size:18px;
+    }
+
+    .brand small{
+        font-size:10px;
+    }
+
+    .stepbar{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+</style>
+</head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home"><img src="assets/aj-seva-logo.png"><span><b>AJ Seva</b><small>आशीष जन सेवा केंद्र</small></span></a><button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-<nav><a href="#home">होम</a><a href="#services">सेवाएँ</a><a href="#booking">बुकिंग</a><a href="#travel">ट्रैवल</a><a href="#offers">ऑफर</a><a href="#gallery">गैलरी</a><a href="#about">हमारे बारे में</a><a href="#contact">सहायता</a></nav></div></header>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+<div class="wrap nav">
+
+<a class="brand" href="#home">
+
+<img
+    src="assets/aj-seva-logo.png"
+    alt="AJ Seva Logo"
+>
+
+<span>
+
+<b>AJ Seva</b>
+
+<small>
+आशीष जन सेवा केंद्र
+</small>
+
+</span>
+
+</a>
+
+<button
+    class="menu"
+    onclick="
+    document
+    .querySelector('nav')
+    .classList
+    .toggle('open')
+    "
+>
+☰
+</button>
+
+<nav>
+
+<a href="#home">
+होम
+</a>
+
+<a href="#services">
+सेवाएँ
+</a>
+
+<a href="#booking">
+बुकिंग
+</a>
+
+<a href="#travel">
+ट्रैवल
+</a>
+
+<a href="#offers">
+ऑफर
+</a>
+
+<a href="#gallery">
+गैलरी
+</a>
+
+<a href="#about">
+हमारे बारे में
+</a>
+
+<a href="#contact">
+सहायता
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================================================
+     HOME
+========================================================= -->
 
 <main id="home">
-<section><div class="wrap hero"><div class="box"><span class="tag">AJ SEVA • DIGITAL SERVICE CENTER</span><h1>आपकी सेवा, <span>हमारे साथ</span></h1><p>डिजिटल सेवाएँ, रिचार्ज, Bus/Train/Flight Booking, Travel Packages, Payment और Customer Support — एक ही जगह।</p><div class="actions"><button class="btn primary" onclick="openM('service')">सेवा के लिए आवेदन</button><a class="btn outline" href="#travel">ट्रैवल देखें</a></div><div class="trust"><div>🔒 <b>सुरक्षित</b><small>विश्वसनीय सेवा</small></div><div>⚡ <b>तेज़ सेवा</b><small>आसान प्रक्रिया</small></div><div>📞 <b>सहायता</b><small>सीधा संपर्क</small></div></div></div><div class="box logo-box"><img src="assets/aj-seva-logo.png"><b style="display:block;color:#0b4ea2;font-size:24px">AJ Seva</b><span class="muted">Digital Services • Recharge • Travel • Wallet</span></div></div></section>
 
-<section><div class="wrap"><div class="head"><div><span class="tag">QUICK ACCESS</span><h2>मुख्य सेवाएँ</h2></div></div><div class="grid four">
-<button class="card quick" onclick="openM('service')"><span class="ico">▤</span><b>डिजिटल सेवाएँ</b><small class="muted">PAN, Aadhaar, Certificate, Online Forms</small></button>
-<button class="card quick" onclick="openM('recharge')"><span class="ico">₹</span><b>रिचार्ज & बिल</b><small class="muted">Mobile, DTH, Electricity & Bills</small></button>
-<button class="card quick" onclick="book('Bus')"><span class="ico">🚌</span><b>बुकिंग</b><small class="muted">Bus • Train • Flight</small></button>
-<button class="card quick" onclick="openM('payment')"><span class="ico">▣</span><b>पेमेंट / वॉलेट</b><small class="muted">Payment, receipt & orders</small></button>
-</div></div></section>
+<section>
 
-<section id="services"><div class="wrap"><div class="head"><div><span class="tag">DIGITAL SERVICES</span><h2>सभी प्रमुख सेवाएँ</h2></div><button class="btn outline" onclick="openM('service')">आवेदन करें</button></div><div class="grid four">
-<article class="card service"><div style="font-size:30px">🪪</div><h3>PAN Card</h3><p>PAN आवेदन / सुधार सहायता</p><button onclick="service('PAN Card')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🆔</div><h3>Aadhaar</h3><p>उपलब्ध Aadhaar सेवाओं में सहायता</p><button onclick="service('Aadhaar')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">💳</div><h3>Ayushman / ABHA</h3><p>कार्ड और आवेदन सहायता</p><button onclick="service('Ayushman / ABHA')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">📄</div><h3>Certificate</h3><p>आय, जाति, निवास आदि</p><button onclick="service('Certificate')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🗳️</div><h3>Voter Card</h3><p>नया आवेदन / सुधार सहायता</p><button onclick="service('Voter Card')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🚘</div><h3>Driving Licence</h3><p>DL ऑनलाइन प्रक्रिया सहायता</p><button onclick="service('Driving Licence')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">👷</div><h3>E-Shram / Labour</h3><p>ई-श्रम / श्रम कार्ड सहायता</p><button onclick="service('E-Shram / Labour')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🧾</div><h3>Online Forms</h3><p>ऑनलाइन फॉर्म भरने की सहायता</p><button onclick="service('Online Forms')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🛂</div><h3>Passport Help</h3><p>पासपोर्ट आवेदन प्रक्रिया</p><button onclick="service('Passport Help')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🖨️</div><h3>Resume / Biodata</h3><p>प्रोफेशनल Resume / Biodata</p><button onclick="service('Resume / Biodata')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🚆</div><h3>Ticket Booking</h3><p>Bus, Train, Flight</p><button onclick="service('Ticket Booking')">आवेदन करें →</button></article><article class="card service"><div style="font-size:30px">🌐</div><h3>More Services</h3><p>अन्य ऑनलाइन सेवाएँ</p><button onclick="service('More Services')">आवेदन करें →</button></article>
-</div></div></section>
+<div class="wrap hero">
 
-<section id="booking"><div class="wrap"><div class="head"><div><span class="tag">TRAVEL BOOKING</span><h2>Bus • Train • Flight</h2></div></div><div class="grid three">
-<article class="card booking"><div class="ico">🚌</div><h3>Bus Booking</h3><p>बस टिकट के लिए यात्रा और यात्री विवरण भेजें।</p><button class="btn primary full" onclick="book('Bus')">Bus Booking</button></article><article class="card booking"><div class="ico">🚆</div><h3>Train Booking</h3><p>ट्रेन टिकट के लिए यात्रा और यात्री विवरण भेजें।</p><button class="btn primary full" onclick="book('Train')">Train Booking</button></article><article class="card booking"><div class="ico">✈️</div><h3>Flight Booking</h3><p>फ्लाइट बुकिंग सहायता के लिए विवरण भेजें।</p><button class="btn primary full" onclick="book('Flight')">Flight Booking</button></article>
-</div></div></section>
+<div class="box">
 
-<section id="travel"><div class="wrap"><div class="head"><div><span class="tag">TOUR & TRAVEL</span><h2>लोकप्रिय यात्रा पैकेज</h2></div></div><div class="grid four">
-<article class="card travel"><div class="pic pic1">अयोध्या</div><h3>अयोध्या धाम यात्रा</h3><p>श्री राम जन्मभूमि • हनुमानगढ़ी • कनक भवन • सरयू आरती</p><strong>₹2,200 से / व्यक्ति</strong><button onclick="packageBook('अयोध्या धाम यात्रा')">बुक करें →</button></article><article class="card travel"><div class="pic pic2">काशी</div><h3>काशी विश्वनाथ दर्शन</h3><p>बलिया ↔ वाराणसी यात्रा और दर्शन सहायता</p><strong>₹2,500 से / व्यक्ति</strong><button onclick="packageBook('काशी विश्वनाथ दर्शन')">बुक करें →</button></article><article class="card travel"><div class="pic pic3">मथुरा</div><h3>वृंदावन मथुरा</h3><p>बलिया ↔ मथुरा यात्रा पैकेज</p><strong>₹5,500 / व्यक्ति</strong><button onclick="packageBook('वृंदावन मथुरा')">बुक करें →</button></article><article class="card travel"><div class="pic pic4">वैष्णो देवी</div><h3>वैष्णो देवी यात्रा</h3><p>यात्रा योजना और टिकट सहायता</p><strong>₹5,500 से / व्यक्ति</strong><button onclick="packageBook('वैष्णो देवी यात्रा')">बुक करें →</button></article>
-</div></div></section>
+<span class="tag">
+AJ SEVA • DIGITAL SERVICE CENTER
+</span>
 
-<section id="offers"><div class="wrap"><div class="offer"><div><span class="tag">SPECIAL OFFER</span><h2>आज की सेवा, आसान प्रक्रिया</h2><p>ऑफर और पैकेज की जानकारी के लिए सीधे संपर्क करें।</p></div><button class="btn outline" onclick="openM('contact')">ऑफर पूछें</button></div></div></section>
+<h1>
+आपकी सेवा,
+<span>
+हमारे साथ
+</span>
+</h1>
 
-<section><div class="wrap"><div class="head"><div><span class="tag">PAYMENT & ORDERS</span><h2>पेमेंट और मेरे ऑर्डर</h2></div></div><div class="grid three">
-<article class="card policy"><h3>💳 Payment / Wallet</h3><p>सेवा या बुकिंग के लिए भुगतान जानकारी देखें।</p><button class="btn primary" onclick="openM('payment')">Payment</button></article>
-<article class="card policy"><h3>📋 My Orders</h3><p>इस ब्राउज़र में बनाए गए आवेदन/बुकिंग देखें।</p><button class="btn outline" onclick="orders()">Orders देखें</button></article>
-<article class="card policy"><h3>👤 Profile</h3><p>नाम और मोबाइल को स्थानीय रूप से सेव करें।</p><button class="btn outline" onclick="openM('profile')">Profile</button></article>
-</div></div></section>
+<p>
+डिजिटल सेवाएँ, Recharge,
+Bus/Train/Flight Booking,
+Travel Packages और Payment —
+अब एक ही वेबसाइट पर।
+</p>
 
-<section id="gallery"><div class="wrap"><div class="head"><div><span class="tag">DAILY GALLERY</span><h2>हमारी सेवा की झलक</h2></div></div><div class="grid four">
-<div class="card gallery"><span>📸</span><b>Daily Service</b><small class="muted">फोटो यहाँ जोड़ी जा सकती है</small></div><div class="card gallery"><span>🧾</span><b>Digital Work</b><small class="muted">ग्राहक सेवा अपडेट</small></div><div class="card gallery"><span>✈️</span><b>Travel</b><small class="muted">यात्रा अपडेट</small></div><div class="card gallery"><span>💳</span><b>Payment</b><small class="muted">पेमेंट सहायता</small></div>
-</div></div></section>
+<div class="actions">
 
-<section id="about"><div class="wrap"><div class="grid two"><article class="card policy"><span class="tag">ABOUT US</span><h2>हमारे बारे में</h2><p><b>आशीष जन सेवा केंद्र</b> का उद्देश्य लोगों को डिजिटल और ऑनलाइन सेवाएँ आसान तरीके से उपलब्ध कराने में सहायता करना है। यहाँ डिजिटल सेवाएँ, ऑनलाइन आवेदन, टिकट/ट्रैवल सहायता, रिचार्ज और ग्राहक सहायता जैसी सेवाएँ एक जगह व्यवस्थित की गई हैं।</p><p>सेवा की उपलब्धता, शुल्क और प्रक्रिया संबंधित सेवा/प्रदाता के नियमों के अनुसार हो सकती है।</p></article><article class="card policy"><span class="tag">WHY AJ SEVA</span><h2>क्यों चुनें?</h2><ul><li>एक जगह कई डिजिटल सेवाएँ</li><li>आसान आवेदन प्रक्रिया</li><li>बुकिंग और ऑर्डर रिकॉर्ड</li><li>सीधी ग्राहक सहायता</li><li>पेमेंट और रिफंड नीति स्पष्ट</li></ul></article></div></div></section>
+<button
+    class="btn primary"
+    onclick="openService()"
+>
+सेवा के लिए आवेदन
+</button>
 
-<section><div class="wrap"><div class="head"><div><span class="tag">POLICIES</span><h2>नीतियाँ और शर्तें</h2></div></div><div class="grid three">
-<article class="card policy"><h3>🔐 Privacy Policy</h3><p>नाम, मोबाइल और आवेदन/बुकिंग विवरण सेवा देने, संपर्क और ऑर्डर प्रबंधन के लिए उपयोग हो सकते हैं।</p><button class="linkbtn" onclick="policy('privacy')">पूरी नीति देखें →</button></article>
-<article class="card policy"><h3>💰 Payment & Refund Policy</h3><p>रिफंड सेवा प्रदाता, टिकट नियम, cancellation charges और बुकिंग स्थिति पर निर्भर कर सकता है।</p><button class="linkbtn" onclick="policy('refund')">पूरी नीति देखें →</button></article>
-<article class="card policy"><h3>📜 Terms & Conditions</h3><p>ग्राहक द्वारा दी गई जानकारी सही होनी चाहिए और third-party service के नियम लागू रहेंगे।</p><button class="linkbtn" onclick="policy('terms')">पूरी शर्तें देखें →</button></article>
-</div></div></section>
+<a
+    class="btn"
+    href="#travel"
+>
+ट्रैवल देखें
+</a>
 
-<section id="contact"><div class="wrap"><div class="box contact"><div><span class="tag">CUSTOMER SUPPORT</span><h2>सहायता के लिए संपर्क करें</h2><p class="muted">बुकिंग, डिजिटल सेवा, पेमेंट या रिफंड से संबंधित सहायता के लिए संपर्क करें।</p></div><div class="actions"><a class="btn green" href="https://wa.me/917376999243" target="_blank">WhatsApp</a><a class="btn primary" href="tel:+917376999243">कॉल करें</a></div></div></div></section>
+</div>
+
+
+<div class="trust">
+
+<div>
+
+🔒
+
+<b>
+सुरक्षित
+</b>
+
+<small>
+विश्वसनीय प्रक्रिया
+</small>
+
+</div>
+
+
+<div>
+
+⚡
+
+<b>
+तेज़ सेवा
+</b>
+
+<small>
+आसान आवेदन
+</small>
+
+</div>
+
+
+<div>
+
+📞
+
+<b>
+सहायता
+</b>
+
+<small>
+सीधा WhatsApp
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="box logo-box">
+
+<img
+    src="assets/aj-seva-logo.png"
+    alt="AJ Seva"
+>
+
+<b
+    style="
+    display:block;
+    color:#0b4ea2;
+    font-size:24px
+    "
+>
+AJ Seva
+</b>
+
+<span class="muted">
+Digital Services • Recharge • Travel • Wallet
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     BOOKING
+========================================================= -->
+
+<section id="booking">
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<span class="tag">
+BOOKING
+</span>
+
+<h2>
+Bus • Train • Flight
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="grid three">
+
+
+<article
+    class="card quick"
+    onclick="openBooking('Bus')"
+>
+
+<div class="quick ico">
+🚌
+</div>
+
+<b>
+Bus Booking
+</b>
+
+<p class="muted">
+बस टिकट के लिए आवेदन करें।
+</p>
+
+<button
+    class="linkbtn"
+>
+आवेदन करें →
+</button>
+
+</article>
+
+
+<article
+    class="card quick"
+    onclick="openBooking('Train')"
+>
+
+<div class="quick ico">
+🚆
+</div>
+
+<b>
+Train Booking
+</b>
+
+<p class="muted">
+ट्रेन टिकट के लिए आवेदन करें।
+</p>
+
+<button
+    class="linkbtn"
+>
+आवेदन करें →
+</button>
+
+</article>
+
+
+<article
+    class="card quick"
+    onclick="openBooking('Flight')"
+>
+
+<div class="quick ico">
+✈️
+</div>
+
+<b>
+Flight Booking
+</b>
+
+<p class="muted">
+फ्लाइट टिकट के लिए आवेदन करें।
+</p>
+
+<button
+    class="linkbtn"
+>
+आवेदन करें →
+</button>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section id="services">
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<span class="tag">
+DIGITAL SERVICES
+</span>
+
+<h2>
+हमारी सेवाएँ
+</h2>
+
+</div>
+
+<button
+    class="btn primary"
+    onclick="openService()"
+>
+सभी सेवाएँ
+</button>
+
+</div>
+
+
+<div class="grid four">
+
+
+<button
+    class="card quick"
+    onclick="startService('PAN Card')"
+>
+<div class="quick ico">🪪</div>
+<b>PAN Card</b>
+<p class="muted">PAN Card आवेदन</p>
+</button>
+
+
+<button
+    class="card quick"
+    onclick="startService('Aadhaar Service')"
+>
+<div class="quick ico">🆔</div>
+<b>Aadhaar</b>
+<p class="muted">आधार संबंधित सेवा</p>
+</button>
+
+
+<button
+    class="card quick"
+    onclick="startService('Ayushman Card')"
+>
+<div class="quick ico">🏥</div>
+<b>Ayushman Card</b>
+<p class="muted">आयुष्मान कार्ड</p>
+</button>
+
+
+<button
+    class="card quick"
+    onclick="startService('Ration Card')"
+>
+<div class="quick ico">🍚</div>
+<b>Ration Card</b>
+<p class="muted">राशन कार्ड आवेदन</p>
+</button>
+
+
+<button
+    class="card quick"
+    onclick="startService('Voter Card')"
+>
+<div class="quick ico">🗳️</div>
+<b>Voter Card</b>
+<p class="muted">वोटर कार्ड</p>
+</button>
+
+
+<button
+    class="card quick"
+    onclick="startService('Driving Licence')"
+>
+<div class="quick ico">🚘</div>
+<b>Driving Licence</b>
+<p class="muted">ड्राइविंग लाइसेंस</p>
+</button>
+
+
+<button
+    class="card quick"
+    onclick="startService('E-Shram / Labour')"
+>
+<div class="quick ico">👷</div>
+<b>E-Shram / Labour</b>
+<p class="muted">श्रमिक सेवाएँ</p>
+</button>
+
+
+<button
+    class="card quick"
+    onclick="startService('Resume / Online Form')"
+>
+<div class="quick ico">📝</div>
+<b>Resume / Form</b>
+<p class="muted">ऑनलाइन फॉर्म</p>
+</button>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TRAVEL
+========================================================= -->
+
+<section id="travel">
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<span class="tag">
+TRAVEL
+</span>
+
+<h2>
+Travel Packages
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="grid three">
+
+
+<article class="card travel">
+
+<div class="pic pic1">
+🛕 अयोध्या
+</div>
+
+<h3>
+Ayodhya Dham
+</h3>
+
+<p>
+श्री राम जन्मभूमि,
+हनुमानगढ़ी और प्रमुख दर्शन।
+</p>
+
+<strong>
+₹2,200 प्रति व्यक्ति
+</strong>
+
+<br>
+
+<button
+    class="btn primary"
+    onclick="
+    startTravel(
+        'Ayodhya Dham',
+        2200
+    )
+    "
+>
+आवेदन करें
+</button>
+
+</article>
+
+
+<article class="card travel">
+
+<div class="pic pic2">
+🛕 काशी
+</div>
+
+<h3>
+Kashi Vishwanath
+</h3>
+
+<p>
+बलिया से बनारस
+दर्शन यात्रा।
+</p>
+
+<strong>
+₹2,500 प्रति व्यक्ति
+</strong>
+
+<br>
+
+<button
+    class="btn primary"
+    onclick="
+    startTravel(
+        'Kashi Vishwanath',
+        2500
+    )
+    "
+>
+आवेदन करें
+</button>
+
+</article>
+
+
+<article class="card travel">
+
+<div class="pic pic3">
+🛕 वृंदावन
+</div>
+
+<h3>
+Vrindavan Mathura
+</h3>
+
+<p>
+मथुरा-वृंदावन दर्शन यात्रा।
+</p>
+
+<strong>
+₹5,500 प्रति व्यक्ति
+</strong>
+
+<br>
+
+<button
+    class="btn primary"
+    onclick="
+    startTravel(
+        'Vrindavan Mathura',
+        5500
+    )
+    "
+>
+आवेदन करें
+</button>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     OFFER
+========================================================= -->
+
+<section id="offers">
+
+<div class="wrap">
+
+<div class="offer">
+
+<div>
+
+<span class="tag">
+SPECIAL OFFER
+</span>
+
+<h2>
+विशेष ऑफर और सेवाएँ
+</h2>
+
+<p>
+नई सेवाओं और यात्रा ऑफर की जानकारी
+के लिए हमसे संपर्क करें।
+</p>
+
+</div>
+
+<button
+    class="btn"
+    onclick="openContact()"
+>
+संपर्क करें
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     GALLERY
+========================================================= -->
+
+<section id="gallery">
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<span class="tag">
+DAILY GALLERY
+</span>
+
+<h2>
+आज की सेवा
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="card gallery">
+
+<div>
+
+<span>
+🖼️
+</span>
+
+<h3>
+Daily Work Gallery
+</h3>
+
+<p class="muted">
+ग्राहकों को दी गई सेवाओं की
+फोटो यहाँ दिखाई जा सकती हैं।
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+<div class="wrap">
+
+<div class="card policy">
+
+<span class="tag">
+ABOUT AJ SEVA
+</span>
+
+<h2>
+हमारे बारे में
+</h2>
+
+<p>
+<strong>AJ Seva — आशीष जन सेवा केंद्र</strong>
+एक डिजिटल सेवा केंद्र है जहाँ
+ग्राहकों को विभिन्न ऑनलाइन सेवाएँ,
+डिजिटल आवेदन, टिकट बुकिंग,
+ट्रैवल और भुगतान संबंधी सहायता
+एक ही स्थान पर उपलब्ध कराने का
+प्रयास किया जाता है।
+</p>
+
+<p>
+हमारा उद्देश्य प्रक्रिया को आसान,
+तेज़ और ग्राहक के लिए सुविधाजनक
+बनाना है।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+<div class="wrap">
+
+<div class="card contact">
+
+<div>
+
+<span class="tag">
+HELP & SUPPORT
+</span>
+
+<h2>
+सहायता के लिए संपर्क करें
+</h2>
+
+<p>
+Booking, Service, Payment या Refund
+से संबंधित सहायता के लिए संपर्क करें।
+</p>
+
+</div>
+
+<div class="actions">
+
+<a
+    class="btn green"
+    href="https://wa.me/917376999243"
+    target="_blank"
+>
+WhatsApp
+</a>
+
+<a
+    class="btn primary"
+    href="tel:+917376999243"
+>
+Call
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 </main>
 
-<footer><div class="wrap foot"><div><img src="assets/aj-seva-logo.png"><h3>AJ Seva</h3><p>आशीष जन सेवा केंद्र</p></div><div><h4>Quick Links</h4><a href="#services">सेवाएँ</a><a href="#booking">बुकिंग</a><a href="#travel">ट्रैवल</a><a href="#contact">सहायता</a></div><div><h4>Policies</h4><a href="#home" onclick="policy('privacy')">Privacy Policy</a><a href="#home" onclick="policy('refund')">Refund Policy</a><a href="#home" onclick="policy('terms')">Terms & Conditions</a></div><div><h4>Contact</h4><p>WhatsApp / Call Support</p><a href="tel:+917376999243">7376999243</a></div></div><div class="copy">© 2026 AJ Seva • आशीष जन सेवा केंद्र • All Rights Reserved</div></footer>
+<footer>
 
-<div class="modal" id="service"><div class="modalbox"><button class="close" onclick="closeM('service')">×</button><h2>सेवा के लिए आवेदन</h2><form onsubmit="serviceSubmit(event)"><label>सेवा<select id="sname" required><option value="">सेवा चुनें</option><option>PAN Card</option><option>Aadhaar</option><option>Ayushman / ABHA</option><option>Certificate</option><option>Voter Card</option><option>Driving Licence</option><option>E-Shram / Labour</option><option>Passport Help</option><option>Resume / Biodata</option><option>Online Form</option><option>Other Service</option></select></label><label>नाम<input id="sn" required></label><label>मोबाइल<input id="sm" maxlength="10" inputmode="numeric" required></label><label>नोट<textarea id="st" rows="3"></textarea></label><button class="btn primary full">आवेदन बनाएं</button></form></div></div>
+<div class="wrap foot">
 
-<div class="modal" id="bookingM"><div class="modalbox"><button class="close" onclick="closeM('bookingM')">×</button><h2>Ticket Booking</h2><form onsubmit="bookingSubmit(event)"><label>Booking Type<select id="bt"><option>Bus</option><option>Train</option><option>Flight</option><option>Travel Package</option></select></label><label>नाम<input id="bn" required></label><label>मोबाइल<input id="bm" maxlength="10" inputmode="numeric" required></label><div class="row"><label>यात्री<input id="bp" type="number" min="1" value="1"></label><label>तारीख<input id="bd" type="date" required></label></div><div class="row"><label>From<input id="bf" required></label><label>To<input id="bto" required></label></div><button class="btn primary full">बुकिंग अनुरोध भेजें</button></form></div></div>
 
-<div class="modal" id="recharge"><div class="modalbox"><button class="close" onclick="closeM('recharge')">×</button><h2>Recharge & Bills</h2><form onsubmit="rechargeSubmit(event)"><label>सेवा<select id="rt"><option>Mobile Recharge</option><option>DTH Recharge</option><option>Electricity Bill</option><option>Other Bill</option></select></label><label>Mobile / Consumer No.<input id="rn" required></label><label>Amount ₹<input id="ra" type="number" min="1" required></label><button class="btn primary full">Request बनाएं</button></form></div></div>
+<div>
 
-<div class="modal" id="payment"><div class="modalbox"><button class="close" onclick="closeM('payment')">×</button><h2>Payment / Wallet</h2><div class="qr">₹<small>अपना UPI QR यहाँ लगाएँ</small></div><p><b>Payment Instructions</b></p><ol><li>Order/Service की पुष्टि करें।</li><li>दिए गए UPI/QR पर भुगतान करें।</li><li>Transaction ID/स्क्रीनशॉट सुरक्षित रखें।</li><li>सहायता के लिए WhatsApp पर भेजें।</li></ol><p style="background:#fff7e5;padding:10px;border-radius:9px">नोट: यह frontend payment screen है। वास्तविक gateway के लिए merchant account/API और secure backend जोड़ना होगा।</p></div></div>
+<img
+    src="assets/aj-seva-logo.png"
+    alt="AJ Seva"
+>
 
-<div class="modal" id="orders"><div class="modalbox"><button class="close" onclick="closeM('orders')">×</button><h2>My Orders</h2><div id="olist"></div></div></div>
-<div class="modal" id="profile"><div class="modalbox"><button class="close" onclick="closeM('profile')">×</button><h2>My Profile</h2><form onsubmit="profileSubmit(event)"><label>नाम<input id="pn" required></label><label>मोबाइल<input id="pm" maxlength="10" required></label><button class="btn primary full">Save Profile</button></form></div></div>
-<div class="modal" id="contact"><div class="modalbox"><button class="close" onclick="closeM('contact')">×</button><h2>सहायता से संपर्क</h2><p>WhatsApp या कॉल से सीधे संपर्क करें।</p><a class="btn green full" href="https://wa.me/917376999243" target="_blank">WhatsApp पर संपर्क</a><br><br><a class="btn primary full" href="tel:+917376999243">कॉल करें</a></div></div>
-<div class="modal" id="policy"><div class="modalbox"><button class="close" onclick="closeM('policy')">×</button><div id="policyText"></div></div></div>
-<div class="toast" id="toast"></div>
+<h3>
+AJ Seva
+</h3>
+
+<p>
+आशीष जन सेवा केंद्र
+</p>
+
+<p>
+Digital Services • Recharge • Travel
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<a href="#home">
+होम
+</a>
+
+<a href="#services">
+सेवाएँ
+</a>
+
+<a href="#booking">
+बुकिंग
+</a>
+
+<a href="#travel">
+ट्रैवल
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Policies
+</h3>
+
+<a href="#" onclick="openPolicy('privacy')">
+Privacy Policy
+</a>
+
+<a href="#" onclick="openPolicy('refund')">
+Payment & Refund
+</a>
+
+<a href="#" onclick="openPolicy('terms')">
+Terms & Conditions
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+संपर्क
+</h3>
+
+<a href="tel:+917376999243">
+📞 7376999243
+</a>
+
+<a
+    href="https://wa.me/917376999243"
+    target="_blank"
+>
+💬 WhatsApp
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copy">
+
+© 2026 AJ Seva —
+आशीष जन सेवा केंद्र
+
+</div>
+
+</footer>
+
+
+<!-- =========================================================
+     SERVICE LIST MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="serviceListModal"
+>
+
+<div class="modalbox">
+
+<button
+    class="close"
+    onclick="closeM('serviceListModal')"
+>
+×
+</button>
+
+<h2>
+सभी सेवाएँ
+</h2>
+
+<div class="grid two">
+
+<button
+    class="card quick"
+    onclick="startService('PAN Card')"
+>
+🪪 PAN Card
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Aadhaar Service')"
+>
+🆔 Aadhaar
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Ayushman Card')"
+>
+🏥 Ayushman Card
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Ration Card')"
+>
+🍚 Ration Card
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Income Certificate')"
+>
+📄 Income Certificate
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Caste Certificate')"
+>
+📄 Caste Certificate
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Residence Certificate')"
+>
+🏠 Residence Certificate
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Voter Card')"
+>
+🗳️ Voter Card
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Driving Licence')"
+>
+🚘 Driving Licence
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('E-Shram / Labour')"
+>
+👷 E-Shram / Labour
+</button>
+
+<button
+    class="card quick"
+    onclick="startService('Resume / Online Form')"
+>
+📝 Resume / Online Form
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     APPLICATION MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="applicationModal"
+>
+
+<div class="modalbox">
+
+<button
+    class="close"
+    onclick="closeM('applicationModal')"
+>
+×
+</button>
+
+<h2 id="appTitle">
+आवेदन
+</h2>
+
+
+<div class="stepbar">
+
+<div
+    class="step active"
+    id="st1"
+>
+1. आवेदन
+</div>
+
+<div
+    class="step"
+    id="st2"
+>
+2. Payment
+</div>
+
+<div
+    class="step"
+    id="st3"
+>
+3. UPI / QR
+</div>
+
+<div
+    class="step"
+    id="st4"
+>
+4. Success
+</div>
+
+</div>
+
+
+<!-- APPLICATION -->
+
+<div id="appStep">
+
+<form onsubmit="submitApplication(event)">
+
+<input
+    type="hidden"
+    id="flowType"
+>
+
+<label>
+सेवा / Booking
+
+<input
+    id="appService"
+    readonly
+>
+</label>
+
+
+<div class="row">
+
+<label>
+नाम
+
+<input
+    id="appName"
+    required
+    placeholder="अपना नाम"
+>
+</label>
+
+
+<label>
+मोबाइल नंबर
+
+<input
+    id="appMobile"
+    maxlength="10"
+    required
+    placeholder="10 अंकों का नंबर"
+>
+</label>
+
+</div>
+
+
+<div class="row">
+
+<label>
+व्यक्ति
+
+<input
+    id="appPersons"
+    type="number"
+    min="1"
+    value="1"
+    required
+>
+</label>
+
+
+<label>
+तारीख
+
+<input
+    id="appDate"
+    type="date"
+>
+</label>
+
+</div>
+
+
+<div class="row">
+
+<label>
+From
+
+<input
+    id="appFrom"
+    placeholder="कहाँ से"
+>
+</label>
+
+
+<label>
+To
+
+<input
+    id="appTo"
+    placeholder="कहाँ तक"
+>
+</label>
+
+</div>
+
+
+<label>
+Amount ₹
+
+<input
+    id="appAmount"
+    type="number"
+    min="1"
+    required
+    placeholder="राशि"
+>
+</label>
+
+
+<label>
+अतिरिक्त जानकारी
+
+<textarea
+    id="appNote"
+    rows="3"
+    placeholder="कोई विशेष जानकारी"
+></textarea>
+
+</label>
+
+
+<button
+    class="btn primary full"
+>
+आगे Payment पर जाएँ →
+</button>
+
+</form>
+
+</div>
+
+
+<!-- PAYMENT -->
+
+<div
+    id="paymentStep"
+    class="hidden"
+>
+
+<h3>
+Payment Summary
+</h3>
+
+<div
+    class="summary"
+    id="paymentSummary"
+>
+</div>
+
+<div class="actions">
+
+<button
+    class="btn"
+    onclick="goStep(1)"
+>
+← वापस
+</button>
+
+<button
+    class="btn primary"
+    onclick="goStep(3)"
+>
+UPI / QR Payment →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- UPI -->
+
+<div
+    id="upiStep"
+    class="hidden"
+>
+
+<h3>
+UPI / QR से Payment करें
+</h3>
+
+<img
+    class="qr"
+    src="assets/upi-qr.png"
+    alt="UPI QR"
+>
+
+
+<div class="upi">
+
+<b>
+UPI ID
+</b>
+
+<br>
+
+7376999243-4@ybl
+
+<br>
+
+<button
+    class="linkbtn"
+    onclick="copyUpi()"
+>
+UPI ID Copy करें
+</button>
+
+</div>
+
+
+<br>
+
+
+<a
+    id="upiPayLink"
+    class="btn green full"
+    href="#"
+>
+📱 UPI App से Pay करें
+</a>
+
+
+<br><br>
+
+
+<label>
+
+UTR / Transaction ID
+
+<input
+    id="utr"
+    required
+    placeholder="Payment के बाद UTR डालें"
+>
+
+</label>
+
+
+<div class="note">
+
+Payment करने के बाद
+UTR / Transaction ID डालकर
+नीचे Success पर क्लिक करें।
+
+</div>
+
+
+<br>
+
+
+<button
+    class="btn primary full"
+    onclick="finishPayment()"
+>
+Payment Done → Success
+</button>
+
+</div>
+
+
+<!-- SUCCESS -->
+
+<div
+    id="successStep"
+    class="hidden"
+>
+
+<div class="success">
+
+<div class="tick">
+✅
+</div>
+
+<h2>
+Order सफलतापूर्वक बन गया
+</h2>
+
+<div id="successSummary">
+</div>
+
+
+<br>
+
+
+<button
+    class="btn green full"
+    onclick="shareWhatsApp()"
+>
+💬 WhatsApp पर Order Share करें
+</button>
+
+
+<br><br>
+
+
+<button
+    class="btn primary full"
+    onclick="closeM('applicationModal')"
+>
+Done
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     ORDERS MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="ordersModal"
+>
+
+<div class="modalbox">
+
+<button
+    class="close"
+    onclick="closeM('ordersModal')"
+>
+×
+</button>
+
+<h2>
+मेरे Orders
+</h2>
+
+<div id="ordersList">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     PAYMENT INFO
+========================================================= -->
+
+<div
+    class="modal"
+    id="paymentInfoModal"
+>
+
+<div class="modalbox">
+
+<button
+    class="close"
+    onclick="closeM('paymentInfoModal')"
+>
+×
+</button>
+
+<h2>
+UPI / QR Payment
+</h2>
+
+<img
+    class="qr"
+    src="assets/upi-qr.png"
+    alt="UPI QR"
+>
+
+
+<div class="upi">
+
+<b>
+UPI ID
+</b>
+
+<br>
+
+7376999243-4@ybl
+
+<br>
+
+<button
+    class="linkbtn"
+    onclick="copyUpi()"
+>
+Copy UPI ID
+</button>
+
+</div>
+
+<p class="note">
+
+सिर्फ payment screen देखने के लिए
+यह जानकारी है।
+
+किसी आवेदन/booking के लिए
+आवेदन form से payment करें
+ताकि Order ID बने।
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     CONTACT MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="contactModal"
+>
+
+<div class="modalbox">
+
+<button
+    class="close"
+    onclick="closeM('contactModal')"
+>
+×
+</button>
+
+<h2>
+सहायता / संपर्क
+</h2>
+
+<p>
+Booking, service, payment या refund
+में सहायता चाहिए?
+</p>
+
+<a
+    class="btn green full"
+    href="https://wa.me/917376999243"
+    target="_blank"
+>
+WhatsApp पर संपर्क
+</a>
+
+<br>
+<br>
+
+<a
+    class="btn primary full"
+    href="tel:+917376999243"
+>
+Call 7376999243
+</a>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     POLICY MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="policyModal"
+>
+
+<div class="modalbox">
+
+<button
+    class="close"
+    onclick="closeM('policyModal')"
+>
+×
+</button>
+
+<div id="policyText">
+</div>
+
+</div>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+</div>
+
 
 <script>
-const $=id=>document.getElementById(id), KEY="ajSevaOrders";
-function openM(id){$(id).classList.add("on")}function closeM(id){$(id).classList.remove("on")}
-function toast(t){$("toast").textContent=t;$("toast").classList.add("on");setTimeout(()=>$("toast").classList.remove("on"),2800)}
-function orders(){let a=JSON.parse(localStorage.getItem(KEY)||"[]");$("olist").innerHTML=a.length?a.map(x=>`<div class="order"><b>${x.type}</b> • Order ID <b>${x.id}</b><br><small>${x.time} • Pending</small><br>${Object.entries(x.d).map(([k,v])=>k+": "+v).join(" • ")}</div>`).join(""):"<div class='order'>अभी कोई order नहीं है।</div>";openM("orders")}
-function add(type,d){let a=JSON.parse(localStorage.getItem(KEY)||"[]");let o={id:"AJ"+Date.now().toString().slice(-8),type,d,time:new Date().toLocaleString("hi-IN")};a.unshift(o);localStorage.setItem(KEY,JSON.stringify(a));return o}
-function service(n){openM("service");$("sname").value=n}
-function serviceSubmit(e){e.preventDefault();let o=add("Service Request",{service:$("sname").value,name:$("sn").value,mobile:$("sm").value,note:$("st").value||"—"});closeM("service");e.target.reset();toast("✅ आवेदन बन गया • "+o.id)}
-function book(t){openM("bookingM");$("bt").value=t}
-function packageBook(n){book("Travel Package");$("bf").value=n;$("bto").value="AJ Seva"}
-function bookingSubmit(e){e.preventDefault();let o=add("Booking Request",{type:$("bt").value,name:$("bn").value,mobile:$("bm").value,persons:$("bp").value,date:$("bd").value,from:$("bf").value,to:$("bto").value});closeM("bookingM");e.target.reset();toast("✅ Booking request बन गई • "+o.id)}
-function rechargeSubmit(e){e.preventDefault();let o=add("Recharge/Bill Request",{service:$("rt").value,number:$("rn").value,amount:"₹"+$("ra").value});closeM("recharge");e.target.reset();toast("✅ Request बन गई • "+o.id)}
-function profileSubmit(e){e.preventDefault();localStorage.setItem("ajSevaProfile",JSON.stringify({name:$("pn").value,mobile:$("pm").value}));closeM("profile");toast("✅ Profile save हो गई")}
-let pol={
-privacy:`<span class="tag">PRIVACY POLICY</span><h2>गोपनीयता नीति</h2><p>AJ Seva पर ग्राहक की जानकारी का उपयोग सेवा अनुरोध, बुकिंग, भुगतान सत्यापन, ऑर्डर प्रबंधन और सहायता के लिए किया जाता है। नाम, मोबाइल, यात्रा विवरण और आवेदन से जुड़ी जानकारी आवश्यकतानुसार ली जा सकती है।</p><p>भुगतान कार्ड/बैंक पासवर्ड जैसी संवेदनशील जानकारी वेबसाइट के local storage में नहीं रखी जाती। वास्तविक payment gateway की अपनी privacy policy भी लागू हो सकती है।</p><p>सेवा पूरी करने के लिए जहाँ आवश्यक हो, संबंधित service provider को आवश्यक जानकारी दी जा सकती है।</p>`,
-refund:`<span class="tag">PAYMENT & REFUND POLICY</span><h2>Payment & Refund Policy</h2><p>भुगतान से पहले सेवा/बुकिंग और शुल्क जाँचें। सफल भुगतान के बाद Order ID/Transaction ID सुरक्षित रखें।</p><p>रिफंड सेवा की प्रकृति, टिकट नियम, cancellation charges और संबंधित provider के नियमों पर निर्भर करेगा। हर भुगतान अपने-आप refundable नहीं माना जाएगा।</p><p>यदि पैसा कट गया लेकिन सेवा/बुकिंग पूरी नहीं हुई, तो Order ID और transaction proof के साथ सहायता से संपर्क करें। सत्यापन के बाद लागू नियमों के अनुसार समाधान/रिफंड किया जाएगा। Gateway या third-party charges जहाँ लागू हों, समायोजित हो सकते हैं।</p>`,
-terms:`<span class="tag">TERMS & CONDITIONS</span><h2>नियम एवं शर्तें</h2><p>ग्राहक द्वारा दी गई जानकारी सही और पूर्ण होनी चाहिए। गलत नाम, मोबाइल, यात्री विवरण या दस्तावेज के कारण होने वाली समस्या के लिए ग्राहक जिम्मेदार हो सकता है।</p><p>टिकट, ट्रैवल और अन्य third-party services उनके संबंधित provider के नियमों के अनुसार संचालित होती हैं। अंतिम confirmation availability पर निर्भर है।</p><p>सेवा शुल्क, समय और उपलब्धता बदल सकती है। आवेदन submit करने से पहले जानकारी जाँचें।</p>`};
-function policy(k){$("policyText").innerHTML=pol[k];openM("policy")}
-document.querySelectorAll("nav a").forEach(a=>a.onclick=()=>document.querySelector("nav").classList.remove("open"));
-let p=JSON.parse(localStorage.getItem("ajSevaProfile")||"null");if(p){$("pn").value=p.name||"";$("pm").value=p.mobile||""}
-</script></body></html>
+
+const UPI_ID =
+"7376999243-4@ybl";
+
+const WA_NUMBER =
+"917376999243";
+
+const KEY =
+"ajSevaOrders";
+
+
+const $ =
+id =>
+document.getElementById(id);
+
+
+/* ================= MODALS ================= */
+
+function openM(id){
+
+    $(id)
+        .classList
+        .add("on");
+
+}
+
+
+function closeM(id){
+
+    $(id)
+        .classList
+        .remove("on");
+
+}
+
+
+/* ================= TOAST ================= */
+
+function toast(t){
+
+    $("toast").textContent =
+        t;
+
+    $("toast")
+        .classList
+        .add("on");
+
+    setTimeout(
+        () =>
+        $("toast")
+        .classList
+        .remove("on"),
+        2800
+    );
+
+}
+
+
+/* ================= SERVICE ================= */
+
+function openService(){
+
+    openM(
+        "serviceListModal"
+    );
+
+}
+
+
+function startService(name){
+
+    closeM(
+        "serviceListModal"
+    );
+
+    resetApplication();
+
+    $("flowType").value =
+        "service";
+
+    $("appService").value =
+        name;
+
+    $("appAmount").value =
+        0;
+
+    $("appTitle").textContent =
+        name +
+        " — आवेदन";
+
+    openM(
+        "applicationModal"
+    );
+
+}
+
+
+/* ================= TRAVEL ================= */
+
+function startTravel(
+    name,
+    price
+){
+
+    resetApplication();
+
+    $("flowType").value =
+        "travel";
+
+    $("appService").value =
+        "Travel Package";
+
+    $("appFrom").value =
+        "Ballia";
+
+    $("appTo").value =
+        name;
+
+    $("appAmount").value =
+        price;
+
+    $("appTitle").textContent =
+        name +
+        " — यात्रा आवेदन";
+
+    openM(
+        "applicationModal"
+    );
+
+}
+
+
+/* ================= BOOKING ================= */
+
+function openBooking(type){
+
+    resetApplication();
+
+    $("flowType").value =
+        "booking";
+
+    $("appService").value =
+        type +
+        " Booking";
+
+    $("appTitle").textContent =
+        type +
+        " Booking — आवेदन";
+
+    openM(
+        "applicationModal"
+    );
+
+}
+
+
+/* ================= RESET ================= */
+
+function resetApplication(){
+
+    $("appService").value =
+        "";
+
+    $("appName").value =
+        "";
+
+    $("appMobile").value =
+        "";
+
+    $("appPersons").value =
+        1;
+
+    $("appDate").value =
+        "";
+
+    $("appFrom").value =
+        "";
+
+    $("appTo").value =
+        "";
+
+    $("appAmount").value =
+        0;
+
+    $("appNote").value =
+        "";
+
+    $("utr").value =
+        "";
+
+    showPart(
+        "appStep"
+    );
+
+    setStep(1);
+
+}
+
+
+/* ================= STEP ================= */
+
+function setStep(n){
+
+    [
+        "st1",
+        "st2",
+        "st3",
+        "st4"
+    ]
+    .forEach(
+        (x,i) =>
+        $(x)
+        .classList
+        .toggle(
+            "active",
+            i + 1 === n
+        )
+    );
+
+}
+
+
+function showPart(id){
+
+    [
+        "appStep",
+        "paymentStep",
+        "upiStep",
+        "successStep"
+    ]
+    .forEach(
+        x =>
+        $(x)
+        .classList
+        .toggle(
+            "hidden",
+            x !== id
+        )
+    );
+
+}
+
+
+/* ================= STEP NAVIGATION ================= */
+
+function goStep(n){
+
+    setStep(n);
+
+    if(n === 1){
+
+        showPart(
+            "appStep"
+        );
+
+    }
+
+    if(n === 2){
+
+        buildSummary();
+
+        showPart(
+            "paymentStep"
+        );
+
+    }
+
+    if(n === 3){
+
+        buildSummary();
+
+        setUpiLink();
+
+        showPart(
+            "upiStep"
+        );
+
+    }
+
+}
+
+
+/* ================= APPLICATION ================= */
+
+function submitApplication(e){
+
+    e.preventDefault();
+
+    if(
+        !$("appMobile")
+        .value
+        .match(
+            /^[0-9]{10}$/
+        )
+    ){
+
+        toast(
+            "कृपया 10 अंकों का मोबाइल नंबर दें"
+        );
+
+        return;
+    }
+
+
+    const amount =
+        Number(
+            $("appAmount").value ||
+            0
+        );
+
+
+    if(amount <= 0){
+
+        toast(
+            "Amount ₹ डालें"
+        );
+
+        return;
+
+    }
+
+
+    goStep(2);
+
+}
+
+
+/* ================= SUMMARY ================= */
+
+function buildSummary(){
+
+    const d = {
+
+        service:
+            $("appService").value,
+
+        name:
+            $("appName").value,
+
+        mobile:
+            $("appMobile").value,
+
+        persons:
+            $("appPersons").value,
+
+        date:
+            $("appDate").value ||
+            "—",
+
+        from:
+            $("appFrom").value ||
+            "—",
+
+        to:
+            $("appTo").value ||
+            "—",
+
+        amount:
+            "₹" +
+            Number(
+                $("appAmount")
+                .value ||
+                0
+            )
+            .toLocaleString(
+                "en-IN"
+            ),
+
+        note:
+            $("appNote").value ||
+            "—"
+
+    };
+
+
+    $("paymentSummary")
+        .innerHTML =
+
+        Object
+        .entries(d)
+        .map(
+            ([k,v]) =>
+            `
+            <div>
+                <b>
+                    ${label(k)}
+                </b>
+
+                <span>
+                    ${escapeHtml(v)}
+                </span>
+            </div>
+            `
+        )
+        .join("");
+
+}
+
+
+function label(k){
+
+    return({
+
+        service:"सेवा",
+
+        name:"नाम",
+
+        mobile:"मोबाइल",
+
+        persons:"व्यक्ति",
+
+        date:"तारीख",
+
+        from:"From",
+
+        to:"To",
+
+        amount:"कुल राशि",
+
+        note:"नोट"
+
+    })[k] || k;
+
+}
+
+
+/* ================= SECURITY ================= */
+
+function escapeHtml(s){
+
+    return String(s)
+        .replace(
+            /[&<>"']/g,
+            m =>
+            ({
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#039;"
+            })[m]
+        );
+
+}
+
+
+/* ================= UPI ================= */
+
+function setUpiLink(){
+
+    const amount =
+        Number(
+            $("appAmount")
+            .value ||
+            0
+        )
+        .toFixed(2);
+
+
+    const note =
+        encodeURIComponent(
+            "AJ Seva " +
+            $("appService").value
+        );
+
+
+    $("upiPayLink").href =
+        `upi://pay?pa=${
+            encodeURIComponent(UPI_ID)
+        }&pn=AJ%20Seva&am=${
+            amount
+        }&cu=INR&tn=${
+            note
+        }`;
+
+}
+
+
+/* ================= COPY UPI ================= */
+
+function copyUpi(){
+
+    navigator
+    .clipboard
+    ?.writeText(
+        UPI_ID
+    )
+    .then(
+        () =>
+        toast(
+            "UPI ID Copy हो गई"
+        )
+    )
+    .catch(
+        () =>
+        toast(
+            "UPI ID: " +
+            UPI_ID
+        )
+    );
+
+}
+
+
+/* ================= PAYMENT SUCCESS ================= */
+
+function finishPayment(){
+
+    const utr =
+        $("utr")
+        .value
+        .trim();
+
+
+    if(
+        utr.length < 4
+    ){
+
+        toast(
+            "UTR / Transaction ID डालें"
+        );
+
+        return;
+
+    }
+
+
+    const o = {
+
+        id:
+            "AJ" +
+            Date.now()
+            .toString()
+            .slice(-8),
+
+        type:
+            $("appService")
+            .value,
+
+        name:
+            $("appName")
+            .value,
+
+        mobile:
+            $("appMobile")
+            .value,
+
+        persons:
+            $("appPersons")
+            .value,
+
+        date:
+            $("appDate")
+            .value ||
+            "—",
+
+        from:
+            $("appFrom")
+            .value ||
+            "—",
+
+        to:
+            $("appTo")
+            .value ||
+            "—",
+
+        amount:
+            "₹" +
+            Number(
+                $("appAmount")
+                .value ||
+                0
+            )
+            .toLocaleString(
+                "en-IN"
+            ),
+
+        utr:
+            utr,
+
+        note:
+            $("appNote")
+            .value ||
+            "—",
+
+        time:
+            new Date()
+            .toLocaleString(
+                "hi-IN"
+            ),
+
+        status:
+            "Payment Submitted"
+
+    };
+
+
+    let a =
+        JSON.parse(
+            localStorage.getItem(
+                KEY
+            ) ||
+            "[]"
+        );
+
+
+    a.unshift(o);
+
+
+    localStorage.setItem(
+        KEY,
+        JSON.stringify(a)
+    );
+
+
+    window.currentOrder =
+        o;
+
+
+    $("successSummary")
+        .innerHTML =
+
+        `
+        <div>
+            <b>
+                Order ID
+            </b>
+
+            <br>
+
+            <span class="amount">
+                ${o.id}
+            </span>
+        </div>
+
+        <div>
+            <b>
+                ${escapeHtml(o.type)}
+            </b>
+
+            •
+            ${escapeHtml(o.name)}
+        </div>
+
+        <div>
+            Amount:
+            <b>
+                ${o.amount}
+            </b>
+
+            •
+
+            UTR:
+            <b>
+                ${escapeHtml(o.utr)}
+            </b>
+        </div>
+
+        <div>
+            ${escapeHtml(o.mobile)}
+        </div>
+        `;
+
+
+    setStep(4);
+
+    showPart(
+        "successStep"
+    );
+
+}
+
+
+/* ================= WHATSAPP ================= */
+
+function shareWhatsApp(){
+
+    const o =
+        window.currentOrder;
+
+
+    if(!o)
+        return;
+
+
+    const msg =
+        `AJ Seva Order%0A%0A` +
+
+        `Order ID: ${
+            encodeURIComponent(o.id)
+        }%0A` +
+
+        `Service: ${
+            encodeURIComponent(o.type)
+        }%0A` +
+
+        `Name: ${
+            encodeURIComponent(o.name)
+        }%0A` +
+
+        `Mobile: ${
+            encodeURIComponent(o.mobile)
+        }%0A` +
+
+        `Amount: ${
+            encodeURIComponent(o.amount)
+        }%0A` +
+
+        `UTR: ${
+            encodeURIComponent(o.utr)
+        }%0A` +
+
+        `Status: Payment Submitted`;
+
+
+    window.open(
+        `https://wa.me/${
+            WA_NUMBER
+        }?text=${msg}`,
+        "_blank"
+    );
+
+}
+
+
+/* ================= ORDERS ================= */
+
+function openOrders(){
+
+    renderOrders();
+
+    openM(
+        "ordersModal"
+    );
+
+}
+
+
+function renderOrders(){
+
+    const a =
+        JSON.parse(
+            localStorage.getItem(
+                KEY
+            ) ||
+            "[]"
+        );
+
+
+    $("ordersList")
+        .innerHTML =
+
+        a.length
+
+        ?
+
+        a.map(
+            o =>
+            `
+            <div class="order">
+
+                <b>
+                    ${escapeHtml(o.id)}
+                </b>
+
+                •
+
+                ${escapeHtml(o.type)}
+
+                <br>
+
+                ${escapeHtml(o.name)}
+
+                •
+
+                ${escapeHtml(o.mobile)}
+
+                <br>
+
+                <b>
+                    ${escapeHtml(o.amount)}
+                </b>
+
+                •
+
+                UTR
+
+                ${escapeHtml(
+                    o.utr ||
+                    "—"
+                )}
+
+                <br>
+
+                <small>
+                    ${escapeHtml(o.time)}
+                    •
+                    ${escapeHtml(
+                        o.status ||
+                        "Pending"
+                    )}
+                </small>
+
+            </div>
+            `
+        )
+        .join("")
+
+        :
+
+        `
+        <div class="order">
+            अभी कोई order नहीं है।
+        </div>
+        `;
+
+}
+
+
+/* ================= POLICIES ================= */
+
+const policies = {
+
+privacy:`
+
+<span class="tag">
+PRIVACY POLICY
+</span>
+
+<h2>
+गोपनीयता नीति
+</h2>
+
+<p>
+AJ Seva पर ग्राहक का नाम,
+मोबाइल नंबर, आवेदन/बुकिंग विवरण,
+यात्रा विवरण और payment reference
+सेवा अनुरोध, order management,
+payment verification और customer
+support के लिए उपयोग किया जा सकता है।
+</p>
+
+<p>
+हम कार्ड PIN, UPI PIN या banking
+password जैसी गोपनीय जानकारी नहीं मांगते।
+UTR/transaction reference को order
+verification के लिए रखा जा सकता है।
+</p>
+
+`,
+
+refund:`
+
+<span class="tag">
+PAYMENT & REFUND POLICY
+</span>
+
+<h2>
+Payment & Refund Policy
+</h2>
+
+<p>
+भुगतान से पहले सेवा/booking details
+और amount जाँचें।
+सफल payment के बाद Order ID और UTR
+सुरक्षित रखें।
+</p>
+
+<p>
+यदि राशि कट गई लेकिन सेवा/booking
+पूरी नहीं हुई, तो Order ID और UTR
+के साथ WhatsApp/Call पर शिकायत करें।
+सत्यापन के बाद लागू नियमों के अनुसार
+समाधान या refund किया जाएगा।
+</p>
+
+<p>
+Travel/ticket booking में cancellation,
+convenience fee और provider के नियम
+लागू हो सकते हैं।
+हर payment स्वतः refundable नहीं है।
+</p>
+
+`,
+
+terms:`
+
+<span class="tag">
+TERMS & CONDITIONS
+</span>
+
+<h2>
+नियम एवं शर्तें
+</h2>
+
+<p>
+ग्राहक द्वारा दी गई जानकारी सही और
+पूर्ण होनी चाहिए।
+गलत नाम, मोबाइल, यात्री विवरण या
+दस्तावेज के कारण होने वाली समस्या
+के लिए ग्राहक जिम्मेदार हो सकता है।
+</p>
+
+<p>
+Bus/Train/Flight और अन्य third-party
+services की availability, confirmation,
+cancellation और refund उनके संबंधित
+provider के नियमों के अनुसार होंगे।
+</p>
+
+<p>
+वेबसाइट पर दिखाए गए शुल्क/पैकेज
+बदल सकते हैं।
+Final confirmation application और
+payment verification के बाद ही माना जाएगा।
+</p>
+
+`
+
+};
+
+
+function openPolicy(k){
+
+    $("policyText")
+        .innerHTML =
+        policies[k];
+
+    openM(
+        "policyModal"
+    );
+
+}
+
+
+/* ================= NAV ================= */
+
+document
+.querySelectorAll("nav a")
+.forEach(
+    a =>
+    a.addEventListener(
+        "click",
+        () =>
+        document
+        .querySelector("nav")
+        .classList
+        .remove("open")
+    )
+);
+
+</script>
+
+</body>
+</html>
