@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AJ Seva - आशीष जन सेवा केंद्र</title>
-
-<meta name="description"
-content="AJ Seva - आशीष जन सेवा केंद्र। डिजिटल सेवाएं, रिचार्ज, यात्रा बुकिंग और अन्य ऑनलाइन सेवाएं।">
 
 <style>
 
@@ -17,725 +15,308 @@ content="AJ Seva - आशीष जन सेवा केंद्र। डि
     padding:0;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:
-    Arial,
-    "Noto Sans Devanagari",
-    sans-serif;
-
+    font-family:Arial, "Noto Sans Devanagari", sans-serif;
     background:#f5f9ff;
     color:#102a43;
 }
 
-/* =========================
-   VARIABLES
-========================= */
-
-:root{
-    --blue:#0758bd;
-    --blue2:#126fd6;
-    --dark:#063b80;
-    --light:#f4f9ff;
-    --border:#cbdcf0;
-    --green:#159447;
-    --red:#e53935;
-    --white:#ffffff;
-    --shadow:0 8px 25px rgba(0,70,150,.10);
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
 }
 
-/* =========================
-   HEADER
-========================= */
+button{
+    cursor:pointer;
+}
 
 header{
+    background:#ffffff;
+    border-bottom:3px solid #1565c0;
     position:sticky;
     top:0;
     z-index:1000;
-
-    background:#ffffff;
-
-    border-bottom:2px solid var(--border);
-
-    box-shadow:0 4px 18px rgba(0,0,0,.08);
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
 }
 
-.header-inner{
+.navbar{
     max-width:1200px;
     margin:auto;
-
-    min-height:75px;
-
+    padding:10px 18px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    padding:10px 18px;
+    gap:15px;
 }
 
 .logo-area{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:10px;
 }
 
-.logo{
+.logo-area img{
     width:55px;
     height:55px;
-
     object-fit:contain;
-
-    border-radius:14px;
-
-    border:2px solid var(--border);
-
-    background:#fff;
+    border-radius:50%;
 }
 
-.brand h1{
-    color:var(--blue);
-    font-size:22px;
+.logo-text h2{
+    color:#0d47a1;
+    font-size:21px;
 }
 
-.brand p{
-    color:#65758b;
+.logo-text p{
+    color:#555;
     font-size:12px;
-    margin-top:3px;
 }
-
-.menu-btn{
-    display:none;
-
-    width:44px;
-    height:44px;
-
-    border:2px solid var(--border);
-    background:white;
-
-    border-radius:10px;
-
-    font-size:24px;
-
-    color:var(--blue);
-}
-
-/* =========================
-   NAVIGATION
-========================= */
 
 nav{
     display:flex;
-    align-items:center;
-    gap:8px;
+    flex-wrap:wrap;
+    gap:7px;
 }
 
-nav a{
-    text-decoration:none;
-
-    color:#183b66;
-
-    font-weight:700;
-
-    padding:10px 12px;
-
-    border:1px solid transparent;
-
-    border-radius:9px;
+nav button{
+    background:white;
+    color:#0d47a1;
+    border:1px solid #b8d0ed;
+    border-radius:8px;
+    padding:9px 13px;
+    font-weight:bold;
 }
 
-nav a:hover{
+nav button:hover{
+    background:#1565c0;
     color:white;
-    background:var(--blue);
-    border-color:var(--blue);
 }
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
     max-width:1200px;
-
-    margin:25px auto;
-
-    padding:45px 25px;
-
-    border:2px solid var(--border);
-
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffffff,
-        #edf6ff
-    );
-
-    box-shadow:var(--shadow);
-
+    margin:20px auto;
+    padding:35px 20px;
+    background:white;
+    border:2px solid #b8d0ed;
+    border-radius:18px;
     text-align:center;
 }
 
 .hero-logo{
-    width:110px;
-    height:110px;
-
+    width:130px;
+    height:130px;
     object-fit:contain;
-
-    margin-bottom:15px;
-
-    border-radius:25px;
-
-    border:2px solid var(--border);
-
-    background:white;
+    margin-bottom:12px;
 }
 
-.hero h2{
-    font-size:34px;
-    color:var(--blue);
+.hero h1{
+    color:#0d47a1;
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+.hero h3{
+    color:#333;
     margin-bottom:10px;
 }
 
 .hero p{
-    font-size:17px;
-    color:#50657c;
-    margin-bottom:20px;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.btn{
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    min-height:46px;
-
-    padding:10px 20px;
-
-    border-radius:11px;
-
-    border:2px solid var(--blue);
-
-    cursor:pointer;
-
-    font-weight:700;
-
-    font-size:15px;
-
-    text-decoration:none;
-}
-
-.btn-primary{
-    background:var(--blue);
-    color:white;
-}
-
-.btn-primary:hover{
-    background:var(--dark);
-}
-
-.btn-white{
-    background:white;
-    color:var(--blue);
-}
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:20px;
+    color:#555;
 }
 
 .section{
-    margin:35px 0;
+    max-width:1200px;
+    margin:20px auto;
+    padding:20px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:22px;
+    color:#0d47a1;
+    font-size:28px;
+    margin-bottom:18px;
 }
 
-.section-title h2{
-    color:var(--blue);
-    font-size:27px;
+.section-title::after{
+    content:"";
+    display:block;
+    width:70px;
+    height:4px;
+    background:#1565c0;
+    margin:8px auto;
+    border-radius:5px;
 }
 
-.section-title p{
-    color:#64748b;
-    margin-top:6px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-/* =========================
-   INFO CARDS
-========================= */
+.card{
+    background:white;
+    border:2px solid #c8d9ee;
+    border-radius:14px;
+    padding:17px;
+    box-shadow:0 2px 7px rgba(0,0,0,.05);
+}
+
+.card:hover{
+    border-color:#1565c0;
+    transform:translateY(-2px);
+    transition:.2s;
+}
+
+.service-card{
+    text-align:center;
+}
+
+.service-icon{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:14px;
+    margin-bottom:10px;
+}
+
+.service-card h3{
+    color:#0d47a1;
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.service-card p{
+    color:#666;
+    font-size:13px;
+    min-height:36px;
+}
+
+.btn{
+    width:100%;
+    border:0;
+    border-radius:9px;
+    padding:12px;
+    margin-top:12px;
+    background:#1565c0;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.btn:hover{
+    background:#0d47a1;
+}
+
+.btn.green{
+    background:#16a34a;
+}
+
+.btn.orange{
+    background:#f57c00;
+}
+
+.btn.purple{
+    background:#6a1b9a;
+}
+
+.travel-img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#1565c0;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:7px;
+}
 
 .info-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:15px;
 }
 
 .info-card{
-    background:white;
-
-    border:2px solid var(--border);
-
-    border-radius:16px;
-
-    padding:22px 15px;
-
     text-align:center;
-
-    box-shadow:var(--shadow);
-}
-
-.info-icon{
-    font-size:34px;
-    margin-bottom:10px;
 }
 
 .info-card h3{
-    color:var(--blue);
-    margin-bottom:7px;
+    color:#0d47a1;
+    margin-bottom:8px;
 }
 
-.info-card p{
-    color:#65758b;
-    font-size:13px;
+footer{
+    background:#0d47a1;
+    color:white;
+    padding:30px 20px;
+    margin-top:30px;
 }
 
-/* =========================
-   SERVICE GRID
-========================= */
-
-.service-grid{
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:16px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.service-card{
-    background:white;
-
-    border:2px solid var(--border);
-
-    border-radius:16px;
-
-    padding:18px;
-
-    cursor:pointer;
-
-    box-shadow:var(--shadow);
-
-    transition:.2s;
-
-    position:relative;
-}
-
-.service-card:hover{
-    transform:translateY(-4px);
-
-    border-color:var(--blue);
-
-    box-shadow:
-    0 12px 30px rgba(0,80,180,.16);
-}
-
-.service-icon{
-    width:60px;
-    height:60px;
-
-    border-radius:15px;
-
-    background:#edf5ff;
-
-    border:1px solid #cbdcf0;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:30px;
-
-    margin-bottom:12px;
-}
-
-.service-card h3{
-    color:#123b70;
-    font-size:17px;
-
-    margin-bottom:5px;
-}
-
-.service-card p{
-    color:#718096;
-    font-size:12px;
-
-    min-height:32px;
-}
-
-.price{
-    display:inline-block;
-
-    margin-top:12px;
-
-    color:var(--green);
-
-    font-size:18px;
-
-    font-weight:800;
-}
-
-/* =========================
-   TRAVEL
-========================= */
-
-.travel-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:18px;
-}
-
-.travel-card{
-    background:white;
-
-    border:2px solid var(--border);
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:var(--shadow);
-}
-
-.travel-image{
-    width:100%;
-    height:170px;
-
-    object-fit:cover;
-
-    background:#edf5ff;
-}
-
-.travel-body{
-    padding:17px;
-}
-
-.travel-body h3{
-    color:var(--blue);
-    margin-bottom:7px;
-}
-
-.travel-body p{
-    color:#66758a;
-    font-size:13px;
-    line-height:1.5;
-}
-
-.travel-bottom{
-    margin-top:15px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.travel-price{
-    color:var(--green);
-    font-size:20px;
-    font-weight:800;
-}
-
-/* =========================
-   ABOUT / POLICY
-========================= */
-
-.content-card{
-    background:white;
-
-    border:2px solid var(--border);
-
-    border-radius:18px;
-
-    padding:25px;
-
-    box-shadow:var(--shadow);
-
-    line-height:1.8;
-}
-
-.content-card h3{
-    color:var(--blue);
-
-    margin:18px 0 8px;
-}
-
-.content-card h3:first-child{
-    margin-top:0;
-}
-
-.content-card p,
-.content-card li{
-    color:#52657a;
-
-    font-size:14px;
-}
-
-.content-card ul{
-    padding-left:22px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:16px;
-}
-
-.contact-card{
-    background:white;
-
-    border:2px solid var(--border);
-
-    border-radius:16px;
-
-    padding:22px;
-
-    text-align:center;
-
-    box-shadow:var(--shadow);
-}
-
-.contact-card .icon{
-    font-size:32px;
+footer h3{
     margin-bottom:10px;
 }
 
-.contact-card h3{
-    color:var(--blue);
-}
-
-.contact-card a{
-    display:inline-block;
-
-    margin-top:10px;
-
-    color:var(--green);
-
-    text-decoration:none;
-
-    font-weight:800;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    margin-top:50px;
-
-    background:#063b80;
-
-    color:white;
-
-    padding:30px 20px;
-
-    text-align:center;
-}
-
 footer p{
-    margin:6px 0;
-
-    font-size:13px;
-
-    opacity:.9;
+    font-size:14px;
+    line-height:1.7;
 }
-
-.footer-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-
-    margin:15px 0;
-}
-
-.footer-links a{
-    color:white;
-    text-decoration:none;
-}
-
-/* =========================
-   MODAL
-========================= */
 
 .modal{
     display:none;
-
     position:fixed;
-
     inset:0;
-
-    z-index:9999;
-
-    background:rgba(0,0,0,.58);
-
-    padding:15px;
-
-    overflow-y:auto;
-
-    align-items:center;
-
-    justify-content:center;
+    background:rgba(0,0,0,.65);
+    z-index:5000;
+    overflow:auto;
+    padding:20px;
 }
 
-.modal-card{
+.modal.show{
+    display:block;
+}
+
+.modal-box{
     width:100%;
-
-    max-width:700px;
-
+    max-width:650px;
+    margin:20px auto;
     background:white;
-
-    border:2px solid var(--border);
-
-    border-radius:20px;
-
+    border:3px solid #1565c0;
+    border-radius:18px;
     overflow:hidden;
-
-    box-shadow:
-    0 25px 70px rgba(0,0,0,.25);
 }
 
 .modal-header{
-    padding:18px 20px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #0758bd,
-        #1478e8
-    );
-
+    background:#1565c0;
     color:white;
-
+    padding:16px;
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 }
 
-.modal-header h2{
-    font-size:22px;
-}
-
-.close-btn{
-    width:40px;
-    height:40px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(255,255,255,.4);
-
-    background:rgba(255,255,255,.15);
-
+.close{
+    background:transparent;
+    border:0;
     color:white;
-
-    font-size:26px;
-
-    cursor:pointer;
+    font-size:27px;
 }
 
 .modal-body{
     padding:20px;
-}
-
-/* =========================
-   SELECTED SERVICE
-========================= */
-
-.selected-service{
-    padding:14px;
-
-    background:#f3f8ff;
-
-    border:2px solid #c9ddf5;
-
-    border-radius:13px;
-
-    margin-bottom:20px;
-}
-
-.selected-service small{
-    color:#718096;
-}
-
-.selected-service strong{
-    display:block;
-
-    margin-top:4px;
-
-    color:var(--blue);
-
-    font-size:18px;
-}
-
-/* =========================
-   FORM
-========================= */
-
-.form-section{
-    margin:20px 0 12px;
-
-    color:var(--blue);
-
-    font-weight:800;
-
-    border-bottom:1px solid #dce7f3;
-
-    padding-bottom:7px;
-}
-
-.form-row{
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:14px;
 }
 
 .form-group{
@@ -744,2519 +325,2388 @@ footer p{
 
 .form-group label{
     display:block;
-
-    margin-bottom:7px;
-
-    font-weight:700;
-
-    color:#183b66;
-
-    font-size:14px;
-}
-
-.form-group label span{
-    color:red;
+    font-weight:bold;
+    color:#0d47a1;
+    margin-bottom:6px;
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-
-    padding:13px;
-
-    border:2px solid #d1dfef;
-
-    border-radius:11px;
-
-    outline:none;
-
-    font-size:15px;
-
-    color:#183b66;
-
-    background:white;
-}
-
-.form-group input{
-    height:48px;
-}
-
+.form-group select,
 .form-group textarea{
-    resize:vertical;
-    min-height:90px;
+    width:100%;
+    border:2px solid #cbd9e9;
+    border-radius:10px;
+    padding:12px;
+    font-size:15px;
+    outline:none;
+    background:#fff;
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-    border-color:var(--blue);
-
-    box-shadow:
-    0 0 0 3px rgba(7,88,189,.10);
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#1565c0;
 }
 
-.document-box{
-    display:flex;
-
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
     gap:12px;
+}
 
-    padding:15px;
-
-    border:2px dashed #bfd3ea;
-
-    background:#f8fbff;
-
+.amount-box{
+    background:#eaf2ff;
+    border:2px solid #b8d0ed;
     border-radius:12px;
-}
-
-.document-box p{
-    font-size:12px;
-
-    color:#718096;
-
-    margin-top:4px;
-}
-
-.summary{
-    margin-top:18px;
-
     padding:15px;
-
-    background:#f2f8ff;
-
-    border:2px solid #c5daf2;
-
-    border-radius:13px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-.summary strong{
-    color:var(--green);
-
-    font-size:22px;
-}
-
-.checkbox{
-    display:flex;
-
-    gap:9px;
-
-    margin:17px 0;
-
-    font-size:13px;
-
-    color:#52657a;
-}
-
-.checkbox input{
-    width:18px;
-    height:18px;
-}
-
-/* =========================
-   PAYMENT
-========================= */
-
-.payment-box{
+    margin:15px 0;
     text-align:center;
 }
 
-.payment-service{
-    color:#64748b;
-
-    margin-bottom:5px;
-}
-
-.payment-amount{
-    color:var(--green);
-
-    font-size:32px;
-
-    font-weight:900;
-
-    margin-bottom:15px;
-}
-
-.qr-container{
-    padding:15px;
-
-    background:#111;
-
-    border-radius:15px;
-
-    display:inline-block;
-
-    border:4px solid #e4e4e4;
-}
-
-.qr-image{
+.amount-box span{
     display:block;
-
-    width:280px;
-
-    max-width:100%;
-
-    height:auto;
+    font-size:28px;
+    color:#0d47a1;
+    font-weight:bold;
 }
 
-.upi-buttons{
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
+.payment-methods{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
     gap:10px;
-
-    margin:18px 0;
+    margin:15px 0;
 }
 
-.upi-btn{
-    border:2px solid var(--border);
-
-    background:white;
-
-    color:var(--blue);
-
-    border-radius:10px;
-
-    padding:10px 16px;
-
-    font-weight:700;
-
-    cursor:pointer;
-}
-
-.payment-note{
-    color:#66758b;
-
-    font-size:12px;
-
-    margin:10px 0 18px;
-}
-
-/* =========================
-   SUCCESS
-========================= */
-
-.success-box{
+.payment-option{
+    border:2px solid #cbd9e9;
+    border-radius:12px;
+    padding:14px 7px;
     text-align:center;
+    background:white;
+    font-weight:bold;
+    color:#0d47a1;
+}
 
-    padding:20px;
+.payment-option.active{
+    border-color:#1565c0;
+    background:#eaf2ff;
+}
+
+.qr-box{
+    text-align:center;
+    border:2px solid #cbd9e9;
+    border-radius:14px;
+    padding:15px;
+    margin-top:15px;
+}
+
+.qr-box img{
+    width:280px;
+    max-width:100%;
+    border-radius:10px;
+}
+
+.upi-box{
+    background:#f3f7ff;
+    border:2px solid #cbd9e9;
+    padding:15px;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+.upi-id{
+    font-size:18px;
+    font-weight:bold;
+    color:#1565c0;
+    word-break:break-all;
+}
+
+.success{
+    text-align:center;
+    padding:25px;
 }
 
 .success-icon{
-    width:85px;
-    height:85px;
-
+    width:80px;
+    height:80px;
     border-radius:50%;
-
-    background:#dff7e8;
-
-    border:4px solid #26a65b;
-
-    color:#159447;
-
+    background:#16a34a;
+    color:white;
     display:flex;
-
-    align-items:center;
-
     justify-content:center;
-
-    margin:0 auto 18px;
-
-    font-size:48px;
-
-    font-weight:900;
+    align-items:center;
+    font-size:45px;
+    margin:0 auto 15px;
 }
 
-.success-box h2{
-    color:var(--green);
-
+.success h2{
+    color:#15803d;
     margin-bottom:8px;
 }
 
-.success-box p{
-    color:#64748b;
-
-    line-height:1.6;
-}
-
-.order-id{
-    margin:18px 0;
-
-    padding:14px;
-
-    border:2px solid var(--border);
-
+.order-details{
+    text-align:left;
+    border:2px solid #cbd9e9;
     border-radius:12px;
-
-    background:#f6faff;
+    padding:15px;
+    margin:18px 0;
 }
 
-.order-id strong{
-    display:block;
-
-    color:var(--blue);
-
-    font-size:20px;
-
-    margin-top:5px;
+.order-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:8px 0;
+    border-bottom:1px solid #e1e8f0;
 }
 
-.whatsapp-btn{
-    width:100%;
-
-    height:50px;
-
-    border:0;
-
-    border-radius:11px;
-
-    background:#20b958;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:800;
-
-    cursor:pointer;
-
-    margin-top:10px;
+.order-row:last-child{
+    border-bottom:0;
 }
 
-/* =========================
-   TOAST
-========================= */
+.order-row b:first-child{
+    color:#0d47a1;
+}
 
-.toast{
-    position:fixed;
+.policy-box{
+    max-width:1000px;
+    margin:20px auto;
+    background:white;
+    border:2px solid #c8d9ee;
+    border-radius:15px;
+    padding:25px;
+    line-height:1.8;
+}
 
-    left:50%;
+.policy-box h2{
+    color:#0d47a1;
+    margin-bottom:10px;
+}
 
-    bottom:25px;
-
-    transform:
-    translateX(-50%)
-    translateY(100px);
-
-    background:#17212b;
-
-    color:white;
-
-    padding:13px 18px;
-
+.notice{
+    background:#fff8e1;
+    border:2px solid #f0c36a;
     border-radius:10px;
-
-    z-index:20000;
-
-    opacity:0;
-
-    transition:.3s;
-
-    max-width:90%;
-
-    text-align:center;
+    padding:12px;
+    margin:12px 0;
+    font-size:13px;
 }
 
-.toast.show{
-    opacity:1;
-
-    transform:
-    translateX(-50%)
-    translateY(0);
+.whatsapp{
+    background:#16a34a !important;
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:900px){
 
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .info-grid{
-        grid-template-columns:
-        repeat(2,1fr);
+        grid-template-columns:1fr 1fr;
     }
 
-    .service-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .travel-grid{
-        grid-template-columns:
-        repeat(2,1fr);
+    .footer-grid{
+        grid-template-columns:1fr;
     }
 
 }
 
-@media(max-width:650px){
+@media(max-width:600px){
 
-    .header-inner{
-        min-height:65px;
-    }
-
-    .menu-btn{
-        display:block;
+    .navbar{
+        flex-direction:column;
     }
 
     nav{
-        display:none;
-
-        position:absolute;
-
-        left:10px;
-        right:10px;
-        top:70px;
-
-        background:white;
-
-        border:2px solid var(--border);
-
-        border-radius:13px;
-
-        padding:10px;
-
-        flex-direction:column;
-
-        box-shadow:var(--shadow);
+        justify-content:center;
     }
 
-    nav.show{
-        display:flex;
-    }
-
-    nav a{
-        width:100%;
-
-        text-align:center;
-    }
-
-    .hero{
-        margin:15px;
-
-        padding:30px 18px;
-    }
-
-    .hero h2{
+    .hero h1{
         font-size:27px;
     }
 
-    .info-grid,
-    .service-grid,
-    .travel-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
+    .grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .section{
+        padding:10px;
     }
 
     .form-row{
         grid-template-columns:1fr;
-        gap:0;
     }
 
-    .container{
+    .payment-methods{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
         padding:12px;
     }
 
-    .modal{
-        padding:8px;
-
-        align-items:flex-start;
-    }
-
-    .modal-card{
-        margin-top:5px;
-    }
-
-    .qr-image{
-        width:250px;
+    .service-icon{
+        width:60px;
+        height:60px;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
 
-<div class="header-inner">
+<div class="navbar">
 
-    <div class="logo-area">
+<div class="logo-area">
 
-        <!-- अपना logo यहां रखें -->
-        <img
-            src="images/aj-seva-logo.png"
-            class="logo"
-            alt="AJ Seva">
+<img src="aj_logo.png" alt="AJ Seva Logo">
 
-        <div class="brand">
+<div class="logo-text">
+<h2>AJ Seva</h2>
+<p>आशीष जन सेवा केंद्र</p>
+</div>
 
-            <h1>AJ Seva</h1>
+</div>
 
-            <p>आशीष जन सेवा केंद्र</p>
+<nav>
 
-        </div>
+<button onclick="scrollToSection('services')">Services</button>
 
-    </div>
+<button onclick="scrollToSection('travel')">Travel</button>
 
+<button onclick="openTicketBooking()">Booking</button>
 
-    <button
-        class="menu-btn"
-        onclick="toggleMenu()">
+<button onclick="scrollToSection('about')">हमारे बारे में</button>
 
-        ☰
+<button onclick="scrollToSection('help')">सहायता</button>
 
-    </button>
-
-
-    <nav id="mainNav">
-
-        <a href="#home">Home</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#travel">Travel</a>
-
-        <a href="#about">हमारे बारे में</a>
-
-        <a href="#contact">संपर्क</a>
-
-        <a href="#privacy">Privacy</a>
-
-        <a href="#refund">Refund Policy</a>
-
-    </nav>
+</nav>
 
 </div>
 
 </header>
 
 
-<!-- =====================================================
-     HOME
-===================================================== -->
-
-<main id="home">
+<!-- HERO -->
 
 <section class="hero">
 
-    <img
-        src="images/aj-seva-logo.png"
-        class="hero-logo"
-        alt="AJ Seva Logo">
+<img class="hero-logo" src="aj_logo.png">
 
-    <h2>
-        आपकी सेवा, हमारे साथ
-    </h2>
+<h1>AJ Seva</h1>
 
-    <p>
-        डिजिटल सेवा • रिचार्ज • यात्रा • ऑनलाइन आवेदन
-    </p>
+<h3>आशीष जन सेवा केंद्र</h3>
 
-    <div class="hero-buttons">
-
-        <a
-            href="#services"
-            class="btn btn-primary">
-
-            📄 सेवाएं देखें
-
-        </a>
-
-        <a
-            href="#travel"
-            class="btn btn-white">
-
-            ✈️ Travel देखें
-
-        </a>
-
-    </div>
+<p>
+आपकी सेवा, हमारे साथ
+</p>
 
 </section>
 
 
-<!-- QUICK FEATURES -->
+<!-- SERVICES -->
 
-<div class="container">
+<section class="section" id="services">
+
+<h2 class="section-title">
+डिजिटल सेवाएं
+</h2>
+
+<div class="grid" id="serviceGrid"></div>
+
+</section>
+
+
+<!-- TRAVEL -->
+
+<section class="section" id="travel">
+
+<h2 class="section-title">
+Travel & Tour
+</h2>
+
+<div class="grid" id="travelGrid"></div>
+
+</section>
+
+
+<!-- BOOKING -->
 
 <section class="section">
 
+<h2 class="section-title">
+Ticket Booking
+</h2>
+
 <div class="info-grid">
 
-    <div class="info-card">
+<div class="card info-card">
 
-        <div class="info-icon">🔐</div>
-
-        <h3>सुरक्षित</h3>
-
-        <p>
-            आपकी जानकारी को सुरक्षित रखने का प्रयास।
-        </p>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <div class="info-icon">⚡</div>
-
-        <h3>तेज़ सेवा</h3>
-
-        <p>
-            ऑनलाइन आवेदन और डिजिटल सेवाएं।
-        </p>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <div class="info-icon">💳</div>
-
-        <h3>UPI Payment</h3>
-
-        <p>
-            QR और UPI के माध्यम से भुगतान।
-        </p>
-
-    </div>
-
-
-    <div class="info-card">
-
-        <div class="info-icon">📲</div>
-
-        <h3>WhatsApp सहायता</h3>
-
-        <p>
-            आवेदन के बाद WhatsApp पर संपर्क।
-        </p>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section
-    class="section"
-    id="services">
-
-<div class="section-title">
-
-    <h2>📄 हमारी सेवाएं</h2>
-
-    <p>
-        सेवा चुनें और आवेदन करें
-    </p>
-
-</div>
-
-
-<div class="service-grid">
-
-
-<script>
-
-const services = [
-
-    ["🪪","PAN Card","PAN Card आवेदन","249"],
-
-    ["🏥","Ayushman Card","आयुष्मान कार्ड सेवा","100"],
-
-    ["🆔","Aadhaar Service","आधार संबंधी सेवा","100"],
-
-    ["📋","Ration Card","राशन कार्ड सेवा","100"],
-
-    ["👷","E-Shram / Labour","ई-श्रम / लेबर कार्ड","50"],
-
-    ["🚗","Driving Licence","ड्राइविंग लाइसेंस","500"],
-
-    ["🗳️","Voter Card","वोटर कार्ड सेवा","100"],
-
-    ["📜","Income Certificate","आय प्रमाण पत्र","100"],
-
-    ["📜","Caste Certificate","जाति प्रमाण पत्र","100"],
-
-    ["🏠","Residence Certificate","निवास प्रमाण पत्र","100"],
-
-    ["🌾","PM Kisan","पीएम किसान सेवा","50"],
-
-    ["🛠️","PM Vishwakarma","पीएम विश्वकर्मा","100"],
-
-    ["👮","Police Character","पुलिस चरित्र प्रमाण पत्र","150"],
-
-    ["👶","Birth Certificate","जन्म प्रमाण पत्र","150"],
-
-    ["🧾","Life Certificate","जीवन प्रमाण पत्र","100"],
-
-    ["🧻","SBM Toilet","शौचालय आवेदन","100"],
-
-    ["💼","Resume / Biodata","Resume बनवाएं","100"],
-
-    ["🛂","Passport Assistance","पासपोर्ट सहायता","500"]
-
-];
-
-services.forEach(function(service){
-
-    document.write(`
-
-    <div
-        class="service-card"
-        onclick="openServiceForm(
-            '${service[1]}',
-            '${service[3]}'
-        )">
-
-        <div class="service-icon">
-            ${service[0]}
-        </div>
-
-        <h3>
-            ${service[1]}
-        </h3>
-
-        <p>
-            ${service[2]}
-        </p>
-
-        <span class="price">
-            ₹${service[3]}
-        </span>
-
-    </div>
-
-    `);
-
-});
-
-</script>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     TRAVEL
-===================================================== -->
-
-<section
-    class="section"
-    id="travel">
-
-<div class="section-title">
-
-    <h2>✈️ Travel & Tour</h2>
-
-    <p>
-        यात्रा पैकेज बुक करें
-    </p>
-
-</div>
-
-
-<div class="travel-grid">
-
-
-<!-- AYODHYA -->
-
-<div class="travel-card">
-
-    <img
-        src="images/ayodhya.jpg"
-        class="travel-image"
-        alt="Ayodhya">
-
-    <div class="travel-body">
-
-        <h3>
-            अयोध्या धाम यात्रा
-        </h3>
-
-        <p>
-            श्री राम जन्मभूमि, हनुमानगढ़ी,
-            कनक भवन, सरयू आरती आदि।
-        </p>
-
-        <div class="travel-bottom">
-
-            <span class="travel-price">
-                ₹2200
-            </span>
-
-            <button
-                class="btn btn-primary"
-                onclick="openTravelForm(
-                    'अयोध्या धाम यात्रा',
-                    '2200'
-                )">
-
-                Book
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- VARANASI -->
-
-<div class="travel-card">
-
-    <img
-        src="images/varanasi.jpg"
-        class="travel-image"
-        alt="Varanasi">
-
-    <div class="travel-body">
-
-        <h3>
-            काशी विश्वनाथ दर्शन
-        </h3>
-
-        <p>
-            बलिया से बनारस और
-            बनारस से बलिया यात्रा।
-        </p>
-
-        <div class="travel-bottom">
-
-            <span class="travel-price">
-                ₹2500
-            </span>
-
-            <button
-                class="btn btn-primary"
-                onclick="openTravelForm(
-                    'काशी विश्वनाथ दर्शन',
-                    '2500'
-                )">
-
-                Book
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- VRINDAVAN -->
-
-<div class="travel-card">
-
-    <img
-        src="images/vrindavan.jpg"
-        class="travel-image"
-        alt="Vrindavan">
-
-    <div class="travel-body">
-
-        <h3>
-            वृंदावन मथुरा यात्रा
-        </h3>
-
-        <p>
-            बलिया से मथुरा और
-            मथुरा से बलिया।
-        </p>
-
-        <div class="travel-bottom">
-
-            <span class="travel-price">
-                ₹5500
-            </span>
-
-            <button
-                class="btn btn-primary"
-                onclick="openTravelForm(
-                    'वृंदावन मथुरा यात्रा',
-                    '5500'
-                )">
-
-                Book
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- VAISHNO DEVI -->
-
-<div class="travel-card">
-
-    <img
-        src="images/vaishnodevi.jpg"
-        class="travel-image"
-        alt="Vaishno Devi">
-
-    <div class="travel-body">
-
-        <h3>
-            वैष्णो देवी यात्रा
-        </h3>
-
-        <p>
-            माता वैष्णो देवी दर्शन यात्रा।
-        </p>
-
-        <div class="travel-bottom">
-
-            <span class="travel-price">
-                ₹5500
-            </span>
-
-            <button
-                class="btn btn-primary"
-                onclick="openTravelForm(
-                    'वैष्णो देवी यात्रा',
-                    '5500'
-                )">
-
-                Book
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- RAMESHWARAM -->
-
-<div class="travel-card">
-
-    <img
-        src="images/rameshwaram.jpg"
-        class="travel-image"
-        alt="Rameshwaram">
-
-    <div class="travel-body">
-
-        <h3>
-            रामेश्वरम यात्रा
-        </h3>
-
-        <p>
-            रामेश्वरम दर्शन यात्रा।
-        </p>
-
-        <div class="travel-bottom">
-
-            <span class="travel-price">
-                ₹6500
-            </span>
-
-            <button
-                class="btn btn-primary"
-                onclick="openTravelForm(
-                    'रामेश्वरम यात्रा',
-                    '6500'
-                )">
-
-                Book
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    class="section"
-    id="about">
-
-<div class="section-title">
-
-    <h2>ℹ️ हमारे बारे में</h2>
-
-</div>
-
-<div class="content-card">
-
-    <h3>
-        आशीष जन सेवा केंद्र
-    </h3>
-
-    <p>
-        AJ Seva यानी आशीष जन सेवा केंद्र पर
-        विभिन्न डिजिटल और ऑनलाइन सेवाओं में
-        सहायता प्रदान की जाती है।
-    </p>
-
-    <h3>
-        हमारी सेवाएं
-    </h3>
-
-    <p>
-        PAN Card, Aadhaar, Ayushman Card,
-        प्रमाण पत्र, Labour/E-Shram,
-        Travel Booking, Recharge तथा
-        अन्य ऑनलाइन सेवाओं के लिए सहायता।
-    </p>
-
-    <h3>
-        हमारा उद्देश्य
-    </h3>
-
-    <p>
-        ग्राहकों को सरल, सुविधाजनक और
-        पारदर्शी तरीके से डिजिटल सेवाएं
-        उपलब्ध कराना।
-    </p>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PRIVACY POLICY
-===================================================== -->
-
-<section
-    class="section"
-    id="privacy">
-
-<div class="section-title">
-
-    <h2>🔐 Privacy Policy</h2>
-
-</div>
-
-<div class="content-card">
-
-    <h3>
-        जानकारी का संग्रह
-    </h3>
-
-    <p>
-        आवेदन करते समय नाम, मोबाइल नंबर,
-        ई-मेल, पता और सेवा से संबंधित
-        जानकारी ली जा सकती है।
-    </p>
-
-    <h3>
-        जानकारी का उपयोग
-    </h3>
-
-    <p>
-        जानकारी का उपयोग ग्राहक के आवेदन,
-        सेवा उपलब्ध कराने और संपर्क करने
-        के लिए किया जाता है।
-    </p>
-
-    <h3>
-        जानकारी की सुरक्षा
-    </h3>
-
-    <p>
-        ग्राहक की जानकारी को सुरक्षित रखने
-        के लिए उचित प्रयास किए जाते हैं।
-    </p>
-
-    <h3>
-        Third Party
-    </h3>
-
-    <p>
-        Payment या अन्य आवश्यक सेवाओं के लिए
-        संबंधित third-party service का उपयोग
-        किया जा सकता है।
-    </p>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     REFUND POLICY
-===================================================== -->
-
-<section
-    class="section"
-    id="refund">
-
-<div class="section-title">
-
-    <h2>💰 Payment & Refund Policy</h2>
-
-</div>
-
-<div class="content-card">
-
-    <h3>
-        Payment
-    </h3>
-
-    <p>
-        सेवा का भुगतान UPI / QR या उपलब्ध
-        payment method से किया जा सकता है।
-    </p>
-
-    <h3>
-        Refund
-    </h3>
-
-    <p>
-        Refund सेवा की स्थिति और आवेदन की
-        प्रक्रिया के अनुसार तय किया जाएगा।
-    </p>
-
-    <h3>
-        गलत Payment
-    </h3>
-
-    <p>
-        यदि payment कट गया लेकिन सेवा
-        successfully process नहीं हुई,
-        तो ग्राहक सहायता के लिए संपर्क कर सकता है।
-    </p>
-
-    <h3>
-        महत्वपूर्ण सूचना
-    </h3>
-
-    <p>
-        Government fee, third-party fee,
-        ticket cancellation charge अथवा
-        अन्य non-refundable charges पर
-        refund उपलब्ध न भी हो सकता है।
-    </p>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-    class="section"
-    id="contact">
-
-<div class="section-title">
-
-    <h2>📞 सहायता एवं संपर्क</h2>
-
-    <p>
-        किसी भी सहायता के लिए संपर्क करें
-    </p>
-
-</div>
-
-
-<div class="contact-grid">
-
-    <div class="contact-card">
-
-        <div class="icon">
-            📱
-        </div>
-
-        <h3>
-            मोबाइल
-        </h3>
-
-        <a href="tel:7376999243">
-            7376999243
-        </a>
-
-    </div>
-
-
-    <div class="contact-card">
-
-        <div class="icon">
-            💬
-        </div>
-
-        <h3>
-            WhatsApp
-        </h3>
-
-        <a
-            href="https://wa.me/917376999243"
-            target="_blank">
-
-            WhatsApp करें
-
-        </a>
-
-    </div>
-
-
-    <div class="contact-card">
-
-        <div class="icon">
-            📍
-        </div>
-
-        <h3>
-            पता
-        </h3>
-
-        <p>
-            आशीष जन सेवा केंद्र<br>
-            बलिया, उत्तर प्रदेश
-        </p>
-
-    </div>
-
-</div>
-
-</section>
-
-</div>
-
-</main>
-
-
-<!-- =====================================================
-     SERVICE FORM MODAL
-===================================================== -->
-
-<div
-    class="modal"
-    id="serviceFormModal">
-
-<div class="modal-card">
-
-<div class="modal-header">
-
-    <h2>
-        📄 आवेदन करें
-    </h2>
-
-    <button
-        class="close-btn"
-        onclick="closeModal('serviceFormModal')">
-
-        ×
-
-    </button>
-
-</div>
-
-
-<div class="modal-body">
-
-
-<div class="selected-service">
-
-    <small>
-        चुनी गई सेवा
-    </small>
-
-    <strong id="selectedServiceName">
-        Service
-    </strong>
-
-</div>
-
-
-<form
-    id="serviceForm"
-    onsubmit="submitServiceForm(event)">
-
-
-<div class="form-section">
-    👤 व्यक्तिगत जानकारी
-</div>
-
-
-<div class="form-row">
-
-<div class="form-group">
-
-<label>
-नाम <span>*</span>
-</label>
-
-<input
-    id="serviceName"
-    type="text"
-    placeholder="अपना पूरा नाम"
-    required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-मोबाइल नंबर <span>*</span>
-</label>
-
-<input
-    id="serviceMobile"
-    type="tel"
-    maxlength="10"
-    placeholder="10 अंकों का मोबाइल नंबर"
-    required>
-
-</div>
-
-</div>
-
-
-<div class="form-row">
-
-<div class="form-group">
-
-<label>
-ई-मेल
-</label>
-
-<input
-    id="serviceEmail"
-    type="email"
-    placeholder="ई-मेल">
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-जिला
-</label>
-
-<input
-    id="serviceDistrict"
-    type="text"
-    placeholder="जिला">
-
-</div>
-
-</div>
-
-
-<div class="form-section">
-    📍 पता
-</div>
-
-
-<div class="form-group">
-
-<label>
-पूरा पता
-</label>
-
-<textarea
-    id="serviceAddress"
-    placeholder="गांव / मोहल्ला / थाना / जिला"></textarea>
-
-</div>
-
-
-<div class="form-section">
-    📄 सेवा की जानकारी
-</div>
-
-
-<div class="form-group">
-
-<label>
-अतिरिक्त जानकारी
-</label>
-
-<textarea
-    id="serviceDetails"
-    placeholder="यदि कोई विशेष जानकारी हो तो लिखें"></textarea>
-
-</div>
-
-
-<div class="document-box">
-
-    <div style="font-size:28px">
-        📎
-    </div>
-
-    <div>
-
-        <strong>
-            दस्तावेज
-        </strong>
-
-        <p>
-            आवश्यक documents बाद में
-            WhatsApp पर भेज सकते हैं।
-        </p>
-
-    </div>
-
-</div>
-
-
-<div class="summary">
-
-    <span>
-        सेवा शुल्क
-    </span>
-
-    <strong>
-        ₹<span id="serviceAmount">
-        0
-        </span>
-    </strong>
-
-</div>
-
-
-<label class="checkbox">
-
-<input
-    type="checkbox"
-    required>
-
-<span>
-मैंने दी गई जानकारी सही भरी है
-और सेवा की शर्तों से सहमत हूँ।
-</span>
-
-</label>
-
-
-<button
-    class="btn btn-primary"
-    type="submit"
-    style="width:100%">
-
-    आगे बढ़ें →
-
-</button>
-
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     TRAVEL FORM
-===================================================== -->
-
-<div
-    class="modal"
-    id="travelFormModal">
-
-<div class="modal-card">
-
-<div class="modal-header">
-
-<h2>
-    ✈️ Travel Booking
-</h2>
-
-<button
-    class="close-btn"
-    onclick="closeModal('travelFormModal')">
-
-    ×
-
-</button>
-
-</div>
-
-
-<div class="modal-body">
-
-
-<div class="selected-service">
-
-<small>
-यात्रा पैकेज
-</small>
-
-<strong id="travelNameTitle">
-    Travel
-</strong>
-
-</div>
-
-
-<form
-    id="travelForm"
-    onsubmit="submitTravelForm(event)">
-
-
-<div class="form-row">
-
-<div class="form-group">
-
-<label>
-नाम <span>*</span>
-</label>
-
-<input
-    id="travelCustomerName"
-    required
-    placeholder="पूरा नाम">
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-मोबाइल <span>*</span>
-</label>
-
-<input
-    id="travelCustomerMobile"
-    type="tel"
-    maxlength="10"
-    required
-    placeholder="10 अंक">
-
-</div>
-
-</div>
-
-
-<div class="form-row">
-
-<div class="form-group">
-
-<label>
-व्यक्ति <span>*</span>
-</label>
-
-<input
-    id="travelPersons"
-    type="number"
-    min="1"
-    value="1"
-    required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-यात्रा तारीख <span>*</span>
-</label>
-
-<input
-    id="travelDate"
-    type="date"
-    required>
-
-</div>
-
-</div>
-
-
-<div class="form-row">
-
-<div class="form-group">
-
-<label>
-From
-</label>
-
-<input
-    id="travelFrom"
-    placeholder="कहां से">
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-To
-</label>
-
-<input
-    id="travelTo"
-    placeholder="कहां तक">
-
-</div>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-अतिरिक्त जानकारी
-</label>
-
-<textarea
-    id="travelDetails"
-    placeholder="कोई विशेष जानकारी"></textarea>
-
-</div>
-
-
-<div class="summary">
-
-<span>
-कुल राशि
-</span>
-
-<strong>
-₹<span id="travelAmount">
-0
-</span>
-</strong>
-
-</div>
-
-
-<button
-    type="submit"
-    class="btn btn-primary"
-    style="width:100%">
-
-    Payment पर जाएं →
-
-</button>
-
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     PAYMENT MODAL
-===================================================== -->
-
-<div
-    class="modal"
-    id="paymentModal">
-
-<div class="modal-card">
-
-<div class="modal-header">
-
-<h2>
-    💳 Payment
-</h2>
-
-<button
-    class="close-btn"
-    onclick="closeModal('paymentModal')">
-
-    ×
-
-</button>
-
-</div>
-
-
-<div class="modal-body payment-box">
-
-
-<div class="payment-service">
-
-<span id="paymentTitle">
-    Service
-</span>
-
-</div>
-
-
-<div class="payment-amount">
-
-₹<span id="paymentAmount">
-0
-</span>
-
-</div>
-
-
-<div class="qr-container">
-
-<img
-    src="images/phonepe-qr.png"
-    class="qr-image"
-    alt="PhonePe QR">
-
-</div>
-
-
-<p class="payment-note">
-
-PhonePe / UPI App खोलें और
-ऊपर दिए गए QR Code को Scan करके
-Payment करें।
-
-</p>
-
-
-<div class="upi-buttons">
-
-<button
-    class="upi-btn"
-    onclick="copyUPI()">
-
-    📋 UPI ID Copy
-
-</button>
-
-<a
-    class="upi-btn"
-    id="upiPayButton"
-    href="#">
-
-    📱 UPI App
-
-</a>
-
-</div>
-
-
-<button
-    class="btn btn-primary"
-    onclick="confirmPayment()"
-    style="width:100%">
-
-    ✅ Payment हो गया
-
-</button>
-
-
-<p
-    style="
-    font-size:11px;
-    color:#8a96a3;
-    margin-top:12px;">
-
-    Payment करने के बाद ही यह बटन दबाएं।
-
-</p>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     SUCCESS MODAL
-===================================================== -->
-
-<div
-    class="modal"
-    id="successModal">
-
-<div class="modal-card">
-
-<div class="modal-body success-box">
-
-
-<div class="success-icon">
-    ✓
-</div>
-
-
-<h2>
-    Payment Successful
-</h2>
-
+<h3>🚌 Bus Booking</h3>
 
 <p>
-    आपका आवेदन सफलतापूर्वक प्राप्त हो गया है।
+Bus Ticket Booking के लिए आवेदन करें।
 </p>
 
-
-<div class="order-id">
-
-<span>
-    Order ID
-</span>
-
-<strong id="successOrderId">
-    AJ000000
-</strong>
-
-</div>
-
-
-<p>
-    <b>सेवा:</b>
-    <span id="successService">
-    </span>
-</p>
-
-
-<p>
-    <b>राशि:</b>
-    ₹<span id="successAmount">
-    </span>
-</p>
-
-
-<button
-    class="whatsapp-btn"
-    onclick="shareWhatsApp()">
-
-    📲 WhatsApp पर Share करें
-
+<button class="btn" onclick="openTicketBooking('Bus')">
+Bus Booking
 </button>
 
+</div>
 
-<button
-    class="btn btn-white"
-    onclick="closeAllModals(); window.scrollTo(0,0)"
-    style="width:100%;margin-top:10px">
 
-    🏠 Home पर जाएं
+<div class="card info-card">
 
+<h3>🚆 Train Booking</h3>
+
+<p>
+Train Ticket Booking के लिए आवेदन करें।
+</p>
+
+<button class="btn" onclick="openTicketBooking('Train')">
+Train Booking
 </button>
 
+</div>
+
+
+<div class="card info-card">
+
+<h3>✈️ Flight Booking</h3>
+
+<p>
+Flight Ticket Booking के लिए आवेदन करें।
+</p>
+
+<button class="btn" onclick="openTicketBooking('Flight')">
+Flight Booking
+</button>
 
 </div>
 
 </div>
 
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<h2 class="section-title">
+हमारे बारे में
+</h2>
+
+<div class="policy-box">
+
+<h2>आशीष जन सेवा केंद्र</h2>
+
+<p>
+आशीष जन सेवा केंद्र पर डिजिटल सेवाएं, ऑनलाइन आवेदन,
+Travel Booking, Recharge, Bill Payment तथा अन्य
+ऑनलाइन सेवाएं उपलब्ध कराई जाती हैं।
+</p>
+
+<br>
+
+<p>
+हमारा उद्देश्य ग्राहकों को सरल, सुरक्षित और सुविधाजनक
+डिजिटल सेवा उपलब्ध कराना है।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- HELP -->
+
+<section class="section" id="help">
+
+<h2 class="section-title">
+सहायता एवं संपर्क
+</h2>
+
+<div class="info-grid">
+
+<div class="card info-card">
+
+<h3>📞 सहायता</h3>
+
+<p>
+किसी भी सेवा के लिए हमसे संपर्क करें।
+</p>
+
+<button class="btn green"
+onclick="openWhatsApp('नमस्ते, मुझे AJ Seva की सेवा के बारे में जानकारी चाहिए।')">
+WhatsApp सहायता
+</button>
+
 </div>
 
 
-<!-- =====================================================
-     TOAST
-===================================================== -->
+<div class="card info-card">
 
-<div
-    id="toast"
-    class="toast">
+<h3>📋 आवेदन सहायता</h3>
 
-    Done
+<p>
+Application भरने में सहायता प्राप्त करें।
+</p>
+
+<button class="btn"
+onclick="openWhatsApp('नमस्ते, मुझे ऑनलाइन आवेदन के लिए सहायता चाहिए।')">
+सहायता लें
+</button>
 
 </div>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<div class="card info-card">
+
+<h3>💳 Payment सहायता</h3>
+
+<p>
+Payment / UTR / Refund संबंधी सहायता।
+</p>
+
+<button class="btn orange"
+onclick="openWhatsApp('नमस्ते, मुझे Payment संबंधी सहायता चाहिए।')">
+Payment Help
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRIVACY -->
+
+<section class="policy-box">
+
+<h2>Privacy Policy</h2>
+
+<p>
+ग्राहक द्वारा दिया गया नाम, मोबाइल नंबर और आवेदन संबंधी
+जानकारी केवल सेवा प्रदान करने तथा आवेदन प्रक्रिया के लिए
+उपयोग की जाएगी।
+</p>
+
+<p>
+हम ग्राहक की जानकारी को अनावश्यक रूप से किसी तीसरे पक्ष
+के साथ साझा नहीं करेंगे, सिवाय सेवा पूरी करने के लिए
+आवश्यक स्थिति के।
+</p>
+
+</section>
+
+
+<!-- REFUND -->
+
+<section class="policy-box">
+
+<h2>Payment & Refund Policy</h2>
+
+<p>
+Payment करने से पहले ग्राहक सेवा और राशि की जानकारी
+ध्यानपूर्वक जांच लें।
+</p>
+
+<p>
+यदि किसी कारण से सेवा उपलब्ध नहीं हो पाती है तो लागू
+परिस्थितियों के अनुसार refund प्रक्रिया की जा सकती है।
+</p>
+
+<p>
+UPI / QR payment के मामले में payment verification के लिए
+UTR / Transaction ID आवश्यक हो सकता है।
+</p>
+
+<div class="notice">
+⚠️ QR/UPI payment सफल होने का अर्थ यह नहीं है कि service
+अपने आप approved हो गई है। Payment verification के बाद
+order process किया जाएगा।
+</div>
+
+</section>
+
 
 <footer>
 
-<h2>
-    AJ Seva
-</h2>
+<div class="footer-grid">
+
+<div>
+
+<h3>AJ Seva</h3>
 
 <p>
-    आशीष जन सेवा केंद्र
+आशीष जन सेवा केंद्र
 </p>
 
-
-<div class="footer-links">
-
-<a href="#about">
-    हमारे बारे में
-</a>
-
-<a href="#privacy">
-    Privacy Policy
-</a>
-
-<a href="#refund">
-    Refund Policy
-</a>
-
-<a href="#contact">
-    Contact
-</a>
+<p>
+Digital Services • Recharge • Travel
+</p>
 
 </div>
 
 
-<p>
-    © 2026 AJ Seva. All Rights Reserved.
+<div>
+
+<h3>Quick Links</h3>
+
+<p onclick="scrollToSection('services')">
+Services
 </p>
+
+<p onclick="scrollToSection('travel')">
+Travel
+</p>
+
+<p onclick="scrollToSection('help')">
+सहायता
+</p>
+
+</div>
+
+
+<div>
+
+<h3>संपर्क</h3>
+
+<p>
+WhatsApp सहायता उपलब्ध
+</p>
+
+<button class="btn whatsapp"
+onclick="openWhatsApp('नमस्ते AJ Seva, मुझे सहायता चाहिए।')">
+WhatsApp करें
+</button>
+
+</div>
+
+</div>
 
 </footer>
 
 
+<!-- ========================================================= -->
+<!-- APPLICATION MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal" id="applicationModal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3 id="applicationTitle">
+Service Application
+</h3>
+
+<button class="close"
+onclick="closeModal('applicationModal')">
+×
+</button>
+
+</div>
+
+
+<div class="modal-body">
+
+<div id="applicationForm">
+
+<div class="form-group">
+
+<label>सेवा</label>
+
+<input id="serviceName" readonly>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>नाम *</label>
+
+<input
+id="customerName"
+placeholder="अपना पूरा नाम"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>मोबाइल नंबर *</label>
+
+<input
+id="customerMobile"
+type="tel"
+maxlength="10"
+placeholder="10 अंकों का नंबर"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>आवेदन संबंधी जानकारी</label>
+
+<textarea
+id="serviceDetails"
+rows="4"
+placeholder="आवेदन से संबंधित जानकारी लिखें"
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>जरूरी Documents</label>
+
+<textarea
+id="documents"
+rows="3"
+placeholder="उदाहरण: Aadhaar, PAN, Photo आदि"
+></textarea>
+
+</div>
+
+
+<div class="amount-box">
+
+सेवा शुल्क
+
+<span>
+₹ <input
+id="serviceAmount"
+type="number"
+value="0"
+style="width:120px;text-align:center;border:0;background:transparent;font-size:28px;font-weight:bold;color:#0d47a1;"
+>
+</span>
+
+</div>
+
+
+<button class="btn"
+onclick="continueServicePayment()">
+
+Continue to Payment
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- TRAVEL MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal" id="travelModal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3 id="travelTitle">
+Travel Booking
+</h3>
+
+<button class="close"
+onclick="closeModal('travelModal')">
+×
+</button>
+
+</div>
+
+
+<div class="modal-body">
+
+<div class="form-group">
+
+<label>Travel Package</label>
+
+<input id="travelPackage" readonly>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>नाम *</label>
+
+<input
+id="travelName"
+placeholder="पूरा नाम"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>मोबाइल नंबर *</label>
+
+<input
+id="travelMobile"
+type="tel"
+maxlength="10"
+placeholder="10 अंकों का नंबर"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>व्यक्ति *</label>
+
+<input
+id="travelPersons"
+type="number"
+value="1"
+min="1"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Travel Date *</label>
+
+<input
+id="travelDate"
+type="date"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>अतिरिक्त जानकारी</label>
+
+<textarea
+id="travelExtra"
+rows="3"
+placeholder="कोई विशेष जानकारी"
+></textarea>
+
+</div>
+
+
+<div class="amount-box">
+
+कुल राशि
+
+<span>
+₹ <span id="travelAmount">
+0
+</span>
+</span>
+
+</div>
+
+
+<button class="btn"
+onclick="continueTravelPayment()">
+
+Continue to Payment
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- TICKET MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal" id="ticketModal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3>
+Ticket Booking
+</h3>
+
+<button class="close"
+onclick="closeModal('ticketModal')">
+×
+</button>
+
+</div>
+
+
+<div class="modal-body">
+
+<div class="form-group">
+
+<label>Ticket Type</label>
+
+<select id="ticketType">
+
+<option>Bus</option>
+<option>Train</option>
+<option>Flight</option>
+
+</select>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>नाम *</label>
+
+<input
+id="ticketName"
+placeholder="पूरा नाम"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>मोबाइल नंबर *</label>
+
+<input
+id="ticketMobile"
+maxlength="10"
+type="tel"
+placeholder="10 अंकों का नंबर"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>From *</label>
+
+<input
+id="ticketFrom"
+placeholder="कहाँ से"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>To *</label>
+
+<input
+id="ticketTo"
+placeholder="कहाँ तक"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Travel Date *</label>
+
+<input
+id="ticketDate"
+type="date"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Passengers</label>
+
+<input
+id="ticketPassengers"
+type="number"
+value="1"
+min="1"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>अतिरिक्त जानकारी</label>
+
+<textarea
+id="ticketExtra"
+rows="3"
+placeholder="कोई विशेष जानकारी"
+></textarea>
+
+</div>
+
+
+<div class="amount-box">
+
+Estimated Booking Amount
+
+<span>
+₹ <input
+id="ticketAmount"
+type="number"
+value="0"
+style="width:140px;text-align:center;border:0;background:transparent;font-size:28px;font-weight:bold;color:#0d47a1;"
+>
+</span>
+
+</div>
+
+
+<div class="notice">
+Ticket booking का final fare उपलब्धता और booking के समय
+confirm किया जाएगा।
+</div>
+
+
+<button class="btn"
+onclick="continueTicketPayment()">
+
+Continue to Payment
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- PAYMENT MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal" id="paymentModal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+
+<h3>
+💳 Payment
+</h3>
+
+<button class="close"
+onclick="closeModal('paymentModal')">
+×
+</button>
+
+</div>
+
+
+<div class="modal-body">
+
+<div class="order-details">
+
+<div class="order-row">
+
+<b>Order ID</b>
+
+<span id="paymentOrderId"></span>
+
+</div>
+
+<div class="order-row">
+
+<b>Service</b>
+
+<span id="paymentService"></span>
+
+</div>
+
+<div class="order-row">
+
+<b>Customer</b>
+
+<span id="paymentCustomer"></span>
+
+</div>
+
+<div class="order-row">
+
+<b>Mobile</b>
+
+<span id="paymentMobile"></span>
+
+</div>
+
+</div>
+
+
+<div class="amount-box">
+
+Payment Amount
+
+<span>
+₹ <span id="paymentAmount">0</span>
+</span>
+
+</div>
+
+
+<h3 style="color:#0d47a1;">
+Payment Method चुनें
+</h3>
+
+
+<div class="payment-methods">
+
+<div
+class="payment-option active"
+onclick="selectPayment('upi',this)">
+📱 UPI
+</div>
+
+<div
+class="payment-option"
+onclick="selectPayment('qr',this)">
+📷 QR
+</div>
+
+<div
+class="payment-option"
+onclick="selectPayment('app',this)">
+📲 UPI App
+</div>
+
+</div>
+
+
+<div id="upiPaymentBox">
+
+<div class="upi-box">
+
+<p>
+UPI ID
+</p>
+
+<p class="upi-id">
+YOUR_UPI_ID
+</p>
+
+<button class="btn"
+onclick="copyUPI()">
+UPI ID Copy करें
+</button>
+
+</div>
+
+</div>
+
+
+<div id="qrPaymentBox" style="display:none;">
+
+<div class="qr-box">
+
+<h3>
+QR Code से भुगतान करें
+</h3>
+
+<br>
+
+<img
+src="phonepe_qr.jpg"
+alt="UPI QR Code"
+>
+
+<p style="margin-top:10px;">
+PhonePe / Google Pay / Paytm / किसी भी UPI App से Scan करें।
+</p>
+
+</div>
+
+</div>
+
+
+<div id="appPaymentBox" style="display:none;">
+
+<div class="upi-box">
+
+<h3>
+UPI App से भुगतान करें
+</h3>
+
+<p style="margin-top:8px;">
+नीचे button दबाकर UPI App खोलें।
+</p>
+
+<button class="btn"
+onclick="openUPIApp()">
+UPI App खोलें
+</button>
+
+</div>
+
+</div>
+
+
+<div class="form-group"
+style="margin-top:18px;">
+
+<label>
+UTR / Transaction ID *
+</label>
+
+<input
+id="utr"
+placeholder="Payment के बाद UTR डालें"
+>
+
+</div>
+
+
+<div class="notice">
+
+Payment करने के बाद UTR / Transaction ID डालना जरूरी है।
+Admin verification के बाद payment status Paid किया जाएगा।
+
+</div>
+
+
+<button class="btn green"
+onclick="submitPayment()">
+
+मैंने Payment कर दिया
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- SUCCESS MODAL -->
+<!-- ========================================================= -->
+
+<div class="modal" id="successModal">
+
+<div class="modal-box">
+
+<div class="success">
+
+<div class="success-icon">
+✓
+</div>
+
+<h2>
+Payment Submitted Successfully
+</h2>
+
+<p>
+आपका आवेदन / booking request सफलतापूर्वक भेज दिया गया है।
+</p>
+
+
+<div class="order-details">
+
+<div class="order-row">
+<b>Order ID</b>
+<span id="successOrderId"></span>
+</div>
+
+<div class="order-row">
+<b>Service</b>
+<span id="successService"></span>
+</div>
+
+<div class="order-row">
+<b>Customer</b>
+<span id="successCustomer"></span>
+</div>
+
+<div class="order-row">
+<b>Mobile</b>
+<span id="successMobile"></span>
+</div>
+
+<div class="order-row">
+<b>Amount</b>
+<span>₹<span id="successAmount"></span></span>
+</div>
+
+<div class="order-row">
+<b>Payment</b>
+<span>Pending Verification</span>
+</div>
+
+</div>
+
+
+<div class="notice">
+
+अब WhatsApp पर booking/application details भेजें।
+Service के documents भी इसी WhatsApp chat में भेज सकते हैं।
+
+</div>
+
+
+<button class="btn whatsapp"
+onclick="sendOrderWhatsApp()">
+
+📲 WhatsApp पर भेजें
+
+</button>
+
+
+<button class="btn"
+onclick="closeSuccess()">
+
+Home पर जाएं
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
 <script>
 
-/* =====================================================
-   GLOBAL VARIABLES
-===================================================== */
+/* ============================================================
+   BASIC CONFIGURATION
+   ============================================================ */
 
-let selectedService = "";
-let selectedAmount = "0";
+/*
+   यहां अपनी जानकारी डालें।
+*/
 
-let selectedTravel = "";
+const CONFIG = {
 
-let currentApplication = null;
+    UPI_ID: "YOUR_UPI_ID",
 
-let currentOrderId = "";
+    WHATSAPP_NUMBER: "YOUR_WHATSAPP_NUMBER"
+
+};
 
 
-/* =====================================================
-   MENU
-===================================================== */
+/* ============================================================
+   SERVICES
+   ============================================================ */
 
-function toggleMenu(){
+const services = [
 
-    document
-        .getElementById("mainNav")
-        .classList
-        .toggle("show");
+{
+name:"PAN Card",
+icon:"digital_service.jpg",
+amount:249,
+details:"PAN Card आवेदन"
+},
+
+{
+name:"Aadhaar Service",
+icon:"digital_service.jpg",
+amount:100,
+details:"Aadhaar संबंधी सेवा"
+},
+
+{
+name:"Ayushman Card",
+icon:"digital_service.jpg",
+amount:100,
+details:"Ayushman Card आवेदन"
+},
+
+{
+name:"ABHA Card",
+icon:"digital_service.jpg",
+amount:50,
+details:"ABHA Card आवेदन"
+},
+
+{
+name:"Ration Card",
+icon:"digital_service.jpg",
+amount:100,
+details:"Ration Card आवेदन"
+},
+
+{
+name:"Voter Card",
+icon:"digital_service.jpg",
+amount:100,
+details:"Voter Card आवेदन"
+},
+
+{
+name:"E-Shram / Labour",
+icon:"digital_service.jpg",
+amount:50,
+details:"E-Shram / Labour Card"
+},
+
+{
+name:"Driving Licence",
+icon:"digital_service.jpg",
+amount:200,
+details:"Driving Licence सेवा"
+},
+
+{
+name:"Passport",
+icon:"digital_service.jpg",
+amount:200,
+details:"Passport सहायता"
+},
+
+{
+name:"Birth Certificate",
+icon:"digital_service.jpg",
+amount:100,
+details:"Birth Certificate"
+},
+
+{
+name:"Income Certificate",
+icon:"digital_service.jpg",
+amount:100,
+details:"Income Certificate"
+},
+
+{
+name:"Caste Certificate",
+icon:"digital_service.jpg",
+amount:100,
+details:"Caste Certificate"
+},
+
+{
+name:"Residence Certificate",
+icon:"digital_service.jpg",
+amount:100,
+details:"Residence Certificate"
+},
+
+{
+name:"Police Character Certificate",
+icon:"digital_service.jpg",
+amount:150,
+details:"Police Character Certificate"
+},
+
+{
+name:"PM Kisan",
+icon:"digital_service.jpg",
+amount:100,
+details:"PM Kisan सहायता"
+},
+
+{
+name:"PM Vishwakarma",
+icon:"digital_service.jpg",
+amount:100,
+details:"PM Vishwakarma आवेदन"
+},
+
+{
+name:"PVC Aadhaar",
+icon:"digital_service.jpg",
+amount:100,
+details:"PVC Aadhaar Order"
+},
+
+{
+name:"PF / EPFO",
+icon:"digital_service.jpg",
+amount:100,
+details:"PF / EPFO सेवा"
+}
+
+];
+
+
+/* ============================================================
+   TRAVEL PACKAGES
+   ============================================================ */
+
+const travels = [
+
+{
+name:"अयोध्या धाम यात्रा",
+price:2200,
+image:"travel.jpg"
+},
+
+{
+name:"काशी विश्वनाथ दर्शन",
+price:2500,
+image:"travel.jpg"
+},
+
+{
+name:"वृंदावन मथुरा यात्रा",
+price:5500,
+image:"travel.jpg"
+},
+
+{
+name:"वैष्णो देवी यात्रा",
+price:5500,
+image:"travel.jpg"
+},
+
+{
+name:"रामेश्वरम यात्रा",
+price:6500,
+image:"travel.jpg"
+},
+
+{
+name:"केदारनाथ यात्रा",
+price:8500,
+image:"travel.jpg"
+},
+
+{
+name:"कन्याकुमारी यात्रा",
+price:6500,
+image:"travel.jpg"
+}
+
+];
+
+
+/* ============================================================
+   CURRENT ORDER
+   ============================================================ */
+
+let currentOrder = null;
+
+
+/* ============================================================
+   LOAD SERVICES
+   ============================================================ */
+
+function loadServices(){
+
+    const grid =
+        document.getElementById("serviceGrid");
+
+    grid.innerHTML = "";
+
+    services.forEach(service => {
+
+        grid.innerHTML += `
+
+        <div class="card service-card">
+
+            <img
+                class="service-icon"
+                src="${service.icon}"
+                alt="${service.name}"
+            >
+
+            <h3>
+                ${service.name}
+            </h3>
+
+            <p>
+                ${service.details}
+            </p>
+
+            <div class="price">
+                ₹${service.amount}
+            </div>
+
+            <button
+                class="btn"
+                onclick='openService(${JSON.stringify(service)})'
+            >
+                आवेदन करें
+            </button>
+
+        </div>
+
+        `;
+
+    });
 
 }
 
 
-/* =====================================================
-   MODAL
-===================================================== */
+/* ============================================================
+   LOAD TRAVEL
+   ============================================================ */
 
-function closeModal(id){
+function loadTravel(){
 
-    document
-        .getElementById(id)
-        .style
-        .display = "none";
+    const grid =
+        document.getElementById("travelGrid");
 
-    document.body.style.overflow = "auto";
+    grid.innerHTML = "";
 
-}
+    travels.forEach(travel => {
 
+        grid.innerHTML += `
 
-function closeAllModals(){
+        <div class="card">
 
-    document
-        .querySelectorAll(".modal")
-        .forEach(function(modal){
+            <img
+                class="travel-img"
+                src="${travel.image}"
+                alt="${travel.name}"
+            >
 
-            modal.style.display = "none";
+            <h3>
+                ${travel.name}
+            </h3>
 
-        });
+            <div class="price">
+                ₹${travel.price} / व्यक्ति
+            </div>
 
-    document.body.style.overflow = "auto";
+            <button
+                class="btn orange"
+                onclick='openTravel(${JSON.stringify(travel)})'
+            >
+                यात्रा बुक करें
+            </button>
 
-}
+        </div>
 
+        `;
 
-/* =====================================================
-   SERVICE FORM
-===================================================== */
-
-function openServiceForm(
-    serviceName,
-    amount
-){
-
-    selectedService = serviceName;
-
-    selectedAmount = amount;
-
-
-    document.getElementById(
-        "selectedServiceName"
-    ).innerText = serviceName;
-
-
-    document.getElementById(
-        "serviceAmount"
-    ).innerText = amount;
-
-
-    document.getElementById(
-        "serviceFormModal"
-    ).style.display = "flex";
-
-
-    document.body.style.overflow = "hidden";
+    });
 
 }
 
 
-/* =====================================================
-   SERVICE SUBMIT
-===================================================== */
+/* ============================================================
+   SERVICE APPLICATION
+   ============================================================ */
 
-function submitServiceForm(event){
+function openService(service){
 
-    event.preventDefault();
+    document.getElementById("applicationTitle")
+        .innerText =
+        service.name + " आवेदन";
 
+    document.getElementById("serviceName")
+        .value =
+        service.name;
+
+    document.getElementById("serviceAmount")
+        .value =
+        service.amount;
+
+    document.getElementById("customerName")
+        .value = "";
+
+    document.getElementById("customerMobile")
+        .value = "";
+
+    document.getElementById("serviceDetails")
+        .value = "";
+
+    document.getElementById("documents")
+        .value = "";
+
+    document.getElementById("applicationModal")
+        .classList.add("show");
+
+}
+
+
+/* ============================================================
+   SERVICE PAYMENT
+   ============================================================ */
+
+function continueServicePayment(){
 
     const name =
-        document.getElementById(
-            "serviceName"
-        ).value.trim();
-
+        document.getElementById("customerName")
+        .value.trim();
 
     const mobile =
-        document.getElementById(
-            "serviceMobile"
-        ).value.trim();
+        document.getElementById("customerMobile")
+        .value.trim();
 
+    const service =
+        document.getElementById("serviceName")
+        .value;
 
-    if(
-        !/^[6-9][0-9]{9}$/.test(mobile)
-    ){
-
-        showToast(
-            "कृपया सही 10 अंकों का मोबाइल नंबर डालें।"
+    const amount =
+        Number(
+            document.getElementById("serviceAmount")
+            .value
         );
 
+    if(!name){
+
+        alert("कृपया नाम भरें।");
         return;
 
     }
 
+    if(!/^[0-9]{10}$/.test(mobile)){
 
-    currentApplication = {
+        alert("सही 10 अंकों का मोबाइल नंबर डालें।");
+        return;
 
-        type:"SERVICE",
+    }
 
-        service:selectedService,
+    createPaymentOrder({
 
-        amount:selectedAmount,
+        type:"service",
+
+        serviceName:service,
 
         name:name,
 
         mobile:mobile,
 
-        email:
-            document.getElementById(
-                "serviceEmail"
-            ).value.trim(),
-
-        district:
-            document.getElementById(
-                "serviceDistrict"
-            ).value.trim(),
-
-        address:
-            document.getElementById(
-                "serviceAddress"
-            ).value.trim(),
+        amount:amount,
 
         details:
-            document.getElementById(
-                "serviceDetails"
-            ).value.trim(),
+            document.getElementById("serviceDetails")
+            .value,
 
-        date:
-            new Date().toLocaleString("en-IN")
+        documents:
+            document.getElementById("documents")
+            .value
 
-    };
-
-
-    localStorage.setItem(
-        "AJ_SEVA_LAST_APPLICATION",
-        JSON.stringify(
-            currentApplication
-        )
-    );
-
-
-    closeModal(
-        "serviceFormModal"
-    );
-
-
-    openPayment();
+    });
 
 }
 
 
-/* =====================================================
-   TRAVEL FORM
-===================================================== */
+/* ============================================================
+   TRAVEL
+   ============================================================ */
 
-function openTravelForm(
-    travelName,
-    amount
-){
+function openTravel(travel){
 
-    selectedTravel = travelName;
+    document.getElementById("travelPackage")
+        .value =
+        travel.name;
 
-    selectedAmount = amount;
+    document.getElementById("travelAmount")
+        .innerText =
+        travel.price;
 
+    document.getElementById("travelPersons")
+        .value = 1;
 
-    document.getElementById(
-        "travelNameTitle"
-    ).innerText = travelName;
+    document.getElementById("travelName")
+        .value = "";
 
+    document.getElementById("travelMobile")
+        .value = "";
 
-    document.getElementById(
-        "travelAmount"
-    ).innerText = amount;
+    document.getElementById("travelDate")
+        .value = "";
 
+    document.getElementById("travelExtra")
+        .value = "";
 
-    document.getElementById(
-        "travelFormModal"
-    ).style.display = "flex";
+    document.getElementById("travelPersons")
+        .oninput = function(){
 
+            const persons =
+                Number(this.value) || 1;
 
-    document.body.style.overflow = "hidden";
+            document.getElementById("travelAmount")
+                .innerText =
+                persons * travel.price;
+
+        };
+
+    document.getElementById("travelModal")
+        .classList.add("show");
 
 }
 
 
-/* =====================================================
-   TRAVEL SUBMIT
-===================================================== */
+/* ============================================================
+   TRAVEL PAYMENT
+   ============================================================ */
 
-function submitTravelForm(event){
+function continueTravelPayment(){
 
-    event.preventDefault();
-
+    const packageName =
+        document.getElementById("travelPackage")
+        .value;
 
     const name =
-        document.getElementById(
-            "travelCustomerName"
-        ).value.trim();
-
+        document.getElementById("travelName")
+        .value.trim();
 
     const mobile =
-        document.getElementById(
-            "travelCustomerMobile"
-        ).value.trim();
+        document.getElementById("travelMobile")
+        .value.trim();
 
+    const persons =
+        Number(
+            document.getElementById("travelPersons")
+            .value
+        ) || 1;
 
-    if(
-        !/^[6-9][0-9]{9}$/.test(mobile)
-    ){
+    const date =
+        document.getElementById("travelDate")
+        .value;
 
-        showToast(
-            "कृपया सही मोबाइल नंबर डालें।"
+    const amount =
+        Number(
+            document.getElementById("travelAmount")
+            .innerText
         );
 
+    if(!name){
+
+        alert("नाम भरें।");
         return;
 
     }
 
+    if(!/^[0-9]{10}$/.test(mobile)){
 
-    currentApplication = {
+        alert("सही 10 अंकों का मोबाइल नंबर डालें।");
+        return;
 
-        type:"TRAVEL",
+    }
 
-        service:selectedTravel,
+    if(!date){
 
-        amount:selectedAmount,
+        alert("Travel Date चुनें।");
+        return;
+
+    }
+
+    createPaymentOrder({
+
+        type:"travel",
+
+        serviceName:packageName,
 
         name:name,
 
         mobile:mobile,
 
-        persons:
-            document.getElementById(
-                "travelPersons"
-            ).value,
+        amount:amount,
 
-        travelDate:
-            document.getElementById(
-                "travelDate"
-            ).value,
+        persons:persons,
 
-        from:
-            document.getElementById(
-                "travelFrom"
-            ).value,
-
-        to:
-            document.getElementById(
-                "travelTo"
-            ).value,
+        travelDate:date,
 
         details:
-            document.getElementById(
-                "travelDetails"
-            ).value,
+            document.getElementById("travelExtra")
+            .value
 
-        date:
-            new Date().toLocaleString("en-IN")
-
-    };
-
-
-    localStorage.setItem(
-        "AJ_SEVA_LAST_APPLICATION",
-        JSON.stringify(
-            currentApplication
-        )
-    );
-
-
-    closeModal(
-        "travelFormModal"
-    );
-
-
-    openPayment();
+    });
 
 }
 
 
-/* =====================================================
-   PAYMENT
-===================================================== */
+/* ============================================================
+   TICKET BOOKING
+   ============================================================ */
 
-function openPayment(){
+function openTicketBooking(type="Bus"){
 
-    document.getElementById(
-        "paymentTitle"
-    ).innerText =
-        currentApplication.service;
+    document.getElementById("ticketType")
+        .value =
+        type;
 
-
-    document.getElementById(
-        "paymentAmount"
-    ).innerText =
-        currentApplication.amount;
-
-
-    /*
-       यहां अपना वास्तविक UPI ID डालें
-    */
-
-    const upiID =
-        "YOUR-UPI-ID@upi";
-
-
-    const upiLink =
-        "upi://pay?pa=" +
-        encodeURIComponent(upiID) +
-        "&pn=" +
-        encodeURIComponent(
-            "Ashish Kumar Verma"
-        ) +
-        "&am=" +
-        encodeURIComponent(
-            currentApplication.amount
-        ) +
-        "&cu=INR";
-
-
-    document.getElementById(
-        "upiPayButton"
-    ).href = upiLink;
-
-
-    document.getElementById(
-        "paymentModal"
-    ).style.display = "flex";
-
-
-    document.body.style.overflow = "hidden";
+    document.getElementById("ticketModal")
+        .classList.add("show");
 
 }
 
 
-/* =====================================================
-   COPY UPI
-===================================================== */
+/* ============================================================
+   TICKET PAYMENT
+   ============================================================ */
 
-function copyUPI(){
+function continueTicketPayment(){
 
-    const upiID =
-        "YOUR-UPI-ID@upi";
+    const type =
+        document.getElementById("ticketType")
+        .value;
 
+    const name =
+        document.getElementById("ticketName")
+        .value.trim();
 
-    navigator.clipboard
-        .writeText(upiID)
-        .then(function(){
+    const mobile =
+        document.getElementById("ticketMobile")
+        .value.trim();
 
-            showToast(
-                "UPI ID Copy हो गई।"
-            );
+    const from =
+        document.getElementById("ticketFrom")
+        .value.trim();
 
-        });
+    const to =
+        document.getElementById("ticketTo")
+        .value.trim();
 
-}
+    const date =
+        document.getElementById("ticketDate")
+        .value;
 
+    const passengers =
+        document.getElementById("ticketPassengers")
+        .value;
 
-/* =====================================================
-   PAYMENT CONFIRM
-===================================================== */
-
-function confirmPayment(){
-
-    if(!currentApplication){
-
-        showToast(
-            "Application नहीं मिली।"
+    const amount =
+        Number(
+            document.getElementById("ticketAmount")
+            .value
         );
 
+    if(!name){
+
+        alert("नाम भरें।");
         return;
 
     }
 
+    if(!/^[0-9]{10}$/.test(mobile)){
 
-    currentOrderId =
-        "AJ" +
+        alert("सही मोबाइल नंबर डालें।");
+        return;
+
+    }
+
+    if(!from || !to){
+
+        alert("From और To भरें।");
+        return;
+
+    }
+
+    if(!date){
+
+        alert("Travel Date चुनें।");
+        return;
+
+    }
+
+    createPaymentOrder({
+
+        type:"ticket",
+
+        serviceName:
+            type + " Ticket Booking",
+
+        name:name,
+
+        mobile:mobile,
+
+        amount:amount,
+
+        from:from,
+
+        to:to,
+
+        travelDate:date,
+
+        passengers:passengers,
+
+        details:
+            document.getElementById("ticketExtra")
+            .value
+
+    });
+
+}
+
+
+/* ============================================================
+   CREATE PAYMENT ORDER
+   ============================================================ */
+
+function createPaymentOrder(data){
+
+    const orderId =
+        "AJSEVA-" +
         Date.now()
             .toString()
             .slice(-8);
 
+    currentOrder = {
 
-    currentApplication.orderId =
-        currentOrderId;
+        ...data,
 
+        orderId:orderId,
 
-    currentApplication.paymentStatus =
-        "PAID";
+        paymentStatus:
+            "Pending Verification",
 
+        orderStatus:
+            "Pending",
 
-    currentApplication.paymentTime =
-        new Date().toLocaleString(
-            "en-IN"
-        );
+        dateTime:
+            new Date().toLocaleString("en-IN")
 
+    };
 
-    /*
-       Save Order
-    */
+    document.getElementById("paymentOrderId")
+        .innerText =
+        orderId;
 
-    const oldOrders =
-        JSON.parse(
-            localStorage.getItem(
-                "AJ_SEVA_ORDERS"
-            ) || "[]"
-        );
+    document.getElementById("paymentService")
+        .innerText =
+        data.serviceName;
 
+    document.getElementById("paymentCustomer")
+        .innerText =
+        data.name;
 
-    oldOrders.push(
-        currentApplication
-    );
+    document.getElementById("paymentMobile")
+        .innerText =
+        data.mobile;
 
+    document.getElementById("paymentAmount")
+        .innerText =
+        data.amount;
 
-    localStorage.setItem(
-        "AJ_SEVA_ORDERS",
-        JSON.stringify(
-            oldOrders
-        )
-    );
+    closeModal("applicationModal");
 
+    closeModal("travelModal");
 
-    /* SUCCESS */
+    closeModal("ticketModal");
 
-    closeModal(
-        "paymentModal"
-    );
-
-
-    document.getElementById(
-        "successOrderId"
-    ).innerText =
-        currentOrderId;
-
-
-    document.getElementById(
-        "successService"
-    ).innerText =
-        currentApplication.service;
-
-
-    document.getElementById(
-        "successAmount"
-    ).innerText =
-        currentApplication.amount;
-
-
-    document.getElementById(
-        "successModal"
-    ).style.display = "flex";
-
-
-    document.body.style.overflow =
-        "hidden";
+    document.getElementById("paymentModal")
+        .classList.add("show");
 
 }
 
 
-/* =====================================================
+/* ============================================================
+   PAYMENT METHOD
+   ============================================================ */
+
+function selectPayment(method, element){
+
+    document.querySelectorAll(".payment-option")
+        .forEach(el => {
+
+            el.classList.remove("active");
+
+        });
+
+    element.classList.add("active");
+
+
+    document.getElementById("upiPaymentBox")
+        .style.display =
+        method === "upi"
+            ? "block"
+            : "none";
+
+    document.getElementById("qrPaymentBox")
+        .style.display =
+        method === "qr"
+            ? "block"
+            : "none";
+
+    document.getElementById("appPaymentBox")
+        .style.display =
+        method === "app"
+            ? "block"
+            : "none";
+
+}
+
+
+/* ============================================================
+   COPY UPI
+   ============================================================ */
+
+function copyUPI(){
+
+    navigator.clipboard.writeText(
+        CONFIG.UPI_ID
+    );
+
+    alert("UPI ID copy हो गई।");
+
+}
+
+
+/* ============================================================
+   OPEN UPI APP
+   ============================================================ */
+
+function openUPIApp(){
+
+    if(!currentOrder){
+
+        alert("Order उपलब्ध नहीं है।");
+        return;
+
+    }
+
+    const upiUrl =
+        "upi://pay" +
+        "?pa=" +
+        encodeURIComponent(CONFIG.UPI_ID) +
+        "&pn=" +
+        encodeURIComponent("AJ Seva") +
+        "&am=" +
+        encodeURIComponent(currentOrder.amount) +
+        "&cu=INR";
+
+    window.location.href =
+        upiUrl;
+
+}
+
+
+/* ============================================================
+   SUBMIT PAYMENT
+   ============================================================ */
+
+function submitPayment(){
+
+    if(!currentOrder){
+
+        alert("Order उपलब्ध नहीं है।");
+        return;
+
+    }
+
+    const utr =
+        document.getElementById("utr")
+        .value.trim();
+
+    if(utr.length < 4){
+
+        alert("Payment के बाद सही UTR / Transaction ID डालें।");
+        return;
+
+    }
+
+    currentOrder.utr =
+        utr;
+
+    currentOrder.paymentStatus =
+        "Pending Verification";
+
+    document.getElementById("successOrderId")
+        .innerText =
+        currentOrder.orderId;
+
+    document.getElementById("successService")
+        .innerText =
+        currentOrder.serviceName;
+
+    document.getElementById("successCustomer")
+        .innerText =
+        currentOrder.name;
+
+    document.getElementById("successMobile")
+        .innerText =
+        currentOrder.mobile;
+
+    document.getElementById("successAmount")
+        .innerText =
+        currentOrder.amount;
+
+    /*
+       Browser में temporary save.
+       Firebase जोड़ने पर यही order database में save होगा.
+    */
+
+    localStorage.setItem(
+        "AJSEVA_LAST_ORDER",
+        JSON.stringify(currentOrder)
+    );
+
+    closeModal("paymentModal");
+
+    document.getElementById("successModal")
+        .classList.add("show");
+
+}
+
+
+/* ============================================================
    WHATSAPP
-===================================================== */
+   ============================================================ */
 
-function shareWhatsApp(){
+function sendOrderWhatsApp(){
 
-    if(!currentApplication){
+    if(!currentOrder){
 
         return;
 
     }
 
+    let message = "";
 
-    const message =
+    if(currentOrder.type === "travel"){
 
-`AJ Seva - आवेदन
+        message = `
 
-Order ID: ${currentApplication.orderId}
+आशीष जन सेवा केंद्र
 
-सेवा:
-${currentApplication.service}
+✈️ TRAVEL BOOKING
 
-नाम:
-${currentApplication.name}
+Order ID: ${currentOrder.orderId}
 
-मोबाइल:
-${currentApplication.mobile}
+Travel Package:
+${currentOrder.serviceName}
 
-राशि:
-₹${currentApplication.amount}
+Customer Name:
+${currentOrder.name}
+
+Mobile:
+${currentOrder.mobile}
+
+Persons:
+${currentOrder.persons}
+
+Travel Date:
+${currentOrder.travelDate}
+
+Amount:
+₹${currentOrder.amount}
+
+Payment Method:
+UPI / QR
+
+UTR:
+${currentOrder.utr}
 
 Payment Status:
-PAID ✅
+Pending Verification
 
-आशीष जन सेवा केंद्र`;
+Order Status:
+Pending
+
+━━━━━━━━━━━━━━━━━━
+
+कृपया मेरी Travel Booking की पुष्टि करें।
+
+धन्यवाद 🙏
+आशीष जन सेवा केंद्र
+
+`.trim();
+
+    }
+
+    else if(currentOrder.type === "ticket"){
+
+        message = `
+
+आशीष जन सेवा केंद्र
+
+🎫 ${currentOrder.serviceName}
+
+Order ID:
+${currentOrder.orderId}
+
+Customer Name:
+${currentOrder.name}
+
+Mobile:
+${currentOrder.mobile}
+
+From:
+${currentOrder.from}
+
+To:
+${currentOrder.to}
+
+Travel Date:
+${currentOrder.travelDate}
+
+Passengers:
+${currentOrder.passengers}
+
+Amount:
+₹${currentOrder.amount}
+
+UTR:
+${currentOrder.utr}
+
+Payment Status:
+Pending Verification
+
+Order Status:
+Pending
+
+━━━━━━━━━━━━━━━━━━
+
+कृपया मेरी Ticket Booking की पुष्टि करें।
+
+धन्यवाद 🙏
+
+`.trim();
+
+    }
+
+    else{
+
+        message = `
+
+आशीष जन सेवा केंद्र
+
+📋 SERVICE APPLICATION
+
+Order ID:
+${currentOrder.orderId}
+
+Service:
+${currentOrder.serviceName}
+
+Customer Name:
+${currentOrder.name}
+
+Mobile:
+${currentOrder.mobile}
+
+Amount:
+₹${currentOrder.amount}
+
+Payment Method:
+UPI / QR
+
+UTR:
+${currentOrder.utr}
+
+Payment Status:
+Pending Verification
+
+Order Status:
+Pending
+
+━━━━━━━━━━━━━━━━━━
+
+📄 Required Documents:
+
+${currentOrder.documents || "कृपया service के आवश्यक documents भेजें।"}
+
+━━━━━━━━━━━━━━━━━━
+
+कृपया ऊपर दिए गए documents इसी WhatsApp chat में भेजें।
+
+धन्यवाद 🙏
+आशीष जन सेवा केंद्र
+
+`.trim();
+
+    }
 
 
-    const whatsappURL =
-        "https://wa.me/?text=" +
-        encodeURIComponent(
-            message
-        );
-
+    const url =
+        "https://wa.me/" +
+        CONFIG.WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
 
     window.open(
-        whatsappURL,
+        url,
         "_blank"
     );
 
 }
 
 
-/* =====================================================
-   TOAST
-===================================================== */
+/* ============================================================
+   GENERAL FUNCTIONS
+   ============================================================ */
 
-function showToast(message){
+function closeModal(id){
 
-    const toast =
-        document.getElementById(
-            "toast"
-        );
-
-
-    toast.innerText =
-        message;
-
-
-    toast.classList.add(
-        "show"
-    );
-
-
-    setTimeout(function(){
-
-        toast.classList.remove(
-            "show"
-        );
-
-    },3000);
+    document.getElementById(id)
+        .classList.remove("show");
 
 }
 
 
-/* =====================================================
-   MODAL BACKGROUND CLICK
-===================================================== */
+function closeSuccess(){
 
-document
-    .querySelectorAll(".modal")
-    .forEach(function(modal){
+    closeModal("successModal");
 
-        modal.addEventListener(
-            "click",
-            function(event){
+    currentOrder = null;
 
-                if(
-                    event.target === modal
-                ){
-
-                    closeModal(
-                        modal.id
-                    );
-
-                }
-
-            }
-        );
-
-    });
+}
 
 
-/* =====================================================
-   MOBILE NAV CLOSE
-===================================================== */
+function scrollToSection(id){
 
-document
-    .querySelectorAll("nav a")
-    .forEach(function(link){
+    document.getElementById(id)
+        ?.scrollIntoView({
+            behavior:"smooth"
+        });
 
-        link.addEventListener(
-            "click",
-            function(){
+}
 
-                document
-                    .getElementById("mainNav")
-                    .classList
-                    .remove("show");
 
-            }
-        );
+/* ============================================================
+   START
+   ============================================================ */
 
-    });
+loadServices();
+
+loadTravel();
 
 </script>
 
