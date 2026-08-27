@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Services | AJ SEVA</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;color:#14213d;background:#f6f8fb}
+a{text-decoration:none}
+.container{max-width:1400px;margin:auto;padding:0 28px}
+.header{height:78px;background:#fff;border-bottom:1px solid #e5e9ef;box-shadow:0 2px 12px #00000008;position:sticky;top:0;z-index:10}
+.navbar{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;color:#17233e}
+.logo-icon{width:48px;height:48px;border-radius:15px;background:#ff7a00;color:#fff;display:grid;place-items:center;font-weight:900;font-size:22px;box-shadow:0 6px 16px #ff7a0030}
+.logo strong{display:block;font-size:25px;line-height:1}
+.logo span{display:block;color:#8791a3;font-size:13px;margin-top:5px}
+.nav{display:flex;gap:9px;align-items:center}
+.nav a{padding:12px 17px;border-radius:12px;color:#303b50;font-size:17px;font-weight:700}
+.nav a:hover,.nav .active{background:#fff0e7;color:#ef6500}
+.menu{display:none;border:0;background:#ff7a00;color:#fff;border-radius:10px;font-size:22px;width:43px;height:43px}
+.hero{padding:46px 0 43px;text-align:center;background:linear-gradient(135deg,#f6f8fb,#eef3f9)}
+.hero .tag{color:#f36b0b;font-size:17px;font-weight:800;letter-spacing:.4px}
+.hero h1{font-size:42px;margin:8px 0 8px}
+.hero h1 span{color:#f36b0b}
+.hero p{margin:auto;max-width:650px;color:#657086;font-size:17px;line-height:1.5}
+.main{padding:24px 0 65px;background:#fff}
+.section-title{text-align:center;margin:0 0 20px}
+.section-title span{display:inline-flex;align-items:center;gap:16px;color:#f36b0b;font-size:17px;font-weight:800}
+.section-title span:before,.section-title span:after{content:"";width:68px;height:2px;background:#f36b0b}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.card{min-width:0;background:#fff;border:1px solid #e0e6ee;border-radius:13px;padding:13px 14px 11px;min-height:164px;display:flex;flex-direction:column;box-shadow:0 4px 14px #16233d0a;transition:.18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 9px 22px #16233d15}
+.icon{width:43px;height:43px;border-radius:10px;background:#fff5ec;display:grid;place-items:center;font-size:23px;margin-bottom:9px}
+.card h3{font-size:15px;margin:0 0 4px;color:#12233f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card p{font-size:11.5px;color:#69768a;margin:0;line-height:1.35;min-height:31px}
+.price{font-size:14px;font-weight:900;color:#f36b0b;margin:7px 0 7px}
+.apply{display:block;text-align:center;background:#ff710d;color:#fff;border-radius:6px;padding:7px 4px;font-size:11.5px;font-weight:800;margin-top:auto}
+.apply:hover{background:#e95f00}
+.note{margin:22px auto 0;max-width:900px;text-align:center;background:#fff6ec;color:#8b4317;padding:11px;border-radius:9px;font-size:12px}
+.footer{background:#14213d;color:#fff;padding:35px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;padding-bottom:30px}
+.footer h3{margin:0 0 12px;font-size:16px}
+.footer p,.footer a{color:#aeb8c8;font-size:13px;line-height:1.7}
+.footer a{display:block}
+.bottom{border-top:1px solid #283651;text-align:center;padding:13px;color:#8793a7;font-size:12px}
+.whatsapp{position:fixed;right:20px;bottom:20px;width:54px;height:54px;border-radius:50%;background:#20c76b;color:#fff;display:grid;place-items:center;font-size:25px;box-shadow:0 8px 22px #0003;z-index:20}
+@media(max-width:1050px){.grid{grid-template-columns:repeat(4,1fr)}.nav a{padding:10px 10px;font-size:15px}}
+@media(max-width:800px){.grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+.container{padding:0 12px}.header,.navbar{height:68px}.logo-icon{width:42px;height:42px}.logo strong{font-size:19px}.logo span{font-size:10px}
+.menu{display:block}.nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:10px 12px 14px;box-shadow:0 8px 18px #0001;flex-direction:column;align-items:stretch}
+.nav.open{display:flex}.nav a{font-size:14px}.hero{padding:38px 0}.hero h1{font-size:31px}.hero p{font-size:14px}
+.main{padding-top:20px}.grid{grid-template-columns:repeat(2,1fr);gap:9px}.card{padding:11px;min-height:158px;border-radius:11px}.icon{width:40px;height:40px;font-size:21px}
+.card h3{font-size:13px}.card p{font-size:10.5px}.price{font-size:13px}.apply{font-size:10px;padding:7px 2px}
+.footer-grid{grid-template-columns:1fr}.section-title span{font-size:14px}.section-title span:before,.section-title span:after{width:35px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="container navbar">
+<a class="logo" href="./index.html">
+<div class="logo-icon">AJ</div>
+<div><strong>AJ SEVA</strong><span>आशीष जन सेवा केंद्र</span></div>
+</a>
+<button class="menu" id="menuBtn">☰</button>
+<nav class="nav" id="nav">
+<a href="./index.html">Home</a>
+<a class="active" href="./services.html">Services</a>
+<a href="./travel.html">Travel</a>
+<a href="./booking.html">Booking</a>
+<a href="./about.html">About</a>
+<a href="./contact.html">Contact</a>
+<a href="./track-order.html">🔎 Track Order</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="tag">AJ SEVA</div>
+<h1>हमारी <span>सभी सेवाएं</span></h1>
+<p>सरकारी, ऑनलाइन, डिजिटल और टिकट बुकिंग की विभिन्न सेवाएं एक ही जगह।</p>
+</div>
+</section>
+
+<main class="main">
+<div class="container">
+<div class="section-title"><span>DIGITAL SERVICES</span></div>
+<div class="grid" id="servicesGrid">
+
+<article class="card">
+  <div class="icon">🪪</div>
+  <h3>PAN Card</h3>
+  <p>नया PAN Card / Correction</p>
+  <div class="price">₹110</div>
+  <a class="apply" href="./booking.html?service=PAN%20Card">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🆔</div>
+  <h3>Aadhaar Card</h3>
+  <p>Aadhaar से संबंधित सेवाएँ</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=Aadhaar%20Card">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">📄</div>
+  <h3>आय प्रमाण पत्र</h3>
+  <p>Income Certificate आवेदन</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=आय%20प्रमाण%20पत्र">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">👨‍👩‍👧</div>
+  <h3>जाति प्रमाण पत्र</h3>
+  <p>Caste Certificate आवेदन</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=जाति%20प्रमाण%20पत्र">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🏠</div>
+  <h3>निवास प्रमाण पत्र</h3>
+  <p>Residence Certificate</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=निवास%20प्रमाण%20पत्र">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🛒</div>
+  <h3>राशन कार्ड</h3>
+  <p>Ration Card बनवाएं / सुधार</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=राशन%20कार्ड">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🧑‍💼</div>
+  <h3>Voter Card</h3>
+  <p>Voter ID Card आवेदन</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=Voter%20Card">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🚗</div>
+  <h3>Driving Licence</h3>
+  <p>नया DL / Renewal</p>
+  <div class="price">₹200</div>
+  <a class="apply" href="./booking.html?service=Driving%20Licence">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🛂</div>
+  <h3>Passport</h3>
+  <p>Passport आवेदन सेवा</p>
+  <div class="price">₹1,500</div>
+  <a class="apply" href="./booking.html?service=Passport">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🌿</div>
+  <h3>Ayushman Card</h3>
+  <p>आयुष्मान भारत कार्ड</p>
+  <div class="price">₹30</div>
+  <a class="apply" href="./booking.html?service=Ayushman%20Card">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">👷</div>
+  <h3>E-Shram Card</h3>
+  <p>E-Shram Card पंजीकरण</p>
+  <div class="price">₹30</div>
+  <a class="apply" href="./booking.html?service=E-Shram%20Card">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">⚙️</div>
+  <h3>EPFO / PF</h3>
+  <p>PF निकासी / UAN सेवा</p>
+  <div class="price">₹100</div>
+  <a class="apply" href="./booking.html?service=EPFO%20/%20PF">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🌾</div>
+  <h3>PM Kisan</h3>
+  <p>PM Kisan पंजीकरण / सुधार</p>
+  <div class="price">₹30</div>
+  <a class="apply" href="./booking.html?service=PM%20Kisan">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🛠️</div>
+  <h3>PM Vishwakarma</h3>
+  <p>PM Vishwakarma रजिस्ट्रेशन</p>
+  <div class="price">₹30</div>
+  <a class="apply" href="./booking.html?service=PM%20Vishwakarma">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">👶</div>
+  <h3>Birth Certificate</h3>
+  <p>जन्म प्रमाण पत्र</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=Birth%20Certificate">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">⚫</div>
+  <h3>Death Certificate</h3>
+  <p>मृत्यु प्रमाण पत्र</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=Death%20Certificate">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">👷‍♂️</div>
+  <h3>Labour Card</h3>
+  <p>Labour Card आवेदन</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=Labour%20Card">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">👮</div>
+  <h3>Police Character</h3>
+  <p>चरित्र प्रमाण पत्र</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=Police%20Character">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🚨</div>
+  <h3>Online FIR</h3>
+  <p>Online FIR दर्ज करें</p>
+  <div class="price">₹100</div>
+  <a class="apply" href="./booking.html?service=Online%20FIR">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">❤️</div>
+  <h3>Life Certificate</h3>
+  <p>जीवन प्रमाण पत्र</p>
+  <div class="price">₹30</div>
+  <a class="apply" href="./booking.html?service=Life%20Certificate">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🪪</div>
+  <h3>PVC Aadhaar Card</h3>
+  <p>PVC Aadhaar Order</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=PVC%20Aadhaar%20Card">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">👤</div>
+  <h3>Resume / Biodata</h3>
+  <p>Resume बनवाएं</p>
+  <div class="price">₹50</div>
+  <a class="apply" href="./booking.html?service=Resume%20/%20Biodata">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🚆</div>
+  <h3>Railway Ticket</h3>
+  <p>रेलवे टिकट बुकिंग</p>
+  <div class="price">संपर्क करें</div>
+  <a class="apply" href="./booking.html?service=Railway%20Ticket">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">🚌</div>
+  <h3>Bus Ticket</h3>
+  <p>बस टिकट बुकिंग</p>
+  <div class="price">संपर्क करें</div>
+  <a class="apply" href="./booking.html?service=Bus%20Ticket">Apply Now →</a>
+</article>
+
+<article class="card">
+  <div class="icon">✈️</div>
+  <h3>Flight Ticket</h3>
+  <p>फ्लाइट टिकट बुकिंग</p>
+  <div class="price">संपर्क करें</div>
+  <a class="apply" href="./booking.html?service=Flight%20Ticket">Apply Now →</a>
+</article>
+</div>
+<div class="note">💡 कुछ सरकारी/थर्ड-पार्टी सेवाओं का शुल्क और नियम अलग हो सकते हैं। आवेदन से पहले अंतिम शुल्क की पुष्टि करें।</div>
+</div>
+</main>
+
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<h3>AJ SEVA</h3>
+<p>आशीष जन सेवा केंद्र — डिजिटल, सरकारी और Travel Services एक ही जगह।</p>
+</div>
+<div>
+<h3>Quick Links</h3>
+<a href="./index.html">Home</a><a href="./services.html">Services</a><a href="./travel.html">Travel</a><a href="./booking.html">Booking</a>
+</div>
+<div>
+<h3>Support</h3>
+<a href="./about.html">About Us</a><a href="./contact.html">Contact</a>
+<a href="./about.html#refund-policy">Payment & Refund Policy</a>
+<a href="./about.html#account-delete-policy">Account Delete Policy</a>
+</div>
+<div>
+<h3>Contact</h3>
+<p>📍 Ballia, Uttar Pradesh</p><p>📞 +91 7376999243</p>
+</div>
+</div>
+<div class="bottom">© 2026 AJ Seva | आशीष जन सेवा केंद्र</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917376999243" target="_blank" rel="noopener">💬</a>
+
+<script>
+document.getElementById("menuBtn").addEventListener("click",function(){
+document.getElementById("nav").classList.toggle("open");
+});
+document.querySelectorAll(".nav a").forEach(function(a){
+a.addEventListener("click",function(){document.getElementById("nav").classList.remove("open");});
+});
+</script>
+</body>
+</html>

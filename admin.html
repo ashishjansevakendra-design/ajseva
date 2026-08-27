@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Seva Admin Panel</title>
+    <meta name="description" content="AJ Seva Admin Panel">
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     ADMIN SIDEBAR
+===================================================== -->
+<aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-logo">
+        <div class="admin-logo-icon">AJ</div>
+        <div>
+            <strong>AJ SEVA</strong>
+            <span>ADMIN PANEL</span>
+        </div>
+    </div>
+
+    <nav class="admin-nav">
+        <a href="#dashboard" class="admin-nav-link active" data-page="dashboard">
+            <span>📊</span> Dashboard
+        </a>
+        <a href="#travel" class="admin-nav-link" data-page="travel">
+            <span>✈️</span> Travel
+        </a>
+        <a href="#services" class="admin-nav-link" data-page="services">
+            <span>🛠️</span> Services
+        </a>
+        <a href="#bookings" class="admin-nav-link" data-page="bookings">
+            <span>📋</span> Bookings
+        </a>
+        <a href="#gallery" class="admin-nav-link" data-page="gallery">
+            <span>🖼️</span> Gallery
+        </a>
+        <a href="#customers" class="admin-nav-link" data-page="customers">
+            <span>👥</span> Customers
+        </a>
+        <a href="#settings" class="admin-nav-link" data-page="settings">
+            <span>⚙️</span> Settings
+        </a>
+    </nav>
+
+    <div class="admin-sidebar-bottom">
+        <a href="index.html" target="_blank">🌐 View Website</a>
+        <button type="button" id="logoutBtn">🚪 Logout</button>
+    </div>
+</aside>
+
+
+<!-- =====================================================
+     MAIN AREA
+===================================================== -->
+<main class="admin-main">
+
+    <!-- =================================================
+         TOP BAR
+    ================================================== -->
+    <header class="admin-topbar">
+        <button type="button" class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <div class="admin-page-title">
+            <span>ADMIN PANEL</span>
+            <h1 id="pageTitle">Dashboard</h1>
+        </div>
+
+        <div class="admin-profile">
+            <div class="admin-notification">
+                🔔
+                <span>3</span>
+            </div>
+            <div class="admin-user">
+                <div class="admin-user-avatar">A</div>
+                <div>
+                    <strong>Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =================================================
+         CONTENT
+    ================================================== -->
+    <div class="admin-content">
+
+        <!-- =================================================
+             DASHBOARD PAGE
+        ================================================== -->
+        <section class="admin-page active" id="page-dashboard">
+            <div class="welcome-box">
+                <div>
+                    <span>Welcome Back 👋</span>
+                    <h2>AJ Seva Admin Dashboard</h2>
+                    <p>यहाँ से आप अपनी website की services, travel packages और bookings manage कर सकेंगे।</p>
+                </div>
+                <div class="welcome-icon">🚀</div>
+            </div>
+
+            <!-- STAT CARDS -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon travel">✈️</div>
+                    <div>
+                        <span>Travel Packages</span>
+                        <strong id="travelCount">9</strong>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon services">🛠️</div>
+                    <div>
+                        <span>Services</span>
+                        <strong id="serviceCount">20+</strong>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bookings">📋</div>
+                    <div>
+                        <span>Total Bookings</span>
+                        <strong id="bookingCount">0</strong>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon customers">👥</div>
+                    <div>
+                        <span>Customers</span>
+                        <strong id="customerCount">0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK ACTIONS -->
+            <div class="section-heading">
+                <div>
+                    <span>QUICK ACTIONS</span>
+                    <h2>जल्दी काम करें</h2>
+                </div>
+            </div>
+
+            <div class="quick-grid">
+                <button type="button" class="quick-card" data-page="travel">
+                    <div>✈️</div>
+                    <strong>Travel Package</strong>
+                    <span>नया package जोड़ें</span>
+                </button>
+                <button type="button" class="quick-card" data-page="services">
+                    <div>🛠️</div>
+                    <strong>Service</strong>
+                    <span>नई service जोड़ें</span>
+                </button>
+                <button type="button" class="quick-card" data-page="bookings">
+                    <div>📋</div>
+                    <strong>Bookings</strong>
+                    <span>booking देखें</span>
+                </button>
+                <button type="button" class="quick-card" data-page="gallery">
+                    <div>🖼️</div>
+                    <strong>Gallery</strong>
+                    <span>photo manage करें</span>
+                </button>
+            </div>
+
+            <!-- RECENT BOOKINGS -->
+            <div class="section-heading recent-heading">
+                <div>
+                    <span>RECENT BOOKINGS</span>
+                    <h2>हाल की Bookings</h2>
+                </div>
+                <button type="button" class="view-all-btn" data-page="bookings">सभी देखें →</button>
+            </div>
+
+            <div class="table-card" id="dashboardRecentBookings">
+    <div class="empty-state">
+        <div>⏳</div>
+        <h3>Bookings load हो रही हैं...</h3>
+        <p>कृपया थोड़ा इंतजार करें।</p>
+    </div>
+</div>
+        </section>
+
+
+        <!-- =================================================
+             TRAVEL PAGE
+        ================================================== -->
+        <section class="admin-page" id="page-travel">
+            <div class="page-header-row">
+                <div>
+                    <span>TRAVEL MANAGEMENT</span>
+                    <h2>Travel Packages</h2>
+                    <p>Travel package की photo, price और details manage करें।</p>
+                </div>
+                <button type="button" class="primary-btn" id="addTravelBtn">
+                    ✈️ Add Travel Package
+                </button>
+            </div>
+
+            <div class="admin-form-card" id="travelFormCard" style="display:none;">
+                <div class="form-card-header">
+                    <div>
+                        <span>NEW PACKAGE</span>
+                        <h3>Travel Package जोड़ें</h3>
+                    </div>
+                    <button type="button" class="close-form" id="closeTravelForm">×</button>
+                </div>
+
+                <form id="travelForm">
+                    <div class="admin-form-grid">
+                        <div class="admin-form-group">
+                            <label for="travelName">Package Name *</label>
+                            <input type="text" id="travelName" placeholder="जैसे Ayodhya Dham Yatra" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="travelPrice">Price *</label>
+                            <input type="number" id="travelPrice" placeholder="2200" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="travelFrom">Starting Place</label>
+                            <input type="text" id="travelFrom" placeholder="Ballia">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="travelLocation">Travel Location</label>
+                            <input type="text" id="travelLocation" placeholder="Ayodhya">
+                        </div>
+                        <div class="admin-form-group full">
+                            <label for="travelDescription">Description *</label>
+                            <textarea id="travelDescription" rows="4" placeholder="Package की पूरी जानकारी" required></textarea>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="travelImage">Package Photo</label>
+                            <input type="file" id="travelImage" accept="image/*">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="travelStatus">Status</label>
+                            <select id="travelStatus">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="secondary-btn" id="cancelTravel">Cancel</button>
+                        <button type="submit" class="primary-btn">Save Package</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- TRAVEL LIST -->
+            <div class="admin-list-grid" id="travelList">
+                <div class="package-admin-card">
+                    <div class="package-admin-image">🛕</div>
+                    <div class="package-admin-content">
+                        <span class="status active">Active</span>
+                        <h3>Ayodhya Dham Yatra</h3>
+                        <p>श्री राम जन्मभूमि, हनुमानगढ़ी और प्रमुख स्थल।</p>
+                        <strong>₹2,200 / व्यक्ति</strong>
+                        <div class="card-actions">
+                            <button type="button">✏️ Edit</button>
+                            <button type="button" class="delete-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-admin-card">
+                    <div class="package-admin-image">🛕</div>
+                    <div class="package-admin-content">
+                        <span class="status active">Active</span>
+                        <h3>Kashi Vishwanath Yatra</h3>
+                        <p>काशी विश्वनाथ मंदिर और गंगा आरती।</p>
+                        <strong>संपर्क करें</strong>
+                        <div class="card-actions">
+                            <button type="button">✏️ Edit</button>
+                            <button type="button" class="delete-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-admin-card">
+                    <div class="package-admin-image">🏔️</div>
+                    <div class="package-admin-content">
+                        <span class="status active">Active</span>
+                        <h3>Kedarnath Yatra</h3>
+                        <p>बाबा केदारनाथ के दर्शन।</p>
+                        <strong>संपर्क करें</strong>
+                        <div class="card-actions">
+                            <button type="button">✏️ Edit</button>
+                            <button type="button" class="delete-btn">🗑️ Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+       <!-- =================================================
+     SERVICES PAGE
+================================================= -->
+
+<section
+    class="admin-page"
+    id="page-services"
+>
+
+    <div class="page-header-row">
+
+        <div>
+
+            <span>
+                SERVICE MANAGEMENT
+            </span>
+
+            <h2>
+                Services
+            </h2>
+
+            <p>
+                अपनी सभी online services manage करें।
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="addServiceBtn"
+        >
+            + Add Service
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         ADD / EDIT SERVICE FORM
+    ================================================== -->
+
+    <div
+        class="admin-form-card"
+        id="serviceFormCard"
+        style="display:none;"
+    >
+
+        <div class="form-card-header">
+
+            <div>
+
+                <span>
+                    SERVICE MANAGEMENT
+                </span>
+
+                <h3 id="serviceFormTitle">
+                    Service जोड़ें
+                </h3>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="close-form"
+                id="closeServiceForm"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="serviceForm">
+
+            <div class="admin-form-grid">
+
+
+                <!-- SERVICE NAME -->
+
+                <div class="admin-form-group">
+
+                    <label
+                        for="serviceName"
+                    >
+                        Service Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="serviceName"
+                        placeholder="जैसे PAN Card"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PRICE -->
+
+                <div class="admin-form-group">
+
+                    <label
+                        for="servicePrice"
+                    >
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="servicePrice"
+                        placeholder="100"
+                        min="0"
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div
+                    class="admin-form-group full"
+                >
+
+                    <label
+                        for="serviceDescription"
+                    >
+                        Description
+                    </label>
+
+                    <textarea
+                        id="serviceDescription"
+                        rows="4"
+                        placeholder="Service की जानकारी"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- PHOTO -->
+
+                <div
+                    class="admin-form-group"
+                >
+
+                    <label
+                        for="serviceImage"
+                    >
+                        Service Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="serviceImage"
+                        accept="image/*"
+                    >
+
+                    <small>
+                        JPG, PNG या WEBP फोटो चुनें।
+                    </small>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div
+                    class="admin-form-group"
+                >
+
+                    <label
+                        for="serviceStatus"
+                    >
+                        Status
+                    </label>
+
+                    <select
+                        id="serviceStatus"
+                    >
+
+                        <option
+                            value="active"
+                        >
+                            Active
+                        </option>
+
+                        <option
+                            value="inactive"
+                        >
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM BUTTONS -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelService"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="saveServiceBtn"
+                >
+                    Save Service
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- =================================================
+         FIREBASE SERVICES LIST
+    ================================================== -->
+
+    <div
+        class="admin-list-grid"
+        id="servicesList"
+        style="margin-top:25px;"
+    >
+
+        <div
+            class="gallery-placeholder"
+        >
+
+            🛠️
+
+            <span>
+                Services लोड हो रही हैं...
+            </span>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+        <!-- =================================================
+             BOOKINGS PAGE
+        ================================================== -->
+        <section class="admin-page" id="page-bookings">
+            <div class="page-header-row">
+                <div>
+                    <span>BOOKING MANAGEMENT</span>
+                    <h2>Customer Bookings</h2>
+                    <p>सभी Service और Travel bookings यहाँ आएंगी।</p>
+                </div>
+            </div>
+
+            <div class="booking-filters">
+                <input type="search" id="bookingSearch" placeholder="🔍 नाम या मोबाइल से खोजें">
+                <select id="bookingStatusFilter">
+                    <option value="all">सभी Booking</option>
+                    <option value="new">New</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="completed">Completed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </div>
+
+            <!-- RECENT BOOKINGS -->
+<div class="table-card" id="recentBookings">
+    <div class="empty-state">
+        <div>⏳</div>
+        <h3>Bookings load हो रही हैं...</h3>
+        <p>कृपया थोड़ा इंतजार करें।</p>
+    </div>
+</div>
+        </section>
+
+
+        <!-- =================================================
+             GALLERY PAGE
+        ================================================== -->
+        <section class="admin-page" id="page-gallery">
+            <div class="page-header-row">
+                <div>
+                    <span>PHOTO GALLERY</span>
+                    <h2>Daily Work Gallery</h2>
+                    <p>Website पर दिखाई जाने वाली photos manage करें।</p>
+                </div>
+                <button type="button" class="primary-btn" id="galleryUploadBtn">+ Upload Photo</button>
+            </div>
+
+            <div class="upload-box">
+                <div class="upload-icon">🖼️</div>
+                <h3>Photo Upload करें</h3>
+                <p>JPG, PNG या WEBP फोटो चुनें।</p>
+                <input type="file" id="galleryFile" accept="image/*" multiple>
+            </div>
+
+            <div class="gallery-admin-grid" id="galleryGrid">
+                <div class="gallery-placeholder">
+                    📷
+                    <span>अभी कोई photo नहीं है</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             CUSTOMERS PAGE
+        ================================================== -->
+        <section class="admin-page" id="page-customers">
+            <div class="page-header-row">
+                <div>
+                    <span>CUSTOMER MANAGEMENT</span>
+                    <h2>Customers</h2>
+                    <p>आपके customers की जानकारी।</p>
+                </div>
+            </div>
+
+            <div class="customer-empty">
+                <div>👥</div>
+                <h3>अभी Customer data उपलब्ध नहीं है</h3>
+                <p>Booking आने के बाद customer यहाँ दिखाई देंगे।</p>
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             SETTINGS PAGE
+        ================================================== -->
+        <section class="admin-page" id="page-settings">
+            <div class="page-header-row">
+                <div>
+                    <span>WEBSITE SETTINGS</span>
+                    <h2>Settings</h2>
+                    <p>AJ Seva की basic information यहाँ बदलें।</p>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <div class="settings-section">
+                    <h3>🏪 Business Information</h3>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-group">
+                            <label for="settingBizName">Business Name</label>
+                            <input type="text" id="settingBizName" value="AJ Seva">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="settingBizSubtitle">Business Subtitle</label>
+                            <input type="text" id="settingBizSubtitle" value="आशीष जन सेवा केंद्र">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="settingMobile">Mobile Number</label>
+                            <input type="tel" id="settingMobile" placeholder="10 digit mobile">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="settingWhatsapp">WhatsApp Number</label>
+                            <input type="tel" id="settingWhatsapp" placeholder="91XXXXXXXXXX">
+                        </div>
+                        <div class="admin-form-group full">
+                            <label for="settingAddress">Address</label>
+                            <textarea id="settingAddress" rows="3" placeholder="Business address"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🌐 Social Links</h3>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-group">
+                            <label for="settingGmap">Google Map</label>
+                            <input type="url" id="settingGmap" placeholder="Google Maps link">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="settingYoutube">YouTube</label>
+                            <input type="url" id="settingYoutube" placeholder="YouTube channel">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="settingFacebook">Facebook</label>
+                            <input type="url" id="settingFacebook" placeholder="Facebook page">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="settingWebsite">Website</label>
+                            <input type="url" id="settingWebsite" placeholder="Website URL">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>💳 Payment Information</h3>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-group">
+                            <label for="settingUpi">UPI ID</label>
+                            <input type="text" id="settingUpi" placeholder="example@upi">
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="settingQr">Payment QR</label>
+                            <input type="file" id="settingQr" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-save">
+                    <button type="button" class="primary-btn">💾 Save Settings</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+<div class="admin-toast" id="adminToast">
+    <span id="toastMessage">Saved successfully</span>
+</div>
+
+<script type="module" src="JS/firebase-config.js"></script>
+<script type="module" src="JS/admin.js"></script>
+
+<!-- =========================================================
+     AJ SEVA SERVICE DATABASE REPAIR
+     - Firebase services collection को सही count करता है
+     - पहली बार collection खाली होने पर 25 default services बनाता है
+     - Admin Services list को refresh करता है
+========================================================= -->
+<script type="module">
+
+import {
+    db,
+    collection,
+    getDocs,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    doc,
+    serverTimestamp
+} from "./JS/firebase-config.js";
+
+const SERVICES_COLLECTION = "services";
+
+const DEFAULT_SERVICES = [
+    {
+        name: "PAN Card",
+        price: 110,
+        description: "नया PAN Card / Correction",
+        icon: "🪪"
+    },
+    {
+        name: "Aadhaar Card",
+        price: 50,
+        description: "Aadhaar से संबंधित सेवाएँ",
+        icon: "🆔"
+    },
+    {
+        name: "आय प्रमाण पत्र",
+        price: 50,
+        description: "Income Certificate आवेदन",
+        icon: "📄"
+    },
+    {
+        name: "जाति प्रमाण पत्र",
+        price: 50,
+        description: "Caste Certificate आवेदन",
+        icon: "📜"
+    },
+    {
+        name: "निवास प्रमाण पत्र",
+        price: 50,
+        description: "Residence Certificate आवेदन",
+        icon: "🏠"
+    },
+    {
+        name: "वोटर कार्ड",
+        price: 50,
+        description: "Voter ID आवेदन / Correction",
+        icon: "🗳️"
+    },
+    {
+        name: "ई-श्रम कार्ड",
+        price: 50,
+        description: "e-Shram Card पंजीकरण",
+        icon: "👷"
+    },
+    {
+        name: "आयुष्मान कार्ड",
+        price: 50,
+        description: "Ayushman Card आवेदन / डाउनलोड",
+        icon: "🏥"
+    },
+    {
+        name: "आभा कार्ड",
+        price: 50,
+        description: "ABHA Health ID बनवाएँ",
+        icon: "❤️"
+    },
+    {
+        name: "राशन कार्ड",
+        price: 100,
+        description: "Ration Card आवेदन / Correction",
+        icon: "🛒"
+    },
+    {
+        name: "PVC Aadhaar Card",
+        price: 100,
+        description: "PVC Aadhaar Card Order",
+        icon: "💳"
+    },
+    {
+        name: "EPFO / PF सेवा",
+        price: 100,
+        description: "PF Balance, Claim और Withdrawal सहायता",
+        icon: "💼"
+    },
+    {
+        name: "Passport सेवा",
+        price: 150,
+        description: "Passport आवेदन में सहायता",
+        icon: "🛂"
+    },
+    {
+        name: "Driving Licence",
+        price: 150,
+        description: "Driving Licence आवेदन / Renewal",
+        icon: "🚗"
+    },
+    {
+        name: "जन्म प्रमाण पत्र",
+        price: 100,
+        description: "Birth Certificate आवेदन",
+        icon: "👶"
+    },
+    {
+        name: "मृत्यु प्रमाण पत्र",
+        price: 100,
+        description: "Death Certificate आवेदन",
+        icon: "📄"
+    },
+    {
+        name: "पुलिस Character Certificate",
+        price: 100,
+        description: "Police Character Certificate आवेदन",
+        icon: "👮"
+    },
+    {
+        name: "Online FIR",
+        price: 100,
+        description: "Online FIR आवेदन में सहायता",
+        icon: "🚔"
+    },
+    {
+        name: "New Labour Card",
+        price: 100,
+        description: "Labour Card आवेदन",
+        icon: "🧑‍🔧"
+    },
+    {
+        name: "SBM Toilet Application",
+        price: 100,
+        description: "Swachh Bharat Toilet Application",
+        icon: "🚽"
+    },
+    {
+        name: "PM Kisan",
+        price: 50,
+        description: "PM Kisan Registration / Update",
+        icon: "🌾"
+    },
+    {
+        name: "PM Vishwakarma",
+        price: 100,
+        description: "PM Vishwakarma Registration",
+        icon: "🔨"
+    },
+    {
+        name: "Life Certificate",
+        price: 100,
+        description: "Digital Life Certificate सेवा",
+        icon: "📋"
+    },
+    {
+        name: "Resume / Biodata",
+        price: 100,
+        description: "Professional Resume / Biodata बनवाएँ",
+        icon: "📝"
+    },
+    {
+        name: "Railway / Bus / Flight Ticket",
+        price: 50,
+        description: "Train, Bus और Flight Ticket Booking सहायता",
+        icon: "🎫"
+    }
+];
+
+function escapeHTML(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function formatPrice(value) {
+    const n = Number(value);
+    return Number.isFinite(n) && n > 0
+        ? "₹" + n.toLocaleString("en-IN")
+        : "संपर्क करें";
+}
+
+function setServiceCount(count) {
+    const el = document.getElementById("serviceCount");
+    if (el) {
+        el.textContent = String(count);
+    }
+}
+
+function showToast(message) {
+    const toast = document.getElementById("adminToast");
+    const msg = document.getElementById("toastMessage");
+
+    if (msg) msg.textContent = message;
+    if (toast) {
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2500);
+    }
+}
+
+async function readServices() {
+    const snap = await getDocs(
+        collection(db, SERVICES_COLLECTION)
+    );
+
+    return snap.docs.map(item => ({
+        id: item.id,
+        ...item.data()
+    }));
+}
+
+async function createDefaultServicesIfEmpty() {
+    let items = await readServices();
+
+    if (items.length > 0) {
+        return items;
+    }
+
+    console.log("AJ SEVA: services collection खाली है। 25 services बनाई जा रही हैं...");
+
+    for (const service of DEFAULT_SERVICES) {
+        await addDoc(
+            collection(db, SERVICES_COLLECTION),
+            {
+                name: service.name,
+                serviceName: service.name,
+                title: service.name,
+                price: Number(service.price),
+                description: service.description,
+                serviceDescription: service.description,
+                icon: service.icon,
+                emoji: service.icon,
+                status: "active",
+                createdAt: serverTimestamp(),
+                updatedAt: serverTimestamp()
+            }
+        );
+    }
+
+    items = await readServices();
+
+    return items;
+}
+
+function renderServiceList(items) {
+    const list = document.getElementById("servicesList");
+
+    if (!list) return;
+
+    if (!items.length) {
+        list.innerHTML = `
+            <div class="gallery-placeholder">
+                🛠️
+                <span>अभी कोई Service उपलब्ध नहीं है</span>
+            </div>
+        `;
+        return;
+    }
+
+    const sorted = [...items].sort((a, b) =>
+        String(a.name || a.serviceName || a.title || "")
+            .localeCompare(
+                String(b.name || b.serviceName || b.title || ""),
+                "hi"
+            )
+    );
+
+    list.innerHTML = sorted.map(item => {
+        const name =
+            item.name ||
+            item.serviceName ||
+            item.title ||
+            "Service";
+
+        const description =
+            item.description ||
+            item.serviceDescription ||
+            item.details ||
+            "Service की जानकारी के लिए संपर्क करें।";
+
+        const price = Number(item.price || 0);
+
+        const icon =
+            item.icon ||
+            item.emoji ||
+            "🛠️";
+
+        const status =
+            item.status === "inactive"
+                ? "inactive"
+                : "active";
+
+        return `
+            <div class="package-admin-card service-admin-card">
+
+                <div class="package-admin-image">
+                    ${escapeHTML(icon)}
+                </div>
+
+                <div class="package-admin-content">
+
+                    <span class="status ${status}">
+                        ${status === "active" ? "Active" : "Inactive"}
+                    </span>
+
+                    <h3>
+                        ${escapeHTML(name)}
+                    </h3>
+
+                    <p>
+                        ${escapeHTML(description)}
+                    </p>
+
+                    <strong>
+                        ${escapeHTML(formatPrice(price))}
+                    </strong>
+
+                    <div class="card-actions">
+
+                        <button
+                            type="button"
+                            class="aj-edit-service"
+                            data-id="${escapeHTML(item.id)}"
+                        >
+                            ✏️ Edit
+                        </button>
+
+                        <button
+                            type="button"
+                            class="delete-btn aj-delete-service"
+                            data-id="${escapeHTML(item.id)}"
+                        >
+                            🗑️ Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+    }).join("");
+
+    list.querySelectorAll(".aj-edit-service").forEach(button => {
+        button.addEventListener("click", () => {
+            const item = sorted.find(
+                service => service.id === button.dataset.id
+            );
+
+            if (!item) return;
+
+            const formCard =
+                document.getElementById("serviceFormCard");
+
+            if (formCard) {
+                formCard.style.display = "block";
+            }
+
+            const title =
+                document.getElementById("serviceFormTitle");
+
+            if (title) {
+                title.textContent = "Service Edit करें";
+            }
+
+            const name =
+                document.getElementById("serviceName");
+
+            const price =
+                document.getElementById("servicePrice");
+
+            const description =
+                document.getElementById("serviceDescription");
+
+            const status =
+                document.getElementById("serviceStatus");
+
+            if (name) {
+                name.value =
+                    item.name ||
+                    item.serviceName ||
+                    item.title ||
+                    "";
+            }
+
+            if (price) {
+                price.value = Number(item.price || 0);
+            }
+
+            if (description) {
+                description.value =
+                    item.description ||
+                    item.serviceDescription ||
+                    item.details ||
+                    "";
+            }
+
+            if (status) {
+                status.value =
+                    item.status === "inactive"
+                        ? "inactive"
+                        : "active";
+            }
+
+            formCard.dataset.editId = item.id;
+
+            formCard.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+
+    list.querySelectorAll(".aj-delete-service").forEach(button => {
+        button.addEventListener("click", async () => {
+
+            const item = sorted.find(
+                service => service.id === button.dataset.id
+            );
+
+            if (!item) return;
+
+            const name =
+                item.name ||
+                item.serviceName ||
+                item.title ||
+                "Service";
+
+            if (!confirm(
+                `"${name}" Service delete करनी है?`
+            )) {
+                return;
+            }
+
+            button.disabled = true;
+            button.textContent = "Deleting...";
+
+            try {
+                await deleteDoc(
+                    doc(
+                        db,
+                        SERVICES_COLLECTION,
+                        button.dataset.id
+                    )
+                );
+
+                showToast("Service delete हो गई।");
+
+                await refreshServices();
+
+            } catch (error) {
+                console.error("SERVICE DELETE ERROR:", error);
+                alert(
+                    "Service delete नहीं हो पाई। Firebase Rules check करें।"
+                );
+
+                button.disabled = false;
+                button.textContent = "🗑️ Delete";
+            }
+        });
+    });
+}
+
+async function refreshServices() {
+    try {
+        const items = await readServices();
+
+        setServiceCount(items.length);
+
+        renderServiceList(items);
+
+        console.log(
+            "AJ SEVA SERVICE COUNT:",
+            items.length
+        );
+
+        return items;
+    } catch (error) {
+        console.error(
+            "AJ SEVA SERVICE READ ERROR:",
+            error
+        );
+
+        const countEl =
+            document.getElementById("serviceCount");
+
+        if (countEl) {
+            countEl.textContent = "0";
+        }
+
+        const list =
+            document.getElementById("servicesList");
+
+        if (list) {
+            list.innerHTML = `
+                <div class="gallery-placeholder">
+                    ⚠️
+                    <span>
+                        Services load नहीं हो पाईं।
+                        Firebase Rules / connection check करें।
+                    </span>
+                </div>
+            `;
+        }
+
+        return [];
+    }
+}
+
+/* =========================================================
+   SERVICE FORM SAVE
+========================================================= */
+
+function installServiceFormFix() {
+    const form =
+        document.getElementById("serviceForm");
+
+    if (!form || form.dataset.ajRepairInstalled === "1") {
+        return;
+    }
+
+    form.dataset.ajRepairInstalled = "1";
+
+    form.addEventListener("submit", async event => {
+
+        event.preventDefault();
+
+        const nameInput =
+            document.getElementById("serviceName");
+
+        const priceInput =
+            document.getElementById("servicePrice");
+
+        const descriptionInput =
+            document.getElementById("serviceDescription");
+
+        const statusInput =
+            document.getElementById("serviceStatus");
+
+        const formCard =
+            document.getElementById("serviceFormCard");
+
+        const saveButton =
+            document.getElementById("saveServiceBtn");
+
+        const name =
+            nameInput?.value.trim() || "";
+
+        const price =
+            Number(priceInput?.value || 0);
+
+        const description =
+            descriptionInput?.value.trim() || "";
+
+        const status =
+            statusInput?.value || "active";
+
+        const editId =
+            formCard?.dataset?.editId || "";
+
+        if (!name) {
+            alert("Service Name डालें।");
+            return;
+        }
+
+        if (!Number.isFinite(price) || price < 0) {
+            alert("सही Price डालें।");
+            return;
+        }
+
+        if (saveButton) {
+            saveButton.disabled = true;
+            saveButton.textContent =
+                editId
+                    ? "⏳ Updating..."
+                    : "⏳ Saving...";
+        }
+
+        try {
+
+            const data = {
+                name: name,
+                serviceName: name,
+                title: name,
+                price: price,
+                description: description,
+                serviceDescription: description,
+                status: status,
+                updatedAt: serverTimestamp()
+            };
+
+            if (editId) {
+
+                await updateDoc(
+                    doc(
+                        db,
+                        SERVICES_COLLECTION,
+                        editId
+                    ),
+                    data
+                );
+
+                showToast("Service update हो गई।");
+
+            } else {
+
+                await addDoc(
+                    collection(
+                        db,
+                        SERVICES_COLLECTION
+                    ),
+                    {
+                        ...data,
+                        icon: "🛠️",
+                        emoji: "🛠️",
+                        createdAt: serverTimestamp()
+                    }
+                );
+
+                showToast("नई Service save हो गई।");
+            }
+
+            if (formCard) {
+                delete formCard.dataset.editId;
+                formCard.style.display = "none";
+            }
+
+            if (nameInput) nameInput.value = "";
+            if (priceInput) priceInput.value = "";
+            if (descriptionInput) descriptionInput.value = "";
+            if (statusInput) statusInput.value = "active";
+
+            const title =
+                document.getElementById("serviceFormTitle");
+
+            if (title) {
+                title.textContent = "Service जोड़ें";
+            }
+
+            await refreshServices();
+
+        } catch (error) {
+
+            console.error(
+                "SERVICE SAVE ERROR:",
+                error
+            );
+
+            alert(
+                "Service save नहीं हो पाई। Firebase Rules / connection check करें।"
+            );
+
+        } finally {
+
+            if (saveButton) {
+                saveButton.disabled = false;
+                saveButton.textContent =
+                    "Save Service";
+            }
+        }
+    });
+}
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+function installServiceFormButtons() {
+
+    const addButton =
+        document.getElementById("addServiceBtn");
+
+    const closeButton =
+        document.getElementById("closeServiceForm");
+
+    const cancelButton =
+        document.getElementById("cancelService");
+
+    const formCard =
+        document.getElementById("serviceFormCard");
+
+    const title =
+        document.getElementById("serviceFormTitle");
+
+    const name =
+        document.getElementById("serviceName");
+
+    const price =
+        document.getElementById("servicePrice");
+
+    const description =
+        document.getElementById("serviceDescription");
+
+    const status =
+        document.getElementById("serviceStatus");
+
+    function resetForm() {
+
+        if (formCard) {
+            delete formCard.dataset.editId;
+            formCard.style.display = "none";
+        }
+
+        if (title) {
+            title.textContent = "Service जोड़ें";
+        }
+
+        if (name) name.value = "";
+        if (price) price.value = "";
+        if (description) description.value = "";
+        if (status) status.value = "active";
+    }
+
+    if (addButton && addButton.dataset.ajRepairInstalled !== "1") {
+
+        addButton.dataset.ajRepairInstalled = "1";
+
+        addButton.addEventListener("click", () => {
+
+            if (formCard) {
+                formCard.style.display = "block";
+            }
+
+            if (title) {
+                title.textContent = "Service जोड़ें";
+            }
+
+            if (name) name.value = "";
+            if (price) price.value = "";
+            if (description) description.value = "";
+            if (status) status.value = "active";
+
+            if (formCard) {
+                delete formCard.dataset.editId;
+
+                formCard.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+    }
+
+    if (closeButton && closeButton.dataset.ajRepairInstalled !== "1") {
+        closeButton.dataset.ajRepairInstalled = "1";
+        closeButton.addEventListener("click", resetForm);
+    }
+
+    if (cancelButton && cancelButton.dataset.ajRepairInstalled !== "1") {
+        cancelButton.dataset.ajRepairInstalled = "1";
+        cancelButton.addEventListener("click", resetForm);
+    }
+}
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+async function initAJSevaServices() {
+
+    try {
+
+        console.log(
+            "========================================"
+        );
+
+        console.log(
+            "AJ SEVA ADMIN SERVICE SYSTEM"
+        );
+
+        console.log(
+            "Checking Firestore services..."
+        );
+
+        const items =
+            await createDefaultServicesIfEmpty();
+
+        setServiceCount(items.length);
+
+        renderServiceList(items);
+
+        installServiceFormFix();
+
+        installServiceFormButtons();
+
+        console.log(
+            "AJ SEVA SERVICES READY:",
+            items.length
+        );
+
+    } catch (error) {
+
+        console.error(
+            "AJ SEVA SERVICE INITIALIZATION ERROR:",
+            error
+        );
+
+        /*
+         * Firebase write/read error होने पर भी
+         * existing dashboard count को गलत 20+ पर नहीं रहने देंगे।
+         */
+        setServiceCount(0);
+
+        const list =
+            document.getElementById("servicesList");
+
+        if (list) {
+            list.innerHTML = `
+                <div class="gallery-placeholder">
+                    ⚠️
+                    <span>
+                        Services Firebase से load नहीं हो पाईं।
+                        Console में error देखें।
+                    </span>
+                </div>
+            `;
+        }
+
+        installServiceFormFix();
+        installServiceFormButtons();
+    }
+}
+
+/*
+ * admin.js module के बाद यह script चल रहा है,
+ * इसलिए थोड़ी देर बाद एक बार फिर refresh करके
+ * count/list को final Firebase data से sync करते हैं।
+ */
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        initAJSevaServices();
+
+    }, 300);
+
+});
+
+</script>
+
+
+</body>
+</html>
