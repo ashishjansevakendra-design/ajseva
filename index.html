@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AJ Seva | आशीष जन सेवा केंद्र</title>
+
+    <meta
+        name="description"
+        content="AJ Seva - आशीष जन सेवा केंद्र। सभी ऑनलाइन सरकारी, डिजिटल, टिकट और यात्रा सेवाएं एक जगह।"
+    >
+
+    <link
+        rel="stylesheet"
+        href="CSS/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        /* =====================================================
+           LOGO / ADMIN ACCESS
+        ===================================================== */
+
+        .logo {
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           SERVICES GRID
+        ===================================================== */
+
+        .services-grid {
+            width: 100% !important;
+
+            display: grid !important;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr)) !important;
+
+            gap: 24px !important;
+
+            align-items: stretch !important;
+
+            justify-content: center !important;
+
+            margin-top: 30px !important;
+        }
+
+
+        /* =====================================================
+           SERVICE CARD
+        ===================================================== */
+
+        .service-card {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            margin: 0 !important;
+            padding: 24px !important;
+
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            align-items: flex-start !important;
+
+            background: #ffffff !important;
+
+            border:
+                1px solid #e2e8f0 !important;
+
+            border-radius: 20px !important;
+
+            box-shadow:
+                0 8px 25px rgba(
+                    15,
+                    23,
+                    42,
+                    0.08
+                ) !important;
+
+            min-height: 300px !important;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease !important;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 14px 35px rgba(
+                    15,
+                    23,
+                    42,
+                    0.13
+                ) !important;
+        }
+
+
+        /* =====================================================
+           SERVICE ICON / IMAGE
+        ===================================================== */
+
+        .service-icon {
+            width: 70px !important;
+            height: 70px !important;
+
+            min-width: 70px !important;
+            min-height: 70px !important;
+
+            margin-bottom: 18px !important;
+
+            border-radius: 18px !important;
+
+            background: #fff0e6 !important;
+
+            display: flex !important;
+
+            align-items: center !important;
+            justify-content: center !important;
+
+            overflow: hidden !important;
+
+            font-size: 38px !important;
+        }
+
+        .service-icon img {
+            width: 100% !important;
+            height: 100% !important;
+
+            object-fit: cover !important;
+
+            display: block !important;
+        }
+
+
+        /* =====================================================
+           SERVICE TITLE
+        ===================================================== */
+
+        .service-card h3 {
+            width: 100% !important;
+
+            margin:
+                0 0 10px 0 !important;
+
+            font-size: 21px !important;
+
+            line-height: 1.3 !important;
+
+            color: #0f172a !important;
+
+            text-align: left !important;
+        }
+
+
+        /* =====================================================
+           SERVICE DESCRIPTION
+        ===================================================== */
+
+        .service-card p,
+        .service-description {
+            width: 100% !important;
+
+            margin:
+                0 0 14px 0 !important;
+
+            color: #64748b !important;
+
+            font-size: 15px !important;
+
+            line-height: 1.6 !important;
+
+            text-align: left !important;
+        }
+
+
+        /* =====================================================
+           SERVICE PRICE
+        ===================================================== */
+
+        .service-card .service-price {
+            color: #f97316 !important;
+
+            font-size: 20px !important;
+
+            font-weight: 800 !important;
+
+            margin-top: auto !important;
+
+            margin-bottom: 12px !important;
+        }
+
+
+        /* =====================================================
+           SERVICE BUTTON
+        ===================================================== */
+
+        .service-card a {
+            display: inline-flex !important;
+
+            align-items: center !important;
+            justify-content: center !important;
+
+            width: auto !important;
+            min-width: 120px !important;
+
+            padding:
+                10px 16px !important;
+
+            border-radius: 10px !important;
+
+            background: #f97316 !important;
+
+            color: #ffffff !important;
+
+            text-decoration: none !important;
+
+            font-weight: 700 !important;
+
+            font-size: 14px !important;
+
+            margin-top: 8px !important;
+        }
+
+        .service-card a:hover {
+            background: #ea580c !important;
+        }
+
+
+        /* =====================================================
+           SERVICE LOADING / ERROR
+        ===================================================== */
+
+        .service-loading,
+        .service-error {
+
+            width: 100% !important;
+
+            grid-column: 1 / -1 !important;
+
+            min-height: 180px !important;
+
+            display: flex !important;
+
+            flex-direction: column !important;
+
+            align-items: center !important;
+
+            justify-content: center !important;
+
+            text-align: center !important;
+
+            padding: 30px !important;
+
+            border-radius: 18px !important;
+
+            background: #ffffff !important;
+
+            border:
+                1px solid #e2e8f0 !important;
+        }
+
+
+        /* =====================================================
+           TRAVEL GRID
+        ===================================================== */
+
+        .travel-grid {
+            width: 100% !important;
+
+            display: grid !important;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr)) !important;
+
+            gap: 24px !important;
+
+            align-items: stretch !important;
+
+            margin-top: 30px !important;
+        }
+
+
+        /* =====================================================
+           TRAVEL CARD
+        ===================================================== */
+
+        .travel-card {
+            width: 100% !important;
+
+            min-width: 0 !important;
+
+            margin: 0 !important;
+
+            overflow: hidden !important;
+
+            background: #ffffff !important;
+
+            border:
+                1px solid #e2e8f0 !important;
+
+            border-radius: 20px !important;
+
+            box-shadow:
+                0 8px 25px rgba(
+                    15,
+                    23,
+                    42,
+                    0.08
+                ) !important;
+
+            display: flex !important;
+
+            flex-direction: column !important;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease !important;
+        }
+
+        .travel-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 14px 35px rgba(
+                    15,
+                    23,
+                    42,
+                    0.13
+                ) !important;
+        }
+
+
+        /* =====================================================
+           TRAVEL IMAGE
+        ===================================================== */
+
+        .travel-image {
+            width: 100% !important;
+
+            height: 220px !important;
+
+            min-height: 220px !important;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dbeafe,
+                    #fce7f3
+                );
+
+            overflow: hidden !important;
+
+            display: flex !important;
+
+            align-items: center !important;
+
+            justify-content: center !important;
+        }
+
+        .travel-image img {
+            width: 100% !important;
+
+            height: 100% !important;
+
+            object-fit: cover !important;
+
+            display: block !important;
+        }
+
+
+        /* =====================================================
+           TRAVEL CONTENT
+        ===================================================== */
+
+        .travel-content {
+            width: 100% !important;
+
+            padding: 20px !important;
+
+            display: flex !important;
+
+            flex-direction: column !important;
+
+            flex: 1 !important;
+        }
+
+        .travel-content h3 {
+            margin:
+                0 0 10px 0 !important;
+
+            color: #0f172a !important;
+
+            font-size: 21px !important;
+
+            line-height: 1.3 !important;
+        }
+
+        .travel-content p {
+            color: #64748b !important;
+
+            line-height: 1.6 !important;
+
+            margin:
+                0 0 10px 0 !important;
+        }
+
+        .travel-bottom {
+            margin-top: auto !important;
+
+            display: flex !important;
+
+            align-items: center !important;
+
+            justify-content: space-between !important;
+
+            gap: 10px !important;
+        }
+
+        .travel-bottom strong {
+            color: #f97316 !important;
+
+            font-size: 20px !important;
+        }
+
+        .travel-bottom small {
+            font-size: 12px !important;
+
+            color: #64748b !important;
+        }
+
+        .travel-bottom a {
+            display: inline-flex !important;
+
+            align-items: center !important;
+
+            justify-content: center !important;
+
+            padding:
+                10px 15px !important;
+
+            border-radius: 10px !important;
+
+            background: #f97316 !important;
+
+            color: #ffffff !important;
+
+            text-decoration: none !important;
+
+            font-weight: 700 !important;
+        }
+
+
+        /* =====================================================
+           DAILY WORK GALLERY
+        ===================================================== */
+
+        .daily-gallery-section {
+            width: 100%;
+            padding: 70px 0;
+            background: #f8fafc;
+        }
+
+        .daily-gallery-grid {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 18px;
+
+            margin-top: 30px;
+        }
+
+        .daily-gallery-card {
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            background: #ffffff;
+
+            border:
+                1px solid #e2e8f0;
+
+            box-shadow:
+                0 8px 24px rgba(
+                    15,
+                    23,
+                    42,
+                    0.08
+                );
+
+            cursor: pointer;
+        }
+
+        .daily-gallery-card img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        .daily-gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .daily-gallery-overlay {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 12px 14px;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,0.68),
+                    rgba(0,0,0,0)
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity 0.25s ease;
+        }
+
+        .daily-gallery-card:hover
+        .daily-gallery-overlay {
+            opacity: 1;
+        }
+
+        .daily-gallery-overlay strong {
+            display: block;
+
+            font-size: 14px;
+
+            line-height: 1.35;
+        }
+
+        .gallery-loading,
+        .gallery-error,
+        .gallery-empty {
+
+            width: 100%;
+
+            grid-column: 1 / -1;
+
+            min-height: 180px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            background: #ffffff;
+
+            border:
+                1px solid #e2e8f0;
+
+            border-radius: 18px;
+        }
+
+        .gallery-loading-icon,
+        .gallery-error-icon,
+        .gallery-empty-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-loading p,
+        .gallery-error p,
+        .gallery-empty p {
+            color: #64748b;
+            margin: 5px 0 0;
+        }
+
+
+        /* =====================================================
+           SECTION SPACING
+        ===================================================== */
+
+        .services-section,
+        .travel-section {
+            width: 100% !important;
+
+            overflow: hidden !important;
+        }
+
+        .section-title {
+            width: 100% !important;
+
+            text-align: center !important;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr)) !important;
+            }
+
+            .travel-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr)) !important;
+            }
+
+            .daily-gallery-grid {
+                grid-template-columns:
+                    repeat(3, minmax(0, 1fr));
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr)) !important;
+
+                gap: 12px !important;
+            }
+
+            .travel-grid {
+                grid-template-columns:
+                    1fr !important;
+
+                gap: 16px !important;
+            }
+
+            .service-card {
+                padding: 16px !important;
+
+                min-height: 250px !important;
+
+                border-radius: 15px !important;
+            }
+
+            .service-icon {
+                width: 55px !important;
+
+                height: 55px !important;
+
+                min-width: 55px !important;
+
+                min-height: 55px !important;
+
+                font-size: 28px !important;
+
+                border-radius: 14px !important;
+            }
+
+            .service-card h3 {
+                font-size: 17px !important;
+            }
+
+            .service-card p,
+            .service-description {
+                font-size: 13px !important;
+
+                line-height: 1.45 !important;
+            }
+
+            .service-card a {
+                width: 100% !important;
+
+                min-width: 0 !important;
+
+                font-size: 13px !important;
+
+                padding:
+                    9px 8px !important;
+            }
+
+            .travel-image {
+                height: 200px !important;
+
+                min-height: 200px !important;
+            }
+
+            .travel-content {
+                padding: 16px !important;
+            }
+
+            .travel-bottom {
+                flex-direction: column !important;
+
+                align-items: stretch !important;
+            }
+
+            .travel-bottom a {
+                width: 100% !important;
+            }
+
+            .daily-gallery-section {
+                padding: 50px 0;
+            }
+
+            .daily-gallery-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 12px;
+            }
+
+            .daily-gallery-card {
+                border-radius: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+
+            <!-- =================================================
+                 AJ SEVA LOGO
+                 5 TAP / CLICK = ADMIN PANEL
+            ================================================= -->
+
+            <a
+                href="index.html"
+                class="logo"
+                id="ajSevaAdminTrigger"
+                title="AJ SEVA"
+            >
+
+                <div class="logo-icon">
+                    AJ
+                </div>
+
+                <div class="logo-text">
+
+                    <strong>
+                        AJ SEVA
+                    </strong>
+
+                    <span>
+                        आशीष जन सेवा केंद्र
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open Menu"
+            >
+                ☰
+            </button>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="nav-menu"
+                id="navMenu"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="travel.html">
+                    Travel
+                </a>
+
+                <a href="booking.html">
+                    Booking
+                </a>
+
+                <a href="./about.html">
+                    About Us
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         ABOUT / CONTACT DIRECT LINKS
+    ===================================================== -->
+
+    <script>
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            document
+                .querySelectorAll(
+                    'a[href="./about.html"]'
+                )
+                .forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            function (event) {
+
+                                event.preventDefault();
+
+                                window.location.assign(
+                                    "./about.html"
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+            document
+                .querySelectorAll(
+                    'a[href="./contact.html"]'
+                )
+                .forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            function (event) {
+
+                                event.preventDefault();
+
+                                window.location.assign(
+                                    "./contact.html"
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+    );
+
+    </script>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="hero-badge">
+                    ✨ आपकी सेवा में हमेशा
+                </span>
+
+                <h1>
+
+                    सभी ऑनलाइन सेवाएं
+
+                    <span>
+                        एक ही जगह
+                    </span>
+
+                </h1>
+
+                <p>
+
+                    आशीष जन सेवा केंद्र में
+                    सरकारी सेवाएं, ऑनलाइन आवेदन,
+                    टिकट बुकिंग और यात्रा सेवाएं
+                    आसानी से प्राप्त करें।
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="services.html"
+                        class="btn btn-primary"
+                    >
+                        🧾 हमारी सेवाएं
+                    </a>
+
+                    <a
+                        href="travel.html"
+                        class="btn btn-secondary"
+                    >
+                        ✈️ Travel Packages
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-card-icon">
+                    🏪
+                </div>
+
+                <h3>
+                    AJ Seva
+                </h3>
+
+                <p>
+                    Digital Services
+                </p>
+
+                <div class="hero-card-line"></div>
+
+                <strong>
+                    विश्वसनीय • तेज • आसान
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK SERVICES
+    ===================================================== -->
+
+    <section class="quick-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    हमारी सुविधाएं
+                </span>
+
+                <h2>
+                    Quick Services
+                </h2>
+
+                <p>
+                    सबसे ज्यादा उपयोग की जाने वाली सेवाएं
+                </p>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+                <a
+                    href="services.html"
+                    class="quick-card"
+                >
+                    <div class="quick-icon">
+                        🪪
+                    </div>
+
+                    <h3>
+                        PAN Card
+                    </h3>
+
+                    <p>
+                        पैन कार्ड सेवा
+                    </p>
+                </a>
+
+
+                <a
+                    href="services.html"
+                    class="quick-card"
+                >
+                    <div class="quick-icon">
+                        🆔
+                    </div>
+
+                    <h3>
+                        Aadhaar
+                    </h3>
+
+                    <p>
+                        आधार सेवा
+                    </p>
+                </a>
+
+
+                <a
+                    href="services.html"
+                    class="quick-card"
+                >
+                    <div class="quick-icon">
+                        💳
+                    </div>
+
+                    <h3>
+                        Ayushman
+                    </h3>
+
+                    <p>
+                        आयुष्मान कार्ड
+                    </p>
+                </a>
+
+
+                <a
+                    href="services.html"
+                    class="quick-card"
+                >
+                    <div class="quick-icon">
+                        🚆
+                    </div>
+
+                    <h3>
+                        Train Ticket
+                    </h3>
+
+                    <p>
+                        रेल टिकट बुकिंग
+                    </p>
+                </a>
+
+
+                <a
+                    href="services.html"
+                    class="quick-card"
+                >
+                    <div class="quick-icon">
+                        🚌
+                    </div>
+
+                    <h3>
+                        Bus Ticket
+                    </h3>
+
+                    <p>
+                        बस टिकट बुकिंग
+                    </p>
+                </a>
+
+
+                <a
+                    href="services.html"
+                    class="quick-card"
+                >
+                    <div class="quick-icon">
+                        ✈️
+                    </div>
+
+                    <h3>
+                        Flight
+                    </h3>
+
+                    <p>
+                        फ्लाइट टिकट
+                    </p>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FIREBASE SERVICES
+    ===================================================== -->
+
+    <section class="services-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    AJ SEVA
+                </span>
+
+                <h2>
+                    हमारी प्रमुख सेवाएं
+                </h2>
+
+                <p>
+                    Admin Panel से जो Service add,
+                    edit या delete होगी,
+                    वह यहाँ अपने आप दिखाई देगी।
+                </p>
+
+            </div>
+
+
+            <div
+                class="services-grid"
+                id="frontServicesGrid"
+            >
+
+                <div class="service-loading">
+
+                    <div style="font-size:40px;">
+                        🛠️
+                    </div>
+
+                    <p>
+                        Services load हो रही हैं...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="center-button">
+
+                <a
+                    href="services.html"
+                    class="btn btn-primary"
+                >
+                    सभी सेवाएं देखें →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FIREBASE TRAVEL
+    ===================================================== -->
+
+    <section class="travel-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    ASHISH TOUR & TRAVEL
+                </span>
+
+                <h2>
+                    Popular Tour Packages
+                </h2>
+
+                <p>
+                    भारत के प्रसिद्ध धार्मिक और
+                    पर्यटन स्थलों की यात्रा करें।
+                </p>
+
+            </div>
+
+
+            <div
+                class="travel-grid"
+                id="frontTravelGrid"
+            >
+
+                <div
+                    style="
+                        grid-column:1/-1;
+                        text-align:center;
+                        padding:40px;
+                    "
+                >
+
+                    <div style="font-size:40px;">
+                        ✈️
+                    </div>
+
+                    <p>
+                        Travel Packages load हो रहे हैं...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="center-button">
+
+                <a
+                    href="travel.html"
+                    class="btn btn-primary"
+                >
+                    सभी Tour Packages देखें →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DAILY WORK GALLERY
+         ADMIN GALLERY से PHOTO AUTO LOAD
+    ===================================================== -->
+
+    <section
+        class="daily-gallery-section"
+        id="dailyWorkGallery"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    AJ SEVA GALLERY
+                </span>
+
+                <h2>
+                    Daily Work Gallery
+                </h2>
+
+                <p>
+                    हमारे सेवा केंद्र में किए गए
+                    दैनिक कार्यों और सेवाओं की तस्वीरें।
+                </p>
+
+            </div>
+
+
+            <div
+                class="daily-gallery-grid"
+                id="frontGalleryGrid"
+            >
+
+                <div class="gallery-loading">
+
+                    <div class="gallery-loading-icon">
+                        🖼️
+                    </div>
+
+                    <h3>
+                        Gallery load हो रही है...
+                    </h3>
+
+                    <p>
+                        कृपया थोड़ा इंतजार करें।
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY AJ SEVA
+    ===================================================== -->
+
+    <section class="why-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    WHY AJ SEVA
+                </span>
+
+                <h2>
+                    हमें क्यों चुनें?
+                </h2>
+
+            </div>
+
+
+            <div class="why-grid">
+
+
+                <div class="why-card">
+
+                    <div>
+                        ⚡
+                    </div>
+
+                    <h3>
+                        तेज सेवा
+                    </h3>
+
+                    <p>
+                        आपकी जरूरत के अनुसार
+                        ऑनलाइन सेवाएं जल्दी उपलब्ध।
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div>
+                        🔒
+                    </div>
+
+                    <h3>
+                        भरोसेमंद
+                    </h3>
+
+                    <p>
+                        आपकी सेवा और आवेदन की
+                        जानकारी सुरक्षित तरीके से।
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div>
+                        📱
+                    </div>
+
+                    <h3>
+                        आसान प्रक्रिया
+                    </h3>
+
+                    <p>
+                        मोबाइल से भी सेवाओं की
+                        जानकारी और आवेदन।
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <div>
+                        ✈️
+                    </div>
+
+                    <h3>
+                        Travel Services
+                    </h3>
+
+                    <p>
+                        धार्मिक यात्रा और
+                        Tour Packages की सुविधा।
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ===================================================== -->
+
+    <section class="cta-section">
+
+        <div class="container cta-content">
+
+            <div>
+
+                <span>
+                    AJ SEVA
+                </span>
+
+                <h2>
+                    किसी सेवा की जरूरत है?
+                </h2>
+
+                <p>
+                    अभी हमसे संपर्क करें और
+                    अपनी सेवा के लिए जानकारी प्राप्त करें।
+                </p>
+
+            </div>
+
+
+            <div class="cta-buttons">
+
+                <a
+                    href="https://wa.me/917376999243"
+                    target="_blank"
+                    class="btn btn-whatsapp"
+                >
+                    💬 WhatsApp करें
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="btn btn-light"
+                >
+                    📞 Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <div class="footer-logo">
+
+                    <div class="logo-icon">
+                        AJ
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            AJ SEVA
+                        </strong>
+
+                        <span>
+                            आशीष जन सेवा केंद्र
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+
+                    सभी ऑनलाइन डिजिटल सेवाएं,
+                    सरकारी सेवाएं और Travel Services
+                    एक ही जगह।
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="travel.html">
+                    Travel
+                </a>
+
+                <a href="booking.html">
+                    Booking
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Support
+                </h3>
+
+                <a href="./about.html">
+                    About Us
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="./privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms & Conditions
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Ballia, Uttar Pradesh
+                </p>
+
+                <p>
+                    📞 +91 7376999243
+                </p>
+
+                <p>
+                    💬 WhatsApp Available
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 AJ Seva | आशीष जन सेवा केंद्र
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         WHATSAPP FLOATING BUTTON
+    ===================================================== -->
+
+    <a
+        href="https://wa.me/917376999243"
+        target="_blank"
+        class="whatsapp-float"
+        title="WhatsApp"
+    >
+        💬
+    </a>
+
+
+
+    <!-- =====================================================
+         NORMAL WEBSITE JAVASCRIPT
+    ===================================================== -->
+
+    <script src="JS/script.js"></script>
+
+
+
+    <!-- =====================================================
+         HIDDEN ADMIN ACCESS
+         AJ SEVA LOGO 5 TAP / CLICK
+    ===================================================== -->
+
+    <script>
+
+    (function () {
+
+        "use strict";
+
+        let tapCount = 0;
+        let tapTimer = null;
+
+        const ADMIN_TAPS = 5;
+        const TAP_TIME = 2000;
+
+
+        function resetTapCount() {
+
+            tapCount = 0;
+
+            if (tapTimer) {
+
+                clearTimeout(tapTimer);
+
+                tapTimer = null;
+            }
+        }
+
+
+        function adminTapHandler(event) {
+
+            /*
+             * Logo के click से सामान्य navigation रोकें।
+             */
+            if (event) {
+                event.preventDefault();
+            }
+
+
+            tapCount++;
+
+
+            if (tapTimer) {
+                clearTimeout(tapTimer);
+            }
+
+
+            tapTimer = setTimeout(
+                resetTapCount,
+                TAP_TIME
+            );
+
+
+            /*
+             * 5 बार tap/click होने पर Admin Panel
+             */
+            if (tapCount >= ADMIN_TAPS) {
+
+                resetTapCount();
+
+
+                const openAdmin =
+                    window.confirm(
+                        "🔐 AJ SEVA Admin Panel खोलना चाहते हैं?"
+                    );
+
+
+                if (openAdmin) {
+
+                    window.location.href =
+                        "./admin.html";
+                }
+
+            }
+
+        }
+
+
+        function setupAdminTrigger() {
+
+            const trigger =
+                document.getElementById(
+                    "ajSevaAdminTrigger"
+                );
+
+
+            if (!trigger) {
+
+                console.warn(
+                    "AJ SEVA Admin Trigger नहीं मिला।"
+                );
+
+                return;
+            }
+
+
+            trigger.addEventListener(
+                "click",
+                adminTapHandler
+            );
+
+
+            console.log(
+                "AJ SEVA: 5-Tap Admin Access Ready"
+            );
+        }
+
+
+        if (
+            document.readyState ===
+            "loading"
+        ) {
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                setupAdminTrigger
+            );
+
+        } else {
+
+            setupAdminTrigger();
+
+        }
+
+    })();
+
+    </script>
+
+
+
+    <!-- =====================================================
+         FIREBASE SERVICES LOADER
+    ===================================================== -->
+
+    <script type="module">
+
+        import {
+            db,
+            collection,
+            getDocs
+        } from "./JS/firebase-config.js";
+
+
+        const servicesGrid =
+            document.getElementById(
+                "frontServicesGrid"
+            );
+
+
+        function escapeHTML(value) {
+
+            if (
+                value === undefined ||
+                value === null
+            ) {
+
+                return "";
+
+            }
+
+
+            return String(value)
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+        }
+
+
+        function formatServicePrice(price) {
+
+            if (
+                price === undefined ||
+                price === null ||
+                price === ""
+            ) {
+
+                return "संपर्क करें";
+            }
+
+
+            const amount =
+                Number(price);
+
+
+            if (
+                !Number.isFinite(amount) ||
+                amount <= 0
+            ) {
+
+                return "संपर्क करें";
+            }
+
+
+            return (
+                "₹" +
+                amount.toLocaleString(
+                    "en-IN"
+                )
+            );
+        }
+
+
+        function renderFrontServices(items) {
+
+            if (!servicesGrid) {
+                return;
+            }
+
+
+            if (!items.length) {
+
+                servicesGrid.innerHTML = `
+
+                    <div class="service-error">
+
+                        <div style="font-size:45px;">
+                            🛠️
+                        </div>
+
+                        <h3>
+                            अभी कोई Service उपलब्ध नहीं है
+                        </h3>
+
+                        <p>
+                            Admin Panel से Service add करें।
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            servicesGrid.innerHTML =
+
+                items.map(
+                    service => {
+
+                        const name =
+                            service.name ||
+                            service.serviceName ||
+                            service.title ||
+                            "Service";
+
+
+                        const description =
+                            service.description ||
+                            service.serviceDescription ||
+                            service.details ||
+                            "Service की जानकारी के लिए संपर्क करें।";
+
+
+                        const icon =
+                            service.icon ||
+                            service.emoji ||
+                            "🛠️";
+
+
+                        const price =
+                            formatServicePrice(
+                                service.price
+                            );
+
+
+                        const image =
+                            service.image ||
+                            service.imageUrl ||
+                            service.photo ||
+                            service.imageURL ||
+                            "";
+
+
+                        let visual = "";
+
+
+                        if (image) {
+
+                            visual = `
+
+                                <div
+                                    class="service-icon"
+                                >
+
+                                    <img
+                                        src="${escapeHTML(image)}"
+                                        alt="${escapeHTML(name)}"
+                                        loading="lazy"
+                                    >
+
+                                </div>
+
+                            `;
+
+                        } else {
+
+                            visual = `
+
+                                <div
+                                    class="service-icon"
+                                >
+
+                                    ${escapeHTML(icon)}
+
+                                </div>
+
+                            `;
+                        }
+
+
+                        return `
+
+                            <div
+                                class="service-card"
+                            >
+
+                                ${visual}
+
+
+                                <h3>
+                                    ${escapeHTML(name)}
+                                </h3>
+
+
+                                <p
+                                    class="service-description"
+                                >
+                                    ${escapeHTML(
+                                        description
+                                    )}
+                                </p>
+
+
+                                <div
+                                    class="service-price"
+                                >
+                                    ${escapeHTML(
+                                        price
+                                    )}
+                                </div>
+
+
+                                <a
+                                    href="booking.html?service=${encodeURIComponent(name)}"
+                                >
+                                    Apply Now →
+                                </a>
+
+                            </div>
+
+                        `;
+
+                    }
+                ).join("");
+        }
+
+
+        async function loadFrontServices() {
+
+            if (!servicesGrid) {
+                return;
+            }
+
+
+            try {
+
+                console.log(
+                    "AJ SEVA FRONT: Firebase Services Loading..."
+                );
+
+
+                const snapshot =
+                    await getDocs(
+                        collection(
+                            db,
+                            "services"
+                        )
+                    );
+
+
+                const services =
+                    snapshot.docs
+
+                        .map(
+                            item => ({
+                                id: item.id,
+                                ...item.data()
+                            })
+                        )
+
+                        .filter(
+                            item =>
+                                item.status !==
+                                "inactive"
+                        );
+
+
+                console.log(
+                    "AJ SEVA FRONT SERVICES:",
+                    services.length
+                );
+
+
+                renderFrontServices(
+                    services
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "AJ SEVA FRONT SERVICES ERROR:",
+                    error
+                );
+
+
+                servicesGrid.innerHTML = `
+
+                    <div
+                        class="service-error"
+                    >
+
+                        <div
+                            style="font-size:45px;"
+                        >
+                            ⚠️
+                        </div>
+
+                        <h3>
+                            Services load नहीं हो पाईं
+                        </h3>
+
+                        <p>
+                            Firebase connection या
+                            Firestore Rules check करें।
+                        </p>
+
+                    </div>
+
+                `;
+            }
+
+        }
+
+
+        loadFrontServices();
+
+    </script>
+
+
+
+    <!-- =====================================================
+         FIREBASE TRAVEL LOADER
+    ===================================================== -->
+
+    <script type="module">
+
+        import {
+            db,
+            collection,
+            getDocs
+        } from "./JS/firebase-config.js";
+
+
+        const travelGrid =
+            document.getElementById(
+                "frontTravelGrid"
+            );
+
+
+        function escapeTravelHTML(value) {
+
+            if (
+                value === undefined ||
+                value === null
+            ) {
+
+                return "";
+            }
+
+
+            return String(value)
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+        }
+
+
+        function formatTravelPrice(price) {
+
+            if (
+                price === undefined ||
+                price === null ||
+                price === ""
+            ) {
+
+                return "संपर्क करें";
+            }
+
+
+            const amount =
+                Number(price);
+
+
+            if (
+                !Number.isFinite(amount) ||
+                amount <= 0
+            ) {
+
+                return "संपर्क करें";
+            }
+
+
+            return (
+                "₹" +
+                amount.toLocaleString(
+                    "en-IN"
+                )
+            );
+        }
+
+
+        function getTravelImage(item) {
+
+            const image =
+                item.image ||
+                item.imageUrl ||
+                item.photo ||
+                item.imageURL ||
+                "";
+
+
+            if (image) {
+
+                return `
+
+                    <img
+                        src="${escapeTravelHTML(image)}"
+                        alt="${escapeTravelHTML(
+                            item.name ||
+                            "Travel Package"
+                        )}"
+                        loading="lazy"
+                    >
+
+                `;
+
+            }
+
+
+            return `
+
+                <span
+                    style="font-size:60px;"
+                >
+                    ✈️
+                </span>
+
+            `;
+        }
+
+
+        function renderTravel(packages) {
+
+            if (!travelGrid) {
+                return;
+            }
+
+
+            if (!packages.length) {
+
+                travelGrid.innerHTML = `
+
+                    <div
+                        style="
+                            grid-column:1/-1;
+                            text-align:center;
+                            padding:40px;
+                        "
+                    >
+
+                        <div
+                            style="font-size:45px;"
+                        >
+                            ✈️
+                        </div>
+
+                        <h3>
+                            अभी कोई Travel Package उपलब्ध नहीं है
+                        </h3>
+
+                        <p>
+                            Admin Panel से नया package add करें।
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            travelGrid.innerHTML =
+
+                packages.map(
+                    item => {
+
+                        const name =
+                            item.name ||
+                            item.title ||
+                            "Travel Package";
+
+
+                        const description =
+                            item.description ||
+                            item.details ||
+                            "Travel package की जानकारी के लिए संपर्क करें।";
+
+
+                        const location =
+                            item.location ||
+                            item.from ||
+                            "भारत";
+
+
+                        const price =
+                            formatTravelPrice(
+                                item.price
+                            );
+
+
+                        return `
+
+                            <div
+                                class="travel-card"
+                            >
+
+                                <div
+                                    class="travel-image"
+                                >
+
+                                    ${getTravelImage(
+                                        item
+                                    )}
+
+                                </div>
+
+
+                                <div
+                                    class="travel-content"
+                                >
+
+                                    <h3>
+                                        ${escapeTravelHTML(
+                                            name
+                                        )}
+                                    </h3>
+
+
+                                    <p>
+                                        ${escapeTravelHTML(
+                                            description
+                                        )}
+                                    </p>
+
+
+                                    <div
+                                        style="
+                                            font-size:14px;
+                                            margin:8px 0;
+                                            color:#64748b;
+                                        "
+                                    >
+                                        📍
+                                        ${escapeTravelHTML(
+                                            location
+                                        )}
+                                    </div>
+
+
+                                    <div
+                                        class="travel-bottom"
+                                    >
+
+                                        <strong>
+
+                                            ${escapeTravelHTML(
+                                                price
+                                            )}
+
+                                            <small>
+                                                / व्यक्ति
+                                            </small>
+
+                                        </strong>
+
+
+                                        <a
+                                            href="booking.html?service=${encodeURIComponent(name)}"
+                                        >
+                                            Book Now
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        `;
+
+                    }
+                ).join("");
+        }
+
+
+        async function loadFrontTravel() {
+
+            if (!travelGrid) {
+                return;
+            }
+
+
+            try {
+
+                console.log(
+                    "AJ SEVA FRONT: Loading Travel Packages..."
+                );
+
+
+                const snapshot =
+                    await getDocs(
+                        collection(
+                            db,
+                            "travelPackages"
+                        )
+                    );
+
+
+                const packages =
+                    snapshot.docs
+
+                        .map(
+                            item => ({
+                                id: item.id,
+                                ...item.data()
+                            })
+                        )
+
+                        .filter(
+                            item =>
+                                item.status !==
+                                "inactive"
+                        );
+
+
+                console.log(
+                    "AJ SEVA FRONT TRAVEL:",
+                    packages.length
+                );
+
+
+                renderTravel(
+                    packages
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "AJ SEVA FRONT TRAVEL ERROR:",
+                    error
+                );
+
+
+                travelGrid.innerHTML = `
+
+                    <div
+                        style="
+                            grid-column:1/-1;
+                            text-align:center;
+                            padding:40px;
+                        "
+                    >
+
+                        <div
+                            style="font-size:45px;"
+                        >
+                            ⚠️
+                        </div>
+
+                        <h3>
+                            Travel Packages load नहीं हो पाए
+                        </h3>
+
+                        <p>
+                            Firebase connection check करें।
+                        </p>
+
+                    </div>
+
+                `;
+            }
+
+        }
+
+
+        loadFrontTravel();
+
+    </script>
+
+
+
+    <!-- =====================================================
+         FIREBASE DAILY WORK GALLERY LOADER
+         COLLECTION: gallery
+    ===================================================== -->
+
+    <script type="module">
+
+        import {
+            db,
+            collection,
+            getDocs
+        } from "./JS/firebase-config.js";
+
+
+        const galleryGrid =
+            document.getElementById(
+                "frontGalleryGrid"
+            );
+
+
+        function escapeGalleryHTML(value) {
+
+            if (
+                value === undefined ||
+                value === null
+            ) {
+
+                return "";
+            }
+
+
+            return String(value)
+
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+        }
+
+
+        function getGalleryImage(item) {
+
+            return (
+                item.image ||
+                item.imageUrl ||
+                item.imageURL ||
+                item.photo ||
+                item.url ||
+                item.src ||
+                ""
+            );
+        }
+
+
+        function getGalleryTitle(item) {
+
+            return (
+                item.title ||
+                item.caption ||
+                item.name ||
+                item.description ||
+                "AJ Seva Daily Work"
+            );
+        }
+
+
+        function getGalleryTime(item) {
+
+            if (!item.createdAt) {
+                return 0;
+            }
+
+
+            if (
+                typeof item.createdAt.toMillis ===
+                "function"
+            ) {
+
+                return item.createdAt.toMillis();
+            }
+
+
+            if (
+                typeof item.createdAt.seconds ===
+                "number"
+            ) {
+
+                return item.createdAt.seconds * 1000;
+            }
+
+
+            const value =
+                new Date(
+                    item.createdAt
+                ).getTime();
+
+
+            return Number.isFinite(value)
+                ? value
+                : 0;
+        }
+
+
+        function renderFrontGallery(items) {
+
+            if (!galleryGrid) {
+                return;
+            }
+
+
+            if (!items.length) {
+
+                galleryGrid.innerHTML = `
+
+                    <div class="gallery-empty">
+
+                        <div
+                            class="gallery-empty-icon"
+                        >
+                            📷
+                        </div>
+
+                        <h3>
+                            अभी कोई Gallery Photo उपलब्ध नहीं है
+                        </h3>
+
+                        <p>
+                            Admin Panel → Gallery में
+                            photo upload करें।
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            galleryGrid.innerHTML =
+
+                items.map(
+                    item => {
+
+                        const image =
+                            getGalleryImage(
+                                item
+                            );
+
+
+                        const title =
+                            getGalleryTitle(
+                                item
+                            );
+
+
+                        if (!image) {
+                            return "";
+                        }
+
+
+                        return `
+
+                            <div
+                                class="daily-gallery-card"
+                                title="${escapeGalleryHTML(title)}"
+                            >
+
+                                <img
+                                    src="${escapeGalleryHTML(image)}"
+                                    alt="${escapeGalleryHTML(title)}"
+                                    loading="lazy"
+                                >
+
+                                <div
+                                    class="daily-gallery-overlay"
+                                >
+
+                                    <strong>
+                                        ${escapeGalleryHTML(
+                                            title
+                                        )}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        `;
+
+                    }
+                ).join("");
+        }
+
+
+        async function loadFrontGallery() {
+
+            if (!galleryGrid) {
+                return;
+            }
+
+
+            try {
+
+                console.log(
+                    "AJ SEVA FRONT: Loading Daily Work Gallery..."
+                );
+
+
+                /*
+                 * Admin Gallery की Firebase collection
+                 */
+                const snapshot =
+                    await getDocs(
+                        collection(
+                            db,
+                            "gallery"
+                        )
+                    );
+
+
+                const items =
+                    snapshot.docs
+
+                        .map(
+                            item => ({
+                                id: item.id,
+                                ...item.data()
+                            })
+                        );
+
+
+                /*
+                 * सबसे नई photo पहले
+                 */
+                items.sort(
+                    (a, b) =>
+                        getGalleryTime(b) -
+                        getGalleryTime(a)
+                );
+
+
+                /*
+                 * सिर्फ ऐसी entries रखें जिनमें
+                 * image मौजूद हो
+                 */
+                const validItems =
+                    items.filter(
+                        item =>
+                            !!getGalleryImage(
+                                item
+                            )
+                    );
+
+
+                console.log(
+                    "AJ SEVA FRONT GALLERY:",
+                    validItems.length
+                );
+
+
+                renderFrontGallery(
+                    validItems
+                );
+
+
+            } catch (error) {
+
+                console.error(
+                    "AJ SEVA FRONT GALLERY ERROR:",
+                    error
+                );
+
+
+                galleryGrid.innerHTML = `
+
+                    <div class="gallery-error">
+
+                        <div
+                            class="gallery-error-icon"
+                        >
+                            ⚠️
+                        </div>
+
+                        <h3>
+                            Gallery load नहीं हो पाई
+                        </h3>
+
+                        <p>
+                            Firebase में "gallery" collection
+                            और Firestore Rules check करें।
+                        </p>
+
+                    </div>
+
+                `;
+            }
+
+        }
+
+
+        loadFrontGallery();
+
+    </script>
+
+
+</body>
+
+</html>

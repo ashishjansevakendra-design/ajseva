@@ -1,0 +1,5506 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AJ Seva Admin Panel</title>
+    <meta name="description" content="AJ Seva Admin Panel">
+
+    <link rel="stylesheet" href="CSS/admin.css">
+
+    <style>
+        /* =====================================================
+           AJ SEVA LOGIN
+        ===================================================== */
+
+        .admin-login-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 999999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a 0%,
+                    #1e293b 50%,
+                    #334155 100%
+                );
+        }
+
+        .admin-login-box {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 35px 30px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+            text-align: center;
+        }
+
+        .admin-login-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .admin-login-icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            background: linear-gradient(135deg,#2563eb,#7c3aed);
+            box-shadow: 0 10px 25px rgba(37,99,235,0.30);
+        }
+
+        .admin-login-box h1 {
+            margin: 0;
+            font-size: 30px;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        .admin-login-title {
+            margin: 4px 0 0;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #2563eb;
+        }
+
+        .admin-login-subtitle {
+            margin: 10px 0 25px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #64748b;
+        }
+
+        .login-input-group {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .login-input-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .login-input-group input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            outline: none;
+            font-size: 15px;
+            background: #f8fafc;
+            transition: 0.2s;
+        }
+
+        .login-input-group input:focus {
+            border-color: #2563eb;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.10);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 50px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 8px;
+        }
+
+        .login-error {
+            display: none;
+            margin-bottom: 15px;
+            padding: 11px 12px;
+            border-radius: 10px;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #b91c1c;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .admin-login-btn {
+            width: 100%;
+            border: 0;
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(135deg,#2563eb,#4f46e5);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .admin-login-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+        }
+
+        .admin-login-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .login-security {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        body.admin-locked .admin-sidebar,
+        body.admin-locked .admin-main {
+            display: none !important;
+        }
+
+        .admin-main {
+            min-height: 100vh;
+        }
+
+        .status.active {
+            color: #166534;
+            background: #dcfce7;
+        }
+
+        .status.inactive {
+            color: #991b1b;
+            background: #fee2e2;
+        }
+
+        .package-admin-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .admin-loading {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+        }
+
+        .empty-box {
+            width: 100%;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 50px 25px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .empty-box .emoji {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .booking-action-btn {
+            border: 0;
+            border-radius: 10px;
+            padding: 9px 13px;
+            cursor: pointer;
+            font-weight: 700;
+            background: #eef2ff;
+            color: #3730a3;
+        }
+
+        .booking-action-btn.danger {
+            background: #fef2f2;
+            color: #b91c1c;
+        }
+
+        .customer-search-box {
+            margin: 20px 0;
+        }
+
+        .customer-search-box input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 15px;
+        }
+
+        .gallery-admin-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .gallery-admin-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .gallery-admin-card .gallery-info {
+            padding: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .admin-login-box {
+                padding: 28px 20px;
+                border-radius: 18px;
+            }
+
+            .admin-login-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 24px;
+            }
+
+            .admin-login-box h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body class="admin-locked">
+
+<!-- =========================================================
+     LOGIN
+========================================================= -->
+
+<div id="adminLoginScreen" class="admin-login-screen">
+
+    <div class="admin-login-box">
+
+        <div class="admin-login-logo">
+            <div class="admin-login-icon">AJ</div>
+        </div>
+
+        <h1>AJ SEVA</h1>
+
+        <p class="admin-login-title">
+            ADMIN PANEL
+        </p>
+
+        <p class="admin-login-subtitle">
+            केवल अधिकृत Admin ही Login कर सकता है।
+        </p>
+
+        <form id="adminLoginForm">
+
+            <div class="login-input-group">
+
+                <label for="adminEmail">
+                    Admin Email
+                </label>
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="Admin Email डालें"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+            <div class="login-input-group">
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="Password डालें"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="password-toggle"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div
+                id="loginError"
+                class="login-error"
+            ></div>
+
+            <button
+                type="submit"
+                id="adminLoginBtn"
+                class="admin-login-btn"
+            >
+                🔐 Login
+            </button>
+
+        </form>
+
+        <div class="login-security">
+            🔒 Secure Firebase Admin Login
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="admin-sidebar" id="adminSidebar">
+
+    <div class="admin-logo">
+
+        <div class="admin-logo-icon">
+            AJ
+        </div>
+
+        <div>
+            <strong>AJ SEVA</strong>
+            <span>ADMIN PANEL</span>
+        </div>
+
+    </div>
+
+    <nav class="admin-nav">
+
+        <a
+            href="#dashboard"
+            class="admin-nav-link active"
+            data-page="dashboard"
+        >
+            <span>📊</span>
+            Dashboard
+        </a>
+
+        <a
+            href="#travel"
+            class="admin-nav-link"
+            data-page="travel"
+        >
+            <span>✈️</span>
+            Travel
+        </a>
+
+        <a
+            href="#services"
+            class="admin-nav-link"
+            data-page="services"
+        >
+            <span>🛠️</span>
+            Services
+        </a>
+
+        <a
+            href="#bookings"
+            class="admin-nav-link"
+            data-page="bookings"
+        >
+            <span>📋</span>
+            Bookings
+        </a>
+
+        <a
+            href="#gallery"
+            class="admin-nav-link"
+            data-page="gallery"
+        >
+            <span>🖼️</span>
+            Gallery
+        </a>
+
+        <a
+            href="#customers"
+            class="admin-nav-link"
+            data-page="customers"
+        >
+            <span>👥</span>
+            Customers
+        </a>
+
+        <a
+            href="#settings"
+            class="admin-nav-link"
+            data-page="settings"
+        >
+            <span>⚙️</span>
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="admin-sidebar-bottom">
+
+        <a
+            href="index.html"
+            target="_blank"
+        >
+            🌐 View Website
+        </a>
+
+        <button
+            type="button"
+            id="logoutBtn"
+        >
+            🚪 Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="admin-main">
+
+<header class="admin-topbar">
+
+    <button
+        type="button"
+        class="sidebar-toggle"
+        id="sidebarToggle"
+    >
+        ☰
+    </button>
+
+    <div class="admin-page-title">
+
+        <span>
+            ADMIN PANEL
+        </span>
+
+        <h1 id="pageTitle">
+            Dashboard
+        </h1>
+
+    </div>
+
+    <div class="admin-profile">
+
+        <div class="admin-notification">
+            🔔
+        </div>
+
+        <div class="admin-user">
+
+            <div class="admin-user-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong id="loggedAdminEmail">
+                    Admin
+                </strong>
+
+                <small>
+                    Administrator
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="admin-content">
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<section
+    class="admin-page active"
+    id="page-dashboard"
+>
+
+    <div class="welcome-box">
+
+        <div>
+
+            <span>
+                Welcome Back 👋
+            </span>
+
+            <h2>
+                AJ Seva Admin Dashboard
+            </h2>
+
+            <p>
+                यहाँ से आप services, travel packages,
+                bookings और customers manage कर सकते हैं।
+            </p>
+
+        </div>
+
+        <div class="welcome-icon">
+            🚀
+        </div>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon travel">
+                ✈️
+            </div>
+
+            <div>
+
+                <span>
+                    Travel Packages
+                </span>
+
+                <strong id="travelCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon services">
+                🛠️
+            </div>
+
+            <div>
+
+                <span>
+                    Services
+                </span>
+
+                <strong id="serviceCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon bookings">
+                📋
+            </div>
+
+            <div>
+
+                <span>
+                    Total Bookings
+                </span>
+
+                <strong id="bookingCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon customers">
+                👥
+            </div>
+
+            <div>
+
+                <span>
+                    Customers
+                </span>
+
+                <strong id="customerCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <span>
+                QUICK ACTIONS
+            </span>
+
+            <h2>
+                जल्दी काम करें
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="quick-grid">
+
+        <button
+            type="button"
+            class="quick-card"
+            data-page="travel"
+        >
+            <div>
+                ✈️
+            </div>
+
+            <strong>
+                Travel Package
+            </strong>
+
+            <span>
+                नया package जोड़ें
+            </span>
+        </button>
+
+
+        <button
+            type="button"
+            class="quick-card"
+            data-page="services"
+        >
+            <div>
+                🛠️
+            </div>
+
+            <strong>
+                Service
+            </strong>
+
+            <span>
+                नई service जोड़ें
+            </span>
+        </button>
+
+
+        <button
+            type="button"
+            class="quick-card"
+            data-page="bookings"
+        >
+            <div>
+                📋
+            </div>
+
+            <strong>
+                Bookings
+            </strong>
+
+            <span>
+                booking देखें
+            </span>
+        </button>
+
+
+        <button
+            type="button"
+            class="quick-card"
+            data-page="gallery"
+        >
+            <div>
+                🖼️
+            </div>
+
+            <strong>
+                Gallery
+            </strong>
+
+            <span>
+                photo manage करें
+            </span>
+        </button>
+
+    </div>
+
+
+    <div class="section-heading recent-heading">
+
+        <div>
+
+            <span>
+                RECENT BOOKINGS
+            </span>
+
+            <h2>
+                हाल की Bookings
+            </h2>
+
+        </div>
+
+        <button
+            type="button"
+            class="view-all-btn"
+            data-page="bookings"
+        >
+            सभी देखें →
+        </button>
+
+    </div>
+
+
+    <div
+        class="table-card"
+        id="dashboardRecentBookings"
+    >
+
+        <div class="admin-loading">
+            ⏳ Bookings load हो रही हैं...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRAVEL
+========================================================= -->
+
+<section
+    class="admin-page"
+    id="page-travel"
+>
+
+    <div class="page-header-row">
+
+        <div>
+
+            <span>
+                TRAVEL MANAGEMENT
+            </span>
+
+            <h2>
+                Travel Packages
+            </h2>
+
+            <p>
+                Travel package की photo, price और details manage करें।
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="addTravelBtn"
+        >
+            ✈️ Add Travel Package
+        </button>
+
+    </div>
+
+
+    <div
+        class="admin-form-card"
+        id="travelFormCard"
+        style="display:none;"
+    >
+
+        <div class="form-card-header">
+
+            <div>
+
+                <span>
+                    TRAVEL PACKAGE
+                </span>
+
+                <h3 id="travelFormTitle">
+                    नया Travel Package
+                </h3>
+
+            </div>
+
+            <button
+                type="button"
+                class="close-form"
+                id="closeTravelForm"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="travelForm">
+
+            <input
+                type="hidden"
+                id="travelEditId"
+            >
+
+            <div class="admin-form-grid">
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Package Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="travelName"
+                        placeholder="जैसे Ayodhya Dham Yatra"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Price *
+                    </label>
+
+                    <input
+                        type="number"
+                        id="travelPrice"
+                        min="0"
+                        placeholder="2200"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Starting Place
+                    </label>
+
+                    <input
+                        type="text"
+                        id="travelFrom"
+                        placeholder="Ballia"
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Travel Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="travelLocation"
+                        placeholder="Ayodhya"
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group full">
+
+                    <label>
+                        Description *
+                    </label>
+
+                    <textarea
+                        id="travelDescription"
+                        rows="4"
+                        placeholder="Package की पूरी जानकारी"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Package Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="travelImage"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select id="travelStatus">
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelTravel"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Package
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div
+        class="admin-list-grid"
+        id="travelPackagesList"
+    >
+
+        <div class="admin-loading">
+            ✈️ Travel Packages load हो रहे हैं...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+    class="admin-page"
+    id="page-services"
+>
+
+    <div class="page-header-row">
+
+        <div>
+
+            <span>
+                SERVICE MANAGEMENT
+            </span>
+
+            <h2>
+                Services
+            </h2>
+
+            <p>
+                अपनी सभी online services manage करें।
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="addServiceBtn"
+        >
+            + Add Service
+        </button>
+
+    </div>
+
+
+    <div
+        class="admin-form-card"
+        id="serviceFormCard"
+        style="display:none;"
+    >
+
+        <div class="form-card-header">
+
+            <div>
+
+                <span>
+                    SERVICE MANAGEMENT
+                </span>
+
+                <h3 id="serviceFormTitle">
+                    नई Service
+                </h3>
+
+            </div>
+
+            <button
+                type="button"
+                class="close-form"
+                id="closeServiceForm"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="serviceForm">
+
+            <input
+                type="hidden"
+                id="serviceEditId"
+            >
+
+            <div class="admin-form-grid">
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Service Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="serviceName"
+                        placeholder="जैसे PAN Card"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="servicePrice"
+                        min="0"
+                        placeholder="100"
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group full">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="serviceDescription"
+                        rows="4"
+                        placeholder="Service की जानकारी"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Service Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="serviceImage"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select id="serviceStatus">
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelService"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="saveServiceBtn"
+                >
+                    Save Service
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div
+        class="admin-list-grid"
+        id="servicesList"
+    >
+
+        <div class="admin-loading">
+            🛠️ Services load हो रही हैं...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BOOKINGS
+========================================================= -->
+
+<section
+    class="admin-page"
+    id="page-bookings"
+>
+
+    <div class="page-header-row">
+
+        <div>
+
+            <span>
+                BOOKING MANAGEMENT
+            </span>
+
+            <h2>
+                Customer Bookings
+            </h2>
+
+            <p>
+                सभी Service, Travel और Ticket bookings यहाँ आएंगी।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="booking-filters">
+
+        <input
+            type="search"
+            id="bookingSearch"
+            placeholder="🔍 नाम, मोबाइल या booking खोजें"
+        >
+
+        <select id="bookingStatusFilter">
+
+            <option value="all">
+                सभी Booking
+            </option>
+
+            <option value="new">
+                New
+            </option>
+
+            <option value="confirmed">
+                Confirmed
+            </option>
+
+            <option value="completed">
+                Completed
+            </option>
+
+            <option value="cancelled">
+                Cancelled
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div
+        class="table-card"
+        id="bookingListContainer"
+    >
+
+        <div class="admin-loading">
+            📋 Bookings load हो रही हैं...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GALLERY
+========================================================= -->
+
+<section
+    class="admin-page"
+    id="page-gallery"
+>
+
+    <div class="page-header-row">
+
+        <div>
+
+            <span>
+                PHOTO GALLERY
+            </span>
+
+            <h2>
+                Daily Work Gallery
+            </h2>
+
+            <p>
+                Website पर दिखाई जाने वाली photos manage करें।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="upload-box">
+
+        <div class="upload-icon">
+            🖼️
+        </div>
+
+        <h3>
+            Photo Upload करें
+        </h3>
+
+        <p>
+            JPG, PNG या WEBP फोटो चुनें।
+        </p>
+
+        <input
+            type="file"
+            id="galleryFile"
+            accept="image/*"
+            multiple
+        >
+
+        <br>
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="galleryUploadBtn"
+            style="margin-top:15px;"
+        >
+            + Upload Photo
+        </button>
+
+    </div>
+
+
+    <div
+        class="gallery-admin-grid"
+        id="galleryGrid"
+    >
+
+        <div class="empty-box">
+            <div class="emoji">
+                📷
+            </div>
+
+            अभी कोई photo नहीं है।
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CUSTOMERS
+========================================================= -->
+
+<section
+    class="admin-page"
+    id="page-customers"
+>
+
+    <div class="page-header-row">
+
+        <div>
+
+            <span>
+                CUSTOMER MANAGEMENT
+            </span>
+
+            <h2>
+                Customers
+            </h2>
+
+            <p>
+                Booking करने वाले customers की जानकारी।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="customer-search-box">
+
+        <input
+            type="search"
+            id="customerSearch"
+            placeholder="🔍 Customer नाम, मोबाइल या email खोजें"
+        >
+
+    </div>
+
+
+    <div
+        id="customerListContainer"
+        class="table-card"
+    >
+
+        <div class="empty-box">
+
+            <div class="emoji">
+                👥
+            </div>
+
+            अभी Customer data उपलब्ध नहीं है।
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SETTINGS
+========================================================= -->
+
+<section
+    class="admin-page"
+    id="page-settings"
+>
+
+    <div class="page-header-row">
+
+        <div>
+
+            <span>
+                WEBSITE SETTINGS
+            </span>
+
+            <h2>
+                Settings
+            </h2>
+
+            <p>
+                AJ Seva की basic information और payment details बदलें।
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <form id="settingsForm">
+
+        <div class="settings-card">
+
+
+            <div class="settings-section">
+
+                <h3>
+                    🏪 Business Information
+                </h3>
+
+                <div class="admin-form-grid">
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Business Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="businessName"
+                            placeholder="AJ Seva"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Business Subtitle
+                        </label>
+
+                        <input
+                            type="text"
+                            id="businessSubtitle"
+                            placeholder="आशीष जन सेवा केंद्र"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            placeholder="10 digit mobile"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            WhatsApp Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="whatsapp"
+                            placeholder="91XXXXXXXXXX"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group full">
+
+                        <label>
+                            Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            rows="3"
+                            placeholder="Business address"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-section">
+
+                <h3>
+                    🌐 Social Links
+                </h3>
+
+                <div class="admin-form-grid">
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Google Map
+                        </label>
+
+                        <input
+                            type="url"
+                            id="googleMap"
+                            placeholder="Google Maps link"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            YouTube
+                        </label>
+
+                        <input
+                            type="url"
+                            id="youtube"
+                            placeholder="YouTube channel"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Facebook
+                        </label>
+
+                        <input
+                            type="url"
+                            id="facebook"
+                            placeholder="Facebook page"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Instagram
+                        </label>
+
+                        <input
+                            type="url"
+                            id="instagram"
+                            placeholder="Instagram link"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Twitter / X
+                        </label>
+
+                        <input
+                            type="url"
+                            id="twitter"
+                            placeholder="Twitter / X link"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Website
+                        </label>
+
+                        <input
+                            type="url"
+                            id="website"
+                            placeholder="Website URL"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-section">
+
+                <h3>
+                    💳 Payment Information
+                </h3>
+
+                <div class="admin-form-grid">
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            UPI ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="upiId"
+                            placeholder="example@upi"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            Payment QR
+                        </label>
+
+                        <input
+                            type="file"
+                            id="paymentQr"
+                            accept="image/*"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div style="margin-top:15px;">
+
+                    <img
+                        id="paymentQrPreview"
+                        src=""
+                        alt="Payment QR"
+                        style="
+                            display:none;
+                            max-width:220px;
+                            border-radius:14px;
+                            border:1px solid #e5e7eb;
+                            padding:8px;
+                            background:#fff;
+                        "
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-save">
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="saveSettingsBtn"
+                >
+                    💾 Save Settings
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</section>
+
+
+</div>
+</main>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="admin-toast"
+    id="adminToast"
+>
+    <span id="toastMessage">
+        Saved successfully
+    </span>
+</div>
+
+
+<!-- =========================================================
+     ONE FIREBASE + ONE ADMIN SCRIPT
+     IMPORTANT:
+     पुराना admin.js script यहाँ नहीं लगाया गया है।
+========================================================= -->
+
+<script type="module">
+
+/* =========================================================
+   FIREBASE IMPORTS
+========================================================= */
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    getDoc,
+    addDoc,
+    updateDoc,
+    deleteDoc,
+    setDoc,
+    doc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+
+/* =========================================================
+   FIREBASE CONFIG
+========================================================= */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyAQN4h2e7AhpY2WDRbeTw_fLfwgOSWMIMQ",
+
+    authDomain:
+        "ashish-jan-seva-kendra-web.firebaseapp.com",
+
+    projectId:
+        "ashish-jan-seva-kendra-web",
+
+    storageBucket:
+        "ashish-jan-seva-kendra-web.firebasestorage.app",
+
+    messagingSenderId:
+        "922913912976",
+
+    appId:
+        "1:922913912976:web:4b9ed0c153daf1ee18c015"
+};
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+const app =
+    initializeApp(firebaseConfig);
+
+const db =
+    getFirestore(app);
+
+const auth =
+    getAuth(app);
+
+
+/* =========================================================
+   COLLECTIONS
+========================================================= */
+
+const TRAVEL_COLLECTION =
+    "travelPackages";
+
+const SERVICES_COLLECTION =
+    "services";
+
+const BOOKINGS_COLLECTION =
+    "bookings";
+
+const GALLERY_COLLECTION =
+    "gallery";
+
+const SETTINGS_COLLECTION =
+    "settings";
+
+const SETTINGS_DOCUMENT =
+    "general";
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+let travelPackages = [];
+let services = [];
+let bookings = [];
+let galleryItems = [];
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function $(id) {
+    return document.getElementById(id);
+}
+
+
+function text(id, value) {
+
+    const el = $(id);
+
+    if (el) {
+        el.textContent =
+            value ?? "";
+    }
+}
+
+
+function value(id) {
+
+    return (
+        $(id)?.value?.trim() ||
+        ""
+    );
+}
+
+
+function setValue(id, value) {
+
+    const el = $(id);
+
+    if (el) {
+        el.value =
+            value ?? "";
+    }
+}
+
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+function numberValue(value) {
+
+    const n =
+        Number(value);
+
+    return Number.isFinite(n)
+        ? n
+        : 0;
+}
+
+
+function timeValue(value) {
+
+    if (!value) {
+        return 0;
+    }
+
+    if (
+        typeof value.toMillis ===
+        "function"
+    ) {
+        return value.toMillis();
+    }
+
+    if (
+        typeof value.seconds ===
+        "number"
+    ) {
+        return value.seconds * 1000;
+    }
+
+    const t =
+        new Date(value).getTime();
+
+    return Number.isFinite(t)
+        ? t
+        : 0;
+}
+
+
+function formatDate(value) {
+
+    const t =
+        timeValue(value);
+
+    if (!t) {
+        return "—";
+    }
+
+    return new Date(t)
+        .toLocaleString(
+            "en-IN",
+            {
+                dateStyle: "medium",
+                timeStyle: "short"
+            }
+        );
+}
+
+
+function showToast(
+    message,
+    type = "success"
+) {
+
+    const toast =
+        $("adminToast");
+
+    const msg =
+        $("toastMessage");
+
+    if (msg) {
+        msg.textContent =
+            message;
+    }
+
+    if (toast) {
+
+        toast.style.background =
+            type === "error"
+                ? "#b91c1c"
+                : "#172554";
+
+        toast.classList.add("show");
+
+        clearTimeout(
+            window.ajToastTimer
+        );
+
+        window.ajToastTimer =
+            setTimeout(() => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            }, 3000);
+    }
+}
+
+
+function showLoginError(
+    message
+) {
+
+    const box =
+        $("loginError");
+
+    if (!box) {
+        return;
+    }
+
+    box.textContent =
+        message || "";
+
+    box.style.display =
+        message
+            ? "block"
+            : "none";
+}
+
+
+function firebaseError(error) {
+
+    console.error(
+        "AJ SEVA FIREBASE ERROR:",
+        error
+    );
+
+    switch (error?.code) {
+
+        case "auth/invalid-email":
+            return "Email address सही नहीं है।";
+
+        case "auth/user-not-found":
+            return "यह Admin Email Firebase Authentication में नहीं मिला।";
+
+        case "auth/wrong-password":
+            return "Password गलत है।";
+
+        case "auth/invalid-credential":
+            return "Email या Password गलत है।";
+
+        case "auth/user-disabled":
+            return "यह Admin account बंद है।";
+
+        case "auth/too-many-requests":
+            return "बहुत ज्यादा Login प्रयास हुए हैं। कुछ समय बाद फिर कोशिश करें।";
+
+        case "auth/network-request-failed":
+            return "Internet connection check करें।";
+
+        case "auth/operation-not-allowed":
+            return "Firebase में Email/Password Login चालू नहीं है।";
+
+        case "permission-denied":
+            return "Firestore Permission Denied. Firebase Rules check करें।";
+
+        case "failed-precondition":
+            return "Firebase operation पूरा नहीं हो पाया।";
+
+        default:
+            return (
+                error?.message ||
+                "Firebase में समस्या हुई।"
+            );
+    }
+}
+
+
+/* =========================================================
+   IMAGE COMPRESS
+========================================================= */
+
+function compressImage(file) {
+
+    return new Promise(
+        (resolve, reject) => {
+
+            if (!file) {
+                resolve("");
+                return;
+            }
+
+            const reader =
+                new FileReader();
+
+            reader.onload =
+                event => {
+
+                    const img =
+                        new Image();
+
+                    img.onload =
+                        () => {
+
+                            let width =
+                                img.width;
+
+                            let height =
+                                img.height;
+
+                            const maxWidth =
+                                900;
+
+                            if (
+                                width >
+                                maxWidth
+                            ) {
+
+                                height =
+                                    height *
+                                    maxWidth /
+                                    width;
+
+                                width =
+                                    maxWidth;
+                            }
+
+                            const canvas =
+                                document.createElement(
+                                    "canvas"
+                                );
+
+                            canvas.width =
+                                width;
+
+                            canvas.height =
+                                height;
+
+                            const ctx =
+                                canvas.getContext(
+                                    "2d"
+                                );
+
+                            if (!ctx) {
+
+                                reject(
+                                    new Error(
+                                        "Canvas उपलब्ध नहीं है।"
+                                    )
+                                );
+
+                                return;
+                            }
+
+                            ctx.drawImage(
+                                img,
+                                0,
+                                0,
+                                width,
+                                height
+                            );
+
+                            let quality =
+                                0.65;
+
+                            let result =
+                                canvas.toDataURL(
+                                    "image/jpeg",
+                                    quality
+                                );
+
+                            while (
+                                result.length >
+                                    700000 &&
+                                quality >
+                                    0.25
+                            ) {
+
+                                quality -=
+                                    0.10;
+
+                                result =
+                                    canvas.toDataURL(
+                                        "image/jpeg",
+                                        quality
+                                    );
+                            }
+
+                            resolve(
+                                result
+                            );
+                        };
+
+                    img.onerror =
+                        () => {
+
+                            reject(
+                                new Error(
+                                    "Image load नहीं हुई।"
+                                )
+                            );
+                        };
+
+                    img.src =
+                        event.target.result;
+                };
+
+            reader.onerror =
+                () => {
+
+                    reject(
+                        new Error(
+                            "Image read नहीं हुई।"
+                        )
+                    );
+                };
+
+            reader.readAsDataURL(
+                file
+            );
+        }
+    );
+}
+
+
+/* =========================================================
+   LOGIN UI
+========================================================= */
+
+function lockAdmin() {
+
+    document.body.classList.add(
+        "admin-locked"
+    );
+
+    const screen =
+        $("adminLoginScreen");
+
+    if (screen) {
+        screen.style.display =
+            "flex";
+    }
+}
+
+
+function unlockAdmin(
+    user
+) {
+
+    document.body.classList.remove(
+        "admin-locked"
+    );
+
+    const screen =
+        $("adminLoginScreen");
+
+    if (screen) {
+        screen.style.display =
+            "none";
+    }
+
+    text(
+        "loggedAdminEmail",
+        user?.email || "Admin"
+    );
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+async function loginAdmin(
+    event
+) {
+
+    event.preventDefault();
+
+    showLoginError("");
+
+    const email =
+        value("adminEmail");
+
+    const password =
+        $("adminPassword")?.value ||
+        "";
+
+    const button =
+        $("adminLoginBtn");
+
+    if (!email) {
+
+        showLoginError(
+            "Admin Email डालें।"
+        );
+
+        return;
+    }
+
+    if (!password) {
+
+        showLoginError(
+            "Password डालें।"
+        );
+
+        return;
+    }
+
+    if (button) {
+
+        button.disabled =
+            true;
+
+        button.textContent =
+            "⏳ Login हो रहा है...";
+    }
+
+    try {
+
+        console.log(
+            "AJ SEVA: Firebase Admin Login START"
+        );
+
+        const result =
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+        console.log(
+            "AJ SEVA: Firebase Login SUCCESS",
+            result.user.email
+        );
+
+        showLoginError("");
+
+    } catch (error) {
+
+        console.error(
+            "AJ SEVA LOGIN ERROR:",
+            error
+        );
+
+        showLoginError(
+            firebaseError(error)
+        );
+
+    } finally {
+
+        if (button) {
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "🔐 Login";
+        }
+    }
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+async function logoutAdmin() {
+
+    try {
+
+        await signOut(auth);
+
+        showToast(
+            "✅ Admin Logout हो गया।"
+        );
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   AUTH STATE
+========================================================= */
+
+onAuthStateChanged(
+    auth,
+    async user => {
+
+        console.log(
+            "AJ SEVA AUTH STATE:",
+            user
+                ? user.email
+                : "LOGGED OUT"
+        );
+
+        if (!user) {
+
+            lockAdmin();
+
+            return;
+        }
+
+        unlockAdmin(
+            user
+        );
+
+        await initializeAdmin();
+
+    }
+);
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+$("togglePassword")
+    ?.addEventListener(
+        "click",
+        () => {
+
+            const password =
+                $("adminPassword");
+
+            const button =
+                $("togglePassword");
+
+            if (
+                !password ||
+                !button
+            ) {
+                return;
+            }
+
+            if (
+                password.type ===
+                "password"
+            ) {
+
+                password.type =
+                    "text";
+
+                button.textContent =
+                    "🙈";
+
+            } else {
+
+                password.type =
+                    "password";
+
+                button.textContent =
+                    "👁️";
+            }
+        }
+    );
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+$("adminLoginForm")
+    ?.addEventListener(
+        "submit",
+        loginAdmin
+    );
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+$("logoutBtn")
+    ?.addEventListener(
+        "click",
+        logoutAdmin
+    );
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function setupNavigation() {
+
+    const links =
+        document.querySelectorAll(
+            ".admin-nav-link, .quick-card, .view-all-btn"
+        );
+
+    const pages =
+        document.querySelectorAll(
+            ".admin-page"
+        );
+
+    links.forEach(
+        link => {
+
+            if (
+                link.dataset.bound ===
+                "1"
+            ) {
+                return;
+            }
+
+            link.dataset.bound =
+                "1";
+
+            link.addEventListener(
+                "click",
+                async event => {
+
+                    const target =
+                        link.dataset.page;
+
+                    if (!target) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    pages.forEach(
+                        page =>
+                            page.classList.remove(
+                                "active"
+                            )
+                    );
+
+                    document
+                        .querySelectorAll(
+                            ".admin-nav-link"
+                        )
+                        .forEach(
+                            nav =>
+                                nav.classList.remove(
+                                    "active"
+                                )
+                        );
+
+                    const targetPage =
+                        document.getElementById(
+                            `page-${target}`
+                        );
+
+                    if (targetPage) {
+                        targetPage.classList.add(
+                            "active"
+                        );
+                    }
+
+                    const activeNav =
+                        document.querySelector(
+                            `.admin-nav-link[data-page="${target}"]`
+                        );
+
+                    if (activeNav) {
+
+                        activeNav.classList.add(
+                            "active"
+                        );
+                    }
+
+                    text(
+                        "pageTitle",
+                        target
+                            .charAt(0)
+                            .toUpperCase() +
+                        target.slice(1)
+                    );
+
+                    if (
+                        window.innerWidth <
+                        800
+                    ) {
+
+                        $("adminSidebar")
+                            ?.classList.remove(
+                                "open"
+                            );
+                    }
+
+                    if (
+                        target ===
+                        "dashboard"
+                    ) {
+
+                        await loadAllData();
+
+                    } else if (
+                        target ===
+                        "travel"
+                    ) {
+
+                        await loadTravel();
+
+                    } else if (
+                        target ===
+                        "services"
+                    ) {
+
+                        await loadServices();
+
+                    } else if (
+                        target ===
+                        "bookings"
+                    ) {
+
+                        await loadBookings();
+
+                    } else if (
+                        target ===
+                        "customers"
+                    ) {
+
+                        await loadBookings();
+
+                    } else if (
+                        target ===
+                        "gallery"
+                    ) {
+
+                        await loadGallery();
+
+                    } else if (
+                        target ===
+                        "settings"
+                    ) {
+
+                        await loadSettings();
+                    }
+                }
+            );
+        }
+    );
+
+    $("sidebarToggle")
+        ?.addEventListener(
+            "click",
+            () => {
+
+                $("adminSidebar")
+                    ?.classList.toggle(
+                        "open"
+                    );
+            }
+        );
+}
+
+
+/* =========================================================
+   COUNTS
+========================================================= */
+
+function updateCounts() {
+
+    text(
+        "travelCount",
+        travelPackages.length
+    );
+
+    text(
+        "serviceCount",
+        services.length
+    );
+
+    text(
+        "bookingCount",
+        bookings.length
+    );
+
+    const customers =
+        buildCustomers();
+
+    text(
+        "customerCount",
+        customers.length
+    );
+}
+
+
+/* =========================================================
+   TRAVEL LOAD
+========================================================= */
+
+async function loadTravel() {
+
+    try {
+
+        const snap =
+            await getDocs(
+                collection(
+                    db,
+                    TRAVEL_COLLECTION
+                )
+            );
+
+        travelPackages =
+            snap.docs.map(
+                item => ({
+                    id: item.id,
+                    ...item.data()
+                })
+            );
+
+        travelPackages.sort(
+            (a,b) =>
+                timeValue(
+                    b.createdAt
+                ) -
+                timeValue(
+                    a.createdAt
+                )
+        );
+
+        renderTravel();
+
+        updateCounts();
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   TRAVEL RENDER
+========================================================= */
+
+function renderTravel() {
+
+    const list =
+        $("travelPackagesList");
+
+    if (!list) {
+        return;
+    }
+
+    if (!travelPackages.length) {
+
+        list.innerHTML = `
+            <div class="empty-box">
+                <div class="emoji">✈️</div>
+                अभी कोई Travel Package नहीं है।
+            </div>
+        `;
+
+        return;
+    }
+
+    list.innerHTML =
+        travelPackages
+            .map(
+                item => {
+
+                    const image =
+                        item.image ||
+                        item.imageUrl ||
+                        item.photo ||
+                        "";
+
+                    const status =
+                        item.status ===
+                        "inactive"
+                            ? "inactive"
+                            : "active";
+
+                    return `
+                        <div class="package-admin-card">
+
+                            <div class="package-admin-image">
+
+                                ${
+                                    image
+                                        ? `
+                                            <img
+                                                src="${escapeHTML(image)}"
+                                                alt="${escapeHTML(item.name || "Travel")}"
+                                            >
+                                        `
+                                        : `
+                                            <div style="
+                                                height:100%;
+                                                display:flex;
+                                                align-items:center;
+                                                justify-content:center;
+                                                font-size:50px;
+                                            ">
+                                                ✈️
+                                            </div>
+                                        `
+                                }
+
+                            </div>
+
+                            <div class="package-admin-content">
+
+                                <span class="status ${status}">
+                                    ${
+                                        status ===
+                                        "active"
+                                            ? "Active"
+                                            : "Inactive"
+                                    }
+                                </span>
+
+                                <h3>
+                                    ${escapeHTML(
+                                        item.name ||
+                                        "Travel Package"
+                                    )}
+                                </h3>
+
+                                <p>
+                                    📍
+                                    ${escapeHTML(
+                                        item.location ||
+                                        ""
+                                    )}
+                                </p>
+
+                                <p>
+                                    ${escapeHTML(
+                                        item.description ||
+                                        ""
+                                    )}
+                                </p>
+
+                                <strong>
+                                    ₹${numberValue(
+                                        item.price
+                                    ).toLocaleString(
+                                        "en-IN"
+                                    )}
+                                    <small>
+                                        / व्यक्ति
+                                    </small>
+                                </strong>
+
+                                <div class="card-actions">
+
+                                    <button
+                                        type="button"
+                                        data-edit="${escapeHTML(item.id)}"
+                                        class="aj-travel-edit"
+                                    >
+                                        ✏️ Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        data-delete="${escapeHTML(item.id)}"
+                                        class="delete-btn aj-travel-delete"
+                                    >
+                                        🗑️ Delete
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    `;
+                }
+            )
+            .join("");
+
+    list
+        .querySelectorAll(
+            ".aj-travel-edit"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const item =
+                            travelPackages.find(
+                                x =>
+                                    x.id ===
+                                    button.dataset.edit
+                            );
+
+                        if (!item) {
+                            return;
+                        }
+
+                        openTravelForm(
+                            item
+                        );
+                    }
+                );
+            }
+        );
+
+    list
+        .querySelectorAll(
+            ".aj-travel-delete"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        const item =
+                            travelPackages.find(
+                                x =>
+                                    x.id ===
+                                    button.dataset.delete
+                            );
+
+                        if (!item) {
+                            return;
+                        }
+
+                        if (
+                            !confirm(
+                                `"${item.name || "Travel Package"}" Delete करना है?`
+                            )
+                        ) {
+                            return;
+                        }
+
+                        try {
+
+                            await deleteDoc(
+                                doc(
+                                    db,
+                                    TRAVEL_COLLECTION,
+                                    item.id
+                                )
+                            );
+
+                            showToast(
+                                "🗑️ Travel Package Delete हो गया।"
+                            );
+
+                            await loadTravel();
+
+                        } catch (error) {
+
+                            showToast(
+                                firebaseError(error),
+                                "error"
+                            );
+                        }
+                    }
+                );
+            }
+        );
+}
+
+
+/* =========================================================
+   OPEN/CLOSE TRAVEL FORM
+========================================================= */
+
+function openTravelForm(
+    item = null
+) {
+
+    $("travelFormCard")
+        .style.display =
+        "block";
+
+    if (item) {
+
+        $("travelEditId").value =
+            item.id;
+
+        $("travelName").value =
+            item.name || "";
+
+        $("travelPrice").value =
+            numberValue(
+                item.price
+            );
+
+        $("travelFrom").value =
+            item.from || "";
+
+        $("travelLocation").value =
+            item.location || "";
+
+        $("travelDescription").value =
+            item.description || "";
+
+        $("travelStatus").value =
+            item.status ||
+            "active";
+
+        text(
+            "travelFormTitle",
+            "Travel Package Edit करें"
+        );
+
+    } else {
+
+        $("travelForm").reset();
+
+        $("travelEditId").value =
+            "";
+
+        $("travelStatus").value =
+            "active";
+
+        text(
+            "travelFormTitle",
+            "नया Travel Package"
+        );
+    }
+
+    $("travelFormCard")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+}
+
+
+function closeTravelForm() {
+
+    $("travelFormCard")
+        .style.display =
+        "none";
+
+    $("travelForm").reset();
+
+    $("travelEditId").value =
+        "";
+
+    text(
+        "travelFormTitle",
+        "नया Travel Package"
+    );
+}
+
+
+/* =========================================================
+   TRAVEL SAVE
+========================================================= */
+
+$("addTravelBtn")
+    ?.addEventListener(
+        "click",
+        () => openTravelForm()
+    );
+
+$("closeTravelForm")
+    ?.addEventListener(
+        "click",
+        closeTravelForm
+    );
+
+$("cancelTravel")
+    ?.addEventListener(
+        "click",
+        closeTravelForm
+    );
+
+
+$("travelForm")
+    ?.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+            const name =
+                value("travelName");
+
+            const price =
+                numberValue(
+                    $("travelPrice")?.value
+                );
+
+            const from =
+                value("travelFrom");
+
+            const location =
+                value("travelLocation");
+
+            const description =
+                value("travelDescription");
+
+            const status =
+                $("travelStatus")?.value ||
+                "active";
+
+            const editId =
+                value("travelEditId");
+
+            const file =
+                $("travelImage")
+                    ?.files?.[0];
+
+            if (!name) {
+
+                showToast(
+                    "Travel Package का नाम डालें।",
+                    "error"
+                );
+
+                return;
+            }
+
+            try {
+
+                let image = "";
+
+                if (file) {
+
+                    image =
+                        await compressImage(
+                            file
+                        );
+                }
+
+                if (editId) {
+
+                    const old =
+                        travelPackages.find(
+                            x =>
+                                x.id ===
+                                editId
+                        );
+
+                    if (!image) {
+
+                        image =
+                            old?.image ||
+                            old?.imageUrl ||
+                            old?.photo ||
+                            "";
+                    }
+
+                    await updateDoc(
+                        doc(
+                            db,
+                            TRAVEL_COLLECTION,
+                            editId
+                        ),
+                        {
+                            name,
+                            price,
+                            from,
+                            location,
+                            description,
+                            status,
+                            image,
+                            updatedAt:
+                                serverTimestamp()
+                        }
+                    );
+
+                    showToast(
+                        "✅ Travel Package Update हो गया।"
+                    );
+
+                } else {
+
+                    await addDoc(
+                        collection(
+                            db,
+                            TRAVEL_COLLECTION
+                        ),
+                        {
+                            name,
+                            price,
+                            from,
+                            location,
+                            description,
+                            status,
+                            image,
+                            createdAt:
+                                serverTimestamp(),
+                            updatedAt:
+                                serverTimestamp()
+                        }
+                    );
+
+                    showToast(
+                        "✅ नया Travel Package Save हो गया।"
+                    );
+                }
+
+                closeTravelForm();
+
+                await loadTravel();
+
+            } catch (error) {
+
+                showToast(
+                    firebaseError(error),
+                    "error"
+                );
+            }
+        }
+    );
+
+
+/* =========================================================
+   SERVICES LOAD
+========================================================= */
+
+async function loadServices() {
+
+    try {
+
+        const snap =
+            await getDocs(
+                collection(
+                    db,
+                    SERVICES_COLLECTION
+                )
+            );
+
+        services =
+            snap.docs.map(
+                item => ({
+                    id: item.id,
+                    ...item.data()
+                })
+            );
+
+        services.sort(
+            (a,b) =>
+                timeValue(
+                    b.createdAt
+                ) -
+                timeValue(
+                    a.createdAt
+                )
+        );
+
+        renderServices();
+
+        updateCounts();
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   SERVICE RENDER
+========================================================= */
+
+function renderServices() {
+
+    const list =
+        $("servicesList");
+
+    if (!list) {
+        return;
+    }
+
+    if (!services.length) {
+
+        list.innerHTML = `
+            <div class="empty-box">
+                <div class="emoji">🛠️</div>
+                अभी कोई Service नहीं है।
+            </div>
+        `;
+
+        return;
+    }
+
+    list.innerHTML =
+        services.map(
+            item => {
+
+                const name =
+                    item.name ||
+                    item.serviceName ||
+                    item.title ||
+                    "Service";
+
+                const description =
+                    item.description ||
+                    item.serviceDescription ||
+                    item.details ||
+                    "";
+
+                const image =
+                    item.image ||
+                    item.imageUrl ||
+                    item.photo ||
+                    "";
+
+                const status =
+                    item.status ===
+                    "inactive"
+                        ? "inactive"
+                        : "active";
+
+                return `
+                    <div class="package-admin-card">
+
+                        <div class="package-admin-image">
+
+                            ${
+                                image
+                                    ? `
+                                        <img
+                                            src="${escapeHTML(image)}"
+                                            alt="${escapeHTML(name)}"
+                                        >
+                                    `
+                                    : `
+                                        <div style="
+                                            height:100%;
+                                            display:flex;
+                                            align-items:center;
+                                            justify-content:center;
+                                            font-size:50px;
+                                        ">
+                                            🛠️
+                                        </div>
+                                    `
+                            }
+
+                        </div>
+
+                        <div class="package-admin-content">
+
+                            <span class="status ${status}">
+                                ${
+                                    status ===
+                                    "active"
+                                        ? "Active"
+                                        : "Inactive"
+                                }
+                            </span>
+
+                            <h3>
+                                ${escapeHTML(name)}
+                            </h3>
+
+                            <p>
+                                ${escapeHTML(description)}
+                            </p>
+
+                            <strong>
+                                ${
+                                    numberValue(
+                                        item.price
+                                    ) > 0
+                                        ? "₹" +
+                                          numberValue(
+                                              item.price
+                                          ).toLocaleString(
+                                              "en-IN"
+                                          )
+                                        : "संपर्क करें"
+                                }
+                            </strong>
+
+                            <div class="card-actions">
+
+                                <button
+                                    type="button"
+                                    class="aj-service-edit"
+                                    data-id="${escapeHTML(item.id)}"
+                                >
+                                    ✏️ Edit
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="delete-btn aj-service-delete"
+                                    data-id="${escapeHTML(item.id)}"
+                                >
+                                    🗑️ Delete
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                `;
+            }
+        )
+        .join("");
+
+    list
+        .querySelectorAll(
+            ".aj-service-edit"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const item =
+                            services.find(
+                                x =>
+                                    x.id ===
+                                    button.dataset.id
+                            );
+
+                        if (!item) {
+                            return;
+                        }
+
+                        openServiceForm(
+                            item
+                        );
+                    }
+                );
+            }
+        );
+
+    list
+        .querySelectorAll(
+            ".aj-service-delete"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        const item =
+                            services.find(
+                                x =>
+                                    x.id ===
+                                    button.dataset.id
+                            );
+
+                        if (!item) {
+                            return;
+                        }
+
+                        if (
+                            !confirm(
+                                `"${item.name || item.serviceName || "Service"}" Delete करनी है?`
+                            )
+                        ) {
+                            return;
+                        }
+
+                        try {
+
+                            await deleteDoc(
+                                doc(
+                                    db,
+                                    SERVICES_COLLECTION,
+                                    item.id
+                                )
+                            );
+
+                            showToast(
+                                "🗑️ Service Delete हो गई।"
+                            );
+
+                            await loadServices();
+
+                        } catch (error) {
+
+                            showToast(
+                                firebaseError(error),
+                                "error"
+                            );
+                        }
+                    }
+                );
+            }
+        );
+}
+
+
+/* =========================================================
+   SERVICE FORM
+========================================================= */
+
+function openServiceForm(
+    item = null
+) {
+
+    $("serviceFormCard")
+        .style.display =
+        "block";
+
+    if (item) {
+
+        $("serviceEditId").value =
+            item.id;
+
+        $("serviceName").value =
+            item.name ||
+            item.serviceName ||
+            item.title ||
+            "";
+
+        $("servicePrice").value =
+            numberValue(
+                item.price
+            );
+
+        $("serviceDescription").value =
+            item.description ||
+            item.serviceDescription ||
+            item.details ||
+            "";
+
+        $("serviceStatus").value =
+            item.status ||
+            "active";
+
+        text(
+            "serviceFormTitle",
+            "Service Edit करें"
+        );
+
+    } else {
+
+        $("serviceForm").reset();
+
+        $("serviceEditId").value =
+            "";
+
+        $("serviceStatus").value =
+            "active";
+
+        text(
+            "serviceFormTitle",
+            "नई Service"
+        );
+    }
+
+    $("serviceFormCard")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+}
+
+
+function closeServiceForm() {
+
+    $("serviceFormCard")
+        .style.display =
+        "none";
+
+    $("serviceForm").reset();
+
+    $("serviceEditId").value =
+        "";
+
+    text(
+        "serviceFormTitle",
+        "नई Service"
+    );
+}
+
+
+$("addServiceBtn")
+    ?.addEventListener(
+        "click",
+        () => openServiceForm()
+    );
+
+$("closeServiceForm")
+    ?.addEventListener(
+        "click",
+        closeServiceForm
+    );
+
+$("cancelService")
+    ?.addEventListener(
+        "click",
+        closeServiceForm
+    );
+
+
+/* =========================================================
+   SERVICE SAVE
+========================================================= */
+
+$("serviceForm")
+    ?.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+            const name =
+                value("serviceName");
+
+            const price =
+                numberValue(
+                    $("servicePrice")?.value
+                );
+
+            const description =
+                value("serviceDescription");
+
+            const status =
+                $("serviceStatus")?.value ||
+                "active";
+
+            const editId =
+                value("serviceEditId");
+
+            const file =
+                $("serviceImage")
+                    ?.files?.[0];
+
+            if (!name) {
+
+                showToast(
+                    "Service का नाम डालें।",
+                    "error"
+                );
+
+                return;
+            }
+
+            try {
+
+                let image = "";
+
+                if (file) {
+
+                    image =
+                        await compressImage(
+                            file
+                        );
+                }
+
+                if (editId) {
+
+                    const old =
+                        services.find(
+                            x =>
+                                x.id ===
+                                editId
+                        );
+
+                    if (!image) {
+
+                        image =
+                            old?.image ||
+                            old?.imageUrl ||
+                            old?.photo ||
+                            "";
+                    }
+
+                    await updateDoc(
+                        doc(
+                            db,
+                            SERVICES_COLLECTION,
+                            editId
+                        ),
+                        {
+                            name,
+                            serviceName: name,
+                            title: name,
+                            price,
+                            description,
+                            serviceDescription:
+                                description,
+                            status,
+                            image,
+                            updatedAt:
+                                serverTimestamp()
+                        }
+                    );
+
+                    showToast(
+                        "✅ Service Update हो गई।"
+                    );
+
+                } else {
+
+                    await addDoc(
+                        collection(
+                            db,
+                            SERVICES_COLLECTION
+                        ),
+                        {
+                            name,
+                            serviceName: name,
+                            title: name,
+                            price,
+                            description,
+                            serviceDescription:
+                                description,
+                            status,
+                            image,
+                            icon: "🛠️",
+                            emoji: "🛠️",
+                            createdAt:
+                                serverTimestamp(),
+                            updatedAt:
+                                serverTimestamp()
+                        }
+                    );
+
+                    showToast(
+                        "✅ नई Service Save हो गई।"
+                    );
+                }
+
+                closeServiceForm();
+
+                await loadServices();
+
+            } catch (error) {
+
+                showToast(
+                    firebaseError(error),
+                    "error"
+                );
+            }
+        }
+    );
+
+
+/* =========================================================
+   BOOKINGS LOAD
+========================================================= */
+
+async function loadBookings() {
+
+    try {
+
+        const snap =
+            await getDocs(
+                collection(
+                    db,
+                    BOOKINGS_COLLECTION
+                )
+            );
+
+        bookings =
+            snap.docs.map(
+                item => ({
+                    id: item.id,
+                    ...item.data()
+                })
+            );
+
+        bookings.sort(
+            (a,b) =>
+                timeValue(
+                    b.createdAt
+                ) -
+                timeValue(
+                    a.createdAt
+                )
+        );
+
+        renderBookings();
+
+        renderRecentBookings();
+
+        renderCustomers();
+
+        updateCounts();
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   BOOKING HELPERS
+========================================================= */
+
+function bookingType(
+    booking
+) {
+
+    const type =
+        String(
+            booking.bookingType ||
+            booking.type ||
+            ""
+        ).toLowerCase();
+
+    if (
+        type === "travel" ||
+        type === "tour" ||
+        booking.packageName ||
+        booking.travelPackage ||
+        booking.package
+    ) {
+
+        return {
+            text: "Travel",
+            icon: "✈️"
+        };
+    }
+
+    if (
+        type === "ticket" ||
+        type === "train" ||
+        type === "railway" ||
+        type === "bus" ||
+        type === "flight" ||
+        booking.ticketType ||
+        booking.ticket
+    ) {
+
+        return {
+            text: "Ticket",
+            icon: "🎫"
+        };
+    }
+
+    return {
+        text: "Service",
+        icon: "🛠️"
+    };
+}
+
+
+function bookingTitle(
+    booking
+) {
+
+    const type =
+        bookingType(
+            booking
+        ).text;
+
+    if (type === "Travel") {
+
+        return (
+            booking.packageName ||
+            booking.package ||
+            booking.nameOfPackage ||
+            booking.travelPackage ||
+            booking.title ||
+            "Travel Package"
+        );
+    }
+
+    if (type === "Ticket") {
+
+        return (
+            booking.ticketType ||
+            booking.ticket ||
+            booking.ticketName ||
+            booking.title ||
+            "Ticket Booking"
+        );
+    }
+
+    return (
+        booking.service ||
+        booking.serviceName ||
+        booking.serviceTitle ||
+        booking.serviceType ||
+        booking.title ||
+        "Service Booking"
+    );
+}
+
+
+function customerName(
+    booking
+) {
+
+    return (
+        booking.name ||
+        booking.customerName ||
+        booking.customer ||
+        booking.passenger ||
+        booking.passengerName ||
+        "Unknown Customer"
+    );
+}
+
+
+function customerMobile(
+    booking
+) {
+
+    return String(
+        booking.mobile ||
+        booking.phone ||
+        booking.phoneNumber ||
+        booking.contact ||
+        ""
+    ).trim() || "—";
+}
+
+
+function customerEmail(
+    booking
+) {
+
+    return (
+        booking.email ||
+        booking.customerEmail ||
+        ""
+    );
+}
+
+
+function bookingAmount(
+    booking
+) {
+
+    return numberValue(
+        booking.totalAmount ??
+        booking.amount ??
+        booking.price ??
+        booking.paidAmount
+    );
+}
+
+
+/* =========================================================
+   BOOKING RENDER
+========================================================= */
+
+function renderBookings() {
+
+    const container =
+        $("bookingListContainer");
+
+    if (!container) {
+        return;
+    }
+
+    const search =
+        value("bookingSearch")
+            .toLowerCase();
+
+    const filter =
+        $("bookingStatusFilter")
+            ?.value ||
+        "all";
+
+    const list =
+        bookings.filter(
+            booking => {
+
+                const haystack =
+                    [
+                        customerName(
+                            booking
+                        ),
+                        customerMobile(
+                            booking
+                        ),
+                        bookingTitle(
+                            booking
+                        ),
+                        bookingType(
+                            booking
+                        ).text
+                    ]
+                        .join(" ")
+                        .toLowerCase();
+
+                const status =
+                    String(
+                        booking.status ||
+                        booking.bookingStatus ||
+                        "new"
+                    ).toLowerCase();
+
+                return (
+                    (
+                        !search ||
+                        haystack.includes(
+                            search
+                        )
+                    )
+                    &&
+                    (
+                        filter === "all" ||
+                        status ===
+                        filter.toLowerCase()
+                    )
+                );
+            }
+        );
+
+    if (!list.length) {
+
+        container.innerHTML = `
+            <div class="empty-box">
+                <div class="emoji">📋</div>
+                कोई Booking नहीं मिली।
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML =
+        list
+            .map(
+                booking => {
+
+                    const type =
+                        bookingType(
+                            booking
+                        );
+
+                    const status =
+                        booking.status ||
+                        booking.bookingStatus ||
+                        "new";
+
+                    return `
+                        <div
+                            class="booking-admin-card"
+                            style="
+                                width:100%;
+                                box-sizing:border-box;
+                                border:1px solid #e5e7eb;
+                                border-radius:18px;
+                                padding:20px;
+                                background:#fff;
+                                margin-bottom:16px;
+                            "
+                        >
+
+                            <div style="
+                                display:flex;
+                                justify-content:space-between;
+                                gap:20px;
+                                flex-wrap:wrap;
+                            ">
+
+                                <div>
+
+                                    <span style="
+                                        display:inline-flex;
+                                        background:#fff7ed;
+                                        color:#f97316;
+                                        border-radius:20px;
+                                        padding:7px 13px;
+                                        font-weight:800;
+                                    ">
+                                        ${type.icon}
+                                        ${type.text}
+                                    </span>
+
+                                    <h3 style="
+                                        margin:12px 0 5px;
+                                        color:#172554;
+                                    ">
+                                        ${escapeHTML(
+                                            bookingTitle(
+                                                booking
+                                            )
+                                        )}
+                                    </h3>
+
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                    ">
+                                        Booking ID:
+                                        ${escapeHTML(
+                                            booking.id
+                                        )}
+                                    </div>
+
+                                </div>
+
+                                <div style="
+                                    text-align:right;
+                                ">
+
+                                    <div style="
+                                        color:#f97316;
+                                        font-size:25px;
+                                        font-weight:900;
+                                    ">
+                                        ₹${bookingAmount(
+                                            booking
+                                        ).toLocaleString(
+                                            "en-IN"
+                                        )}
+                                    </div>
+
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                    ">
+                                        ${formatDate(
+                                            booking.createdAt
+                                        )}
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div style="
+                                border-top:1px solid #e5e7eb;
+                                margin-top:18px;
+                                padding-top:16px;
+                                display:grid;
+                                grid-template-columns:
+                                    repeat(
+                                        auto-fit,
+                                        minmax(180px,1fr)
+                                    );
+                                gap:12px;
+                            ">
+
+                                <div>
+                                    <strong>नाम:</strong>
+                                    ${escapeHTML(
+                                        customerName(
+                                            booking
+                                        )
+                                    )}
+                                </div>
+
+                                <div>
+                                    <strong>मोबाइल:</strong>
+                                    ${escapeHTML(
+                                        customerMobile(
+                                            booking
+                                        )
+                                    )}
+                                </div>
+
+                                <div>
+                                    <strong>Payment:</strong>
+                                    ${escapeHTML(
+                                        booking.paymentStatus ||
+                                        booking.payment ||
+                                        "pending"
+                                    )}
+                                </div>
+
+                                <div>
+                                    <strong>Status:</strong>
+                                    ${escapeHTML(
+                                        status
+                                    )}
+                                </div>
+
+                            </div>
+
+                            <div style="
+                                display:flex;
+                                flex-wrap:wrap;
+                                gap:10px;
+                                margin-top:18px;
+                            ">
+
+                                <button
+                                    type="button"
+                                    class="booking-action-btn"
+                                    data-id="${escapeHTML(booking.id)}"
+                                    data-status="confirmed"
+                                >
+                                    ✓ Confirm
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="booking-action-btn"
+                                    data-id="${escapeHTML(booking.id)}"
+                                    data-status="completed"
+                                >
+                                    ✓ Complete
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="booking-action-btn"
+                                    data-id="${escapeHTML(booking.id)}"
+                                    data-status="cancelled"
+                                >
+                                    ✕ Cancel
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="booking-action-btn danger"
+                                    data-delete-booking="${escapeHTML(booking.id)}"
+                                >
+                                    🗑️ Delete
+                                </button>
+
+                            </div>
+
+                        </div>
+                    `;
+                }
+            )
+            .join("");
+
+    container
+        .querySelectorAll(
+            ".booking-action-btn[data-status]"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        await changeBookingStatus(
+                            button.dataset.id,
+                            button.dataset.status
+                        );
+                    }
+                );
+            }
+        );
+
+    container
+        .querySelectorAll(
+            "[data-delete-booking]"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        await deleteBooking(
+                            button.dataset.deleteBooking
+                        );
+                    }
+                );
+            }
+        );
+}
+
+
+/* =========================================================
+   RECENT BOOKINGS
+========================================================= */
+
+function renderRecentBookings() {
+
+    const container =
+        $("dashboardRecentBookings");
+
+    if (!container) {
+        return;
+    }
+
+    if (!bookings.length) {
+
+        container.innerHTML = `
+            <div class="empty-box">
+                <div class="emoji">📋</div>
+                अभी कोई Booking नहीं है।
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML =
+        bookings
+            .slice(0,5)
+            .map(
+                booking => {
+
+                    const type =
+                        bookingType(
+                            booking
+                        );
+
+                    return `
+                        <div
+                            style="
+                                background:#fff;
+                                border:1px solid #e5e7eb;
+                                border-radius:15px;
+                                padding:16px;
+                                margin-bottom:12px;
+                            "
+                        >
+
+                            <div style="
+                                display:flex;
+                                justify-content:space-between;
+                                gap:15px;
+                                flex-wrap:wrap;
+                            ">
+
+                                <div>
+
+                                    <strong style="
+                                        color:#172554;
+                                    ">
+                                        ${type.icon}
+                                        ${escapeHTML(
+                                            bookingTitle(
+                                                booking
+                                            )
+                                        )}
+                                    </strong>
+
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                        margin-top:5px;
+                                    ">
+                                        ${escapeHTML(
+                                            customerName(
+                                                booking
+                                            )
+                                        )}
+                                        •
+                                        ${escapeHTML(
+                                            customerMobile(
+                                                booking
+                                            )
+                                        )}
+                                    </div>
+
+                                </div>
+
+                                <strong style="
+                                    color:#f97316;
+                                ">
+                                    ₹${bookingAmount(
+                                        booking
+                                    ).toLocaleString(
+                                        "en-IN"
+                                    )}
+                                </strong>
+
+                            </div>
+
+                        </div>
+                    `;
+                }
+            )
+            .join("");
+}
+
+
+/* =========================================================
+   BOOKING STATUS
+========================================================= */
+
+async function changeBookingStatus(
+    id,
+    status
+) {
+
+    try {
+
+        await updateDoc(
+            doc(
+                db,
+                BOOKINGS_COLLECTION,
+                id
+            ),
+            {
+                status,
+                bookingStatus:
+                    status,
+                updatedAt:
+                    serverTimestamp()
+            }
+        );
+
+        showToast(
+            "✅ Booking status update हो गया।"
+        );
+
+        await loadBookings();
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+async function deleteBooking(
+    id
+) {
+
+    const item =
+        bookings.find(
+            x =>
+                x.id === id
+        );
+
+    if (!item) {
+        return;
+    }
+
+    if (
+        !confirm(
+            `${customerName(item)} की Booking Delete करनी है?`
+        )
+    ) {
+        return;
+    }
+
+    try {
+
+        await deleteDoc(
+            doc(
+                db,
+                BOOKINGS_COLLECTION,
+                id
+            )
+        );
+
+        showToast(
+            "🗑️ Booking Delete हो गई।"
+        );
+
+        await loadBookings();
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   BOOKING SEARCH/FILTER
+========================================================= */
+
+$("bookingSearch")
+    ?.addEventListener(
+        "input",
+        renderBookings
+    );
+
+$("bookingStatusFilter")
+    ?.addEventListener(
+        "change",
+        renderBookings
+    );
+
+
+/* =========================================================
+   CUSTOMERS
+========================================================= */
+
+function buildCustomers() {
+
+    const map =
+        new Map();
+
+    bookings.forEach(
+        booking => {
+
+            const mobile =
+                customerMobile(
+                    booking
+                );
+
+            const name =
+                customerName(
+                    booking
+                );
+
+            const email =
+                customerEmail(
+                    booking
+                );
+
+            const key =
+                mobile !== "—"
+                    ? mobile
+                    :
+                    (
+                        String(name)
+                            .trim()
+                            .toLowerCase() +
+                        "|" +
+                        String(email)
+                            .trim()
+                            .toLowerCase()
+                    );
+
+            if (!map.has(key)) {
+
+                map.set(
+                    key,
+                    {
+                        name,
+                        mobile,
+                        email,
+                        bookings: [],
+                        totalAmount: 0,
+                        lastBooking:
+                            booking
+                    }
+                );
+            }
+
+            const customer =
+                map.get(key);
+
+            customer.bookings.push(
+                booking
+            );
+
+            customer.totalAmount +=
+                bookingAmount(
+                    booking
+                );
+
+            if (
+                timeValue(
+                    booking.createdAt
+                ) >
+                timeValue(
+                    customer
+                        .lastBooking
+                        ?.createdAt
+                )
+            ) {
+
+                customer.lastBooking =
+                    booking;
+            }
+
+            if (
+                !customer.email &&
+                email
+            ) {
+
+                customer.email =
+                    email;
+            }
+        }
+    );
+
+    return Array.from(
+        map.values()
+    ).sort(
+        (a,b) =>
+            timeValue(
+                b.lastBooking
+                    ?.createdAt
+            ) -
+            timeValue(
+                a.lastBooking
+                    ?.createdAt
+            )
+    );
+}
+
+
+function renderCustomers() {
+
+    const container =
+        $("customerListContainer");
+
+    if (!container) {
+        return;
+    }
+
+    const query =
+        value("customerSearch")
+            .toLowerCase();
+
+    let customers =
+        buildCustomers();
+
+    if (query) {
+
+        customers =
+            customers.filter(
+                customer =>
+                    [
+                        customer.name,
+                        customer.mobile,
+                        customer.email
+                    ]
+                        .join(" ")
+                        .toLowerCase()
+                        .includes(query)
+            );
+    }
+
+    if (!customers.length) {
+
+        container.innerHTML = `
+            <div class="empty-box">
+                <div class="emoji">👥</div>
+                Customer नहीं मिला।
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML =
+        customers
+            .map(
+                customer => {
+
+                    const types =
+                        [
+                            ...new Set(
+                                customer.bookings.map(
+                                    booking =>
+                                        bookingType(
+                                            booking
+                                        ).text
+                                )
+                            )
+                        ]
+                        .join(" • ");
+
+                    return `
+                        <div
+                            class="customer-admin-card"
+                            style="
+                                width:100%;
+                                box-sizing:border-box;
+                                background:#fff;
+                                border:1px solid #e5e7eb;
+                                border-radius:18px;
+                                padding:20px;
+                                margin-bottom:16px;
+                            "
+                        >
+
+                            <div style="
+                                display:flex;
+                                justify-content:space-between;
+                                gap:20px;
+                                flex-wrap:wrap;
+                            ">
+
+                                <div>
+
+                                    <h3 style="
+                                        margin:0 0 6px;
+                                        color:#172554;
+                                    ">
+                                        ${escapeHTML(
+                                            customer.name
+                                        )}
+                                    </h3>
+
+                                    <div style="
+                                        color:#475569;
+                                        font-size:14px;
+                                    ">
+                                        📱
+                                        ${escapeHTML(
+                                            customer.mobile
+                                        )}
+                                    </div>
+
+                                    ${
+                                        customer.email
+                                            ? `
+                                                <div style="
+                                                    color:#64748b;
+                                                    font-size:13px;
+                                                    margin-top:4px;
+                                                ">
+                                                    ✉️
+                                                    ${escapeHTML(
+                                                        customer.email
+                                                    )}
+                                                </div>
+                                            `
+                                            : ""
+                                    }
+
+                                </div>
+
+                                <div style="
+                                    text-align:right;
+                                ">
+
+                                    <div style="
+                                        color:#f97316;
+                                        font-size:24px;
+                                        font-weight:900;
+                                    ">
+                                        ₹${customer.totalAmount.toLocaleString(
+                                            "en-IN"
+                                        )}
+                                    </div>
+
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                    ">
+                                        Total Booking Amount
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div style="
+                                margin-top:18px;
+                                padding-top:15px;
+                                border-top:1px solid #e5e7eb;
+                                display:grid;
+                                grid-template-columns:
+                                    repeat(
+                                        auto-fit,
+                                        minmax(160px,1fr)
+                                    );
+                                gap:14px;
+                            ">
+
+                                <div>
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                    ">
+                                        Total Bookings
+                                    </div>
+                                    <strong>
+                                        ${customer.bookings.length}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                    ">
+                                        Booking Type
+                                    </div>
+                                    <strong>
+                                        ${escapeHTML(
+                                            types
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                    ">
+                                        Last Booking
+                                    </div>
+                                    <strong>
+                                        ${escapeHTML(
+                                            bookingTitle(
+                                                customer.lastBooking
+                                            )
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <div style="
+                                        color:#64748b;
+                                        font-size:13px;
+                                    ">
+                                        Last Booking Date
+                                    </div>
+                                    <strong>
+                                        ${formatDate(
+                                            customer
+                                                .lastBooking
+                                                ?.createdAt
+                                        )}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    `;
+                }
+            )
+            .join("");
+}
+
+
+$("customerSearch")
+    ?.addEventListener(
+        "input",
+        renderCustomers
+    );
+
+
+/* =========================================================
+   SETTINGS LOAD
+========================================================= */
+
+async function loadSettings() {
+
+    try {
+
+        const snap =
+            await getDoc(
+                doc(
+                    db,
+                    SETTINGS_COLLECTION,
+                    SETTINGS_DOCUMENT
+                )
+            );
+
+        if (!snap.exists()) {
+            return;
+        }
+
+        const data =
+            snap.data();
+
+        setValue(
+            "businessName",
+            data.businessName ||
+            data.bizName ||
+            "AJ Seva"
+        );
+
+        setValue(
+            "businessSubtitle",
+            data.businessSubtitle ||
+            data.bizSubtitle ||
+            "आशीष जन सेवा केंद्र"
+        );
+
+        setValue(
+            "mobile",
+            data.mobile
+        );
+
+        setValue(
+            "whatsapp",
+            data.whatsapp
+        );
+
+        setValue(
+            "address",
+            data.address
+        );
+
+        setValue(
+            "googleMap",
+            data.googleMap
+        );
+
+        setValue(
+            "youtube",
+            data.youtube
+        );
+
+        setValue(
+            "facebook",
+            data.facebook
+        );
+
+        setValue(
+            "instagram",
+            data.instagram
+        );
+
+        setValue(
+            "twitter",
+            data.twitter
+        );
+
+        setValue(
+            "website",
+            data.website
+        );
+
+        setValue(
+            "upiId",
+            data.upiId
+        );
+
+        const qr =
+            data.paymentQr ||
+            "";
+
+        $("paymentQr")
+            .dataset.currentQr =
+            qr;
+
+        if (qr) {
+
+            $("paymentQrPreview")
+                .src = qr;
+
+            $("paymentQrPreview")
+                .style.display =
+                "block";
+        }
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   SETTINGS QR PREVIEW
+========================================================= */
+
+$("paymentQr")
+    ?.addEventListener(
+        "change",
+        async () => {
+
+            const file =
+                $("paymentQr")
+                    ?.files?.[0];
+
+            if (!file) {
+                return;
+            }
+
+            try {
+
+                const image =
+                    await compressImage(
+                        file
+                    );
+
+                if (image) {
+
+                    $("paymentQrPreview")
+                        .src = image;
+
+                    $("paymentQrPreview")
+                        .style.display =
+                        "block";
+                }
+
+            } catch (error) {
+
+                showToast(
+                    "QR preview नहीं बन पाई।",
+                    "error"
+                );
+            }
+        }
+    );
+
+
+/* =========================================================
+   SETTINGS SAVE
+========================================================= */
+
+$("settingsForm")
+    ?.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+            const button =
+                $("saveSettingsBtn");
+
+            if (button) {
+
+                button.disabled =
+                    true;
+
+                button.textContent =
+                    "⏳ Saving...";
+            }
+
+            try {
+
+                const qrFile =
+                    $("paymentQr")
+                        ?.files?.[0];
+
+                let paymentQr =
+                    $("paymentQr")
+                        ?.dataset?.currentQr ||
+                    "";
+
+                if (qrFile) {
+
+                    paymentQr =
+                        await compressImage(
+                            qrFile
+                        );
+                }
+
+                await setDoc(
+                    doc(
+                        db,
+                        SETTINGS_COLLECTION,
+                        SETTINGS_DOCUMENT
+                    ),
+                    {
+                        businessName:
+                            value(
+                                "businessName"
+                            ),
+
+                        businessSubtitle:
+                            value(
+                                "businessSubtitle"
+                            ),
+
+                        mobile:
+                            value("mobile"),
+
+                        whatsapp:
+                            value("whatsapp"),
+
+                        address:
+                            value("address"),
+
+                        googleMap:
+                            value("googleMap"),
+
+                        youtube:
+                            value("youtube"),
+
+                        facebook:
+                            value("facebook"),
+
+                        instagram:
+                            value("instagram"),
+
+                        twitter:
+                            value("twitter"),
+
+                        website:
+                            value("website"),
+
+                        upiId:
+                            value("upiId"),
+
+                        paymentQr,
+
+                        updatedAt:
+                            serverTimestamp()
+                    },
+                    {
+                        merge: true
+                    }
+                );
+
+                $("paymentQr")
+                    .dataset.currentQr =
+                    paymentQr;
+
+                showToast(
+                    "✅ Settings Firebase में Save हो गईं।"
+                );
+
+            } catch (error) {
+
+                showToast(
+                    firebaseError(error),
+                    "error"
+                );
+
+            } finally {
+
+                if (button) {
+
+                    button.disabled =
+                        false;
+
+                    button.textContent =
+                        "💾 Save Settings";
+                }
+            }
+        }
+    );
+
+
+/* =========================================================
+   GALLERY LOAD
+========================================================= */
+
+async function loadGallery() {
+
+    try {
+
+        const snap =
+            await getDocs(
+                collection(
+                    db,
+                    GALLERY_COLLECTION
+                )
+            );
+
+        galleryItems =
+            snap.docs.map(
+                item => ({
+                    id: item.id,
+                    ...item.data()
+                })
+            );
+
+        galleryItems.sort(
+            (a,b) =>
+                timeValue(
+                    b.createdAt
+                ) -
+                timeValue(
+                    a.createdAt
+                )
+        );
+
+        renderGallery();
+
+    } catch (error) {
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   GALLERY RENDER
+========================================================= */
+
+function renderGallery() {
+
+    const grid =
+        $("galleryGrid");
+
+    if (!grid) {
+        return;
+    }
+
+    if (!galleryItems.length) {
+
+        grid.innerHTML = `
+            <div class="empty-box">
+                <div class="emoji">📷</div>
+                अभी कोई photo नहीं है।
+            </div>
+        `;
+
+        return;
+    }
+
+    grid.innerHTML =
+        galleryItems
+            .map(
+                item => {
+
+                    return `
+                        <div class="gallery-admin-card">
+
+                            <img
+                                src="${escapeHTML(
+                                    item.image || ""
+                                )}"
+                                alt="${escapeHTML(
+                                    item.title ||
+                                    "Gallery"
+                                )}"
+                            >
+
+                            <div class="gallery-info">
+
+                                <strong>
+                                    ${escapeHTML(
+                                        item.title ||
+                                        "AJ Seva"
+                                    )}
+                                </strong>
+
+                                <br>
+
+                                <small style="
+                                    color:#64748b;
+                                ">
+                                    ${formatDate(
+                                        item.createdAt
+                                    )}
+                                </small>
+
+                                <br><br>
+
+                                <button
+                                    type="button"
+                                    class="booking-action-btn danger"
+                                    data-gallery-delete="${escapeHTML(item.id)}"
+                                >
+                                    🗑️ Delete
+                                </button>
+
+                            </div>
+
+                        </div>
+                    `;
+                }
+            )
+            .join("");
+
+    grid
+        .querySelectorAll(
+            "[data-gallery-delete]"
+        )
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        if (
+                            !confirm(
+                                "यह photo Delete करनी है?"
+                            )
+                        ) {
+                            return;
+                        }
+
+                        try {
+
+                            await deleteDoc(
+                                doc(
+                                    db,
+                                    GALLERY_COLLECTION,
+                                    button.dataset.galleryDelete
+                                )
+                            );
+
+                            showToast(
+                                "🗑️ Photo Delete हो गई।"
+                            );
+
+                            await loadGallery();
+
+                        } catch (error) {
+
+                            showToast(
+                                firebaseError(error),
+                                "error"
+                            );
+                        }
+                    }
+                );
+            }
+        );
+}
+
+
+/* =========================================================
+   GALLERY UPLOAD
+========================================================= */
+
+$("galleryUploadBtn")
+    ?.addEventListener(
+        "click",
+        async () => {
+
+            const files =
+                $("galleryFile")
+                    ?.files;
+
+            if (!files || !files.length) {
+
+                showToast(
+                    "पहले photo चुनें।",
+                    "error"
+                );
+
+                return;
+            }
+
+            try {
+
+                for (
+                    const file of files
+                ) {
+
+                    const image =
+                        await compressImage(
+                            file
+                        );
+
+                    await addDoc(
+                        collection(
+                            db,
+                            GALLERY_COLLECTION
+                        ),
+                        {
+                            image,
+                            title:
+                                file.name,
+                            createdAt:
+                                serverTimestamp()
+                        }
+                    );
+                }
+
+                $("galleryFile").value =
+                    "";
+
+                showToast(
+                    "✅ Photo Gallery में Save हो गई।"
+                );
+
+                await loadGallery();
+
+            } catch (error) {
+
+                showToast(
+                    firebaseError(error),
+                    "error"
+                );
+            }
+        }
+    );
+
+
+/* =========================================================
+   LOAD ALL
+========================================================= */
+
+async function loadAllData() {
+
+    await Promise.all([
+        loadTravel(),
+        loadServices(),
+        loadBookings()
+    ]);
+
+    updateCounts();
+    renderRecentBookings();
+    renderCustomers();
+}
+
+
+/* =========================================================
+   INITIALIZE ADMIN
+========================================================= */
+
+let initialized =
+    false;
+
+async function initializeAdmin() {
+
+    if (initialized) {
+        return;
+    }
+
+    initialized =
+        true;
+
+    console.log(
+        "======================================"
+    );
+
+    console.log(
+        "AJ SEVA ADMIN PANEL STARTING..."
+    );
+
+    console.log(
+        "======================================"
+    );
+
+    try {
+
+        setupNavigation();
+
+        await loadAllData();
+
+        await loadSettings();
+
+        await loadGallery();
+
+        console.log(
+            "AJ SEVA ADMIN READY"
+        );
+
+    } catch (error) {
+
+        console.error(
+            "AJ SEVA ADMIN ERROR:",
+            error
+        );
+
+        initialized =
+            false;
+
+        showToast(
+            firebaseError(error),
+            "error"
+        );
+    }
+}
+
+
+/* =========================================================
+   DOM READY
+========================================================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        console.log(
+            "AJ SEVA: DOM READY"
+        );
+
+        lockAdmin();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
